@@ -43,7 +43,7 @@ const RootWithAuth = withRouter(connect()(Root));
 
 const RootWithRouter = () => {
   return (
-    <Provider>
+    <Provider store={store} >
       <BrowserRouter>
         <RootWithAuth />
       </BrowserRouter>
