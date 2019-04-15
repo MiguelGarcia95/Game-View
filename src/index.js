@@ -7,7 +7,7 @@ import styled from "styled-components";
 import store from './store';
 
 import './index.css';
-import App from './components/App';
+import Home from './components/pages/Home';
 import Test from './components/Test';
 import * as serviceWorker from './serviceWorker';
 
@@ -31,7 +31,7 @@ const Root = () => {
                 key={location.key}
               >
                 <Switch location={location}>
-                  <Route exact path='/' component={App} />
+                  <Route exact path='/' component={Home} />
                   <Route exact path='/test' component={Test} />
                 </Switch>
               </CSSTransition>

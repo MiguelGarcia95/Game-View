@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import styled from "styled-components";
-import {slideInLeft, slideOutRight} from '../utils/pageTransitions';
-import {OverflowPage} from '../utils/styledClasses';
+
+import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
+import {OverflowPage} from '../../utils/styledClasses';
 import './App.css';
 
 const HomePageElm = styled(OverflowPage)`
@@ -14,14 +15,14 @@ const HomePageElm = styled(OverflowPage)`
   }
 `;
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
-      <HomePageElm className="app">
+      <HomePageElm className="home">
         <Link to='/test'>Test</Link>
       </HomePageElm>
     );
   }
 }
 
-export default App;
+export default Home;
