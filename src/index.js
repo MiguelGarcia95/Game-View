@@ -8,6 +8,7 @@ import store from './store';
 
 import './index.css';
 import App from './components/App';
+import Test from './components/Test';
 import * as serviceWorker from './serviceWorker';
 
 const PageContainer = styled.div`
@@ -23,15 +24,18 @@ const Root = () => {
       <Route render={({location}) => {
         return (
           <PageContainer>
-            <CSSTransition
-              timeout={600}
-              classNames='page'
-              key={location.key}
-            >
-              <Switch location={location}>
-                <Route exact path='/' component={App} />
-              </Switch>
-            </CSSTransition>
+            <TransitionGroup component={null}>
+              <CSSTransition
+                timeout={600}
+                classNames='page'
+                key={location.key}
+              >
+                <Switch location={location}>
+                  <Route exact path='/' component={App} />
+                  <Route exact path='/test' component={Test} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
           </PageContainer>
         )
       }} />

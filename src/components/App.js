@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import styled, {keyframes} from "styled-components";
+import './App.css';
 
 const OverflowPage = styled.div`
   width: 100vw;
@@ -37,7 +38,7 @@ const HomePageElm = styled(OverflowPage)`
   }
 `;
 
-export const slideInLeft = keyframes`
+const slideInLeft = keyframes`
   from {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
@@ -49,7 +50,7 @@ export const slideInLeft = keyframes`
     transform: translate3d(0, 0, 0);
   }
 `;
-export const slideOutLeft = keyframes`
+const slideOutLeft = keyframes`
   from {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -62,7 +63,7 @@ export const slideOutLeft = keyframes`
   }
 `;
 
-export const slideInRight = keyframes`
+const slideInRight = keyframes`
   from {
     transform: translate3d(100%, 0, 0);
     visibility: visible;
@@ -73,7 +74,7 @@ export const slideInRight = keyframes`
   }
 `;
 
-export const slideOutRight = keyframes`
+const slideOutRight = keyframes`
   from {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -89,7 +90,7 @@ export const slideOutRight = keyframes`
 class App extends Component {
   render() {
     return (
-      <HomePageElm className="App">
+      <HomePageElm className="app">
         <Link to='/test'>Test</Link>
       </HomePageElm>
     );
