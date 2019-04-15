@@ -29,15 +29,6 @@ const OverflowPage = styled.div`
   }
 `;
 
-const HomePageElm = styled(OverflowPage)`
-  &.page-enter {
-    animation: ${slideInLeft} 0.7s ease forwards;
-  }
-  &.page-exit {
-    animation: ${slideOutRight} 0.7s ease forwards;
-  }
-`;
-
 const slideInLeft = keyframes`
   from {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -84,6 +75,15 @@ const slideOutRight = keyframes`
     visibility: hidden;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
+  }
+`;
+
+const HomePageElm = styled(OverflowPage)`
+  &.page-enter {
+    animation: ${slideInLeft} 0.7s ease forwards;
+  }
+  &.page-exit {
+    animation: ${slideOutRight} 0.7s ease forwards;
   }
 `;
 
