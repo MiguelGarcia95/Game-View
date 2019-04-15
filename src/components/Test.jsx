@@ -18,7 +18,7 @@ const HomePageElm = styled(OverflowPage)`
 class Test extends Component {
   render() {
     return (
-      <HomePageElm className="test">
+      <HomePageElm className="test app">
         <Link to='/'>Home</Link>
       </HomePageElm>
     );
