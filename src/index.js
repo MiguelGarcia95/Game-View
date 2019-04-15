@@ -1,21 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route, withRouter} from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import {Provider, connect} from 'react-redux';
+import styled from "styled-components";
 import store from './store';
 
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+const PageContainer = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #232323;
+`;
+
 const Root = () => {
   return (
     <BrowserRouter>
-      <React.Fragment>
-        <Switch>
-          <Route exact path='/' component={App} />
-        </Switch>
-      </React.Fragment>
+      <Route render={({location}) => {
+        return (
+          <PageContainer>
+            <CSSTransition
+              timeout={600}
+              classNames='page'
+              key={location.key}
+            >
+              <Switch location={location}>
+                <Route exact path='/' component={App} />
+              </Switch>
+            </CSSTransition>
+          </PageContainer>
+        )
+      }} />
     </BrowserRouter>
   )
 }
