@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import {slideInLeft, slideOutRight} from '../utils/pageTransitions';
 import {OverflowPage} from '../utils/styledClasses';
-import './App.css';
 
 const HomePageElm = styled(OverflowPage)`
   &.page-enter {
