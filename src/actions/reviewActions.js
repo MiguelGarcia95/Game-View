@@ -13,8 +13,6 @@ export const getReviews = () => {
         field_list: 'api_detail_url,deck,description,dlc_name,game,guid,id,publish_date,release,reviewer,score,site_detail_url'
       }
     });
-    console.log(results);
+    console.log(results.data);
   }
 }
-
-// URL: https://www.giantbomb.com/api/reviews/?api_key=[YOUR API KEY]
