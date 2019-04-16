@@ -6,7 +6,7 @@ import {Provider, connect} from 'react-redux';
 import styled from "styled-components";
 import store from './store';
 
-import './index.css';
+import './style.css';
 import Home from './components/pages/Home';
 import Test from './components/Test';
 import * as serviceWorker from './serviceWorker';
