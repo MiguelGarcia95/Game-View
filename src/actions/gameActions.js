@@ -16,3 +16,4 @@ export const getGames = () => {
     console.log(results.data);
   }
 }
+

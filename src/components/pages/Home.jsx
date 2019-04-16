@@ -19,7 +19,8 @@ const HomePageElm = styled(OverflowPage)`
 
 class Home extends React.Component {
   componentDidMount() {
-    this.props.getGames()
+    // this.props.getGames()
+    this.props.getReviews()
   }
 
   render() {
