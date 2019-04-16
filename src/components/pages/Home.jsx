@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
 import styled from "styled-components";
+import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
@@ -15,7 +15,7 @@ const HomePageElm = styled(OverflowPage)`
   }
 `;
 
-class Home extends Component {
+class Home extends React.Component {
   render() {
     return (
       <HomePageElm className="home app">
@@ -25,4 +25,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
