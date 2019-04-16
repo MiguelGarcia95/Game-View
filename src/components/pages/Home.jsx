@@ -32,7 +32,7 @@ class Home extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getFeed: () => dispatch(getFeed)
+    getFeed: () => dispatch(getFeed())
   }
 }
 

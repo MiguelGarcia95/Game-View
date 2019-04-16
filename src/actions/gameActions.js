@@ -11,10 +11,10 @@ export const getGames = () => {
 export const getFeed = () => {
   return async (dispatch) => {
     
-    // 'https://api-v3.igdb.com/feeds'
+    // 2
     axios({
       url: "https://api-v3.igdb.com/feeds",
-      method: 'POST',
+      method: 'GET',
       headers: {
           'Accept': 'application/json',
           'user-key': IGDBKEY
