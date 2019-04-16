@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import styled from "styled-components";
 
+import Navbar from '../layout/Navbar';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
@@ -18,7 +19,7 @@ class Home extends Component {
   render() {
     return (
       <HomePageElm className="home app">
-        <Link to='/test'>Test</Link>
+        <Navbar />
       </HomePageElm>
     );
   }
