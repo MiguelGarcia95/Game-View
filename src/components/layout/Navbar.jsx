@@ -6,7 +6,7 @@ const Navbar = () => {
     <section className="navbar">
       <section className="brand"></section>
       <section className="nav">
-
+        <NavLink activeClassName='active' to='/'>Home</NavLink>
       </section>
     </section>
   )
