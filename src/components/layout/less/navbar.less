@@ -27,7 +27,11 @@
   .nav-search, .nav-ham {
     float: right;
     width: @height; height: @height;
-    background-color: #232323;
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    &:hover {
+      box-shadow: inset 0px 0px 1px   black;
+    }
   }
   .nav-search {
 
