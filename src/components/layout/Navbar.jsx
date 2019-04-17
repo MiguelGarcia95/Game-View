@@ -5,7 +5,7 @@ import './css/navbar.css';
 const Navbar = () => {
   return (
     <section className="navbar">
-      <section className="brand"><p>G</p></section>
+      <NavLink className='nav-link brand' activeClassName='active' to='/'>G</NavLink>
       <NavLink className='nav-link home' activeClassName='active' to='/'>Home</NavLink>
       <NavLink className='nav-link games' activeClassName='active' to='/games'>Games</NavLink>
       <NavLink className='nav-link reviews' activeClassName='active' to='/reviews'>Reviews</NavLink>
