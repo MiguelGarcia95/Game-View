@@ -19,9 +19,9 @@ const HomePage = styled(OverflowPage)`
 
 class Home extends React.Component {
   componentDidMount() {
-    this.props.getHomeReviews();
-    this.props.getHomeGames();
-    this.props.getHomeGameReleases();
+    // this.props.getHomeReviews();
+    // this.props.getHomeGames();
+    // this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -30,6 +30,9 @@ class Home extends React.Component {
     return (
       <HomePage className="home app">
         <Navbar />
+        <section className="home_header">
+          
+        </section>
       </HomePage>
     );
   }

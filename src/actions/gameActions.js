@@ -29,8 +29,8 @@ export const getHomeGameReleases = () => {
         api_key: GBAPI,
         format: 'json',
         limit: '20',
-        sort: 'date_last_updated:desc',
-        field_list: 'api_detail_url,date_added,date_last_updated,deck,image,guid,id,game,name,release_date'
+        sort: 'date_added:asc',
+        field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,image,guid,id,game,name,release_date'
       }
     });
     dispatch({
