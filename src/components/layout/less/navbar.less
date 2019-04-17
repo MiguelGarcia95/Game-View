@@ -20,22 +20,51 @@
   .nav-link {
     box-sizing: border-box;
     cursor: pointer;
-    &.active {
-      // border-bottom: 3px solid blue; 
-    }
+    transition: border 0.3s;
+    border-top: 0px solid rgba(0,0,0,0); 
     &.brand {
       width: 10%;
     }
     width: 12%;
     &.home {
+      &:hover {
+        border-top: 3px solid rgb(91, 82, 221); 
+      }
+      &.active {
+        border-top: 3px solid rgb(91, 82, 221); 
+      }
     }
     &.games {
+      &:hover {
+        border-top: 3px solid rgb(134, 214, 123); 
+      }
+      &.active {
+        border-top: 3px solid rgb(134, 214, 123); 
+      }
     }
     &.reviews {
+      &:hover {
+        border-top: 3px solid rgb(214, 123, 158); 
+      }
+      &.active {
+        border-top: 3px solid rgb(214, 123, 158); 
+      }
     }
     &.franchises {
+      &:hover {
+        border-top: 3px solid rgb(92, 207, 153); 
+      }
+      &.active {
+        border-top: 3px solid rgb(92, 207, 153); 
+      }
     }
     &.characters {
+      &:hover {
+        border-top: 3px solid rgb(207, 119, 92); 
+      }
+      &.active {
+        border-top: 3px solid rgb(207, 119, 92); 
+      }
     }
   }
   .nav-search, .nav-ham {
