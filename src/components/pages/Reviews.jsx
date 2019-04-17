@@ -3,8 +3,7 @@ import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import {getGames} from '../../actions/gameActions';
-import {getReviews} from '../../actions/reviewActions';
+import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
@@ -32,8 +31,7 @@ class Reviews extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGames: () => dispatch(getGames()),
-    getReviews: () => dispatch(getReviews())
+    getHomeReviews: () => dispatch(getHomeReviews())
   }
 }
 
