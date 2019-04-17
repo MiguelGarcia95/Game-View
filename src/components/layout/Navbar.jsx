@@ -8,13 +8,13 @@ class Navbar extends React.Component {
   state = {
     mobile: false,
     search: false,
-    navOpen: false,
     menu: false,
     searchTerm: ''
   }
 
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
+
   onChange = e => this.setState({[e.target.name]: e.target.value})
 
   searchBar = () => {
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
 
 
   render() {
-    const {search, navOpen} = this.state;
+    const {search, menu} = this.state;
     return (
       <React.Fragment>
         <section className="navbar">
@@ -46,7 +46,8 @@ class Navbar extends React.Component {
         <section className={classnames('searchbar', {active: search})} >
           <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
         </section>
-        <section className={classnames('nav-box', {active: navOpen})}>
+        <section className={classnames('nav-box', {active: menu})}>
+          <section className="screen"></section>
         </section>
       </React.Fragment>
     )

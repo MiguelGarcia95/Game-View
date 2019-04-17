@@ -9,6 +9,8 @@
   width: @width;
   height: @height;
   background-color: @bgColor;
+  z-index: 100;
+  position: fixed;
   a, .nav-search {
     float: left;
     text-decoration: none;
@@ -64,9 +66,9 @@
       box-shadow: inset 0px 0px 1px black;
     }
   }
-  .nav-search {
+  // .nav-search {
 
-  }
+  // }
   .nav-ham {
     padding-top: 14px;
   }
@@ -77,6 +79,9 @@
   height: 0px;
   transition: 0.5s;
   overflow: hidden;
+  position: fixed;
+  top: 62px;
+  background-color: rebeccapurple;
   &.active {
     height: 50px;
   }
@@ -95,7 +100,20 @@
 }
 
 .nav-box {
+  width: 0px;
+  height: 100vh;
+  position: fixed;
+  padding-top: 60px;
+  top: 0; right: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.5s;
+  .screen {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
   &.active {
-    height: 50px;
+    width: 100%;
   }
 }
