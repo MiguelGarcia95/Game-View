@@ -4,6 +4,11 @@
 @width: 100%;
 @bgColor: #232323;
 @bgColor: #f1f1f1;
+@homeBorderColor: rgb(91, 82, 221);
+@gameBorderColor: rgb(134, 214, 123);
+@reviewBorderColor: rgb(214, 123, 158);
+@franchisesBorderColor: rgb(92, 207, 153);
+@charactersBorderColor: rgb(207, 119, 92);
 
 .navbar {
   width: @width;
@@ -30,27 +35,27 @@
     width: 12%;
     &.home {
       &:hover, &.active  {
-        border-top: 3px solid rgb(91, 82, 221); 
+        border-top: 3px solid @homeBorderColor; 
       }
     }
     &.games {
       &:hover, &.active  {
-        border-top: 3px solid rgb(134, 214, 123); 
+        border-top: 3px solid @gameBorderColor; 
       }
     }
     &.reviews {
       &:hover, &.active  {
-        border-top: 3px solid rgb(214, 123, 158); 
+        border-top: 3px solid @reviewBorderColor; 
       }
     }
     &.franchises {
       &:hover, &.active  {
-        border-top: 3px solid rgb(92, 207, 153); 
+        border-top: 3px solid @franchisesBorderColor; 
       }
     }
     &.characters {
       &:hover, &.active  {
-        border-top: 3px solid rgb(207, 119, 92); 
+        border-top: 3px solid @charactersBorderColor; 
       }
     }
   }
@@ -80,8 +85,8 @@
   transition: 0.5s;
   overflow: hidden;
   position: fixed;
-  top: 62px;
-  background-color: rebeccapurple;
+  top: 60px;
+  background-color: @bgColor;
   &.active {
     height: 50px;
   }
@@ -93,6 +98,8 @@
     border: none;
     padding: 10px;
     border-radius: 20px;
+    background-color: #232323;
+    color: white;
     &:focus {
       outline: none;
     }
@@ -111,7 +118,7 @@
   .screen {
     width: 100%;
     height: 100%;
-    background-color: green;
+    background-color: @bgColor;
   }
   &.active {
     width: 100%;
