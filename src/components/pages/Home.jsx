@@ -8,7 +8,7 @@ import {getReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
-const HomePageElm = styled(OverflowPage)`
+const HomePage = styled(OverflowPage)`
   &.page-enter {
     animation: ${slideInLeft} 0.7s ease forwards;
   }
@@ -27,9 +27,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <HomePageElm className="home app">
+      <HomePage className="home app">
         <Navbar />
-      </HomePageElm>
+      </HomePage>
     );
   }
 }

@@ -19,10 +19,6 @@ const GamePage = styled(OverflowPage)`
 
 class Games extends React.Component {
   componentDidMount() {
-    // this.props.getReviews();
-    // this.props.getGames();
-    // setTimeout(() => {
-    // }, 1000)
   }
 
   render() {
