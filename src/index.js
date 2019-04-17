@@ -36,6 +36,9 @@ const Root = () => {
                 <Switch location={location}>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/games' component={Games} />
+                  <Route exact path='/reviews' component={Reviews} />
+                  <Route exact path='/franchises' component={Franchises} />
+                  <Route exact path='/characters' component={Characters} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
