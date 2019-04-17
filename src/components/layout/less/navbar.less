@@ -1,15 +1,25 @@
 //out: ../css/navbar.css, compress: true, sourcemap: false
 
+@height: 60px;
+@width: 100%;
+@bgColor: #232323;
+@bgColor: #f1f1f1;
+
 .navbar {
-  width: 100%;
-  height: 80px;
-  
+  width: @width;
+  height: @height;
+  background-color: @bgColor;
   .brand {
+    width: 20%;
+    float: left;
     p {
 
     }
   }
-  .nav {
+  .nav-link {
+    width: 15%;
+  }
+  .nav-search {
 
   }
 }
