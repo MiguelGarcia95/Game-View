@@ -12,8 +12,8 @@ const Navbar = () => {
       <NavLink className='nav-link franchises' activeClassName='active' to='/franchises'>Franchises</NavLink>
       {/* <NavLink className='nav-link characters' activeClassName='active' to='/characters'>Characters</NavLink> */}
       <NavLink className='nav-link characters' activeClassName='active' to='/test'>Characters</NavLink>
-      <section className='nav-ham'></section>
-      <section className='nav-search'>S</section>
+      <section className='nav-ham'><i className="fas fa-bars fa-2x"></i></section>
+      <section className='nav-search'><i className="fas fa-search fa-lg"></i></section>
     </section>
   )
 }
