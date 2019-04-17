@@ -46,7 +46,8 @@ class Navbar extends React.Component {
         <section className={classnames('searchbar', {active: search})} >
           <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
         </section>
-        <section className={classnames('nav-box', {active: navOpen})}></section>
+        <section className={classnames('nav-box', {active: navOpen})}>
+        </section>
       </React.Fragment>
     )
   }
