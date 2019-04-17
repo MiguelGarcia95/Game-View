@@ -7,7 +7,7 @@
 @homeBorderColor: rgb(91, 82, 221);
 @gameBorderColor: rgb(134, 214, 123);
 @reviewBorderColor: rgb(214, 123, 158);
-@franchisesBorderColor: rgb(92, 207, 153);
+@franchisesBorderColor: rgb(92, 180, 207);
 @charactersBorderColor: rgb(207, 119, 92);
 
 .navbar {
@@ -36,26 +36,31 @@
     &.home {
       &:hover, &.active  {
         border-top: 3px solid @homeBorderColor; 
+        color: @homeBorderColor;
       }
     }
     &.games {
       &:hover, &.active  {
         border-top: 3px solid @gameBorderColor; 
+        color: @gameBorderColor; 
       }
     }
     &.reviews {
       &:hover, &.active  {
         border-top: 3px solid @reviewBorderColor; 
+        color: @reviewBorderColor;
       }
     }
     &.franchises {
       &:hover, &.active  {
         border-top: 3px solid @franchisesBorderColor; 
+        color: @franchisesBorderColor;
       }
     }
     &.characters {
       &:hover, &.active  {
         border-top: 3px solid @charactersBorderColor; 
+        color: @charactersBorderColor;
       }
     }
   }
