@@ -14,7 +14,7 @@ class Navbar extends React.Component {
 
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
-  onChange = e => this.setState({[e.tagert.name]: e.target.value})
+  onChange = e => this.setState({[e.target.name]: e.target.value})
 
   searchBar = () => {
     return (
@@ -23,6 +23,7 @@ class Navbar extends React.Component {
       </section>
     )
   }
+
 
   render() {
     const {search} = this.state;
@@ -36,11 +37,14 @@ class Navbar extends React.Component {
           <NavLink className='nav-link franchises' activeClassName='active' to='/franchises'>Franchises</NavLink>
           <NavLink className='nav-link characters' activeClassName='active' to='/characters'>Characters</NavLink>
           <section className='nav-ham' onClick={this.toggleMenu} ><i className="fas fa-bars fa-2x"></i></section>
-          <section className={classnames('nav-search', {active :search})} onClick={this.toggleSearch} >
+          <section className={classnames('nav-search', {active: search})} onClick={this.toggleSearch} >
             <i className="fas fa-search fa-lg"></i>
           </section>
         </section>
-        {search && this.searchBar()}
+        {/* {search && this.searchBar()} */}
+        <section className={classnames('searchbar', {active :search})} >
+          <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
+        </section>
       </React.Fragment>
     )
   }
