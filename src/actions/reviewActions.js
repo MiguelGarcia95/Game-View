@@ -13,6 +13,11 @@ export const getReviews = () => {
         field_list: 'api_detail_url,deck,description,dlc_name,game,guid,id,publish_date,release,reviewer,score,site_detail_url'
       }
     });
-    console.log(results.data);
+    dispatch({
+      type: actionTypes.GET_REVIEWS,
+      payload: {
+        reviews: results.data.results
+      }
+    })
   }
 }

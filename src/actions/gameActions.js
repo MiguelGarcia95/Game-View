@@ -14,6 +14,12 @@ export const getGames = () => {
       }
     });
     console.log(results.data);
+    dispatch({
+      type: actionTypes.GET_GAMES,
+      payload: {
+        games: results.data
+      }
+    })
   }
 }
 
