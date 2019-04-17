@@ -8,16 +8,18 @@ class Navbar extends React.Component {
   state = {
     mobile: false,
     search: false,
-    menu: false
+    menu: false,
+    searchTerm: ''
   }
 
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
+  onChange = e => this.setState({[e.tagert.name]: e.target.value})
 
   searchBar = () => {
     return (
       <section className="searchbar">
-       <input type="text" placeholder='search'/>
+       <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
       </section>
     )
   }
