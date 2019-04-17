@@ -12,6 +12,14 @@ class Navbar extends React.Component {
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
 
+  searchBar = () => {
+    return (
+      <section className="searchbar">
+       <input type="text" placeholder='search'/>
+      </section>
+    )
+  }
+
   render() {
     const {search} = this.state;
     return (
@@ -24,6 +32,7 @@ class Navbar extends React.Component {
         <NavLink className='nav-link characters' activeClassName='active' to='/characters'>Characters</NavLink>
         <section className='nav-ham' onClick={this.toggleMenu} ><i className="fas fa-bars fa-2x"></i></section>
         <section className='nav-search' onClick={this.toggleSearch} ><i className="fas fa-search fa-lg"></i></section>
+        {search && this.searchBar()}
       </section>
     )
   }
