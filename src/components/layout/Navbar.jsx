@@ -8,6 +8,7 @@ class Navbar extends React.Component {
   state = {
     mobile: false,
     search: false,
+    navOpen: false,
     menu: false,
     searchTerm: ''
   }
@@ -26,7 +27,7 @@ class Navbar extends React.Component {
 
 
   render() {
-    const {search} = this.state;
+    const {search, navOpen} = this.state;
     return (
       <React.Fragment>
         <section className="navbar">
@@ -42,9 +43,10 @@ class Navbar extends React.Component {
           </section>
         </section>
         {/* {search && this.searchBar()} */}
-        <section className={classnames('searchbar', {active :search})} >
+        <section className={classnames('searchbar', {active: search})} >
           <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
         </section>
+        <section className={classnames('nav-box', {active: navOpen})}></section>
       </React.Fragment>
     )
   }
