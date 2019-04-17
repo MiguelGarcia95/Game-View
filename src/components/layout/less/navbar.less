@@ -60,7 +60,7 @@
     text-align: center;
     cursor: pointer;
     color: #232323;
-    &:hover {
+    &:hover, &.active {
       box-shadow: inset 0px 0px 1px black;
     }
   }
@@ -74,7 +74,7 @@
 
 .searchbar {
   width: 100%;
-  height: 40px;
+  height: 50px;
   // position: relative;
   input {
     // position: absolute;
@@ -86,5 +86,8 @@
     border: none;
     padding: 10px;
     border-radius: 20px;
+    &:focus {
+      outline: none;
+    }
   }
 }
