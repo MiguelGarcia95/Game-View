@@ -9,6 +9,9 @@ const Navbar = () => {
       <section className="nav">
         <NavLink activeClassName='active' to='/'>Home</NavLink>
         <NavLink activeClassName='active' to='/games'>Games</NavLink>
+        <NavLink activeClassName='active' to='/reviews'>Reviews</NavLink>
+        <NavLink activeClassName='active' to='/franchises'>Franchises</NavLink>
+        <NavLink activeClassName='active' to='/character'>Character</NavLink>
         <NavLink activeClassName='active' to='/test'>Test</NavLink>
       </section>
     </section>
