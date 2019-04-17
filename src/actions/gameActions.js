@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/types';
 import axios from 'axios';
 import {GBAPI} from '../apiKeys';
 
-export const getGames = () => {
+export const getHomeGames = () => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/games',{
       params: {
@@ -14,7 +14,7 @@ export const getGames = () => {
       }
     });
     dispatch({
-      type: actionTypes.GET_GAMES,
+      type: actionTypes.GET_HOME_GAMES,
       payload: {
         games: results.data.results
       }

@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/types';
 import axios from 'axios';
 import {GBAPI} from '../apiKeys';
 
-export const getReviews = () => {
+export const getHomeReviews = () => {
   return async (dispatch) => {
     const results = await axios.get(`https://www.giantbomb.com/api/reviews`, {
       params: {
@@ -14,7 +14,7 @@ export const getReviews = () => {
       }
     });
     dispatch({
-      type: actionTypes.GET_REVIEWS,
+      type: actionTypes.GET_HOME_REVIEWS,
       payload: {
         reviews: results.data.results
       }
