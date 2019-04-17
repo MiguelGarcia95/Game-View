@@ -9,6 +9,9 @@ import store from './store';
 import './style.css';
 import Home from './components/pages/Home';
 import Games from './components/pages/Games';
+import Reviews from './components/pages/Reviews';
+import Franchises from './components/pages/Franchises';
+import Characters from './components/pages/Characters';
 import * as serviceWorker from './serviceWorker';
 
 const PageContainer = styled.div`
