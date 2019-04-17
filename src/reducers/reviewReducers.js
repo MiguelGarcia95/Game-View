@@ -10,6 +10,11 @@ const reviewReducer = (state = initialState, action) => {
     case actionTypes.GET_REVIEWS: 
       return {
         ...state,
+        currentReview: action.payload.currentReview
+      }
+    case actionTypes.GET_REVIEW: 
+      return {
+        ...state,
         reviews: action.payload.reviews
       }
     default:
