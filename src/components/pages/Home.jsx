@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import {getHomeGames} from '../../actions/gameActions';
+import {getHomeGames,getHomeGameReleases} from '../../actions/gameActions';
 import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
@@ -21,6 +21,7 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.getHomeReviews();
     this.props.getHomeGames();
+    this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -37,6 +38,7 @@ class Home extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
+    getHomeGameReleases: () => dispatch(getHomeGameReleases()),
     getHomeReviews: () => dispatch(getHomeReviews())
   }
 }

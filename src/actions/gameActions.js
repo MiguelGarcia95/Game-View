@@ -30,7 +30,7 @@ export const getHomeGameReleases = () => {
         format: 'json',
         limit: '20',
         sort: 'date_last_updated:desc',
-        field_list: 'api_detail_url,date_added,date_last_updated,deck,image,guid,id,game,release_date'
+        field_list: 'api_detail_url,date_added,date_last_updated,deck,image,guid,id,game,name,release_date'
       }
     });
     dispatch({
