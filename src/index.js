@@ -8,7 +8,7 @@ import store from './store';
 
 import './style.css';
 import Home from './components/pages/Home';
-import Test from './components/Test';
+import Games from './components/pages/Games';
 import * as serviceWorker from './serviceWorker';
 
 const PageContainer = styled.div`
@@ -32,7 +32,7 @@ const Root = () => {
               >
                 <Switch location={location}>
                   <Route exact path='/' component={Home} />
-                  <Route exact path='/test' component={Test} />
+                  <Route exact path='/games' component={Games} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
