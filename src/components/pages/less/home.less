@@ -27,19 +27,25 @@
   }
   .home_content {
     background-color: #232323;
+    position: relative;
+    .sidebar {
+      width: 300px;
+      position: absolute;
+      height: 800px;
+      background-color: darkcyan;
+    }
     .game_releases, .game_reviews {
       width: 100%;
       height: auto;
       overflow: auto;
       .title {
         h1 {
-          font-size: 2.5em;
+          font-size: 2em;
         }
       }
     }
     .game_releases {
       .title {
-        float: left;
         h1 {
           color: white;
         }
