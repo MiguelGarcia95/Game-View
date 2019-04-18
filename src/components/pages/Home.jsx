@@ -68,6 +68,7 @@ class Home extends React.Component {
         <section className="home_content">
           <section className="game_releases">
             <section className="title_row">
+              <section className="title_underline"></section>
             </section>
             <section className="title">
               <h1>Game Releases</h1>
@@ -75,6 +76,7 @@ class Home extends React.Component {
           </section>
           <section className="game_reviews">
             <section className="title_row">
+              <section className="title_underline"></section>
             </section>
             <section className="title">
               <h1>Game Reviews</h1>
