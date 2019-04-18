@@ -8,6 +8,8 @@ import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
+import './css/home.css';
+
 const HomePage = styled(OverflowPage)`
   &.page-enter {
     animation: ${slideInLeft} 0.7s ease forwards;
