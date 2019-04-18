@@ -28,6 +28,13 @@ class Home extends React.Component {
     // }, 1000)
   }
 
+  closeColumns = () => {
+    const header = document.querySelectorAll('.home_header_col');
+    header.forEach(head => {
+      head.classList.remove('active');
+    })
+  }
+
   expandColumn = col => {
     const column = document.querySelector(`.${col}`);
     const header = document.querySelector('.home_header');
@@ -35,6 +42,7 @@ class Home extends React.Component {
       header.classList.remove('selected');
       column.classList.remove('active');
     } else {
+      this.closeColumns();
       header.classList.add('selected');
       column.classList.toggle('active');
     }
