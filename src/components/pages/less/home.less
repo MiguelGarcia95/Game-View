@@ -1,5 +1,7 @@
 //out: ../css/home.css, compress: true, sourcemap: false
 
+@colHeader: 100%;
+
 .home {
   .home_header {
     width: 100vw;
@@ -8,13 +10,17 @@
     padding-top: 60px;
     box-sizing: border-box;
     background-color: aliceblue;
-    .home_header_col {
-      .home_header_inner_col {
-  
-      }
+    .home_header_left {
+      width: 40%;
+      float: left;
+      background-color: aqua;
+      height: @colHeader;
     }
-    .home_header_bottom_col {
-
+    .home_header_right {
+      width: 20%;
+      float: left;
+      background-color: slateblue;
+      height: @colHeader;
     }
   }
 }
