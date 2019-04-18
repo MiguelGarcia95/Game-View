@@ -64,14 +64,17 @@ class Home extends React.Component {
           <section className="home_header_col five" onClick={() => this.expandColumn('five')}>
           </section>
         </section>
-        
+
         <section className="home_content">
-          <section className="games">
-            <h1>Game Releases</h1>
+          <section className="game_releases">
+            <section className="title">
+              <h1>Game Releases</h1>
+            </section>
           </section>
-          <section className="reviews">
-            <h1>Game Reviews</h1>
-          
+          <section className="game_reviews">
+            <section className="title">
+              <h1>Game Reviews</h1>
+            </section>
           </section>
         </section>
       </HomePage>
