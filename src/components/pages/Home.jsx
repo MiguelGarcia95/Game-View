@@ -28,20 +28,27 @@ class Home extends React.Component {
     // }, 1000)
   }
 
+  expandColumn = col => {
+    const column = document.querySelector(`.${col}`);
+    const header = document.querySelector('.home_header');
+    header.classList.add('selected');
+    column.classList.toggle('active');
+  }
+
   render() {
     return (
       <HomePage className="home app">
         <Navbar />
         <section className="home_header">
-          <section className="home_header_col">
+          <section className="home_header_col one" onClick={() => this.expandColumn('one')}>
           </section>
-          <section className="home_header_col">
+          <section className="home_header_col two" onClick={() => this.expandColumn('two')}>
           </section>
-          <section className="home_header_col">
+          <section className="home_header_col three" onClick={() => this.expandColumn('three')}>
           </section>
-          <section className="home_header_col">
+          <section className="home_header_col four" onClick={() => this.expandColumn('four')}>
           </section>
-          <section className="home_header_col">
+          <section className="home_header_col five" onClick={() => this.expandColumn('five')}>
           </section>
         </section>
       </HomePage>
