@@ -33,18 +33,16 @@ class Home extends React.Component {
       <HomePage className="home app">
         <Navbar />
         <section className="home_header">
-          <section className="home_header_left">
+          <section className="home_header_col">
           </section>
-          <section className="home_header_right">
+          <section className="home_header_col">
           </section>
-          <section className="home_header_right">
+          <section className="home_header_col">
           </section>
-          <section className="home_header_right">
+          <section className="home_header_col">
           </section>
-          {/* <section className="home_header_inner_col">
+          <section className="home_header_col">
           </section>
-          <section className="home_header_inner_col">
-          </section> */}
         </section>
       </HomePage>
     );
