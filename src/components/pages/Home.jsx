@@ -31,8 +31,13 @@ class Home extends React.Component {
   expandColumn = col => {
     const column = document.querySelector(`.${col}`);
     const header = document.querySelector('.home_header');
-    header.classList.add('selected');
-    column.classList.toggle('active');
+    if (column.className.includes('active')) {
+      header.classList.remove('selected');
+      column.classList.remove('active');
+    } else {
+      header.classList.add('selected');
+      column.classList.toggle('active');
+    }
   }
 
   render() {
