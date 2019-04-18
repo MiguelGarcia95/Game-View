@@ -66,13 +66,15 @@ class Home extends React.Component {
         </section>
 
         <section className="home_content">
-          <section className="game_releases">
+          <section className="sidebar">
+          </section>
+          <section className="game_releases content">
             <section className="title">
               <h1>Game Releases</h1>
             </section>
             <section><h1>helloooooooooooo</h1></section>
           </section>
-          <section className="game_reviews">
+          <section className="game_reviews content">
             <section className="title">
               <h1>Game Reviews</h1>
             </section>

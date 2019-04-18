@@ -26,18 +26,24 @@
     }
   }
   .home_content {
-    background-color: #232323;
-    position: relative;
+    overflow: auto;
+    height: auto;
+    width: 1200px;
+    margin: auto;
     .sidebar {
       width: 300px;
-      position: absolute;
       height: 800px;
+      float: left;
       background-color: darkcyan;
     }
+    .content {
+      width: 900px;
+      float: left;
+      background-color: blueviolet;
+      padding-left: 25px;
+      box-sizing: border-box;
+    }
     .game_releases, .game_reviews {
-      width: 100%;
-      height: auto;
-      overflow: auto;
       .title {
         h1 {
           font-size: 2em;
