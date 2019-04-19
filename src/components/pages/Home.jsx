@@ -74,6 +74,12 @@ class Home extends React.Component {
             </section>
             <section className="content_results">
               <section className="content_result">
+                <section className="image"></section>
+                <section className="data">
+                  <section className="name"></section>
+                  <section className="description"></section>
+                  <section className="meta"></section>
+                </section>
               </section>
               <section className="content_result">
               </section>
