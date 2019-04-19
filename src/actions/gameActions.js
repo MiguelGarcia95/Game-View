@@ -62,3 +62,23 @@ export const getHomeVideos = () => {
   }
 }
 
+export const getHomePromos = () => {
+  return async (dispatch) => {
+    const results = await axios.get('https://www.giantbomb.com/api/promos',{
+      params: {
+        api_key: GBAPI,
+        format: 'json',
+        limit: '10',
+        sort: 'date_added:desc',
+        field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date'
+      }
+    });
+    dispatch({
+      type: actionTypes.GET_HOME_PROMOS,
+      payload: {
+        promos: results.data.results
+      }
+    })
+  }
+}
+
