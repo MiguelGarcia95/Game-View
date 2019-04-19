@@ -64,12 +64,11 @@ class Home extends React.Component {
 
           <section className="upcoming_games content">
             <section className="title">
-              <h1>Upcoming Game</h1>
+              <h1>Upcoming Games</h1>
             </section>
             <section className="content_results">
               {homeGames.length > 0 && this.displayResults(homeGames)}
             </section>
-            {/* <section><h1>helloooooooooooo</h1></section> */}
           </section>
           <section className="game_reviews content">
             <section className="title">
