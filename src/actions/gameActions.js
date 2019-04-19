@@ -8,7 +8,7 @@ export const getHomeGames = () => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        limit: '20',
+        limit: '10',
         sort: 'original_release_date:desc',
         field_list: 'api_detail_url,date_added,deck,description,expected_release_month,expected_release_quarter,expected_release_year,guid,id,image,image_tags,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,site_detail_url'
       }
