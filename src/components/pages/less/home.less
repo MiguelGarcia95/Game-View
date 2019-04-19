@@ -58,12 +58,13 @@
           height: 500px;
           background-color: antiquewhite;
           float: left;
-          &:nth-of-type(n + 1) {
+          &:nth-of-type(odd) {
             margin-right: 2.5%;
+            margin-top: 20px;
           }
-          &:nth-of-type(n + 2) {
-            margin-right: 0%;
+          &:nth-of-type(even) {
             margin-left: 2.5%;
+            margin-top: 20px;
           }
         }
       }
