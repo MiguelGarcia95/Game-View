@@ -23,19 +23,19 @@ const HomePage = styled(OverflowPage)`
 class Home extends React.Component {
   componentDidMount() {
     // this.props.getHomeReviews();
-    // this.props.getHomeGames();
-    this.props.getHomeGameReleases();
+    this.props.getHomeGames();
+    // this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
 
-  displayResults = () => {
-    return [1,2,3,4].map(result => {
+  displayResults = (releases) => {
+    return releases.map(release => {
       return (
-        <section key={result} className="content_result">
+        <section key={release.id} className="content_result">
           <section className="image"></section>
           <section className="data">
-            <section className="name"></section>
+            <section className="name"><p>{release.name}</p></section>
             <section className="description"></section>
             <section className="meta"></section>
           </section>
@@ -45,8 +45,9 @@ class Home extends React.Component {
   }
 
   render() {
-    const {gameReleases} = this.props;
-    console.log(gameReleases)
+    const {homeGames} = this.props;
+    console.log(homeGames)
+    
     return (
       <HomePage className="home app">
         <Navbar />
@@ -56,12 +57,12 @@ class Home extends React.Component {
           <section className="sidebar">
           </section>
 
-          <section className="game_releases content">
+          <section className="upcoming_games content">
             <section className="title">
-              <h1>Game Releases</h1>
+              <h1>Upcoming Game</h1>
             </section>
             <section className="content_results">
-              {this.displayResults()}
+              {homeGames.length > 0 && this.displayResults(homeGames)}
             </section>
             {/* <section><h1>helloooooooooooo</h1></section> */}
           </section>
@@ -70,7 +71,7 @@ class Home extends React.Component {
               <h1>Game Reviews</h1>
             </section>
             <section className="content_results">
-              {this.displayResults()}
+              {/* {this.displayResults()} */}
             </section>
           </section>
         </section>
@@ -81,7 +82,8 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    gameReleases: state.games.gameReleases
+    gameReleases: state.games.gameReleases,
+    homeGames: state.games.homeGames
   }
 }
 
