@@ -72,7 +72,13 @@ class Home extends React.Component {
             <section className="title">
               <h1>Game Releases</h1>
             </section>
-            <section><h1>helloooooooooooo</h1></section>
+            <section className="content_results">
+              <section className="content_result">
+              </section>
+              <section className="content_result">
+              </section>
+            </section>
+            {/* <section><h1>helloooooooooooo</h1></section> */}
           </section>
           <section className="game_reviews content">
             <section className="title">

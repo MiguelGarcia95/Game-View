@@ -31,13 +31,14 @@
     width: 1200px;
     margin: auto;
     .sidebar {
-      width: 300px;
+      width: 400px;
       height: 800px;
       float: left;
       background-color: darkcyan;
     }
+
     .content {
-      width: 900px;
+      width: 800px;
       float: left;
       padding-left: 25px;
       box-sizing: border-box;
@@ -45,24 +46,32 @@
     .game_releases, .game_reviews {
       .title {
         h1 {
+          color: white;
           font-size: 2em;
         }
       }
-    }
-    .game_releases {
-      .title {
-        h1 {
-          color: white;
+      .content_results {
+        width: 100%; 
+        margin-top: 10px;
+        .content_result {
+          width: 47.5%;
+          height: 500px;
+          background-color: antiquewhite;
+          float: left;
+          &:nth-of-type(n + 1) {
+            margin-right: 2.5%;
+          }
+          &:nth-of-type(n + 2) {
+            margin-right: 0%;
+            margin-left: 2.5%;
+          }
         }
       }
     }
+    // .game_releases {
+    // }
     .game_reviews {
       margin-top: 50px;
-      .title {
-        h1 {
-          color: white;
-        }
-      }
     }
   }
 }
