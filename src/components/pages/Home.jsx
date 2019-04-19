@@ -31,9 +31,14 @@ class Home extends React.Component {
 
   displayResults = (releases) => {
     return releases.map(release => {
+      const imageStyle = {
+        backgroundImage: `url(${release.image.medium_url})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
+      }
       return (
         <section key={release.id} className="content_result">
-          <section className="image"></section>
+          <section className="image" style={imageStyle}></section>
           <section className="data">
             <section className="name"><p>{release.name}</p></section>
             <section className="description"><p>{release.deck ? release.deck : 'N/A'}</p></section>
