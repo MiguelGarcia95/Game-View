@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
+import Header from '../layout/Header';
 import {getHomeGames,getHomeGameReleases} from '../../actions/gameActions';
 import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
@@ -28,65 +29,35 @@ class Home extends React.Component {
     // }, 1000)
   }
 
-  closeColumns = () => {
-    const header = document.querySelectorAll('.home_header_col');
-    header.forEach(head => {
-      head.classList.remove('active');
+  displayResults = () => {
+    return [1,2,3,4].map(result => {
+      <section key={result} className="content_result">
+        <section className="image"></section>
+        <section className="data">
+          <section className="name"></section>
+          <section className="description"></section>
+          <section className="meta"></section>
+        </section>
+      </section>
     })
-  }
-
-  expandColumn = col => {
-    const column = document.querySelector(`.${col}`);
-    const header = document.querySelector('.home_header');
-    if (column.className.includes('active')) {
-      header.classList.remove('selected');
-      column.classList.remove('active');
-    } else {
-      this.closeColumns();
-      header.classList.add('selected');
-      column.classList.toggle('active');
-    }
   }
 
   render() {
     return (
       <HomePage className="home app">
         <Navbar />
-        <section className="home_header">
-          <section className="home_header_col one" onClick={() => this.expandColumn('one')}>
-          </section>
-          <section className="home_header_col two" onClick={() => this.expandColumn('two')}>
-          </section>
-          <section className="home_header_col three" onClick={() => this.expandColumn('three')}>
-          </section>
-          <section className="home_header_col four" onClick={() => this.expandColumn('four')}>
-          </section>
-          <section className="home_header_col five" onClick={() => this.expandColumn('five')}>
-          </section>
-        </section>
+        <Header />
 
         <section className="home_content">
           <section className="sidebar">
           </section>
+
           <section className="game_releases content">
             <section className="title">
               <h1>Game Releases</h1>
             </section>
             <section className="content_results">
-              <section className="content_result">
-                <section className="image"></section>
-                <section className="data">
-                  <section className="name"></section>
-                  <section className="description"></section>
-                  <section className="meta"></section>
-                </section>
-              </section>
-              <section className="content_result">
-              </section>
-              <section className="content_result">
-              </section>
-              <section className="content_result">
-              </section>
+              {this.displayResults()}
             </section>
             {/* <section><h1>helloooooooooooo</h1></section> */}
           </section>
@@ -95,14 +66,7 @@ class Home extends React.Component {
               <h1>Game Reviews</h1>
             </section>
             <section className="content_results">
-              <section className="content_result">
-              </section>
-              <section className="content_result">
-              </section>
-              <section className="content_result">
-              </section>
-              <section className="content_result">
-              </section>
+              {this.displayResults()}
             </section>
           </section>
         </section>
