@@ -42,7 +42,9 @@ class Home extends React.Component {
           <section className="data">
             <section className="name"><p>{release.name}</p></section>
             <section className="description"><p>{release.deck ? release.deck : 'N/A'}</p></section>
-            <section className="meta"></section>
+            <section className="meta">
+             <p>Expected: {release.expected_release_year}</p>
+            </section>
           </section>
         </section>
       )
