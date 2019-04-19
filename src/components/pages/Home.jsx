@@ -24,7 +24,7 @@ class Home extends React.Component {
   componentDidMount() {
     // this.props.getHomeReviews();
     // this.props.getHomeGames();
-    // this.props.getHomeGameReleases();
+    this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -45,6 +45,8 @@ class Home extends React.Component {
   }
 
   render() {
+    const {homeGames} = this.props;
+    console.log(gameReleases)
     return (
       <HomePage className="home app">
         <Navbar />
@@ -77,6 +79,12 @@ class Home extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    gameReleases: state.games.gameReleases
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
@@ -85,4 +93,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
