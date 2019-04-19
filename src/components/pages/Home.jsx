@@ -31,14 +31,16 @@ class Home extends React.Component {
 
   displayResults = () => {
     return [1,2,3,4].map(result => {
-      <section key={result} className="content_result">
-        <section className="image"></section>
-        <section className="data">
-          <section className="name"></section>
-          <section className="description"></section>
-          <section className="meta"></section>
+      return (
+        <section key={result} className="content_result">
+          <section className="image"></section>
+          <section className="data">
+            <section className="name"></section>
+            <section className="description"></section>
+            <section className="meta"></section>
+          </section>
         </section>
-      </section>
+      )
     })
   }
 
