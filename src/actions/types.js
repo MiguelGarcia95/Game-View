@@ -5,3 +5,4 @@ export const GET_GAME = 'GET_GAME';
 export const GET_REVIEWS = 'GET_REVIEWS';
 export const GET_HOME_REVIEWS = 'GET_HOME_REVIEWS';
 export const GET_REVIEW = 'GET_REVIEW';
+export const GET_HOME_VIDEOS = 'GET_HOME_VIDEOS';
