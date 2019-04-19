@@ -45,7 +45,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const {homeGames} = this.props;
+    const {gameReleases} = this.props;
     console.log(gameReleases)
     return (
       <HomePage className="home app">
