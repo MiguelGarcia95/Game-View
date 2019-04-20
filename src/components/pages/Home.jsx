@@ -76,7 +76,11 @@ class Home extends React.Component {
   }
 
   trimString = (string, length) => {
-    return string.substr(0, length) + ' . . .';
+    if (string.length > length) {
+      return string.substr(0, length) + ' . . .';
+    } else {
+      return string.substr(0, length);
+    }
   }
 
   render() {
