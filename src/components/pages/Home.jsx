@@ -25,15 +25,12 @@ const HomePage = styled(OverflowPage)`
 
 class Home extends React.Component {
   componentDidMount() {
-    // this.props.getHomeReviews();
     if (this.props.homeGames.length === 0) {
       this.props.getHomeGames();
     }
     if (this.props.homeVideos.length === 0) {
       this.props.getHomeVideos();
     }
-    // this.props.getHomePromos();
-    // this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -85,9 +82,7 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    // gameReleases: state.games.gameReleases,
     homeGames: state.games.homeGames,
-    // homePromos: state.games.homePromos,
     homeVideos: state.games.homeVideos
   }
 }
@@ -95,9 +90,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
-    // getHomeGameReleases: () => dispatch(getHomeGameReleases()),
-    // getHomeReviews: () => dispatch(getHomeReviews()),
-    // getHomePromos: () => dispatch(getHomePromos()),
     getHomeVideos: () => dispatch(getHomeVideos())
   }
 }
