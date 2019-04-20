@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import Header from '../layout/Header';
-import {getHomeGames,getHomeGameReleases, getHomePromos} from '../../actions/gameActions';
+import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
 import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
@@ -24,7 +24,8 @@ class Home extends React.Component {
   componentDidMount() {
     // this.props.getHomeReviews();
     this.props.getHomeGames();
-    this.props.getHomePromos();
+    this.props.getHomeVideos();
+    // this.props.getHomePromos();
     // this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
@@ -53,8 +54,8 @@ class Home extends React.Component {
   }
 
   render() {
-    const {homeGames, homePromos} = this.props;
-    console.log(homePromos)
+    const {homeGames, homeVideos} = this.props;
+    console.log(homeVideos)
     
     return (
       <HomePage className="home app">
@@ -91,7 +92,8 @@ const mapStateToProps = state => {
   return {
     gameReleases: state.games.gameReleases,
     homeGames: state.games.homeGames,
-    homePromos: state.games.homePromos
+    homePromos: state.games.homePromos,
+    homeVideos: state.games.homeVideos
   }
 }
 
@@ -100,7 +102,8 @@ const mapDispatchToProps = dispatch => {
     getHomeGames: () => dispatch(getHomeGames()),
     getHomeGameReleases: () => dispatch(getHomeGameReleases()),
     getHomeReviews: () => dispatch(getHomeReviews()),
-    getHomePromos: () => dispatch(getHomePromos())
+    getHomePromos: () => dispatch(getHomePromos()),
+    getHomeVideos: () => dispatch(getHomeVideos())
   }
 }
 
