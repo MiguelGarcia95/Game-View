@@ -39,7 +39,7 @@ const displayColumns = (games) => {
   return games.map((game, index) => {
     const colName = getColumnName(index);
     return (
-      <section className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
+      <section key={index} className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
 
       </section>
     )
