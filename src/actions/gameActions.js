@@ -49,8 +49,8 @@ export const getHomeVideos = () => {
         api_key: GBAPI,
         format: 'json',
         limit: '10',
-        sort: 'date_added:desc',
-        field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date'
+        sort: 'publish_date:desc',
+        field_list: 'api_detail_url,deck,hd_url,high_url,low_url,image,guid,id,length_seconds,name,publish_date,site_detail_url,url,user'
       }
     });
     dispatch({

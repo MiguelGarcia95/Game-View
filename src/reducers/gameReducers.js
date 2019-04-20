@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/types';
 const initialState = {
   homeGames: [],
   homePromos: [],
+  homeVideos: [],
   games: [],
   gameReleases: [],
   currentGame: null
@@ -24,6 +25,11 @@ const gameReducer = (state = initialState, action) => {
       return {
         ...state,
         homePromos: action.payload.promos
+      }
+    case actionTypes.GET_HOME_VIDEOS:
+      return {
+        ...state,
+        homeVideos: action.payload.videos
       }
     case actionTypes.GET_HOME_GAME_RELEASES: 
       return {
