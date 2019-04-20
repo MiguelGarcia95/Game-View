@@ -64,22 +64,25 @@ export const getHomeVideos = () => {
 
 export const getHomePromos = () => {
   return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/promos',{
+    const results = await axios.get('https://www.giantbomb.com/api/franchises',{
       params: {
         api_key: GBAPI,
         format: 'json',
         limit: '10',
-        sort: 'date_added:desc',
-        field_list: 'api_detail_url,date_added,deck,guid,id,image,link,name,resource_type,user'
+        // sort: 'date_added:desc',
+        field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,guid,id,image,image_tags,name,site_detail_url'
       }
     });
     console.log(results)
-    dispatch({
-      type: actionTypes.GET_HOME_PROMOS,
-      payload: {
-        promos: results.data.results
-      }
-    })
+    // dispatch({
+    //   type: actionTypes.GET_HOME_PROMOS,
+    //   payload: {
+    //     promos: results.data.results
+    //   }
+    // })
   }
 }
+
+
+
 

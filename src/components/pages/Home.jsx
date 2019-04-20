@@ -6,11 +6,12 @@ import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 
-import {getHomeGames,getHomeVideos} from '../../actions/gameActions';
+import {getHomeGames,getHomeVideos, getHomePromos} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
 import './css/home.css';
+import { throws } from 'assert';
 
 const HomePage = styled(OverflowPage)`
   &.page-enter {
@@ -22,6 +23,10 @@ const HomePage = styled(OverflowPage)`
 `;
 
 class Home extends React.Component {
+  state = {
+    currentVideo: null
+  }
+
   componentDidMount() {
     if (this.props.homeGames.length === 0) {
       this.props.getHomeGames();
@@ -29,6 +34,7 @@ class Home extends React.Component {
     if (this.props.homeVideos.length === 0) {
       this.props.getHomeVideos();
     }
+    this.props.getHomePromos();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -88,7 +94,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
-    getHomeVideos: () => dispatch(getHomeVideos())
+    getHomeVideos: () => dispatch(getHomeVideos()),
+    getHomePromos: () => dispatch(getHomePromos())
   }
 }
 
