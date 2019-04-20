@@ -47,12 +47,11 @@ class Home extends React.Component {
 
   render() {
     const {homeGames, homeVideos, homeReleases} = this.props;
-    console.log(homeReleases);
     
     return (
       <HomePage className="home app">
         <Navbar />
-        <HomeHeader />
+        <HomeHeader games={homeReleases} />
 
         <section className="home_content">
           <section className="sidebar">

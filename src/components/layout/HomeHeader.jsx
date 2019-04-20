@@ -20,19 +20,36 @@ const expandColumn = col => {
   }
 }
 
-const HomeHeader = () => {
+const getColumnName = colNumber => {
+  switch (colNumber) {
+    case 0:
+      return 'one'
+    case 1:
+      return 'two'
+    case 2:
+      return 'three'
+    case 3:
+      return 'four'
+    default:
+      return 'five'
+  }
+}
+
+const displayColumns = (games) => {
+  return games.map((game, index) => {
+    const colName = getColumnName(index);
+    return (
+      <section className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
+
+      </section>
+    )
+  })
+}
+
+const HomeHeader = ({games}) => {
   return (
     <section className="home_header">
-      <section className="home_header_col one" onClick={() => expandColumn('one')}>
-      </section>
-      <section className="home_header_col two" onClick={() => expandColumn('two')}>
-      </section>
-      <section className="home_header_col three" onClick={() => expandColumn('three')}>
-      </section>
-      <section className="home_header_col four" onClick={() => expandColumn('four')}>
-      </section>
-      <section className="home_header_col five" onClick={() => expandColumn('five')}>
-      </section>
+      {games && displayColumns(games)}
     </section>
   )
 }
