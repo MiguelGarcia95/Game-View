@@ -38,15 +38,9 @@ class Home extends React.Component {
     // }, 1000)
   }
 
-  displayResults = (results) => {
+  displayResults = (results, type) => {
     return results.map(result => {
-      return <HomeResult result={result} type='content' key={result.id} />
-    })
-  }
-
-  displaySidebarResults = results => {
-    return results.map(result => {
-      return <HomeResult result={result} type='sidebar' key={result.id} />
+      return <HomeResult result={result} type={type} key={result.id} />
     })
   }
 
@@ -64,7 +58,7 @@ class Home extends React.Component {
             <section className="title">
               <h1>Videos</h1>
             </section>
-            {homeVideos.length > 0 && this.displaySidebarResults(homeVideos)}
+            {homeVideos.length > 0 && this.displayResults(homeVideos, 'sidebar')}
           </section>
 
           <section className="upcoming_games content">
@@ -72,7 +66,7 @@ class Home extends React.Component {
               <h1>Upcoming Games</h1>
             </section>
             <section className="content_results">
-              {homeGames.length > 0 && this.displayResults(homeGames)}
+              {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
             </section>
           </section>
           <section className="game_reviews content">
