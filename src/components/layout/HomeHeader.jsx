@@ -39,10 +39,15 @@ const getColumnName = colNumber => {
 const displayColumns = (games) => {
   return games.map((game, index) => {
     const colName = getColumnName(index);
-    // console.log(game)
+    const imageStyle = {
+      backgroundImage: `url(${game.image.medium_url})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center'
+    }
+    console.log(game)
     return (
       <section key={index} className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
-        <section className="image"></section>
+        <section className="image" style={imageStyle}></section>
         <section className="data">
           <section className="name"><p></p></section>
           <section className="date"><p></p></section>

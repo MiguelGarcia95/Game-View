@@ -27,7 +27,9 @@ export const getHomeGameReleases = () => {
   return async (dispatch) => {
     let end = new Date();
     let start = new Date();
-    start.setMonth(start.getMonth() - 1);
+    // date.setDate(date.getDate() + 7);
+    start.setDate(start.getDate() - 7);
+    // start.setMonth(start.getMonth() - 1);
     const results = await axios.get('https://www.giantbomb.com/api/releases',{
       params: {
         api_key: GBAPI,
