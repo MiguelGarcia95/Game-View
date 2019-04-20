@@ -43,7 +43,7 @@ class Home extends React.Component {
           <section className="image" style={imageStyle}></section>
           <section className="data">
             <section className="name"><p>{result.name}</p></section>
-            <section className="description"><p>{result.deck ? result.deck : 'N/A'}</p></section>
+            <section className="description lg"><p>{result.deck ? this.trimString(result.deck, 250) : 'N/A'}</p></section>
             <section className="meta">
              <p>Expected: {result.expected_release_year}</p>
             </section>
