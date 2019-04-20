@@ -4,8 +4,8 @@ import {trimString} from '../../utils/functions';
 const HomeResult = ({result, type}) => {
   const imageStyle = {
     backgroundImage: `url(${result.image.medium_url})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center'
+    // backgroundSize: 'cover',
+    // backgroundPosition: 'center center'
   }
   return (
     <section className="content_result">
