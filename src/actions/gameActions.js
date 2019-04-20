@@ -70,7 +70,7 @@ export const getHomePromos = () => {
         format: 'json',
         limit: '10',
         sort: 'date_added:desc',
-        field_list: 'api_detail_url,date_added,deck,guid,id,image,link,name,resource_type, user'
+        field_list: 'api_detail_url,date_added,deck,guid,id,image,link,name,resource_type,user'
       }
     });
     dispatch({
