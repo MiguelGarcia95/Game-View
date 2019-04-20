@@ -5,12 +5,12 @@ import {connect} from 'react-redux';
 import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
-import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
-import {getHomeReviews} from '../../actions/reviewActions';
+import {getHomeGames,getHomeVideos} from '../../actions/gameActions';
+// import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
+// import {getHomeReviews} from '../../actions/reviewActions';
 
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
-import {trimString} from '../../utils/functions';
 
 import './css/home.css';
 
@@ -85,9 +85,9 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    gameReleases: state.games.gameReleases,
+    // gameReleases: state.games.gameReleases,
     homeGames: state.games.homeGames,
-    homePromos: state.games.homePromos,
+    // homePromos: state.games.homePromos,
     homeVideos: state.games.homeVideos
   }
 }
@@ -95,9 +95,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
-    getHomeGameReleases: () => dispatch(getHomeGameReleases()),
-    getHomeReviews: () => dispatch(getHomeReviews()),
-    getHomePromos: () => dispatch(getHomePromos()),
+    // getHomeGameReleases: () => dispatch(getHomeGameReleases()),
+    // getHomeReviews: () => dispatch(getHomeReviews()),
+    // getHomePromos: () => dispatch(getHomePromos()),
     getHomeVideos: () => dispatch(getHomeVideos())
   }
 }
