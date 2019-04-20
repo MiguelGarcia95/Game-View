@@ -36,11 +36,30 @@ const getColumnName = colNumber => {
   }
 }
 
+const getUniqueGames = games => {
+  return games.reduce((sortedGames, game) => {
+    if (sortedGames.length > 0 && sortedGames.length < 5) {
+      let isInArray = false;
+      sortedGames.forEach(sortedGame => {
+        if (game.game.name === sortedGame.game.name) {
+          isInArray = true;
+        }      
+      });
+      if (!isInArray) {
+        sortedGames.push(game);
+      }
+    } else if (sortedGames.length < 5) {
+      sortedGames.push(game);
+    }
+    return sortedGames;
+  }, []);
+}
+
 const displayColumns = (games) => {
   return games.map((game, index) => {
     const colName = getColumnName(index);
     const imageStyle = {
-      backgroundImage: `url(${game.image.medium_url})`,
+      backgroundImage: `url(${game.image.original_url})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
     }
@@ -58,9 +77,10 @@ const displayColumns = (games) => {
 }
 
 const HomeHeader = ({games}) => {
+  const sortedGames = getUniqueGames(games);
   return (
     <section className="home_header">
-      {games && displayColumns(games)}
+      {games && displayColumns(sortedGames)}
     </section>
   )
 }
