@@ -38,13 +38,12 @@ export const getHomeGameReleases = () => {
         field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date'
       }
     });
-    console.log(results);
-    // dispatch({
-    //   type: actionTypes.GET_HOME_GAME_RELEASES,
-    //   payload: {
-    //     releases: results.data.results
-    //   }
-    // })
+    dispatch({
+      type: actionTypes.GET_HOME_GAME_RELEASES,
+      payload: {
+        releases: results.data.results
+      }
+    })
   }
 }
 
