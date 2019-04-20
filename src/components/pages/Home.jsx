@@ -11,7 +11,6 @@ import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
 import './css/home.css';
-import { throws } from 'assert';
 
 const HomePage = styled(OverflowPage)`
   &.page-enter {
@@ -47,8 +46,8 @@ class Home extends React.Component {
   }
 
   render() {
-    const {homeGames, homeVideos} = this.props;
-    console.log(homeVideos)
+    const {homeGames, homeVideos, homeReleases} = this.props;
+    console.log(homeReleases);
     
     return (
       <HomePage className="home app">
@@ -88,7 +87,8 @@ class Home extends React.Component {
 const mapStateToProps = state => {
   return {
     homeGames: state.games.homeGames,
-    homeVideos: state.games.homeVideos
+    homeVideos: state.games.homeVideos,
+    homeReleases: state.games.homeReleases
   }
 }
 
