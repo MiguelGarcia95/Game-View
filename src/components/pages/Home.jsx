@@ -64,10 +64,19 @@ class Home extends React.Component {
 
         <section className="home_content">
           <section className="sidebar">
-            <section className="title">
-              <h1>Videos</h1>
+            <section className="sidebar_results">
+              <section className="title">
+                <h1>Videos</h1>
+              </section>
+              <section className="content_results">
+                <section className="image"></section>
+                <section className="data">
+                  <section className="title"></section>
+                  <section className="description"></section>
+                  <section className="meta"></section>
+                </section>
+              </section>
             </section>
-            <section className="content_results"></section>
           </section>
 
           <section className="upcoming_games content">
