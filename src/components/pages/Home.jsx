@@ -5,10 +5,8 @@ import {connect} from 'react-redux';
 import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
-import {getHomeGames,getHomeVideos} from '../../actions/gameActions';
-// import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
-// import {getHomeReviews} from '../../actions/reviewActions';
 
+import {getHomeGames,getHomeVideos} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
