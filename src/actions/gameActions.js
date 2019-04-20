@@ -1,5 +1,6 @@
 import * as actionTypes from '../actions/types';
 import axios from 'axios';
+import moment from 'moment';
 import {GBAPI} from '../apiKeys';
 
 export const getHomeGames = () => {
@@ -26,14 +27,14 @@ export const getHomeGameReleases = () => {
   return async (dispatch) => {
     let end = new Date();
     let start = new Date();
-    start.setMonth(start.getMonth() - 3);
+    start.setMonth(start.getMonth() - 1);
     const results = await axios.get('https://www.giantbomb.com/api/releases',{
       params: {
         api_key: GBAPI,
         format: 'json',
         limit: '10',
-        sort: 'date_added:desc',
-        filter: `release_date:${start}|${end}`,
+        sort: 'release_date:desc',
+        filter: `release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
         field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date'
       }
     });
