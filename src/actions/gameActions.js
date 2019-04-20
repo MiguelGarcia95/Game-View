@@ -73,6 +73,7 @@ export const getHomePromos = () => {
         field_list: 'api_detail_url,date_added,deck,guid,id,image,link,name,resource_type,user'
       }
     });
+    console.log(results)
     dispatch({
       type: actionTypes.GET_HOME_PROMOS,
       payload: {
