@@ -31,22 +31,42 @@ class Home extends React.Component {
     // }, 1000)
   }
 
-  displayResults = (releases) => {
-    return releases.map(release => {
+  displayResults = (results) => {
+    return results.map(result => {
       const imageStyle = {
-        backgroundImage: `url(${release.image.medium_url})`,
+        backgroundImage: `url(${result.image.medium_url})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center'
       }
       return (
-        <section key={release.id} className="content_result">
+        <section key={result.id} className="content_result">
           <section className="image" style={imageStyle}></section>
           <section className="data">
-            <section className="name"><p>{release.name}</p></section>
-            <section className="description"><p>{release.deck ? release.deck : 'N/A'}</p></section>
+            <section className="name"><p>{result.name}</p></section>
+            <section className="description"><p>{result.deck ? result.deck : 'N/A'}</p></section>
             <section className="meta">
-             <p>Expected: {release.expected_release_year}</p>
+             <p>Expected: {result.expected_release_year}</p>
             </section>
+          </section>
+        </section>
+      )
+    })
+  }
+
+  displaySidebarResults = results => {
+    return results.map(result => {
+      const imageStyle = {
+        backgroundImage: `url(${result.image.medium_url})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
+      }
+      return (
+        <section className="sidebar_result" key={result.id}>
+          <section className="image" style={imageStyle}></section>
+          <section className="data">
+            <section className="title"></section>
+            <section className="description"></section>
+            <section className="meta"></section>
           </section>
         </section>
       )
@@ -67,14 +87,7 @@ class Home extends React.Component {
             <section className="title">
               <h1>Videos</h1>
             </section>
-            <section className="sidebar_result">
-              <section className="image"></section>
-              <section className="data">
-                <section className="title"></section>
-                <section className="description"></section>
-                <section className="meta"></section>
-              </section>
-            </section>
+            {homeVideos.length > 0 && this.displaySidebarResults(homeVideos)}
           </section>
 
           <section className="upcoming_games content">
