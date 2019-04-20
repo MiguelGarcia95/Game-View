@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import Header from '../layout/Header';
+import HomeHeader from '../layout/HomeHeader';
 import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
 import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
@@ -65,7 +65,7 @@ class Home extends React.Component {
         backgroundPosition: 'center center'
       }
       return (
-        <section className="sidebar_result" key={result.id}>
+        <section className="content_result" key={result.id}>
           <section className="image" style={imageStyle}></section>
           <section className="data">
             <section className="name"><p>{result.name}</p></section>
@@ -94,7 +94,7 @@ class Home extends React.Component {
     return (
       <HomePage className="home app">
         <Navbar />
-        <Header />
+        <HomeHeader />
 
         <section className="home_content">
           <section className="sidebar">

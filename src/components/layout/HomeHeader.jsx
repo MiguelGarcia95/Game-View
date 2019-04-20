@@ -20,7 +20,7 @@ const expandColumn = col => {
   }
 }
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <section className="home_header">
       <section className="home_header_col one" onClick={() => expandColumn('one')}>
@@ -37,4 +37,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default HomeHeader;

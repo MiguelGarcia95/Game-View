@@ -50,7 +50,7 @@ export const getHomeVideos = () => {
         format: 'json',
         limit: '10',
         sort: 'publish_date:desc',
-        field_list: 'api_detail_url,deck,hd_url,high_url,low_url,image,guid,id,length_seconds,name,publish_date,site_detail_url,url,user'
+        field_list: 'api_detail_url,deck,embed_player,hd_url,high_url,low_url,image,guid,id,length_seconds,name,publish_date,site_detail_url,url,user,youtube_id'
       }
     });
     dispatch({
