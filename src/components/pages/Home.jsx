@@ -6,7 +6,7 @@ import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 
-import {getHomeGames,getHomeVideos, getHomePromos} from '../../actions/gameActions';
+import {getHomeGames,getHomeVideos, getHomePromos,getHomeGameReleases} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
@@ -34,7 +34,8 @@ class Home extends React.Component {
     if (this.props.homeVideos.length === 0) {
       this.props.getHomeVideos();
     }
-    this.props.getHomePromos();
+    // this.props.getHomePromos();
+    this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
   }
@@ -95,7 +96,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
     getHomeVideos: () => dispatch(getHomeVideos()),
-    getHomePromos: () => dispatch(getHomePromos())
+    getHomePromos: () => dispatch(getHomePromos()),
+    getHomeGameReleases: () => dispatch(getHomeGameReleases())
   }
 }
 
