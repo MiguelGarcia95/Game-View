@@ -6,4 +6,3 @@ export const GET_REVIEWS = 'GET_REVIEWS';
 export const GET_HOME_REVIEWS = 'GET_HOME_REVIEWS';
 export const GET_REVIEW = 'GET_REVIEW';
 export const GET_HOME_VIDEOS = 'GET_HOME_VIDEOS';
-export const GET_HOME_PROMOS = 'GET_HOME_PROMOS';
