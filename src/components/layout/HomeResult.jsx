@@ -1,7 +1,12 @@
 import React from 'react';
 import {trimString} from '../../utils/functions';
 
-const HomeResults = ({result, type}) => {
+const HomeResult = ({result, type}) => {
+  const imageStyle = {
+    backgroundImage: `url(${result.image.medium_url})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center'
+  }
   return (
     <section className="content_result" key={result.id}>
       <section className="image" style={imageStyle}></section>
@@ -16,4 +21,4 @@ const HomeResults = ({result, type}) => {
   )
 }
 
-export default HomeResults;
+export default HomeResult;

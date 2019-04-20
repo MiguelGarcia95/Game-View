@@ -4,8 +4,10 @@ import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
+import HomeResult from '../layout/HomeResult';
 import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../../actions/gameActions';
 import {getHomeReviews} from '../../actions/reviewActions';
+
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 import {trimString} from '../../utils/functions';
