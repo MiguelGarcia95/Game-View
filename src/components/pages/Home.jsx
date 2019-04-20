@@ -6,7 +6,7 @@ import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 
-import {getHomeGames,getHomeVideos, getHomePromos,getHomeGameReleases} from '../../actions/gameActions';
+import {getHomeGames,getHomeVideos, getHomeGameReleases} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
@@ -96,7 +96,6 @@ const mapDispatchToProps = dispatch => {
   return {
     getHomeGames: () => dispatch(getHomeGames()),
     getHomeVideos: () => dispatch(getHomeVideos()),
-    getHomePromos: () => dispatch(getHomePromos()),
     getHomeGameReleases: () => dispatch(getHomeGameReleases())
   }
 }

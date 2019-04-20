@@ -67,7 +67,7 @@ export const getHomeVideos = () => {
   }
 }
 
-export const getHomePromos = () => {
+export const getFranchises = () => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/franchises',{
       params: {
@@ -80,7 +80,7 @@ export const getHomePromos = () => {
     });
     console.log(results)
     // dispatch({
-    //   type: actionTypes.GET_HOME_PROMOS,
+    //   type: actionTypes.GET_FRANCHISES,
     //   payload: {
     //     promos: results.data.results
     //   }
