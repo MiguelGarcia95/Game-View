@@ -8,6 +8,7 @@ import {getHomeGames,getHomeGameReleases, getHomePromos,getHomeVideos} from '../
 import {getHomeReviews} from '../../actions/reviewActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
+import {trimString} from '../../utils/functions';
 
 import './css/home.css';
 
@@ -47,7 +48,7 @@ class Home extends React.Component {
           <section className="image" style={imageStyle}></section>
           <section className="data">
             <section className="name"><p>{result.name}</p></section>
-            <section className="description lg"><p>{result.deck ? this.trimString(result.deck, 250) : 'N/A'}</p></section>
+            <section className="description lg"><p>{result.deck ? trimString(result.deck, 250) : 'N/A'}</p></section>
             <section className="meta">
              <p>Expected: {result.expected_release_year}</p>
             </section>
@@ -69,7 +70,7 @@ class Home extends React.Component {
           <section className="image" style={imageStyle}></section>
           <section className="data">
             <section className="name"><p>{result.name}</p></section>
-            <section className="description"><p>{result.deck ? this.trimString(result.deck, 80) : 'N/A'}</p></section>
+            <section className="description"><p>{result.deck ? trimString(result.deck, 80) : 'N/A'}</p></section>
             <section className="meta">
               <p>From: {result.user}</p>
             </section>
@@ -77,14 +78,6 @@ class Home extends React.Component {
         </section>
       )
     })
-  }
-
-  trimString = (string, length) => {
-    if (string.length > length) {
-      return string.substr(0, length) + ' . . .';
-    } else {
-      return string.substr(0, length);
-    }
   }
 
   render() {
