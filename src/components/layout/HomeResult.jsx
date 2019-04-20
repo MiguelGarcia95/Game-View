@@ -8,7 +8,7 @@ const HomeResult = ({result, type}) => {
     backgroundPosition: 'center center'
   }
   return (
-    <section className="content_result" key={result.id}>
+    <section className="content_result">
       <section className="image" style={imageStyle}></section>
       <section className="data">
         <section className="name"><p>{result.name}</p></section>

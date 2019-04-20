@@ -40,23 +40,25 @@ class Home extends React.Component {
 
   displayResults = (results) => {
     return results.map(result => {
-      const imageStyle = {
-        backgroundImage: `url(${result.image.medium_url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center'
-      }
-      return (
-        <section key={result.id} className="content_result">
-          <section className="image" style={imageStyle}></section>
-          <section className="data">
-            <section className="name"><p>{result.name}</p></section>
-            <section className="description lg"><p>{result.deck ? trimString(result.deck, 250) : 'N/A'}</p></section>
-            <section className="meta">
-             <p>Expected: {result.expected_release_year}</p>
-            </section>
-          </section>
-        </section>
-      )
+      return <HomeResult result={result} type='content' key={result.id} />
+      // const imageStyle = {
+      //   backgroundImage: `url(${result.image.medium_url})`,
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center center'
+      // }
+      // return (
+      //   <section key={result.id} className="content_result">
+      //     <section className="image" style={imageStyle}></section>
+      //     <section className="data">
+      //       <section className="name"><p>{result.name}</p></section>
+      //       <section className="description lg"><p>{result.deck ? trimString(result.deck, 250) : 'N/A'}</p></section>
+      //       <section className="meta">
+      //        <p>Expected: {result.expected_release_year}</p>
+      //       </section>
+      //     </section>
+      //   </section>
+      // )
+      
     })
   }
 
