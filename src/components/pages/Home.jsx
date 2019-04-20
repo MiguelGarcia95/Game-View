@@ -24,7 +24,7 @@ class Home extends React.Component {
   componentDidMount() {
     // this.props.getHomeReviews();
     this.props.getHomeGames();
-    this.props.homePromos();
+    this.props.getHomePromos();
     // this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
