@@ -4,7 +4,7 @@ import {trimString} from '../../utils/functions';
 const HomeResult = ({result, type}) => {
   const imageStyle = {
     backgroundImage: `url(${result.image.medium_url})`,
-    backgroundSize: 'contain',
+    backgroundSize: 'cover',
     backgroundPosition: 'center center'
   }
   return (

@@ -76,9 +76,9 @@ const displayColumns = (games) => {
     return (
       <section key={index} className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
         <section className="image" style={imageStyle}></section>
-        <section className="image_filter" ></section>
+        <section className="image_filter"></section>
         <section className="data">
-          <section className="name"><p></p></section>
+          <section className="name"><h1>{game.game.name}</h1></section>
           <section className="date"><p></p></section>
         </section>
       </section>
