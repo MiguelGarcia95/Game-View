@@ -44,6 +44,7 @@ class Home extends React.Component {
     this.pageDown.scrollIntoView({behavior: 'smooth'});
   }
 
+  setCurrentVideo = video => this.setState({currentVideo: video});
 
   displayResults = (results, type) => {
     return results.map(result => {
