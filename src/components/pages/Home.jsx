@@ -58,8 +58,8 @@ class Home extends React.Component {
         <Navbar />
         <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
 
+        <div ref={node => this.pageDown = node}></div>
         <section className="home_content">
-          <div ref={node => this.pageDown = node}></div>
           <section className="sidebar">
             <section className="title">
               <h1>Videos</h1>
@@ -75,14 +75,14 @@ class Home extends React.Component {
               {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
             </section>
           </section>
-          <section className="game_reviews content">
-            <section className="title">
-              <h1>Game Reviews</h1>
-            </section>
-            <section className="content_results">
+          {/* <section className="game_reviews content"> */}
+            {/* <section className="title"> */}
+              {/* <h1>Game Reviews</h1> */}
+            {/* </section> */}
+            {/* <section className="content_results"> */}
               {/* {this.displayResults()} */}
-            </section>
-          </section>
+            {/* </section> */}
+          {/* </section> */}
         </section>
       </HomePage>
     );
