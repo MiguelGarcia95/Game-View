@@ -90,12 +90,12 @@ const displayColumns = (games) => {
   })
 }
 
-const HomeHeader = ({games}) => {
+const HomeHeader = ({games, pageDown}) => {
   const sortedGames = getUniqueGames(games);
   return (
     <section className="home_header selected">
       {games && displayColumns(sortedGames)}
-      <section className="scroll_down">
+      <section className="scroll_down" onClick={() => pageDown()}>
         <i className="fas fa-caret-down fa-4x"></i>
       </section>
     </section>
