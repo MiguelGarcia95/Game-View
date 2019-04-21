@@ -8,6 +8,7 @@
   height: 100vh;
   padding-top: 60px;
   box-sizing: border-box;
+  position: relative;
   &.selected {
     .home_header_col {
       width: 10%;
@@ -111,5 +112,15 @@
         }
       }
     }
+  }
+  .scroll_down {
+    position: absolute;
+    text-align: center;
+    width: 64px; height: 64px;
+    left: 0; right: 0;
+    bottom: 50px;
+    margin: auto;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.6);
   }
 }

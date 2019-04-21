@@ -95,6 +95,9 @@ const HomeHeader = ({games}) => {
   return (
     <section className="home_header selected">
       {games && displayColumns(sortedGames)}
+      <section className="scroll_down">
+        <i className="fas fa-caret-down fa-4x"></i>
+      </section>
     </section>
   )
 }
