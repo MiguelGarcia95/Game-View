@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
+import Sidebar from '../layout/Sidebar';
 
 import {getHomeGames,getHomeVideos, getHomeGameReleases} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
@@ -60,12 +61,8 @@ class Home extends React.Component {
 
         <div ref={node => this.pageDown = node}></div>
         <section className="home_content">
-          <section className="sidebar">
-            <section className="title">
-              <h1>Videos</h1>
-            </section>
-            {homeVideos.length > 0 && this.displayResults(homeVideos, 'sidebar')}
-          </section>
+
+          <Sidebar title='Videos' content={homeVideos} />
 
           <section className="upcoming_games content">
             <section className="title">
@@ -75,6 +72,7 @@ class Home extends React.Component {
               {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
             </section>
           </section>
+
         </section>
       </HomePage>
     );
