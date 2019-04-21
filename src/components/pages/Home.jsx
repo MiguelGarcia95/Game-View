@@ -39,6 +39,11 @@ class Home extends React.Component {
     // }, 1000)
   }
 
+  scrollDown = () => {
+    this.pageDown.scrollIntoView({behavior: 'smooth'});
+  }
+
+
   displayResults = (results, type) => {
     return results.map(result => {
       return <HomeResult result={result} type={type} key={result.id} />
@@ -51,9 +56,10 @@ class Home extends React.Component {
     return (
       <HomePage className="home app">
         <Navbar />
-        <HomeHeader games={homeReleases} />
+        <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
 
         <section className="home_content">
+          <div ref={node => this.pageDown = node}></div>
           <section className="sidebar">
             <section className="title">
               <h1>Videos</h1>
