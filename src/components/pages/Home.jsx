@@ -75,14 +75,6 @@ class Home extends React.Component {
               {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
             </section>
           </section>
-          {/* <section className="game_reviews content"> */}
-            {/* <section className="title"> */}
-              {/* <h1>Game Reviews</h1> */}
-            {/* </section> */}
-            {/* <section className="content_results"> */}
-              {/* {this.displayResults()} */}
-            {/* </section> */}
-          {/* </section> */}
         </section>
       </HomePage>
     );
