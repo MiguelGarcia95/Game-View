@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeResult from './HomeResult';
+import './css/content.css';
 
 const displayResults = (results, type) => {
   return results.map(result => {
@@ -9,7 +10,7 @@ const displayResults = (results, type) => {
 
 const Content = ({title, content}) => {
   return (
-    <section className="upcoming_games content">
+    <section className="content">
       <section className="title">
         <h1>{title}</h1>
       </section>

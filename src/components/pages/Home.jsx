@@ -35,7 +35,6 @@ class Home extends React.Component {
     if (this.props.homeVideos.length === 0) {
       this.props.getHomeVideos();
     }
-    // this.props.getHomePromos();
     this.props.getHomeGameReleases();
     // setTimeout(() => {
     // }, 1000)
