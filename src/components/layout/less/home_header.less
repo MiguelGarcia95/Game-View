@@ -1,5 +1,6 @@
 //out: ../css/home_header.css, compress: true, sourcemap: false
 @colHeader: 100%;
+@bgColor: #f1f1f1;
 
 .home_header {
   width: 100%;
@@ -41,6 +42,25 @@
     }
     // .image {
     // }
+    .link {
+      width: 90px;
+      background-color: @bgColor;
+      height: 25px;
+      padding: 10px;
+      position: absolute;
+      box-sizing: content-box;
+      left: 0; right: 0;
+      bottom: 150px;
+      margin: auto;
+      a {
+        color: #232323;
+        text-decoration: none;
+        line-height: 25px;
+        font-size: 0.9em;
+      }
+      i {
+      }
+    }
     .image_filter {
       background-color: rgba(0,0,0,0.9);
       transition: background 0.3s;
