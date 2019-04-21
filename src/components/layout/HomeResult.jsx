@@ -11,8 +11,8 @@ const HomeResult = ({result, type, setCurrentVideo}) => {
     <section className="content_result">
       <section className="image" style={imageStyle}>
         {type === 'sidebar' && (
-          <section className='play'>
-            <i className="far fa-play-circle fa-2x" onClick={() => setCurrentVideo('test')}></i>
+          <section className='play' onClick={() => setCurrentVideo('test')}>
+            <i className="far fa-play-circle fa-2x"></i>
           </section>
         ) }
       </section>

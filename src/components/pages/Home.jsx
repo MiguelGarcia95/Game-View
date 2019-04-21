@@ -54,7 +54,7 @@ class Home extends React.Component {
 
   render() {
     const {homeGames, homeVideos, homeReleases} = this.props;
-    
+    const {currentVideo} = this.state;
     return (
       <HomePage className="home app">
         <Navbar />
@@ -64,6 +64,11 @@ class Home extends React.Component {
           <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
           <Content title='Upcoming Games' content={homeGames} />
         </section>
+        {currentVideo && (
+          <section className="video">
+          
+          </section>
+        )}
       </HomePage>
     );
   }
