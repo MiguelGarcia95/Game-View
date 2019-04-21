@@ -1,7 +1,7 @@
 import React from 'react';
 import {trimString} from '../../utils/functions';
 
-const HomeResult = ({result, type}) => {
+const HomeResult = ({result, type, setCurrentVideo}) => {
   const imageStyle = {
     backgroundImage: `url(${result.image.medium_url})`,
     backgroundSize: 'cover',
@@ -12,7 +12,7 @@ const HomeResult = ({result, type}) => {
       <section className="image" style={imageStyle}>
         {type === 'sidebar' && (
           <section className='play'>
-            <i className="far fa-play-circle fa-2x"></i>
+            <i className="far fa-play-circle fa-2x" onClick={() => setCurrentVideo('test')}></i>
           </section>
         ) }
       </section>
