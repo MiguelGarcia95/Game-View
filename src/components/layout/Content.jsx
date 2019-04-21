@@ -9,11 +9,13 @@ const displayResults = (results, type) => {
 
 const Content = ({title, content}) => {
   return (
-    <section className="sidebar">
+    <section className="upcoming_games content">
       <section className="title">
         <h1>{title}</h1>
       </section>
-      {content.length > 0 && displayResults(content, 'sidebar')}
+      <section className="content_results">
+        {content.length > 0 && displayResults(content, 'content')}
+      </section>
     </section>
   )
 }

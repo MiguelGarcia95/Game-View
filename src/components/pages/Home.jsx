@@ -6,6 +6,7 @@ import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 import Sidebar from '../layout/Sidebar';
+import Content from '../layout/Content';
 
 import {getHomeGames,getHomeVideos, getHomeGameReleases} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
@@ -63,15 +64,16 @@ class Home extends React.Component {
         <section className="home_content">
 
           <Sidebar title='Videos' content={homeVideos} />
+          <Content title='Upcoming Games' content={homeGames} />
 
-          <section className="upcoming_games content">
+          {/* <section className="upcoming_games content">
             <section className="title">
               <h1>Upcoming Games</h1>
             </section>
             <section className="content_results">
               {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
             </section>
-          </section>
+          </section> */}
 
         </section>
       </HomePage>
