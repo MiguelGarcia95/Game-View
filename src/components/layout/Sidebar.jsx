@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeResult from './HomeResult';
+import './css/sidebar.css';
 
 const displayResults = (results, type) => {
   return results.map(result => {
