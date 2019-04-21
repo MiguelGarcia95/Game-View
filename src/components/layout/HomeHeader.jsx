@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import {Link} from 'react-router-dom';
 import './css/home_header.css';
 
 const closeColumns = () => {
@@ -82,6 +83,7 @@ const displayColumns = (games) => {
           <section className="name"><h1>{game.game.name}</h1></section>
           <section className="platform"><h3>Platform: {game.platform.name}</h3></section>
           <section className="date"><p>Release Date: {moment(game.release_date).format('LL')}</p></section>
+          <section className='link'><Link>Check Out <i className="fas fa-arrow-right fa-2x"></i></Link></section>
         </section>
       </section>
     )
