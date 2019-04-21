@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import './css/home_header.css';
 
 const closeColumns = () => {
@@ -68,7 +69,7 @@ const displayColumns = (games) => {
   return games.map((game, index) => {
     const colName = getColumnName(index);
     const imageStyle = {
-      backgroundImage: `url(${game.image.original_url})`,
+      backgroundImage: `url(${game.image.super_url})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
     }
@@ -79,7 +80,7 @@ const displayColumns = (games) => {
         <section className="image_filter"></section>
         <section className="data">
           <section className="name"><h1>{game.game.name}</h1></section>
-          <section className="date"><p></p></section>
+          <section className="date"><p>{moment(game.release_date).format('LL')}</p></section>
         </section>
       </section>
     )

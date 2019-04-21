@@ -38,7 +38,7 @@ export const getHomeGameReleases = () => {
         // limit: '5',
         sort: 'release_date:desc',
         filter: `release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
-        field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date'
+        field_list: 'api_detail_url,expected_release_year,date_added,date_last_updated,deck,description,image,guid,id,game,name,release_date,platform'
       }
     });
     dispatch({
