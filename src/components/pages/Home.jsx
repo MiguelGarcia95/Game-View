@@ -62,19 +62,8 @@ class Home extends React.Component {
 
         <div ref={node => this.pageDown = node}></div>
         <section className="home_content">
-
           <Sidebar title='Videos' content={homeVideos} />
           <Content title='Upcoming Games' content={homeGames} />
-
-          {/* <section className="upcoming_games content">
-            <section className="title">
-              <h1>Upcoming Games</h1>
-            </section>
-            <section className="content_results">
-              {homeGames.length > 0 && this.displayResults(homeGames, 'content')}
-            </section>
-          </section> */}
-
         </section>
       </HomePage>
     );
