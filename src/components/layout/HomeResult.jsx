@@ -9,7 +9,13 @@ const HomeResult = ({result, type}) => {
   }
   return (
     <section className="content_result">
-      <section className="image" style={imageStyle}></section>
+      <section className="image" style={imageStyle}>
+        {type === 'sidebar' && (
+          <section className='play'>
+            <i className="far fa-play-circle fa-2x"></i>
+          </section>
+        ) }
+      </section>
       <section className="data">
         <section className="name"><p>{result.name}</p></section>
         <section className="description"><p>{result.deck ? trimString(result.deck, 80) : 'N/A'}</p></section>
