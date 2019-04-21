@@ -58,7 +58,6 @@ class Home extends React.Component {
       <HomePage className="home app">
         <Navbar />
         <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
-
         <div ref={node => this.pageDown = node}></div>
         <section className="home_content">
           <Sidebar title='Videos' content={homeVideos} />
