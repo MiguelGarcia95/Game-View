@@ -54,37 +54,39 @@
     }
     .data {
       color: white;
-      .name {
+      .name, .date, .platform {
         width: 100%;
         text-align: center;
-        height: 100px;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        h1 {
-          font-size: 2em;
-          line-height: 100px;
+        h1, p, h3 {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
       }
+      .name {
+        height: 100px;
+        top: 0; bottom: 0;
+        margin: auto;
+        h1 {
+          font-size: 2em;
+          line-height: 100px;
+        }
+      }
       .platform {
+        top: 100px; bottom: 0;
+        height: 50px;
+        margin: auto;
+        h3 {
 
+        }
       }
       .date {
-        width: 100%;
-        text-align: center;
         height: 50px;
-        position: absolute;
         bottom: 25px;
         margin: auto;
         p {
           line-height: 50px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
         }
       }
     }
