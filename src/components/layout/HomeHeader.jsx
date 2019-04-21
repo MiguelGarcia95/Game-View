@@ -9,7 +9,8 @@ const closeColumns = () => {
 }
 
 const expandColumn = col => {
-  const column = document.querySelector(`.${col}`);
+  const colName = cleanClassName(col);
+  const column = document.querySelector(`.${colName}`);
   const header = document.querySelector('.home_header');
   if (column.className.includes('active')) {
     header.classList.remove('selected');
@@ -18,6 +19,14 @@ const expandColumn = col => {
     closeColumns();
     header.classList.add('selected');
     column.classList.toggle('active');
+  }
+}
+
+const cleanClassName = (classString) => {
+  if (classString.includes('active') && classString.includes('three')) {
+    return 'three';
+  } else {
+    return classString;
   }
 }
 
