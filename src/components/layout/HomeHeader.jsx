@@ -28,7 +28,7 @@ const getColumnName = colNumber => {
     case 1:
       return 'two'
     case 2:
-      return 'three'
+      return 'three active'
     case 3:
       return 'four'
     default:
@@ -80,7 +80,7 @@ const displayColumns = (games) => {
 const HomeHeader = ({games}) => {
   const sortedGames = getUniqueGames(games);
   return (
-    <section className="home_header">
+    <section className="home_header selected">
       {games && displayColumns(sortedGames)}
     </section>
   )
