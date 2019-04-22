@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
 import {connect} from 'react-redux';
+import {Page} from '../../utils/styledClasses';
 
 import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
@@ -10,8 +10,6 @@ import Content from '../layout/Content';
 
 import {getHomeGames, getHomeGameReleases} from '../../actions/gameActions';
 import {getHomeVideos} from '../../actions/videosActions';
-import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
-import {OverflowPage, Page} from '../../utils/styledClasses';
 
 import './css/home.css';
 
@@ -72,8 +70,8 @@ class Home extends React.Component {
 const mapStateToProps = state => {
   return {
     homeGames: state.games.homeGames,
-    homeVideos: state.games.homeVideos,
-    homeReleases: state.games.homeReleases
+    homeReleases: state.games.homeReleases,
+    homeVideos: state.videos.homeVideos
   }
 }
 
