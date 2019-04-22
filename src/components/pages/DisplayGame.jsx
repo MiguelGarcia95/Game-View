@@ -9,6 +9,9 @@ import './css/page.css';
 
 class Games extends React.Component {
   componentDidMount() {
+    if (!this.props.game) {
+      this.props.getGame(this.props.match.params.guid);
+    }
   }
 
   render() {
@@ -20,10 +23,16 @@ class Games extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    game: state.games.game,
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     getGame: guid => dispatch(getGame(guid))
   }
 }
 
-export default connect(null, mapDispatchToProps)(Games);
+export default connect(mapStateToProps, mapDispatchToProps)(Games);

@@ -29,9 +29,6 @@ export const getHomeGames = () => {
 
 export const getGame = guid => {
   return async (dispatch) => {
-    // let end = new Date();
-    // let start = new Date();
-    // end.setMonth(end.getMonth() + (Math.floor(Math.random() * 12) + 6));
     const results = await axios.get(`https://www.giantbomb.com/api/game/${guid}/`,{
       params: {
         api_key: GBAPI,
@@ -42,7 +39,7 @@ export const getGame = guid => {
     dispatch({
       type: actionTypes.GET_GAME,
       payload: {
-        games: results.data.results
+        game: results.data.results
       }
     })
   }
