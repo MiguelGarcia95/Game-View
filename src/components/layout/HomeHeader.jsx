@@ -74,7 +74,6 @@ const displayColumns = (games) => {
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
     }
-    console.log(game)
     return (
       <section key={index} className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
         <section className="image" style={imageStyle}></section>
