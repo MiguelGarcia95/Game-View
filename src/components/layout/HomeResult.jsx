@@ -25,7 +25,7 @@ const HomeResult = ({result, type, setCurrentVideo}) => {
           {type === 'content' && (
             <React.Fragment>
               <p>Expected: {result.expected_release_year}</p>
-              <Link>Go  <i className="fas fa-arrow-right"></i></Link>
+              <Link to='games'>Go  <i className="fas fa-arrow-right"></i></Link>
             </React.Fragment>
           )}
         </section>
