@@ -55,26 +55,6 @@ export const getHomeGameReleases = () => {
   }
 }
 
-export const getHomeVideos = () => {
-  return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/videos',{
-      params: {
-        api_key: GBAPI,
-        format: 'json',
-        limit: '10',
-        sort: 'publish_date:desc',
-        field_list: 'deck,embed_player,image,guid,id,name,publish_date,user,youtube_id'
-      }
-    });
-    dispatch({
-      type: actionTypes.GET_HOME_VIDEOS,
-      payload: {
-        videos: results.data.results
-      }
-    })
-  }
-}
-
 export const getFranchises = () => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/franchises',{
