@@ -20,11 +20,6 @@ const gameReducer = (state = initialState, action) => {
         ...state,
         homeGames: action.payload.games
       }
-    case actionTypes.GET_HOME_VIDEOS:
-      return {
-        ...state,
-        homeVideos: action.payload.videos
-      }
     case actionTypes.GET_HOME_GAME_RELEASES: 
       return {
         ...state,
