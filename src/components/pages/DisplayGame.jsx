@@ -17,22 +17,25 @@ class Games extends React.Component {
   }
 
   render() {
+    const {game} = this.props;
     return (
       <Page className="page app">
         <Navbar />
-        <section className="display_header">
-          <section className="display_image"></section>
-          <section className="display_content">
-            <section className="name"></section>
-            <section className="description"></section>
-            <section className="platforms"></section>
-            <section className="release_date"></section>
-            <section className="genres"></section>
-            <section className="themes"></section>
-            <section className="score"></section>
-            <section className="rating"></section>
+        {game && (
+          <section className="display_header">
+            <section className="display_image"></section>
+            <section className="display_content">
+              <section className="name"></section>
+              <section className="description"></section>
+              <section className="platforms"></section>
+              <section className="release_date"></section>
+              <section className="genres"></section>
+              <section className="themes"></section>
+              <section className="score"></section>
+              <section className="rating"></section>
+            </section>
           </section>
-        </section>
+        )}
       </Page>
     );
   }
