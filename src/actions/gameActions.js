@@ -33,7 +33,8 @@ export const getGame = guid => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        field_list: 'deck,expected_release_year,guid,id,image,name,original_release_date'
+        field_list: 'date_added,deck,description,expected_release_month,expected_release_quarter,expected_release_year,guid,id,image,image_tags,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,site_detail_url'
+        // field_list: 'deck,expected_release_year,guid,id,image,name,original_release_date'
       }
     });
     dispatch({
@@ -45,7 +46,6 @@ export const getGame = guid => {
   }
 }
 
-// field_list: 'date_added,deck,description,expected_release_month,expected_release_quarter,expected_release_year,guid,id,image,image_tags,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,site_detail_url'
 
 
 export const getHomeGameReleases = () => {
