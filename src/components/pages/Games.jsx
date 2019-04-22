@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import {getHomeGames} from '../../actions/gameActions';
-import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {Page} from '../../utils/styledClasses';
 
 class Games extends React.Component {
