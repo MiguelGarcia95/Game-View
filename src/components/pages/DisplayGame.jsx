@@ -23,7 +23,14 @@ class Games extends React.Component {
         <section className="display_header">
           <section className="display_image"></section>
           <section className="display_content">
-          
+            <section className="name"></section>
+            <section className="description"></section>
+            <section className="platforms"></section>
+            <section className="release_date"></section>
+            <section className="genres"></section>
+            <section className="themes"></section>
+            <section className="score"></section>
+            <section className="rating"></section>
           </section>
         </section>
       </Page>
