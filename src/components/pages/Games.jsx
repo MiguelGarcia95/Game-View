@@ -5,16 +5,7 @@ import {connect} from 'react-redux';
 import Navbar from '../layout/Navbar';
 import {getHomeGames} from '../../actions/gameActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
-import {OverflowPage} from '../../utils/styledClasses';
-
-const GamePage = styled(OverflowPage)`
-  &.page-enter {
-    animation: ${slideInLeft} 0.7s ease forwards;
-  }
-  &.page-exit {
-    animation: ${slideOutRight} 0.7s ease forwards;
-  }
-`;
+import {Page} from '../../utils/styledClasses';
 
 class Games extends React.Component {
   componentDidMount() {
@@ -22,9 +13,9 @@ class Games extends React.Component {
 
   render() {
     return (
-      <GamePage className="games app">
+      <Page className="games app">
         <Navbar />
-      </GamePage>
+      </Page>
     );
   }
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {slideInLeft, slideOutRight} from './pageTransitions';
 
 export const OverflowPage = styled.div`
 width: 100vw;
@@ -23,4 +24,13 @@ p {
   font-size: 1rem;
   margin: 20px auto;
 }
+`;
+
+export const Page = styled(OverflowPage)`
+  &.page-enter {
+    animation: ${slideInLeft} 0.7s ease forwards;
+  }
+  &.page-exit {
+    animation: ${slideOutRight} 0.7s ease forwards;
+  }
 `;

@@ -11,18 +11,9 @@ import Content from '../layout/Content';
 import {getHomeGames, getHomeGameReleases} from '../../actions/gameActions';
 import {getHomeVideos} from '../../actions/videosActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
-import {OverflowPage} from '../../utils/styledClasses';
+import {OverflowPage, Page} from '../../utils/styledClasses';
 
 import './css/home.css';
-
-const HomePage = styled(OverflowPage)`
-  &.page-enter {
-    animation: ${slideInLeft} 0.7s ease forwards;
-  }
-  &.page-exit {
-    animation: ${slideOutRight} 0.7s ease forwards;
-  }
-`;
 
 class Home extends React.Component {
   state = {
@@ -57,7 +48,7 @@ class Home extends React.Component {
     const {homeGames, homeVideos, homeReleases} = this.props;
     const {currentVideo} = this.state;
     return (
-      <HomePage className="home app">
+      <Page className="home app">
         <Navbar />
         <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
         <div ref={node => this.pageDown = node}></div>
@@ -73,7 +64,7 @@ class Home extends React.Component {
             </section>
           </section>
         )}
-      </HomePage>
+      </Page>
     );
   }
 }
