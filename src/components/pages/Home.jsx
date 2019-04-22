@@ -47,11 +47,11 @@ class Home extends React.Component {
     const {homeGames, homeVideos, homeReleases} = this.props;
     const {currentVideo} = this.state;
     return (
-      <Page className="home app">
+      <Page className="page app">
         <Navbar />
         <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
         <div ref={node => this.pageDown = node}></div>
-        <section className="home_content">
+        <section className="page_content">
           <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
           <Content title='Upcoming Games' content={homeGames} />
         </section>
