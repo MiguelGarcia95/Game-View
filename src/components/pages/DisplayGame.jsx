@@ -11,6 +11,8 @@ class Games extends React.Component {
   componentDidMount() {
     if (!this.props.game) {
       this.props.getGame(this.props.match.params.guid);
+    } else if (this.props.game.guid !== this.props.match.params.guid) {
+      this.props.getGame(this.props.match.params.guid);
     }
   }
 
