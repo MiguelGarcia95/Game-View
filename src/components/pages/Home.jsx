@@ -6,6 +6,7 @@ import Navbar from '../layout/Navbar';
 import HomeHeader from '../layout/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 import Sidebar from '../layout/Sidebar';
+import VideoPlayer from '../layout/VideoPlayer';
 import Content from '../layout/Content';
 
 import {getHomeGames, getHomeGameReleases} from '../../actions/gameActions';
@@ -54,14 +55,7 @@ class Home extends React.Component {
           <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
           <Content title='Upcoming Games' content={homeGames} />
         </section>
-        {currentVideo && (
-          <section className="video">
-            <section className="video_background" onClick={() => this.setCurrentVideo(null)}></section>
-            <section className="video_box">
-              <embed src={currentVideo} type=""/>
-            </section>
-          </section>
-        )}
+        {currentVideo && <VideoPlayer currentVideo={currentVideo} setCurrentVideo={this.setCurrentVideo} /> }
       </Page>
     );
   }
