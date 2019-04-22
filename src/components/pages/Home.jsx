@@ -67,7 +67,9 @@ class Home extends React.Component {
         {currentVideo && (
           <section className="video">
             <section className="video_background" onClick={() => this.setCurrentVideo(null)}></section>
-            <section className="video_box"></section>
+            <section className="video_box">
+              <embed src="https://www.giantbomb.com/videos/embed/14117/" type=""/>
+            </section>
           </section>
         )}
       </HomePage>
