@@ -82,7 +82,7 @@ const displayColumns = (games) => {
           <section className="name"><h1>{game.game.name}</h1></section>
           <section className="platform"><h3>Platform: {game.platform.name}</h3></section>
           <section className="date"><p>Release Date: {moment(game.release_date).format('LL')}</p></section>
-          <section className='link'><Link to={`games/game/${game.game.guid}`} >Check Out <i className="fas fa-arrow-right fa-lg"></i></Link></section>
+          <section className='link'><Link to={`games/game/3030-${game.game.id}`} >Check Out <i className="fas fa-arrow-right fa-lg"></i></Link></section>
         </section>
       </section>
     )
