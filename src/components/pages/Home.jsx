@@ -8,7 +8,8 @@ import HomeResult from '../layout/HomeResult';
 import Sidebar from '../layout/Sidebar';
 import Content from '../layout/Content';
 
-import {getHomeGames,getHomeVideos, getHomeGameReleases} from '../../actions/gameActions';
+import {getHomeGames, getHomeGameReleases} from '../../actions/gameActions';
+import {getHomeVideos} from '../../actions/videosActions';
 import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
 import {OverflowPage} from '../../utils/styledClasses';
 
