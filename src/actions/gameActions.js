@@ -7,14 +7,13 @@ export const getHomeGames = () => {
   return async (dispatch) => {
     let end = new Date();
     let start = new Date();
-    // start.setDate(start.getDate() - 14);
-    end.setMonth(end.getMonth() + 12);
+    end.setMonth(end.getMonth() + 6);
     const results = await axios.get('https://www.giantbomb.com/api/games',{
       params: {
         api_key: GBAPI,
         format: 'json',
         limit: '10',
-        // filter: `original_release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
+        filter: `original_release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
         sort: 'original_release_date:desc',
         field_list: 'date_added,deck,description,expected_release_month,expected_release_quarter,expected_release_year,guid,id,image,image_tags,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,site_detail_url'
       }
