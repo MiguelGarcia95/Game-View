@@ -33,7 +33,7 @@ export const getHomeGameReleases = () => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        limit: '10',
+        limit: '20',
         sort: 'release_date:desc',
         filter: `release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
         field_list: 'image,guid,id,game,name,release_date,platform'
