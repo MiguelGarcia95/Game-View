@@ -27,6 +27,27 @@ export const getHomeGames = () => {
   }
 }
 
+export const getGame = guid => {
+  return async (dispatch) => {
+    // let end = new Date();
+    // let start = new Date();
+    // end.setMonth(end.getMonth() + (Math.floor(Math.random() * 12) + 6));
+    const results = await axios.get(`https://www.giantbomb.com/api/game/${guid}/`,{
+      params: {
+        api_key: GBAPI,
+        format: 'json',
+        field_list: 'deck,expected_release_year,guid,id,image,name,original_release_date'
+      }
+    });
+    dispatch({
+      type: actionTypes.GET_GAME,
+      payload: {
+        games: results.data.results
+      }
+    })
+  }
+}
+
 // field_list: 'date_added,deck,description,expected_release_month,expected_release_quarter,expected_release_year,guid,id,image,image_tags,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,site_detail_url'
 
 
