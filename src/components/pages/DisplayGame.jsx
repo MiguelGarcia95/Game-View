@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import {getHomeGames} from '../../actions/gameActions';
+import {getGame} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
@@ -22,7 +22,7 @@ class Games extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getHomeGames: () => dispatch(getHomeGames())
+    getGame: guid => dispatch(getGame(guid))
   }
 }
 
