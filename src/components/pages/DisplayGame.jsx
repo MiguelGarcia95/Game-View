@@ -20,6 +20,9 @@ class Games extends React.Component {
     return (
       <Page className="page app">
         <Navbar />
+        <section className="display_header">
+        
+        </section>
       </Page>
     );
   }
