@@ -21,7 +21,10 @@ class Games extends React.Component {
       <Page className="page app">
         <Navbar />
         <section className="display_header">
-        
+          <section className="display_image"></section>
+          <section className="display_content">
+          
+          </section>
         </section>
       </Page>
     );
