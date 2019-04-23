@@ -24,7 +24,7 @@ class Games extends React.Component {
   }
 
   getDate = (original_date, expected_date) => {
-    console.log(original_date === 'null')
+    console.log(expected_date)
     if (original_date !== 'null') {
       return moment(original_date).format('LL');
     } else if (expected_date) {
