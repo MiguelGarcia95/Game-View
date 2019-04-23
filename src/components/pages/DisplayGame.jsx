@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 import Navbar from '../layout/Navbar';
 import {getGame} from '../../actions/gameActions';
@@ -66,7 +67,7 @@ class Games extends React.Component {
                   </section>
                   <section className="release_date">
                     <p className="title">Release Date: </p>
-                    <p className='date'>{game.original_release_date ? game.original_release_date : game.expected_release_year}</p>
+                    <p className='date'>{game.original_release_date ? moment(game.original_release_date).format('LL') : moment(game.expected_release_year).format('LL') }</p>
                   </section>
                 </section>
               </section>
