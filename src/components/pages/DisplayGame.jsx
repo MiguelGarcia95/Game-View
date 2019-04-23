@@ -23,12 +23,8 @@ class Games extends React.Component {
     })
   }
 
-  displayPlatforms = (platforms) => {
-
-  }
-
-  displayThemes = (themes) => {
-
+  getDate = (original_date, expected_date) => {
+    
   }
 
   render() {
