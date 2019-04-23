@@ -16,6 +16,18 @@ class Games extends React.Component {
     }
   }
 
+  displayGenres = () => {
+
+  }
+
+  displayPlatforms = () => {
+
+  }
+
+  displayThemes = () => {
+
+  }
+
   render() {
     const {game} = this.props;
     let imageStyle;
@@ -40,7 +52,6 @@ class Games extends React.Component {
               <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
               <section className="genres"></section>
               <section className="themes"></section>
-              <section className="score"></section>
               <section className="rating"></section>
             </section>
           </section>
