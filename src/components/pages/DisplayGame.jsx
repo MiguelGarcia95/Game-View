@@ -24,7 +24,13 @@ class Games extends React.Component {
   }
 
   getDate = (original_date, expected_date) => {
-    
+    if (original_date) {
+      return moment(original_date).format('LL');
+    } else if (expected_date) {
+      return moment(expected_date).format('LL');
+    } else {
+      return 'N/A';
+    }
   }
 
   render() {
@@ -63,7 +69,7 @@ class Games extends React.Component {
                   </section>
                   <section className="release_date">
                     <p className="title">Release Date: </p>
-                    <p className='date'>{game.original_release_date ? moment(game.original_release_date).format('LL') : moment(game.expected_release_year).format('LL') }</p>
+                    <p className='date'>{this.getDate(game.original_release_date, expected_release_year)}</p>
                   </section>
                 </section>
               </section>
