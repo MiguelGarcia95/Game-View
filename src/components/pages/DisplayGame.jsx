@@ -7,6 +7,7 @@ import {getGame, getPlatforms} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
+import { platform } from 'os';
 
 class Games extends React.Component {
   componentDidMount() {
@@ -28,13 +29,15 @@ class Games extends React.Component {
 
   displayPlatforms = (platforms, allPlatforms) => {
     let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
-    return platforms.map(item => {
+    return sortedPlatforms.map(item => {
       return <span key={item.id} className="data_span">{item.name}</span>
     })
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
-    
+    return  platforms.reduce((sortedPlatforms, platform) => {
+      return sortedPlatforms;
+    }, []);
   }
 
   getDate = (original_date, expected_date) => {
