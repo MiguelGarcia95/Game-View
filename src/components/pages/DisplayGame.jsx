@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../layout/Navbar';
-import {getGame} from '../../actions/gameActions';
+import {getGame, getPlatforms} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
@@ -15,6 +15,7 @@ class Games extends React.Component {
     } else if (this.props.game.guid !== this.props.match.params.guid) {
       this.props.getGame(this.props.match.params.guid);
     }
+    this.props.getPlatforms();
   }
 
   displayMetaData = (data) => {
@@ -34,7 +35,7 @@ class Games extends React.Component {
   }
 
   render() {
-    const {game} = this.props;
+    const {game, platforms} = this.props;
     let imageStyle;
     if (game) {
       imageStyle = {
@@ -57,7 +58,7 @@ class Games extends React.Component {
                   <section className="description"><p>{game.deck}</p></section>
                   <section className="platforms">
                     <p className="title">Platforms: </p>
-                    {game.platforms && this.displayMetaData(game.platforms)}
+                    {game.platforms && platforms && this.displayMetaData(game.platforms)}
                   </section>
                   <section className="genres">
                     <p className="title">Genres: </p>
@@ -89,7 +90,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGame: guid => dispatch(getGame(guid))
+    getGame: guid => dispatch(getGame(guid)),
+    getPlatforms: () => dispatch(getPlatforms())
   }
 }
 

@@ -45,8 +45,6 @@ export const getGame = guid => {
   }
 }
 
-
-
 export const getHomeGameReleases = () => {
   return async (dispatch) => {
     let end = new Date();
@@ -90,6 +88,26 @@ export const getFranchises = () => {
     //     promos: results.data.results
     //   }
     // })
+  }
+}
+
+export const getPlatforms = () => {
+  return async (dispatch) => {
+    const results = await axios.get('https://www.giantbomb.com/api/platforms',{
+      params: {
+        api_key: GBAPI,
+        format: 'json',
+        // limit: '20',
+        sort: 'release_date:desc',
+        field_list: 'abbreviation,company,deck,image,guid,id,name,release_date,platform'
+      }
+    });
+    dispatch({
+      type: actionTypes.GET_PLATFORMS,
+      payload: {
+        releases: results.data.results
+      }
+    })
   }
 }
 
