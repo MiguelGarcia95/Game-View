@@ -48,13 +48,15 @@ class Games extends React.Component {
             <section className="display_image" style={imageStyle}></section>
             <section className="display_content">
               <section className="content_container">
-                <section className="image"><img src={game.image.small_url} alt={game.name}/></section>
-                <section className="name"><h1>{game.name}</h1></section>
-                <section className="description"><p>{game.deck}</p></section>
-                <section className="platforms">{this.displayMetaData(game.platforms)}</section>
-                <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
-                <section className="genres">{this.displayMetaData(game.genres)}</section>
-                <section className="themes">{this.displayMetaData(game.themes)}</section>
+                <img className="image" src={game.image.small_url} alt={game.name}/>
+                <section className="data">
+                  <section className="name"><h1>{game.name}</h1></section>
+                  <section className="description"><p>{game.deck}</p></section>
+                  <section className="platforms">{this.displayMetaData(game.platforms)}</section>
+                  <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
+                  <section className="genres">{this.displayMetaData(game.genres)}</section>
+                  <section className="themes">{this.displayMetaData(game.themes)}</section>
+                </section>
               </section>
             </section>
           </section>
