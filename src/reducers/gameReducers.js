@@ -29,7 +29,7 @@ const gameReducer = (state = initialState, action) => {
     case actionTypes.GET_PLATFORMS:
       return {
         ...state,
-        platforms: action.payload.releases
+        platforms: action.payload.platforms
       }
     case actionTypes.GET_GAME: 
       return {

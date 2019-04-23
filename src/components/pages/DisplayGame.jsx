@@ -7,7 +7,6 @@ import {getGame, getPlatforms} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
-import { platform } from 'os';
 
 class Games extends React.Component {
   componentDidMount() {
@@ -16,7 +15,7 @@ class Games extends React.Component {
     } else if (this.props.game.guid !== this.props.match.params.guid) {
       this.props.getGame(this.props.match.params.guid);
     }
-    if (!this.props.platforms) {
+    if (this.props.platforms.length === 0) {
       this.props.getPlatforms();
     }
   }
@@ -28,14 +27,21 @@ class Games extends React.Component {
   }
 
   displayPlatforms = (platforms, allPlatforms) => {
+    // console.log('ran')
     let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
-    return sortedPlatforms.map(item => {
+    return platforms.map(item => {
       return <span key={item.id} className="data_span">{item.name}</span>
     })
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
     return  platforms.reduce((sortedPlatforms, platform) => {
+      console.log(platform)
+      allPlatforms.forEach(pForm => {
+        if (pForm.id === platform.id) {
+          allPlatforms.push(pForm);
+        }
+      });
       return sortedPlatforms;
     }, []);
   }
@@ -60,6 +66,7 @@ class Games extends React.Component {
         backgroundPosition: 'center center'
       }
     }
+    console.log(platforms)
     return (
       <Page className="page app">
         <Navbar />
@@ -74,7 +81,7 @@ class Games extends React.Component {
                   <section className="description"><p>{game.deck}</p></section>
                   <section className="platforms">
                     <p className="title">Platforms: </p>
-                    {game.platforms && platforms && this.displayPlatforms(game.platforms, platforms)}
+                    {game.platforms && platforms.length > 0 && this.displayPlatforms(game.platforms, platforms)}
                   </section>
                   <section className="genres">
                     <p className="title">Genres: </p>
@@ -101,6 +108,7 @@ class Games extends React.Component {
 const mapStateToProps = state => {
   return {
     game: state.games.game,
+    platforms: state.games.platforms
   }
 }
 

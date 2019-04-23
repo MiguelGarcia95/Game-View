@@ -105,7 +105,7 @@ export const getPlatforms = () => {
     dispatch({
       type: actionTypes.GET_PLATFORMS,
       payload: {
-        releases: results.data.results
+        platforms: results.data.results
       }
     })
   }
