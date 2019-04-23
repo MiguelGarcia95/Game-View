@@ -26,6 +26,17 @@ class Games extends React.Component {
     })
   }
 
+  displayPlatforms = (platforms, allPlatforms) => {
+    let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
+    return platforms.map(item => {
+      return <span key={item.id} className="data_span">{item.name}</span>
+    })
+  }
+
+  sortPlatforms = (platforms, allPlatforms) => {
+    
+  }
+
   getDate = (original_date, expected_date) => {
     if (original_date !== null) {
       return moment(original_date).format('LL');
@@ -60,7 +71,7 @@ class Games extends React.Component {
                   <section className="description"><p>{game.deck}</p></section>
                   <section className="platforms">
                     <p className="title">Platforms: </p>
-                    {game.platforms && platforms && this.displayMetaData(game.platforms)}
+                    {game.platforms && platforms && this.displayPlatforms(game.platforms, platforms)}
                   </section>
                   <section className="genres">
                     <p className="title">Genres: </p>
