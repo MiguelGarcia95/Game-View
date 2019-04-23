@@ -30,7 +30,11 @@ class Games extends React.Component {
     let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
     console.log(sortedPlatforms)
     return sortedPlatforms.map(item => {
-      return <span key={item.id} className="data_span">{item.name}</span>
+      return (
+        <section key={item.id} className="platform">
+          {item.name}
+        </section>
+      )
     })
   }
 
