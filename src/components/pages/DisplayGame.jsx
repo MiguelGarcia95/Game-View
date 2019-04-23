@@ -27,19 +27,18 @@ class Games extends React.Component {
   }
 
   displayPlatforms = (platforms, allPlatforms) => {
-    // console.log('ran')
     let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
-    return platforms.map(item => {
+    console.log(sortedPlatforms)
+    return sortedPlatforms.map(item => {
       return <span key={item.id} className="data_span">{item.name}</span>
     })
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
     return  platforms.reduce((sortedPlatforms, platform) => {
-      console.log(platform)
-      allPlatforms.forEach(pForm => {
+      allPlatforms.some(pForm => {
         if (pForm.id === platform.id) {
-          allPlatforms.push(pForm);
+          sortedPlatforms.push(pForm);
         }
       });
       return sortedPlatforms;
@@ -66,7 +65,6 @@ class Games extends React.Component {
         backgroundPosition: 'center center'
       }
     }
-    console.log(platforms)
     return (
       <Page className="page app">
         <Navbar />
