@@ -16,15 +16,17 @@ class Games extends React.Component {
     }
   }
 
-  displayGenres = () => {
+  displayMetaData = (data) => {
+    return data.map(item => {
+      return <span key={item.id} className="data_span">{item.name}</span>
+    })
+  }
+
+  displayPlatforms = (platforms) => {
 
   }
 
-  displayPlatforms = () => {
-
-  }
-
-  displayThemes = () => {
+  displayThemes = (themes) => {
 
   }
 
@@ -49,11 +51,10 @@ class Games extends React.Component {
                 <section className="image"><img src={game.image.small_url} alt={game.name}/></section>
                 <section className="name"><h1>{game.name}</h1></section>
                 <section className="description"><p>{game.deck}</p></section>
-                <section className="platforms"></section>
+                <section className="platforms">{this.displayMetaData(game.platforms)}</section>
                 <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
-                <section className="genres"></section>
-                <section className="themes"></section>
-                <section className="rating"></section>
+                <section className="genres">{this.displayMetaData(game.genres)}</section>
+                <section className="themes">{this.displayMetaData(game.themes)}</section>
               </section>
             </section>
           </section>
