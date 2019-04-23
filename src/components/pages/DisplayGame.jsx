@@ -64,7 +64,10 @@ class Games extends React.Component {
                     <p className="title">Themes: </p>
                     {this.displayMetaData(game.themes)}
                   </section>
-                  <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
+                  <section className="release_date">
+                    <p className="title">Release Date: </p>
+                    <p className='date'>{game.original_release_date ? game.original_release_date : game.expected_release_year}</p>
+                  </section>
                 </section>
               </section>
             </section>
