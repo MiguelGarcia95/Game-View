@@ -27,13 +27,20 @@
       background-color: rgba(0,0,0,0.9);
       .content_container {
         width: 1200px;
+        height: 100%;
         margin: auto;
+        position: relative;
         .image {
-          width: 200px;
-          img {width: 100%;}
+          // width: 200px; height: 200px;
+          // float: left;
         }
+        img {width: 30%; position: absolute; top: 0; bottom: 0; margin: auto;}
         .name {
-  
+          // position: absolute;
+          top: 0;
+          width: 100%;
+          box-sizing: border-box;
+          padding-left: 320px;
         }
         .description {
   
