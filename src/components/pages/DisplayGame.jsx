@@ -15,7 +15,9 @@ class Games extends React.Component {
     } else if (this.props.game.guid !== this.props.match.params.guid) {
       this.props.getGame(this.props.match.params.guid);
     }
-    this.props.getPlatforms();
+    if (!this.props.platforms) {
+      this.props.getPlatforms();
+    }
   }
 
   displayMetaData = (data) => {
