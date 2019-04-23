@@ -52,10 +52,19 @@ class Games extends React.Component {
                 <section className="data">
                   <section className="name"><h1>{game.name}</h1></section>
                   <section className="description"><p>{game.deck}</p></section>
-                  <section className="platforms">{this.displayMetaData(game.platforms)}</section>
+                  <section className="platforms">
+                    <p className="title">Platforms: </p>
+                    {this.displayMetaData(game.platforms)}
+                  </section>
+                  <section className="genres">
+                    <p className="title">Genres: </p>
+                    {this.displayMetaData(game.genres)}
+                  </section>
+                  <section className="themes">
+                    <p className="title">Themes: </p>
+                    {this.displayMetaData(game.themes)}
+                  </section>
                   <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
-                  <section className="genres">{this.displayMetaData(game.genres)}</section>
-                  <section className="themes">{this.displayMetaData(game.themes)}</section>
                 </section>
               </section>
             </section>
