@@ -69,7 +69,7 @@ class Games extends React.Component {
                   </section>
                   <section className="release_date">
                     <p className="title">Release Date: </p>
-                    <p className='date'>{this.getDate(game.original_release_date, expected_release_year)}</p>
+                    <p className='date'>{this.getDate(game.original_release_date, game.expected_release_year)}</p>
                   </section>
                 </section>
               </section>
