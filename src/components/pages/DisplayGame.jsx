@@ -33,6 +33,7 @@ class Games extends React.Component {
           <section className="display_header">
             <section className="display_image" style={imageStyle}></section>
             <section className="display_content">
+              <section className="image"></section>
               <section className="name"><h1>{game.name}</h1></section>
               <section className="description"><p>{game.deck}</p></section>
               <section className="platforms"></section>
