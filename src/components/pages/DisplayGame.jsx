@@ -45,14 +45,16 @@ class Games extends React.Component {
           <section className="display_header">
             <section className="display_image" style={imageStyle}></section>
             <section className="display_content">
-              <section className="image"><img src={game.image.original_url} alt={game.name}/></section>
-              <section className="name"><h1>{game.name}</h1></section>
-              <section className="description"><p>{game.deck}</p></section>
-              <section className="platforms"></section>
-              <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
-              <section className="genres"></section>
-              <section className="themes"></section>
-              <section className="rating"></section>
+              <section className="content_container">
+                <section className="image"><img src={game.image.medium_url} alt={game.name}/></section>
+                <section className="name"><h1>{game.name}</h1></section>
+                <section className="description"><p>{game.deck}</p></section>
+                <section className="platforms"></section>
+                <section className="release_date">{game.original_release_date ? game.original_release_date : game.expected_release_year}</section>
+                <section className="genres"></section>
+                <section className="themes"></section>
+                <section className="rating"></section>
+              </section>
             </section>
           </section>
         )}
