@@ -98,8 +98,8 @@ export const getPlatforms = () => {
         api_key: GBAPI,
         format: 'json',
         // limit: '20',
-        sort: 'release_date:desc',
-        field_list: 'abbreviation,company,deck,image,guid,id,name,release_date,platform'
+        sort: 'install_base:desc',
+        field_list: 'abbreviation,company,deck,image,guid,install_base,id,name,release_date,platform'
       }
     });
     dispatch({

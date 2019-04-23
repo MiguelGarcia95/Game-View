@@ -32,7 +32,7 @@ class Games extends React.Component {
     return sortedPlatforms.map(item => {
       return (
         <section key={item.id} className="platform">
-          {item.image.icon_url ? <img src={item.image.icon_url} alt=""/> : <p>{item.name}</p> }
+          {item.image.icon_url ? <img title={item.name} src={item.image.icon_url} alt={item.name}/> : <p>{item.name}</p> }
         </section>
       )
     })
