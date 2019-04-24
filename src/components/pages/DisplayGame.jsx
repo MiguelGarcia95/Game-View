@@ -57,21 +57,11 @@ class Games extends React.Component {
                   <section className="image"></section>
                   <section className="about"></section>
                 </section>
-                <section className="row">
-                  <section className="row_item name"></section>
-                </section>
-                <section className="row">
-                  <section className="row_item platforms"></section>
-                </section>
-                <section className="row">
-                  <section className="row_item genres"></section>
-                </section>
-                <section className="row">
-                  <section className="row_item themes"></section>
-                </section>
-                <section className="row">
-                  <section className="row_item date"></section>
-                </section>
+                <section className="row name"></section>
+                <section className="row platforms"></section>
+                <section className="row genres"></section>
+                <section className="row themes"></section>
+                <section className="row date"></section>
               </section>
             </section>
 
