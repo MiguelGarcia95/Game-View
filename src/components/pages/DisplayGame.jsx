@@ -43,7 +43,8 @@ class Games extends React.Component {
             <DisplayHeader game={game} scrollDown={this.scrollDown} />
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
-            
+              <section className="images"></section>
+              <section className="about"></section>
             </section>
           </React.Fragment>
         )}
