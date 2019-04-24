@@ -45,10 +45,12 @@ const DisplayHeader = ({game, scrollDown}) => {
       <section className="display_header_2" style={imageStyle}>
         <section className="display_cover"></section>
         <section className="display_box">
-          <section className="image">
-            <img className="image" src={game.image.small_url} alt={game.name}/>
+          <section className="display_top">
+            <section className="image">
+              <img src={game.image.small_url} alt={game.name}/>
+            </section>
+            <section className="about"></section>
           </section>
-          <section className="about"></section>
           <section className="row name"></section>
           <section className="row platforms"></section>
           <section className="row genres"></section>
