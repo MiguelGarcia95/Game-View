@@ -100,7 +100,6 @@ export const getRating = guid => {
         field_list: 'guid,id,name,image,rating_board'
       }
     });
-    console.log(results)
     dispatch({
       type: actionTypes.GET_RATING,
       payload: {

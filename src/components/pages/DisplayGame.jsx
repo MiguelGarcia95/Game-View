@@ -16,6 +16,7 @@ class Games extends React.Component {
       this.props.getGame(this.props.match.params.guid);
     }
     this.props.getRating('3065-16');
+    // this.props.getRating(`3065-${this.props.game.original_rating.id}`);
   }
 
   scrollDown = () => {
