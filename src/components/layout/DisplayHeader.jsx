@@ -34,6 +34,11 @@ const DisplayHeader = ({game, scrollDown}) => {
     backgroundSize: 'cover',
     backgroundPosition: 'center center'
   }
+  const imageStyle2 = {
+    backgroundImage: `url(${game.image.small_url})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center'
+  }
   let view = true;
   if (view) {
     return (
@@ -41,7 +46,9 @@ const DisplayHeader = ({game, scrollDown}) => {
         <section className="display_cover"></section>
         <section className="display_box">
           <section className="display_top">
-            <section className="image"></section>
+            <section className="image">
+              <img className="image" src={game.image.small_url} alt={game.name}/>
+            </section>
             <section className="about"></section>
           </section>
           <section className="row name"></section>
