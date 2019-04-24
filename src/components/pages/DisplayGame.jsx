@@ -20,6 +20,10 @@ class Games extends React.Component {
     }
   }
 
+  scrollDown = () => {
+    this.pageDown.scrollIntoView({behavior: 'smooth'});
+  }
+
   displayMetaData = (data) => {
     return data.map(item => {
       return <span key={item.id} className="data_span">{item.name}</span>
@@ -78,34 +82,43 @@ class Games extends React.Component {
       <Page className="page app">
         <Navbar />
         {game && (
-          <section className="display_header">
-            <section className="display_image" style={imageStyle}></section>
-            <section className="display_content">
-              <section className="content_container">
-                <img className="image" src={game.image.small_url} alt={game.name}/>
-                <section className="data">
-                  <section className="name"><h1>{game.name}</h1></section>
-                  <section className="description"><p>{game.deck}</p></section>
-                  <section className="platforms">
-                    <p className="title">Available On </p>
-                    {game.platforms && platforms.length > 0 && this.displayPlatforms(game.platforms, platforms)}
-                  </section>
-                  <section className="genres">
-                    <p className="title">Genres: </p>
-                    {game.genres && this.displayMetaData(game.genres)}
-                  </section>
-                  <section className="themes">
-                    <p className="title">Themes: </p>
-                    {game.themes && this.displayMetaData(game.themes)}
-                  </section>
-                  <section className="release_date">
-                    <p className="title">Release Date: </p>
-                    <p className='date'>{this.getDate(game.original_release_date, game.expected_release_year)}</p>
+          <React.Fragment>
+            <section className="display_header">
+              <section className="display_image" style={imageStyle}></section>
+              <section className="display_content">
+                <section className="content_container">
+                  <img className="image" src={game.image.small_url} alt={game.name}/>
+                  <section className="data">
+                    <section className="name"><h1>{game.name}</h1></section>
+                    <section className="description"><p>{game.deck}</p></section>
+                    <section className="platforms">
+                      <p className="title">Available On </p>
+                      {game.platforms && platforms.length > 0 && this.displayPlatforms(game.platforms, platforms)}
+                    </section>
+                    <section className="genres">
+                      <p className="title">Genres: </p>
+                      {game.genres && this.displayMetaData(game.genres)}
+                    </section>
+                    <section className="themes">
+                      <p className="title">Themes: </p>
+                      {game.themes && this.displayMetaData(game.themes)}
+                    </section>
+                    <section className="release_date">
+                      <p className="title">Release Date: </p>
+                      <p className='date'>{this.getDate(game.original_release_date, game.expected_release_year)}</p>
+                    </section>
                   </section>
                 </section>
               </section>
+              <section className="scroll_down" onClick={() => this.scrollDown()}>
+                <i className="fas fa-caret-down fa-4x"></i>
+              </section>
             </section>
-          </section>
+            <div ref={node => this.pageDown = node}></div>
+            <section className="page_content game">
+            
+            </section>
+          </React.Fragment>
         )}
       </Page>
     );
