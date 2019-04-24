@@ -49,8 +49,8 @@ const DisplayHeader = ({game, scrollDown}) => {
             <section className="image">
               <img src={game.image.small_url} alt={game.name}/>
             </section>
-            <section className="about"></section>
             <section className="name"></section>
+            <section className="about"></section>
           </section>
           <section className="row platforms"></section>
           <section className="row genres"></section>
