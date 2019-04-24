@@ -62,7 +62,7 @@ const DisplayHeader = ({game, scrollDown}) => {
           </section>
         </section>
       </section>
-      <section className="scroll_down" onClick={() => this.scrollDown()}>
+      <section className="scroll_down" onClick={() => scrollDown()}>
         <i className="fas fa-caret-down fa-4x"></i>
       </section>
     </section>
