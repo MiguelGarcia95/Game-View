@@ -40,7 +40,8 @@ class Games extends React.Component {
       imageStyle = {
         backgroundImage: `url(${game.image.screen_large_url})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center center'
+        backgroundPosition: 'center center',
+        backgroundAttachment: 'fixed'
       }
     }
     return (
