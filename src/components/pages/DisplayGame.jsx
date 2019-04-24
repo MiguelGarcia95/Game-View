@@ -40,7 +40,33 @@ class Games extends React.Component {
         <Navbar />
         {game && (
           <React.Fragment>
-            <DisplayHeader game={game} scrollDown={this.scrollDown} />
+            {/* <DisplayHeader game={game} scrollDown={this.scrollDown} /> */}
+            <section className="display_header_2">
+              <section className="display_cover"></section>
+              <section className="display_box">
+                <section className="display_top">
+                  <section className="image"></section>
+                  <section className="about"></section>
+                </section>
+                <section className="row">
+                  <section className="row_item name"></section>
+                </section>
+                <section className="row">
+                  <section className="row_item platforms"></section>
+                </section>
+                <section className="row">
+                  <section className="row_item genres"></section>
+                </section>
+                <section className="row">
+                  <section className="row_item themes"></section>
+                </section>
+                <section className="row">
+                  <section className="row_item date"></section>
+                </section>
+              </section>
+            </section>
+
+            
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
               <section className="images"></section>
