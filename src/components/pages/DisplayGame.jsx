@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../layout/Navbar';
-import {getGame} from '../../actions/gameActions';
+import {getGame, getRating} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
@@ -15,6 +15,7 @@ class Games extends React.Component {
     } else if (this.props.game.guid !== this.props.match.params.guid) {
       this.props.getGame(this.props.match.params.guid);
     }
+    this.props.getRating('3065-16');
   }
 
   scrollDown = () => {
@@ -115,13 +116,15 @@ class Games extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    game: state.games.game
+    game: state.games.game,
+    rating: state.games.rating
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGame: guid => dispatch(getGame(guid))
+    getGame: guid => dispatch(getGame(guid)),
+    getRating: guid => dispatch(getRating(guid))
   }
 }
 

@@ -91,21 +91,20 @@ export const getFranchises = () => {
   }
 }
 
-export const getRating = () => {
+export const getRating = guid => {
   return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/platforms',{
+    const results = await axios.get(`https://www.giantbomb.com/api/game_rating/${guid}`,{
       params: {
         api_key: GBAPI,
         format: 'json',
-        // limit: '20',
-        sort: 'install_base:desc',
-        field_list: 'abbreviation,company,deck,image,guid,install_base,id,name,release_date,platform'
+        field_list: 'guid,id,name,image,rating_board'
       }
     });
+    console.log(results)
     dispatch({
       type: actionTypes.GET_RATING,
       payload: {
-        platforms: results.data.results
+        rating: results.data.results
       }
     })
   }
