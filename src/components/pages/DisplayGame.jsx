@@ -35,13 +35,21 @@ class Games extends React.Component {
 
   render() {
     const {game} = this.props;
+    let imageStyle; 
+    if (game) {
+      imageStyle = {
+        backgroundImage: `url(${game.image.screen_large_url})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
+      }
+    }
     return (
       <Page className="page app">
         <Navbar />
         {game && (
           <React.Fragment>
             {/* <DisplayHeader game={game} scrollDown={this.scrollDown} /> */}
-            <section className="display_header_2">
+            <section className="display_header_2" style={imageStyle}>
               <section className="display_cover"></section>
               <section className="display_box">
                 <section className="display_top">
@@ -66,7 +74,7 @@ class Games extends React.Component {
               </section>
             </section>
 
-            
+
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
               <section className="images"></section>
