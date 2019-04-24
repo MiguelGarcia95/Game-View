@@ -91,7 +91,7 @@ export const getFranchises = () => {
   }
 }
 
-export const getPlatforms = () => {
+export const getRating = () => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/platforms',{
       params: {
@@ -103,7 +103,7 @@ export const getPlatforms = () => {
       }
     });
     dispatch({
-      type: actionTypes.GET_PLATFORMS,
+      type: actionTypes.GET_RATING,
       payload: {
         platforms: results.data.results
       }

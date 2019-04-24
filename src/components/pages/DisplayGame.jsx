@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../layout/Navbar';
-import {getGame, getPlatforms} from '../../actions/gameActions';
+import {getGame} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
@@ -14,9 +14,6 @@ class Games extends React.Component {
       this.props.getGame(this.props.match.params.guid);
     } else if (this.props.game.guid !== this.props.match.params.guid) {
       this.props.getGame(this.props.match.params.guid);
-    }
-    if (this.props.platforms.length === 0) {
-      this.props.getPlatforms();
     }
   }
 
@@ -118,15 +115,13 @@ class Games extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    game: state.games.game,
-    platforms: state.games.platforms
+    game: state.games.game
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGame: guid => dispatch(getGame(guid)),
-    getPlatforms: () => dispatch(getPlatforms())
+    getGame: guid => dispatch(getGame(guid))
   }
 }
 
