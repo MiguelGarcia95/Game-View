@@ -31,9 +31,7 @@ class Games extends React.Component {
   }
 
   displayPlatforms = (platforms, allPlatforms) => {
-    let sortedPlatforms = this.sortPlatforms(platforms, allPlatforms);
-    console.log(sortedPlatforms)
-    return sortedPlatforms.map(item => {
+    return platforms.map(item => {
       return (
         <section key={item.id} className="platform"><p>{item.name}</p></section>
       )
@@ -86,7 +84,7 @@ class Games extends React.Component {
                     <section className="description"><p>{game.deck}</p></section>
                     <section className="platforms">
                       <p className="title">Available On </p>
-                      {game.platforms && platforms.length > 0 && this.displayPlatforms(game.platforms, platforms)}
+                      {game.platforms && this.displayPlatforms(game.platforms)}
                     </section>
                     <section className="genres">
                       <p className="title">Genres: </p>
