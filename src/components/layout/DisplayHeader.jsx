@@ -36,8 +36,9 @@ const DisplayHeader = ({game, scrollDown}) => {
   }
   const imageStyle2 = {
     backgroundImage: `url(${game.image.small_url})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center'
+    backgroundSize: '100%',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat'
   }
   let view = true;
   if (view) {
@@ -49,13 +50,25 @@ const DisplayHeader = ({game, scrollDown}) => {
             <section className="image" style={imageStyle2} >
               {/* <img src={game.image.small_url} alt={game.name}/> */}
             </section>
-            <section className="name"></section>
-            <section className="about"></section>
+            <section className="name"><h1>{game.name}</h1></section>
+            <section className="about"><p>{game.deck}</p></section>
           </section>
-          <section className="row platforms"></section>
-          <section className="row genres"></section>
-          <section className="row themes"></section>
-          <section className="row date"></section>
+          <section className="row platforms">
+            <p className="title">Available On </p>
+            {game.platforms && displayPlatforms(game.platforms)}
+          </section>
+          <section className="row genres">
+            <p className="title">Genres: </p>
+            {game.genres && displayMetaData(game.genres)}
+          </section>
+          <section className="row themes">
+            <p className="title">Themes: </p>
+            {game.themes && displayMetaData(game.themes)}
+          </section>
+          <section className="row date">
+            <p className="title">Release Date: </p>
+            <p className='date'>{getDate(game.original_release_date, game.expected_release_year)}</p>
+          </section>
         </section>
       </section>
     )
