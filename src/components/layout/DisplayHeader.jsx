@@ -54,20 +54,20 @@ const DisplayHeader = ({game, scrollDown}) => {
             <section className="about"><p>{game.deck}</p></section>
           </section>
           <section className="row platforms">
-            <p className="title">Available On </p>
+            <span className="title">Available On: </span>
             {game.platforms && displayPlatforms(game.platforms)}
           </section>
           <section className="row genres">
-            <p className="title">Genres: </p>
+            <span className="title">Genres: </span>
             {game.genres && displayMetaData(game.genres)}
           </section>
           <section className="row themes">
-            <p className="title">Themes: </p>
+            <span className="title">Themes: </span>
             {game.themes && displayMetaData(game.themes)}
           </section>
           <section className="row date">
-            <p className="title">Release Date: </p>
-            <p className='date'>{getDate(game.original_release_date, game.expected_release_year)}</p>
+            <span className="title">Release Date: </span>
+            <span className='date'>{getDate(game.original_release_date, game.expected_release_year)}</span>
           </section>
         </section>
       </section>
