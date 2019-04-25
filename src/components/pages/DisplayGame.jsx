@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
@@ -18,23 +17,22 @@ class Games extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    let about = document.querySelector('#about');
+    if (about !== null) {
+      about.addEventListener('load', (event) => {
+        console.log('page is fully loaded');
+      });
+      console.log(about)
+    }
+  }
+
   scrollDown = () => {
     this.pageDown.scrollIntoView({behavior: 'smooth'});
   }
 
-  aToLink = (description) => {
-    var re = new RegExp('<a(.*?)<\/');
-    // let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
-    let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
-    let string2 = string.replace(re, 'tag')
-    // let string2 = string.replace(/<a(.*?)<\//, 'tag')
-
-//     var e = document.getElementsByTagName('span')[0];
-// var d = document.createElement('div');
-// d.innerHTML = e.innerHTML;
-// e.parentNode.replaceChild(d, e);
-    
-  console.log(string2);
+  aToLink = () => {
+    let about = document.querySelector('#about');
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
@@ -60,10 +58,9 @@ class Games extends React.Component {
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
               <section className="images"></section>
-              <section className="about">
-                <div dangerouslySetInnerHTML={{ __html: '<Link>Hey</Link>' }} />
-                {this.aToLink(game.description)}
+              <section className="about" id='about'>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
+                {/* {this.aToLink()} */}
               </section>
             </section>
           </React.Fragment>
