@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
@@ -29,10 +30,8 @@ class Games extends React.Component {
     // let string2 = string.replace(/<a(.*?)<\//, 'tag')
 
 //     var e = document.getElementsByTagName('span')[0];
-
 // var d = document.createElement('div');
 // d.innerHTML = e.innerHTML;
-
 // e.parentNode.replaceChild(d, e);
     
   console.log(string2);
@@ -62,6 +61,7 @@ class Games extends React.Component {
             <section className="page_content game">
               <section className="images"></section>
               <section className="about">
+                <div dangerouslySetInnerHTML={{ __html: '<Link>Hey</Link>' }} />
                 {this.aToLink(game.description)}
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
