@@ -22,8 +22,10 @@ class Games extends React.Component {
     this.pageDown.scrollIntoView({behavior: 'smooth'});
   }
 
-  aToLink = () => {
-    console.log('<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>')
+  aToLink = (description) => {
+    let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
+    let string2 = string.replace(/<a(.*?)<\//, 'tag')
+    console.log(string2)
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
@@ -51,6 +53,7 @@ class Games extends React.Component {
               <section className="images"></section>
               <section className="about">
                 {game.description}
+                {this.aToLink(game.description)}
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
             </section>
