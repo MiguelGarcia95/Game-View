@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import moment from 'moment';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
@@ -23,9 +22,12 @@ class Games extends React.Component {
   }
 
   aToLink = (description) => {
-    let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
-    let string2 = string.replace(/<a(.*?)<\//, 'tag')
-    console.log(string2)
+    var re = new RegExp('<a(.*?)<\/');
+    // let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a><a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
+    let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
+    let string2 = string.replace(re, 'tag')
+    // let string2 = string.replace(/<a(.*?)<\//, 'tag')
+    console.log(string2);
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
@@ -52,7 +54,6 @@ class Games extends React.Component {
             <section className="page_content game">
               <section className="images"></section>
               <section className="about">
-                {game.description}
                 {this.aToLink(game.description)}
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
