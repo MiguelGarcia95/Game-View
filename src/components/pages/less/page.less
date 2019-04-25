@@ -12,81 +12,7 @@
     width: 1200px;
     margin: auto;    
   }
-
-  .display_header {
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    padding-top: 60px;
-    box-sizing: border-box;
-    position: relative;
-    .display_image {
-      width: 100%; height: 100%;
-    }
-    .display_content {
-      position: absolute;
-      width: 100%; height: 75%;
-      top: 0; bottom: 0;
-      margin: auto;
-      background-color: rgba(0,0,0,0.9);
-      .content_container {
-        width: 1200px;
-        height: 100%;
-        margin: auto;
-        position: relative;
-        .image {width: 30%; position: absolute; top: 0; bottom: 0; margin: auto;}
-        .data {
-          position: absolute;
-          top: 25px;
-          width: 100%;
-          box-sizing: border-box;
-          padding-left: 32%;
-          .name {
-            h1 {
-              font-size: 3em;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
-          }
-          .description {
-            p {
-              font-size: 1.2em;
-              margin: 20px 10px;
-              margin-left: 0px;
-            }
-          }
-          .genres, .themes, .release_date {
-            width: 100%;
-            float: left;
-            .data_span, .date, .title {
-              margin: 10px 10px;
-              float: left;
-            }
-            .title {
-              margin-left: 0px;
-            }
-          }
-          .platforms {
-            width: 100%;
-            float: left;
-            .platform {
-              float: left;
-              padding: 10px;
-              &:hover {
-                background-color: green;
-              }
-              p {
-                line-height: 20px;
-                margin: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
+  
   .display_header_2 {
     width: 100%;
     max-width: 100%;
@@ -133,6 +59,7 @@
         }
         .about {
           height: 175px;
+          overflow: hidden;
           p {
             margin: 0;
           }
@@ -158,7 +85,6 @@
         &.genres, &.themes, &.date, &.platforms {
           width: 100%;
           float: left;
-          // border-top: 1px solid black;
           box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
           .data_span, .date {
             float: left;
@@ -185,14 +111,6 @@
             font-weight: bold;
           }
         }
-      }
-      .platforms {
-      }
-      .genres {
-      }
-      .themes {
-      }
-      .date {
       }
     }
   }
