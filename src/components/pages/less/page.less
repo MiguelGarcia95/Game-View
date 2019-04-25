@@ -126,11 +126,19 @@
       width: 100%;
       a {text-decoration: none; color: white;}
       figure {
+        width: 300px !important;
+        text-align: center;
+        &:nth-of-type(odd) {
+          float: right;
+        }
+        &:nth-of-type(even) {
+          float: left;
+        }
         img {
-          
+          width: 100%;
         }
         figcaption {
-
+          width: 100%;
         }
       }
     }
