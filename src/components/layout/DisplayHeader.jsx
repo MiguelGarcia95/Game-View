@@ -68,6 +68,9 @@ const DisplayHeader = ({game, scrollDown}) => {
           <span className='date'>{getDate(game.original_release_date, game.expected_release_year)}</span>
         </section>
       </section>
+      <section className="scroll_down" onClick={() => scrollDown()}>
+        <i className="fas fa-caret-down fa-4x"></i>
+      </section>
     </section>
   )
 }
