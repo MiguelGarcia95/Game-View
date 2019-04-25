@@ -55,7 +55,7 @@ const DisplayHeader = ({game, scrollDown}) => {
           </section>
           <section className="row platforms">
             <span className="title">Available On: </span>
-            {game.platforms && displayPlatforms(game.platforms)}
+            {game.platforms && displayMetaData(game.platforms)}
           </section>
           <section className="row genres">
             <span className="title">Genres: </span>
