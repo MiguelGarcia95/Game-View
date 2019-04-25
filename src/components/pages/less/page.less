@@ -1,6 +1,7 @@
 //out: ../css/page.css, compress: true, sourcemap: false
 
 @bgColor: #f1f1f1;
+@bgColor: rgba(255,255,255,0.5);
 
 .page {
   .page_content {
@@ -141,13 +142,10 @@
           width: 80%; float: left;
           padding: 5px;
           box-sizing: border-box;
-          // background-color: @bgColor;
-          background-color: rgba(255,255,255,0.5);
+          background-color: @bgColor;
         }
         .about {
-          height: 150px;
           height: 175px;
-          background-color: rgb(143, 17, 17);
           p {
             margin: 0;
           }
@@ -157,7 +155,7 @@
           height: 65px;
           // background-color: gold;
           h1 {
-            color: @bgColor;
+            color: black;
             line-height: 55px;
             font-size: 2em;
             overflow: hidden;
