@@ -1,6 +1,7 @@
 //out: ../css/page.css, compress: true, sourcemap: false
 
 @bgColor: rgba(255,255,255,0.5);
+@gameBorderColor: rgb(134, 214, 123);
 @textColor: black;
 
 .page {
@@ -169,7 +170,8 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             &:hover {
-              background-color: rgba(255,0,0,0.5);
+              color: @gameBorderColor;
+              text-shadow: 0px 0px 5px black;
             }
           }
           .title {
