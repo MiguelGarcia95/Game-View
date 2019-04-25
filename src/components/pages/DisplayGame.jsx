@@ -50,8 +50,6 @@ class Games extends React.Component {
         {game && (
           <React.Fragment>
             <DisplayHeader game={game} scrollDown={this.scrollDown} />
-            
-
 
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
