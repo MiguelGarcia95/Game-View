@@ -139,18 +139,30 @@
         }
         .about, .name {
           width: 80%; float: left;
+          padding: 5px;
+          box-sizing: border-box;
+          // background-color: @bgColor;
+          background-color: rgba(255,255,255,0.5);
         }
         .about {
           height: 150px;
           height: 175px;
           background-color: rgb(143, 17, 17);
+          p {
+            margin: 0;
+          }
         }
         .name {
           height: 90px;
           height: 65px;
-          background-color: gold;
+          // background-color: gold;
           h1 {
-            color: black;
+            color: @bgColor;
+            line-height: 55px;
+            font-size: 2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }
