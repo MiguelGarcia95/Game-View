@@ -27,7 +27,15 @@ class Games extends React.Component {
     let string = '<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>';
     let string2 = string.replace(re, 'tag')
     // let string2 = string.replace(/<a(.*?)<\//, 'tag')
-    console.log(string2);
+
+//     var e = document.getElementsByTagName('span')[0];
+
+// var d = document.createElement('div');
+// d.innerHTML = e.innerHTML;
+
+// e.parentNode.replaceChild(d, e);
+    
+  console.log(string2);
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
