@@ -22,6 +22,10 @@ class Games extends React.Component {
     this.pageDown.scrollIntoView({behavior: 'smooth'});
   }
 
+  aToLink = () => {
+    console.log('<a href="/shang-tsung/3005-92/" data-ref-id="3005-92">Shang Tsung</a>')
+  }
+
   sortPlatforms = (platforms, allPlatforms) => {
     return  platforms.reduce((sortedPlatforms, platform) => {
       allPlatforms.some(pForm => {
@@ -35,15 +39,6 @@ class Games extends React.Component {
 
   render() {
     const {game} = this.props;
-    let imageStyle; 
-    if (game) {
-      imageStyle = {
-        backgroundImage: `url(${game.image.screen_large_url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        backgroundAttachment: 'fixed'
-      }
-    }
     return (
       <Page className="page app">
         <Navbar />
@@ -55,7 +50,7 @@ class Games extends React.Component {
             <section className="page_content game">
               <section className="images"></section>
               <section className="about">
-                {/* {game.description} */}
+                {game.description}
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
             </section>
