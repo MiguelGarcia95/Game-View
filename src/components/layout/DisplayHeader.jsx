@@ -29,26 +29,25 @@ const displayPlatforms = (platforms, allPlatforms) => {
 }
 
 const DisplayHeader = ({game, scrollDown}) => {
-  const imageStyle = {
+  const headerImage = {
     backgroundImage: `url(${game.image.screen_large_url})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center'
   }
-  const imageStyle2 = {
+  const displayImage = {
     backgroundImage: `url(${game.image.small_url})`,
-    backgroundSize: '100%',
+    backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat'
   }
   let view = true;
   if (view) {
     return (
-      <section className="display_header_2" style={imageStyle}>
+      <section className="display_header_2" style={headerImage}>
         <section className="display_cover"></section>
         <section className="display_box">
           <section className="display_top">
-            <section className="image" style={imageStyle2} >
-              {/* <img src={game.image.small_url} alt={game.name}/> */}
+            <section className="image" style={displayImage} >
             </section>
             <section className="name"><h1>{game.name}</h1></section>
             <section className="about"><p>{game.deck}</p></section>
@@ -75,7 +74,7 @@ const DisplayHeader = ({game, scrollDown}) => {
   } else {
     return (
       <section className="display_header">
-        <section className="display_image" style={imageStyle}></section>
+        <section className="display_image" style={headerImage}></section>
         <section className="display_content">
           <section className="content_container">
             <img className="image" src={game.image.small_url} alt={game.name}/>
