@@ -153,16 +153,16 @@
         width: 100%;
         overflow: hidden;
         color: @textColor;
-        .genres, .themes, .release_date {
+        &.genres, &.themes, &.release_date, &.platforms {
           width: 100%;
           float: left;
-          .data_span, .date, .title {
-            margin: 10px 10px;
+          .data_span {
             float: left;
           }
           .title {
             margin-left: 0px;
             float: left;
+            line-height: 65px;
           }
         }
       }
