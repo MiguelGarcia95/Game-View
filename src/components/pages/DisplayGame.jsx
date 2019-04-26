@@ -42,6 +42,36 @@ class Games extends React.Component {
     }, []);
   }
 
+  displayImages = images => {
+    return images.map((image, index) => {
+      return <img key={index} src={image.small_url} alt={this.props.game.name} />
+    })
+  }
+
+  displayFranchises = franchises => {
+    return franchises.map(franchise => {
+      return <span key={franchise.id}>{franchise.name}</span>
+    })
+  }
+
+  displayPublishers = publishers => {
+    return publishers.map(publisher => {
+      return <span key={publisher.id}>{publisher.name}</span>
+    })
+  }
+  
+  displayRatings = ratings => {
+    return ratings.map(rating => {
+      return <span key={rating.id}>{rating.name}</span>
+    })
+  }
+
+  displayDevs = devs => {
+    return devs.map(dev => {
+      return <span key={dev.id}>{dev.name}</span>
+    })
+  }
+
   render() {
     const {game} = this.props;
     return (
