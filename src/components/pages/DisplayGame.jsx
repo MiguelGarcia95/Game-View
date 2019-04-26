@@ -105,7 +105,10 @@ class Games extends React.Component {
                   {this.displayDevs(game.developers)}
                 </section>
               </section>
-              <section className="images"></section>
+              <section className="images">
+                <h1>Images</h1>
+                {this.displayImages(game.images)}
+              </section>
               <section className="videos"></section>
             </section>
           </React.Fragment>
