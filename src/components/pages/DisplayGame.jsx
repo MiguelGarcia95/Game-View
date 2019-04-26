@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
+import VideoPlayer from '../layout/VideoPlayer';
+import ImageViewer from '../layout/ImageViewer';
+
 import {getGame} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
@@ -13,7 +16,7 @@ class Games extends React.Component {
     currentVideo: null,
     currentImage: null
   }
-  
+
   componentDidMount() {
     if (!this.props.game) {
       this.props.getGame(this.props.match.params.guid);
