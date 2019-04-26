@@ -36,9 +36,14 @@ class Games extends React.Component {
     
     if (this.state.currentImage) {
       window.addEventListener('keydown', e => {
+        // let firstClick = true;
+        // if (firstClick) {
+        // firstClick = false;
+        // }
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
+
           if (this.state.currentImageIndex === 0) {
             this.setCurrentImage(
               this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1
@@ -48,19 +53,20 @@ class Games extends React.Component {
               this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1
             );
           }
+
         } else if (e.keyCode === 39) {
+
           if (this.state.currentImageIndex === this.props.game.images.length - 1) {
             this.setCurrentImage(this.props.game.images[0].original, 0);
           } else {
             this.setCurrentImage(
               this.props.game.images[this.state.currentImageIndex + 1].original, this.state.currentImageIndex + 1
             );
-
           }
         }
+
       })
     }
-
   }
 
   scrollDown = () => {
