@@ -47,8 +47,13 @@ class Games extends React.Component {
             console.log(this.props.game.images[this.state.currentImageIndex - 1])
           }
         } else if (e.keyCode === 39) {
-          console.log('get next image')
-          console.log(this.props.game.images[this.state.currentImageIndex + 1])
+          if (this.state.currentImageIndex === this.props.game.images.length - 1) {
+            console.log('from last to first image')
+            console.log(this.props.game.images[0]);
+          } else {
+            console.log('get next image')
+            console.log(this.props.game.images[this.state.currentImageIndex + 1])
+          }
         }
       })
     }
