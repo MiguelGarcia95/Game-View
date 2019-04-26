@@ -9,6 +9,10 @@ import {Page} from '../../utils/styledClasses';
 import './css/page.css';
 
 class Games extends React.Component {
+  state = {
+    currentVideo: null,
+    currentImage: null
+  }
   componentDidMount() {
     if (!this.props.game) {
       this.props.getGame(this.props.match.params.guid);
