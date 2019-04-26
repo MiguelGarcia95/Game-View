@@ -40,13 +40,13 @@ class Games extends React.Component {
           this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
           if (this.state.currentImageIndex === 0) {
-            // console.log('from first to last image')
-            // console.log(this.props.game.images[this.props.game.images.length - 1]);
-            this.setCurrentImage(this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1);
+            this.setCurrentImage(
+              this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1
+            );
           } else {
-            // console.log('get prior image')
-            // console.log(this.props.game.images[this.state.currentImageIndex - 1])
-            this.setCurrentImage(this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1);
+            this.setCurrentImage(
+              this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1
+            );
           }
         } else if (e.keyCode === 39) {
           if (this.state.currentImageIndex === this.props.game.images.length - 1) {
