@@ -36,37 +36,48 @@ class Games extends React.Component {
     
     if (this.state.currentImage) {
       window.addEventListener('keydown', e => {
-        // let firstClick = true;
-        // if (firstClick) {
-        // firstClick = false;
-        // }
-        console.log('clicked')
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
 
-          if (this.state.currentImageIndex === 0) {
-            this.setCurrentImage(
-              this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1
-            );
-          } else {
-            this.setCurrentImage(
-              this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1
-            );
-          }
+          // if (this.state.currentImageIndex === 0) {
+          //   this.setCurrentImage(
+          //     this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1
+          //   );
+          // } else {
+          //   this.setCurrentImage(
+          //     this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1
+          //   );
+          // }
 
         } else if (e.keyCode === 39) {
 
-          if (this.state.currentImageIndex === this.props.game.images.length - 1) {
-            this.setCurrentImage(this.props.game.images[0].original, 0);
-          } else {
-            this.setCurrentImage(
-              this.props.game.images[this.state.currentImageIndex + 1].original, this.state.currentImageIndex + 1
-            );
-          }
+          // if (this.state.currentImageIndex === this.props.game.images.length - 1) {
+          //   this.setCurrentImage(this.props.game.images[0].original, 0);
+          // } else {
+          //   this.setCurrentImage(
+          //     this.props.game.images[this.state.currentImageIndex + 1].original, this.state.currentImageIndex + 1
+          //   );
+          // }
         }
 
       })
+    }
+  }
+
+  changeImage = (images, index, direction) => {
+    if (direction === 'prev') {
+      if (index === 0) {
+        this.setCurrentImage(images[images.length - 1].original, images.length - 1);
+      } else {
+        this.setCurrentImage(images[index - 1].original, index - 1);
+      }
+    } else {
+      if (index === images.length - 1) {
+        this.setCurrentImage(images[0].original, 0);
+      } else {
+        this.setCurrentImage(images[index + 1].original, index + 1);
+      }
     }
   }
 
