@@ -88,7 +88,10 @@ class Games extends React.Component {
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
               <section className="misc">
-                <section className="franchises"></section>
+                <section className="franchises">
+                  <p>Franchises: </p>
+                  {this.displayFranchises(game.franchises)}
+                </section>
                 <section className="publishers"></section>
                 <section className="ratings"></section>
                 <section className="devs"></section>
