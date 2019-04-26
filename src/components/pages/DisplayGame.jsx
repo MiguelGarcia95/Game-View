@@ -32,6 +32,15 @@ class Games extends React.Component {
         link.removeAttribute('href');
       }
     }
+    
+    if (this.state.currentImage) {
+      window.addEventListener('keydown', e => {
+        if (e.keyCode === '27') {
+          this.setCurrentImage(null);
+        }
+      })
+    }
+
   }
 
   scrollDown = () => {
@@ -84,7 +93,6 @@ class Games extends React.Component {
   render() {
     const {game} = this.props;
     const {currentImage} = this.state;
-    console.log(currentImage)
     return (
       <Page className="page app">
         <Navbar />
