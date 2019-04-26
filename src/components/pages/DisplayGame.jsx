@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
-// import VideoPlayer from '../layout/VideoPlayer';
 import ImageViewer from '../layout/ImageViewer';
 
 import {getGame} from '../../actions/gameActions';
@@ -52,7 +51,7 @@ class Games extends React.Component {
 
   displayImages = images => {
     return images.map((image, index) => {
-      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.large_url)} />
+      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.original)} />
     })
   }
 
@@ -85,6 +84,7 @@ class Games extends React.Component {
   render() {
     const {game} = this.props;
     const {currentImage} = this.state;
+    console.log(currentImage)
     return (
       <Page className="page app">
         <Navbar />
