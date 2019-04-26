@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/image_viewer.css';
 
-const ImageViewer = ({setCurrentImage, currentImage, currentImageIndex}) => {
+const ImageViewer = ({setCurrentImage, currentImage}) => {
   return (
     <section className="image">
       <section className="image_background" onClick={() => setCurrentImage(null, null)}></section>
