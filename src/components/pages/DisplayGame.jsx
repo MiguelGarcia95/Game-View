@@ -53,11 +53,18 @@ class Games extends React.Component {
 
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
-              <section className="images"></section>
               <section className="about" id='about'>
                 <header>About The Game</header>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
+              <section className="misc">
+                <section className="franchises"></section>
+                <section className="publishers"></section>
+                <section className="ratings"></section>
+                <section className="devs"></section>
+              </section>
+              <section className="images"></section>
+              <section className="videos"></section>
             </section>
           </React.Fragment>
         )}
