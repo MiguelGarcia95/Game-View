@@ -92,7 +92,10 @@ class Games extends React.Component {
                   <p>Franchises: </p>
                   {this.displayFranchises(game.franchises)}
                 </section>
-                <section className="publishers"></section>
+                <section className="publishers">
+                  <p>Publishers: </p>
+                  {this.displayPublishers(game.publishers)}
+                </section>
                 <section className="ratings"></section>
                 <section className="devs"></section>
               </section>
