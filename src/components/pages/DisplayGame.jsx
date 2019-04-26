@@ -124,28 +124,36 @@ class Games extends React.Component {
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
               <section className="misc">
-                <section className="franchises">
-                  <p>Franchises: </p>
-                  {this.displayFranchises(game.franchises)}
+                <section className="row franchises">
+                  <p className='name' >Franchises: </p>
+                  <section className="data">
+                    {this.displayFranchises(game.franchises)}
+                  </section>
                 </section>
-                <section className="publishers">
-                  <p>Publishers: </p>
-                  {this.displayPublishers(game.publishers)}
+                <section className="row publishers">
+                  <p className='name' >Publishers: </p>
+                  <section className="data">
+                    {this.displayPublishers(game.publishers)}
+                  </section>
                 </section>
-                <section className="ratings">
-                  <p>Ratings: </p>
-                  {this.displayRatings(game.original_game_rating)}
+                <section className="row ratings">
+                  <p className='name' >Ratings: </p>
+                  <section className="data">
+                    {this.displayRatings(game.original_game_rating)}
+                  </section>
                 </section>
-                <section className="devs">
-                  <p>Developers: </p>
-                  {this.displayDevs(game.developers)}
+                <section className="row devs">
+                  <p className='name' >Developers: </p>
+                  <section className="data">
+                    {this.displayDevs(game.developers)}
+                  </section>
                 </section>
               </section>
               <section className="images">
                 <h1>Images</h1>
                 {this.displayImages(game.images)}
               </section>
-              <section className="videos"></section>
+              {/* <section className="videos"></section> */}
             </section>
             {currentImage && <ImageViewer changeImage={this.changeImage} currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
             
