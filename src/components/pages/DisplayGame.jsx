@@ -96,8 +96,14 @@ class Games extends React.Component {
                   <p>Publishers: </p>
                   {this.displayPublishers(game.publishers)}
                 </section>
-                <section className="ratings"></section>
-                <section className="devs"></section>
+                <section className="ratings">
+                  <p>Ratings: </p>
+                  {this.displayRatings(game.original_game_rating)}
+                </section>
+                <section className="devs">
+                  <p>Developers: </p>
+                  {this.displayDevs(game.developers)}
+                </section>
               </section>
               <section className="images"></section>
               <section className="videos"></section>
