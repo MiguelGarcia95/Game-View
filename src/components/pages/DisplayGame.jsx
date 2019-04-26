@@ -39,33 +39,16 @@ class Games extends React.Component {
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
-
-          // if (this.state.currentImageIndex === 0) {
-          //   this.setCurrentImage(
-          //     this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1
-          //   );
-          // } else {
-          //   this.setCurrentImage(
-          //     this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1
-          //   );
-          // }
-
+          // this.changeImage(this.state.currentImageIndex, 'prev');
         } else if (e.keyCode === 39) {
-
-          // if (this.state.currentImageIndex === this.props.game.images.length - 1) {
-          //   this.setCurrentImage(this.props.game.images[0].original, 0);
-          // } else {
-          //   this.setCurrentImage(
-          //     this.props.game.images[this.state.currentImageIndex + 1].original, this.state.currentImageIndex + 1
-          //   );
-          // }
+          // this.changeImage(this.state.currentImageIndex, 'next');
         }
-
       })
     }
   }
 
-  changeImage = (images, index, direction) => {
+  changeImage = (index, direction) => {
+    const images = this.props.game.images;
     if (direction === 'prev') {
       if (index === 0) {
         this.setCurrentImage(images[images.length - 1].original, images.length - 1);
@@ -168,7 +151,7 @@ class Games extends React.Component {
               </section>
               <section className="videos"></section>
             </section>
-            {currentImage && <ImageViewer currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
+            {currentImage && <ImageViewer changeImage={this.changeImage} currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
             
           </React.Fragment>
         )}
