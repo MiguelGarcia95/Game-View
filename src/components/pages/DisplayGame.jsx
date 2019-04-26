@@ -20,19 +20,15 @@ class Games extends React.Component {
   componentDidUpdate() {
     let about = document.querySelector('#about');
     if (about !== null) {
-      about.addEventListener('load', (event) => {
-        console.log('page is fully loaded');
-      });
-      console.log(about)
+      let links = about.getElementsByTagName('a');
+      for (const link of links) {
+        link.removeAttribute('href');
+      }
     }
   }
 
   scrollDown = () => {
     this.pageDown.scrollIntoView({behavior: 'smooth'});
-  }
-
-  aToLink = () => {
-    let about = document.querySelector('#about');
   }
 
   sortPlatforms = (platforms, allPlatforms) => {
@@ -60,7 +56,6 @@ class Games extends React.Component {
               <section className="images"></section>
               <section className="about" id='about'>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
-                {/* {this.aToLink()} */}
               </section>
             </section>
           </React.Fragment>
