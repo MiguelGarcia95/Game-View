@@ -13,6 +13,7 @@ class Games extends React.Component {
     currentVideo: null,
     currentImage: null
   }
+  
   componentDidMount() {
     if (!this.props.game) {
       this.props.getGame(this.props.match.params.guid);
