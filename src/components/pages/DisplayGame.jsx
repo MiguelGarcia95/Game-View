@@ -38,10 +38,6 @@ class Games extends React.Component {
       window.addEventListener('keydown', e => {
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null, null);
-        } else if (e.keyCode === 37) {
-          // this.changeImage(this.state.currentImageIndex, 'prev');
-        } else if (e.keyCode === 39) {
-          // this.changeImage(this.state.currentImageIndex, 'next');
         }
       })
     }
