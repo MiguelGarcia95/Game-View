@@ -13,7 +13,8 @@ import './css/page.css';
 class Games extends React.Component {
   state = {
     currentVideo: null,
-    currentImage: null
+    currentImage: null,
+    currentImageIndex: null
   }
 
   componentDidMount() {
@@ -60,7 +61,7 @@ class Games extends React.Component {
 
   displayImages = images => {
     return images.map((image, index) => {
-      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.original)} />
+      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.original, index)} />
     })
   }
 
@@ -88,11 +89,11 @@ class Games extends React.Component {
     })
   }
 
-  setCurrentImage = image => this.setState({currentImage: image})
+  setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
     const {game} = this.props;
-    const {currentImage} = this.state;
+    const {currentImage, currentImageIndex} = this.state;
     return (
       <Page className="page app">
         <Navbar />
@@ -130,8 +131,8 @@ class Games extends React.Component {
               </section>
               <section className="videos"></section>
             </section>
-            {currentImage && <ImageViewer currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
-
+            {currentImage && <ImageViewer currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
+            
           </React.Fragment>
         )}
       </Page>
