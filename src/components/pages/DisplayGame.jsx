@@ -40,6 +40,7 @@ class Games extends React.Component {
         // if (firstClick) {
         // firstClick = false;
         // }
+        console.log('clicked')
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
