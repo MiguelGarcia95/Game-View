@@ -37,14 +37,16 @@ class Games extends React.Component {
     if (this.state.currentImage) {
       window.addEventListener('keydown', e => {
         if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
-          this.setCurrentImage(null);
+          this.setCurrentImage(null, null);
         } else if (e.keyCode === 37) {
           if (this.state.currentImageIndex === 0) {
-            console.log('from first to last image')
-            console.log(this.props.game.images[this.props.game.images.length - 1]);
+            // console.log('from first to last image')
+            // console.log(this.props.game.images[this.props.game.images.length - 1]);
+            this.setCurrentImage(this.props.game.images[this.props.game.images.length - 1].original, this.props.game.images.length - 1);
           } else {
-            console.log('get prior image')
-            console.log(this.props.game.images[this.state.currentImageIndex - 1])
+            // console.log('get prior image')
+            // console.log(this.props.game.images[this.state.currentImageIndex - 1])
+            this.setCurrentImage(this.props.game.images[this.state.currentImageIndex - 1].original, this.state.currentImageIndex - 1);
           }
         } else if (e.keyCode === 39) {
           if (this.state.currentImageIndex === this.props.game.images.length - 1) {
