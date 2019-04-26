@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
 import DisplayHeader from '../layout/DisplayHeader';
-import VideoPlayer from '../layout/VideoPlayer';
+// import VideoPlayer from '../layout/VideoPlayer';
 import ImageViewer from '../layout/ImageViewer';
 
 import {getGame} from '../../actions/gameActions';
@@ -52,7 +52,7 @@ class Games extends React.Component {
 
   displayImages = images => {
     return images.map((image, index) => {
-      return <img key={index} src={image.small_url} alt={this.props.game.name} />
+      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.large_url)} />
     })
   }
 
@@ -80,8 +80,11 @@ class Games extends React.Component {
     })
   }
 
+  setCurrentImage = image => this.setState({currentImage: image})
+
   render() {
     const {game} = this.props;
+    const {currentImage} = this.state;
     return (
       <Page className="page app">
         <Navbar />
@@ -119,6 +122,8 @@ class Games extends React.Component {
               </section>
               <section className="videos"></section>
             </section>
+            {currentImage && <ImageViewer currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
+
           </React.Fragment>
         )}
       </Page>
