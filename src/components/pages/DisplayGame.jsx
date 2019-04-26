@@ -55,6 +55,7 @@ class Games extends React.Component {
             <section className="page_content game">
               <section className="images"></section>
               <section className="about" id='about'>
+                <header>About The Game</header>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
             </section>
