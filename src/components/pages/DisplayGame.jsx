@@ -35,7 +35,7 @@ class Games extends React.Component {
     
     if (this.state.currentImage) {
       window.addEventListener('keydown', e => {
-        if (e.keyCode === '27') {
+        if (e.keyCode === 27 || e.keyCode === 8 || e.keyCode === 32) {
           this.setCurrentImage(null);
         }
       })
