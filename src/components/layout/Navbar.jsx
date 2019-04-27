@@ -1,9 +1,6 @@
 import React from 'react';
-// import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import classnames from 'classnames';
-
-// import {search} from '../../actions/gameActions';
 
 import './css/navbar.css';
 
@@ -56,11 +53,4 @@ class Navbar extends React.Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     search: query => dispatch(search(query)) 
-//   }
-// }
-
 export default Navbar;
-// export default connect(null, mapDispatchToProps)(Navbar);
