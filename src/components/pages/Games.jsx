@@ -10,9 +10,10 @@ class Games extends React.Component {
   }
 
   render() {
+    const {history} = this.props;
     return (
       <Page className="games app">
-        <Navbar />
+        <Navbar history={history} />
       </Page>
     );
   }

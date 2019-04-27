@@ -21,9 +21,10 @@ class Franchises extends React.Component {
   }
 
   render() {
+    const {history} = this.props;
     return (
       <FranchisesPage className="franchises app">
-        <Navbar />
+        <Navbar history={history} />
       </FranchisesPage>
     );
   }

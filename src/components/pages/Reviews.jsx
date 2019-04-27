@@ -21,9 +21,10 @@ class Reviews extends React.Component {
   }
 
   render() {
+    const {history} = this.props;
     return (
       <ReviewsPage className="reviews app">
-        <Navbar />
+        <Navbar history={history} />
       </ReviewsPage>
     );
   }

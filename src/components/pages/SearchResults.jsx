@@ -12,9 +12,10 @@ class SearchResults extends React.Component {
   }
 
   render() {
+    const {history} = this.props;
     return (
       <Page className="page app">
-        <Navbar />
+        <Navbar history={history} />
       </Page>
     );
   }

@@ -22,9 +22,10 @@ class Characters extends React.Component {
   }
 
   render() {
+    const {history} = this.props;
     return (
       <CharactersPage className="characters app">
-        <Navbar />
+        <Navbar history={history} />
       </CharactersPage>
     );
   }
