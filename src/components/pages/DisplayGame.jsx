@@ -124,6 +124,10 @@ class Games extends React.Component {
                 {this.displayRow(game.developers, 'Developers')}
               </section>
 
+              <section className="similar_games">
+                <h1>Similar Games</h1>
+              </section>
+
               <section className="images">
                 <h1>Images</h1>
                 {game.images ? this.displayImages(game.images) : <h2 className='not_available'>No Images</h2>}
