@@ -24,19 +24,6 @@ class Navbar extends React.Component {
     if (e.keyCode === 13) {
       console.log('Enter clicked')
     }
-    console.log(e)
-  }
-
-  searchBar = () => {
-    return (
-      <section className="searchbar">
-       <input 
-         type="text" name='searchTerm' placeholder='search' 
-         onChange={this.onChange} onKeyDown={this.onSearchKeyDown} 
-         value={this.state.searchTerm}
-       />
-      </section>
-    )
   }
 
 
@@ -59,7 +46,7 @@ class Navbar extends React.Component {
           </section>
         </section>
         <section className={classnames('searchbar', {active: search})} >
-          <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
+          <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm} />
         </section>
         <section className={classnames('nav-box', {active: menu})}>
           <section className="screen"></section>
