@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import {Link} from 'react-router-dom';
-// import './css/home_header.css';
+
+import './css/display_header.css';
 
 const getDate = (original_date, expected_date) => {
   if (original_date !== null) {
@@ -42,7 +42,7 @@ const DisplayHeader = ({game, scrollDown}) => {
   }
   
   return (
-    <section className="display_header_2" style={headerImage}>
+    <section className="display_header" style={headerImage}>
       <section className="display_cover"></section>
       <section className="display_box">
         <section className="display_top">
