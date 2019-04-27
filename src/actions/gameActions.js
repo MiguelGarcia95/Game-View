@@ -91,21 +91,25 @@ export const getFranchises = () => {
   }
 }
 
-export const search = query => {
+export const search = (query, page) => {
   return async (dispatch) => {
     const results = await axios.get(`https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
         format: 'json',
+        page: page,
         query: query,
         resources: 'game',
         field_list: 'guid,id,name,image'
       }
     });
+    console.log(results)
     dispatch({
       type: actionTypes.SEARCH,
       payload: {
-        searchResults: results.data.results
+        searchResults: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        page: page
       }
     })
   }
