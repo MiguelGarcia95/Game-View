@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import classnames from 'classnames';
 
-import {search} from '../../actions/gameActions';
+// import {search} from '../../actions/gameActions';
 
 import './css/navbar.css';
 
@@ -22,7 +22,9 @@ class Navbar extends React.Component {
 
   onSearchKeyDown = e => {
     if (e.keyCode === 13) {
-      console.log('Enter clicked')
+      // console.log('Enter clicked')
+      this.props.history.push(`/search/${e.target.value}`)
+      // console.log(this.props)
     }
   }
 
@@ -56,10 +58,11 @@ class Navbar extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    search: query => dispatch(search(query)) 
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     search: query => dispatch(search(query)) 
+//   }
+// }
 
-export default connect(null, mapDispatchToProps)(Navbar);
+export default Navbar;
+// export default connect(null, mapDispatchToProps)(Navbar);

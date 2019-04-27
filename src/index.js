@@ -9,6 +9,7 @@ import store from './store';
 import './style.css';
 import Home from './components/pages/Home';
 import Games from './components/pages/Games';
+import SearchResults from './components/pages/SearchResults';
 import DisplayGame from './components/pages/DisplayGame';
 import Reviews from './components/pages/Reviews';
 import Franchises from './components/pages/Franchises';
@@ -37,6 +38,7 @@ const Root = () => {
                 <Switch location={location}>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/games' component={Games} />
+                  <Route path='/search/:query' component={SearchResults} />
                   <Route path='/games/game/:guid' component={DisplayGame} />
                   <Route exact path='/reviews' component={Reviews} />
                   <Route exact path='/franchises' component={Franchises} />

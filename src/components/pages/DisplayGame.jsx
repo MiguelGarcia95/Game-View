@@ -105,11 +105,11 @@ class Games extends React.Component {
   setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
-    const {game} = this.props;
+    const {game, history} = this.props;
     const {currentImage, currentImageIndex} = this.state;
     return (
       <Page className="page app">
-        <Navbar />
+        <Navbar history={history} />
         {game && (
           <React.Fragment>
             <DisplayHeader game={game} scrollDown={this.scrollDown} />
