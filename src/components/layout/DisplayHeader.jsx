@@ -13,18 +13,9 @@ const getDate = (original_date, expected_date) => {
   }
 }
 
-
 const displayMetaData = (data) => {
   return data.map(item => {
     return <span key={item.id} className="data_span">{item.name}</span>
-  })
-}
-
-const displayPlatforms = (platforms, allPlatforms) => {
-  return platforms.map(item => {
-    return (
-      <section key={item.id} className="platform"><p>{item.name}</p></section>
-    )
   })
 }
 
