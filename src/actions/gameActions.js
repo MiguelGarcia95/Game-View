@@ -98,7 +98,7 @@ export const search = query => {
         api_key: GBAPI,
         format: 'json',
         query: query,
-        resources: 'games',
+        resources: 'game',
         field_list: 'guid,id,name,image'
       }
     });
