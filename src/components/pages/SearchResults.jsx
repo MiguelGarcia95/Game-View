@@ -8,7 +8,7 @@ import './css/page.css';
 
 class SearchResults extends React.Component {
   componentDidMount() {
-    console.log(this.props.match.params.query);
+    this.props.search(this.props.match.params.query);
   }
 
   render() {
@@ -23,7 +23,7 @@ class SearchResults extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    search: () => dispatch(search())
+    search: query => dispatch(search(query))
   }
 }
 
