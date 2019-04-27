@@ -87,6 +87,10 @@ class Games extends React.Component {
     })
   }
 
+  displaySimilarGames = games => {
+    return <span>games here</span>
+  }
+
   displayRow = (content, name) => {
     return (
       <section className="row franchises">
@@ -126,6 +130,7 @@ class Games extends React.Component {
 
               <section className="similar_games">
                 <h1>Similar Games</h1>
+                {game.similar_games ? this.displaySimilarGames(game.similar_games) :  <h2 className='not_available'>No Games</h2>}
               </section>
 
               <section className="images">
