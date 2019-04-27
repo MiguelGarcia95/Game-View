@@ -3,7 +3,7 @@ import './css/image_viewer.css';
 
 const ImageViewer = ({setCurrentImage, currentImageIndex, currentImage, changeImage}) => {
   return (
-    <section className="image">
+    <section className="image_container">
       <section className="image_background" onClick={() => setCurrentImage(null, null)}></section>
       <section className="image_box">
         <img src={currentImage} alt={currentImage}/>

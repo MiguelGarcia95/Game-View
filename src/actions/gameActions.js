@@ -33,7 +33,7 @@ export const getGame = guid => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        field_list: 'deck,description,developers,expected_release_year,franchises,genres,guid,id,image,images,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,publishers,dlcs,reviews,similar_games,themes,videos'
+        field_list: 'deck,description,developers,expected_release_year,franchises,genres,guid,id,image,images,name,number_of_user_reviews,original_game_rating,original_release_date,platforms,publishers,dlcs,reviews,similar_games,themes'
       }
     });
     dispatch({

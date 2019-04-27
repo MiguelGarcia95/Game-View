@@ -77,7 +77,7 @@ class Games extends React.Component {
 
   displayImages = images => {
     return images.map((image, index) => {
-      return <img key={index} src={image.small_url} alt={image.small_url} onClick={() => this.setCurrentImage(image.original, index)} />
+      return <img key={index} src={image.medium_url} alt={image.tags} onClick={() => this.setCurrentImage(image.original, index)} />
     })
   }
 
@@ -86,7 +86,7 @@ class Games extends React.Component {
       return <span key={item.id}><p>{item.name}</p></span>
     })
   }
-  
+
   setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
@@ -109,31 +109,31 @@ class Games extends React.Component {
                 <section className="row franchises">
                   <p className='name' >Franchises: </p>
                   <section className="data">
-                    {this.displayData(game.franchises)}
+                    {game.franchises && this.displayData(game.franchises)}
                   </section>
                 </section>
                 <section className="row publishers">
                   <p className='name' >Publishers: </p>
                   <section className="data">
-                    {this.displayData(game.publishers)}
+                    {game.publishers && this.displayData(game.publishers)}
                   </section>
                 </section>
                 <section className="row ratings">
                   <p className='name' >Ratings: </p>
                   <section className="data">
-                    {this.displayData(game.original_game_rating)}
+                    {game.original_game_rating && this.displayData(game.original_game_rating)}
                   </section>
                 </section>
                 <section className="row devs">
                   <p className='name' >Developers: </p>
                   <section className="data">
-                    {this.displayData(game.developers)}
+                    {game.developers && this.displayData(game.developers)}
                   </section>
                 </section>
               </section>
               <section className="images">
                 <h1>Images</h1>
-                {this.displayImages(game.images)}
+                {game.images && this.displayImages(game.images)}
               </section>
               {/* <section className="videos"></section> */}
             </section>
