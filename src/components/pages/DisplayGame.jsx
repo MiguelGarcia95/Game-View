@@ -66,7 +66,7 @@ class Games extends React.Component {
 
   sortPlatforms = (platforms, allPlatforms) => {
     return  platforms.reduce((sortedPlatforms, platform) => {
-      allPlatforms.some(pForm => {
+      allPlatforms.forEach(pForm => {
         if (pForm.id === platform.id) {
           sortedPlatforms.push(pForm);
         }

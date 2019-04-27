@@ -5,8 +5,9 @@ const initialState = {
   homeVideos: [],
   games: [],
   homeReleases: [],
-  ratings: [],
-  rating: null,
+  searchResults: [],
+  // ratings: [],
+  // rating: null,
   game: null
 };
 
@@ -27,15 +28,20 @@ const gameReducer = (state = initialState, action) => {
         ...state,
         homeReleases: action.payload.releases
       }
-    case actionTypes.GET_RATING:
-      return {
-        ...state,
-        rating: action.payload.rating
-      }
+    // case actionTypes.GET_RATING:
+    //   return {
+    //     ...state,
+    //     rating: action.payload.rating
+    //   }
     case actionTypes.GET_GAME: 
       return {
         ...state,
         game: action.payload.game
+      }
+    case actionTypes.SEARCH:
+      return {
+        ...state,
+        searchResults: action.payload.search
       }
     default:
       return state;

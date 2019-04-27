@@ -91,23 +91,49 @@ export const getFranchises = () => {
   }
 }
 
-export const getRating = guid => {
+// URL: /?api_key=[YOUR API KEY]
+
+export const search = query => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/game_rating/${guid}`,{
+    const results = await axios.get(`https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
         format: 'json',
-        field_list: 'guid,id,name,image,rating_board'
+        query: query,
+        page: 0,
+        resources: 'games',
+        field_list: 'guid,id,name,image'
       }
     });
+    console.log(results);
     dispatch({
-      type: actionTypes.GET_RATING,
+      type: actionTypes.SEARCH,
       payload: {
-        rating: results.data.results
+        search: results.data.results
       }
     })
   }
 }
+
+
+
+// export const getRating = guid => {
+//   return async (dispatch) => {
+//     const results = await axios.get(`https://www.giantbomb.com/api/game_rating/${guid}`,{
+//       params: {
+//         api_key: GBAPI,
+//         format: 'json',
+//         field_list: 'guid,id,name,image,rating_board'
+//       }
+//     });
+//     dispatch({
+//       type: actionTypes.GET_RATING,
+//       payload: {
+//         rating: results.data.results
+//       }
+//     })
+//   }
+// }
 
 
 
