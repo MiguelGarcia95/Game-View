@@ -91,8 +91,6 @@ export const getFranchises = () => {
   }
 }
 
-// URL: /?api_key=[YOUR API KEY]
-
 export const search = query => {
   return async (dispatch) => {
     const results = await axios.get(`https://www.giantbomb.com/api/search`,{

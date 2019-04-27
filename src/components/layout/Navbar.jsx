@@ -1,6 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import classnames from 'classnames';
+
+import {search} from '../../actions/gameActions';
 
 import './css/navbar.css';
 
@@ -15,12 +18,23 @@ class Navbar extends React.Component {
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
 
-  onChange = e => this.setState({[e.target.name]: e.target.value})
+  onChange = e => this.setState({[e.target.name]: e.target.value});
+
+  onSearchKeyDown = e => {
+    if (e.keyCode === 13) {
+      console.log('Enter clicked')
+    }
+    console.log(e)
+  }
 
   searchBar = () => {
     return (
       <section className="searchbar">
-       <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} value={this.state.searchTerm} />
+       <input 
+         type="text" name='searchTerm' placeholder='search' 
+         onChange={this.onChange} onKeyDown={this.onSearchKeyDown} 
+         value={this.state.searchTerm}
+       />
       </section>
     )
   }
@@ -55,4 +69,10 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+const mapDispatchToProps = dispatch => {
+  return {
+    search: query => dispatch(search(query)) 
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Navbar);
