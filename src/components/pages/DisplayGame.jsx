@@ -114,7 +114,7 @@ class Games extends React.Component {
 
               <section className="about" id='about'>
                 <header>About The Game</header>
-                <div dangerouslySetInnerHTML={{ __html: game.description }} />
+                {game.description ? <div dangerouslySetInnerHTML={{ __html: game.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
 
               <section className="misc">
@@ -126,7 +126,7 @@ class Games extends React.Component {
 
               <section className="images">
                 <h1>Images</h1>
-                {game.images ? this.displayImages(game.images) : <h2>No Images</h2>}
+                {game.images ? this.displayImages(game.images) : <h2 className='not_available'>No Images</h2>}
               </section>
 
             </section>
