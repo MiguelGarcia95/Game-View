@@ -87,6 +87,17 @@ class Games extends React.Component {
     })
   }
 
+  displayRow = (content, name) => {
+    return (
+      <section className="row franchises">
+        <p className='name' >{name}:</p>
+        <section className="data">
+          {content ? this.displayData(content) : 'N/A'}
+        </section>
+      </section>
+    )
+  }
+
   setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
@@ -98,44 +109,25 @@ class Games extends React.Component {
         {game && (
           <React.Fragment>
             <DisplayHeader game={game} scrollDown={this.scrollDown} />
-
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
               <section className="about" id='about'>
                 <header>About The Game</header>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
               </section>
+
               <section className="misc">
-                <section className="row franchises">
-                  <p className='name' >Franchises: </p>
-                  <section className="data">
-                    {game.franchises && this.displayData(game.franchises)}
-                  </section>
-                </section>
-                <section className="row publishers">
-                  <p className='name' >Publishers: </p>
-                  <section className="data">
-                    {game.publishers && this.displayData(game.publishers)}
-                  </section>
-                </section>
-                <section className="row ratings">
-                  <p className='name' >Ratings: </p>
-                  <section className="data">
-                    {game.original_game_rating && this.displayData(game.original_game_rating)}
-                  </section>
-                </section>
-                <section className="row devs">
-                  <p className='name' >Developers: </p>
-                  <section className="data">
-                    {game.developers && this.displayData(game.developers)}
-                  </section>
-                </section>
+                {this.displayRow(game.franchises, 'Franchises')}
+                {this.displayRow(game.publishers, 'Publishers')}
+                {this.displayRow(game.original_game_rating, 'Ratings')}
+                {this.displayRow(game.developers, 'Developers')}
               </section>
+
               <section className="images">
                 <h1>Images</h1>
                 {game.images && this.displayImages(game.images)}
               </section>
-              {/* <section className="videos"></section> */}
+              
             </section>
             {currentImage && <ImageViewer changeImage={this.changeImage} currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
             
