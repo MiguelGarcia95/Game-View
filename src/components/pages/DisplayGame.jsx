@@ -111,6 +111,7 @@ class Games extends React.Component {
             <DisplayHeader game={game} scrollDown={this.scrollDown} />
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
+
               <section className="about" id='about'>
                 <header>About The Game</header>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} />
@@ -125,9 +126,9 @@ class Games extends React.Component {
 
               <section className="images">
                 <h1>Images</h1>
-                {game.images && this.displayImages(game.images)}
+                {game.images ? this.displayImages(game.images) : <h2>No Images</h2>}
               </section>
-              
+
             </section>
             {currentImage && <ImageViewer changeImage={this.changeImage} currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
             
