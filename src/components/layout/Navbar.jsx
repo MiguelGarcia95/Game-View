@@ -21,10 +21,8 @@ class Navbar extends React.Component {
   onChange = e => this.setState({[e.target.name]: e.target.value});
 
   onSearchKeyDown = e => {
-    if (e.keyCode === 13) {
-      // console.log('Enter clicked')
+    if (e.keyCode === 13 && e.target.value) {
       this.props.history.push(`/search/${e.target.value}`)
-      // console.log(this.props)
     }
   }
 
