@@ -81,30 +81,12 @@ class Games extends React.Component {
     })
   }
 
-  displayFranchises = franchises => {
-    return franchises.map(franchise => {
-      return <span key={franchise.id}>{franchise.name}</span>
-    })
-  }
-
-  displayPublishers = publishers => {
-    return publishers.map(publisher => {
-      return <span key={publisher.id}>{publisher.name}</span>
+  displayData = data => {
+    return data.map(item => {
+      return <span key={item.id}><p>{item.name}</p></span>
     })
   }
   
-  displayRatings = ratings => {
-    return ratings.map(rating => {
-      return <span key={rating.id}>{rating.name}</span>
-    })
-  }
-
-  displayDevs = devs => {
-    return devs.map(dev => {
-      return <span key={dev.id}>{dev.name}</span>
-    })
-  }
-
   setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
@@ -127,25 +109,25 @@ class Games extends React.Component {
                 <section className="row franchises">
                   <p className='name' >Franchises: </p>
                   <section className="data">
-                    {this.displayFranchises(game.franchises)}
+                    {this.displayData(game.franchises)}
                   </section>
                 </section>
                 <section className="row publishers">
                   <p className='name' >Publishers: </p>
                   <section className="data">
-                    {this.displayPublishers(game.publishers)}
+                    {this.displayData(game.publishers)}
                   </section>
                 </section>
                 <section className="row ratings">
                   <p className='name' >Ratings: </p>
                   <section className="data">
-                    {this.displayRatings(game.original_game_rating)}
+                    {this.displayData(game.original_game_rating)}
                   </section>
                 </section>
                 <section className="row devs">
                   <p className='name' >Developers: </p>
                   <section className="data">
-                    {this.displayDevs(game.developers)}
+                    {this.displayData(game.developers)}
                   </section>
                 </section>
               </section>
