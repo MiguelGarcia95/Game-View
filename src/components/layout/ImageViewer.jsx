@@ -7,6 +7,8 @@ const ImageViewer = ({setCurrentImage, currentImageIndex, currentImage, changeIm
       <section className="image_background" onClick={() => setCurrentImage(null, null)}></section>
       <section className="image_box">
         <img src={currentImage} alt={currentImage}/>
+        <section className="imageR" onClick={() => changeImage(currentImageIndex, 'next')} ></section>
+        <section className="imageL" onClick={() => changeImage(currentImageIndex, 'prev')} ></section>
       </section>
       <section className="click left" onClick={() => changeImage(currentImageIndex, 'prev')} ><i className="fas fa-2x fa-arrow-left"></i></section>
       <section className="click right" onClick={() => changeImage(currentImageIndex, 'next')} ><i className="fas fa-2x fa-arrow-right"></i></section>
