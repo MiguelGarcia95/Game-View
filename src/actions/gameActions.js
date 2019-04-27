@@ -102,11 +102,10 @@ export const search = query => {
         field_list: 'guid,id,name,image'
       }
     });
-    console.log(results);
     dispatch({
       type: actionTypes.SEARCH,
       payload: {
-        search: results.data.results
+        searchResults: results.data.results
       }
     })
   }

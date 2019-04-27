@@ -41,7 +41,7 @@ const gameReducer = (state = initialState, action) => {
     case actionTypes.SEARCH:
       return {
         ...state,
-        searchResults: action.payload.search
+        searchResults: action.payload.searchResults
       }
     default:
       return state;

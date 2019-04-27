@@ -12,12 +12,19 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    const {history} = this.props;
+    const {history, searchResults} = this.props;
+    console.log(searchResults)
     return (
       <Page className="page app">
         <Navbar history={history} />
       </Page>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    searchResults: state.games.searchResults
   }
 }
 
@@ -27,4 +34,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SearchResults);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
