@@ -15,7 +15,7 @@ class SearchResults extends React.Component {
     return results.map(result => {
       return (
         <section className="search_result" key={result.id} >
-          <section className="result_image"></section>
+          <section className="result_image"><img src={result.image.small_url} alt=""/></section>
           <p>{result.name}</p>
         </section>
       )
