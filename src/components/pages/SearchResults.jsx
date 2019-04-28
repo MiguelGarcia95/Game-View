@@ -40,6 +40,7 @@ class SearchResults extends React.Component {
         <section className="search_results">
           {this.displayResults(searchResults)}
         </section>
+        
         <section className="pagination">
           {page === 1 ? 
             <section className="left_section">
