@@ -103,7 +103,6 @@ export const searchGames = (query, page) => {
         field_list: 'guid,id,name,image'
       }
     });
-    console.log(results)
     dispatch({
       type: actionTypes.SEARCH,
       payload: {
