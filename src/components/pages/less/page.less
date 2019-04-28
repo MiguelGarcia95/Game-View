@@ -161,8 +161,10 @@
         text-align: center;
         &.disabled {
           color:rgba(0,0,0,0.4);
+          i {cursor: not-allowed;}
         }
         i {
+          cursor: pointer;
           margin-top: 9px;
         }
       }
@@ -178,13 +180,13 @@
         font-size: 1.4em;
         line-height: 50px;
         color: white;
+        cursor: pointer;
         &.current_page {border-bottom: 1px solid white;}
         &.disabled {
           color:rgba(0,0,0,0.4);
+          cursor: not-allowed;
         }
       }
     }
-
-    
   }
 }
