@@ -11,6 +11,14 @@ class SearchResults extends React.Component {
     this.props.search(this.props.match.params.query, 1);
   }
 
+  displayResults = results => {
+    return results.map(result => {
+      return (
+        <h1 key={result.id}>{result.name}</h1>
+      )
+    })
+  }
+
   render() {
     const {history, searchResults, totalResults} = this.props;
     console.log(searchResults)
@@ -24,7 +32,7 @@ class SearchResults extends React.Component {
           </section>
         </section>
         <section className="search_results">
-          
+          {this.displayResults(searchResults)}
         </section>
       </Page>
     );
