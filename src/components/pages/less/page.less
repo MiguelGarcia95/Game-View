@@ -138,11 +138,46 @@
 
 
   .search_header {
-    padding-top: 60px;
+    padding-top: 120px;
+    width: 1200px;
+    margin: auto;
+    .title {
+      text-align: center;
+      font-size: 3em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .meta {
+      text-align: right;
+    }
   }
 
   .search_results {
-
+    width: 1200px;
+    margin: auto;
+    height: auto;
+    overflow: auto;
+    margin-bottom: 100px;
+    .search_result {
+      width: 400px; float: left;
+      padding: 25px;
+      box-sizing: border-box;
+      .result_image {
+        width: 100%; height: 250px;
+        background-color: goldenrod;
+      }
+      p {
+        width: 100%;
+        height: 50px;
+        margin: 0px;
+        line-height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+      }
+    }
   }
 
   .pagination {

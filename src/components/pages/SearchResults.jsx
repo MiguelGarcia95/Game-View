@@ -14,13 +14,15 @@ class SearchResults extends React.Component {
   displayResults = results => {
     return results.map(result => {
       return (
-        <h1 key={result.id}>{result.name}</h1>
+        <section className="search_result" key={result.id} >
+          <section className="result_image"></section>
+          <p>{result.name}</p>
+        </section>
       )
     })
   }
 
   getLastPage = () => {
-    // let {totalResults} = this.props;
     return Math.ceil(this.props.totalResults/10);
   }
 
