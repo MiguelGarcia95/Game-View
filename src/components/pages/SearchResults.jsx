@@ -42,13 +42,20 @@ class SearchResults extends React.Component {
         </section>
         <section className="pagination">
           <section className="left_section">
-            <section className="arrow left double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-angle-double-left"></i></section>
-            <section className="arrow left" onClick={() => this.props.search(query, page - 1)} ><i className="fas fa-angle-left"></i></section>
+            {page === 1 ? 
+              <section className="arrow double disabled"><i className="fas fa-angle-double-left"></i></section> :
+              <section className="arrow double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-angle-double-left"></i></section>  
+            }
+            
+            <section className="arrow" onClick={() => this.props.search(query, page - 1)} ><i className="fas fa-angle-left"></i></section>
           </section>
           <section className="center_section"></section>
           <section className="right_section">
-            <section className="arrow right double" onClick={() => this.props.search(query, this.getLastPage())} ><i className="fas fa-angle-double-right"></i></section>
-            <section className="arrow right" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-angle-right"></i></section>
+            <section className="arrow" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-angle-right"></i></section>
+            {page === 1 ? 
+              <section className="arrow double disabled" ><i className="fas fa-angle-double-right"></i></section> :
+              <section className="arrow double" onClick={() => this.props.search(query, this.getLastPage())} ><i className="fas fa-angle-double-right"></i></section>
+            }
           </section>
         </section>
       </Page>
