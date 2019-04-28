@@ -12,11 +12,20 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    const {history, searchResults} = this.props;
+    const {history, searchResults, totalResults} = this.props;
     console.log(searchResults)
     return (
       <Page className="page app">
         <Navbar history={history} />
+        <section className="header">
+          <section className="title"><h1>{this.props.match.params.query}</h1></section>
+          <section className="meta">
+            {searchResults && <p>{`${searchResults.length} of ${totalResults}`}</p> }
+          </section>
+        </section>
+        <section className="search_results">
+          
+        </section>
       </Page>
     );
   }
