@@ -35,11 +35,12 @@ class SearchResults extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <section className="search_header">
-          <section className="title"><h1>{query}</h1></section>
+          <section className="title"><h1>Searched for: <span>{query}</span></h1></section>
           <section className="meta">
-            {searchResults && <p>{`${searchResults.length} of ${totalResults}`}</p> }
+            {searchResults && <p>Results: {`${searchResults.length} of ${totalResults}`}</p> }
           </section>
         </section>
+
         <section className="search_results">
           {this.displayResults(searchResults)}
         </section>
