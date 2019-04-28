@@ -44,36 +44,36 @@ class SearchResults extends React.Component {
 
         <section className="pagination">
           {page === 1 ? 
-            <section className="left_section">
-              <section className="arrow double disabled"><i className="fas fa-angle-double-left"></i></section>
-              <section className="arrow disabled"><i className="fas fa-angle-left"></i></section>
+            <section className="arrow_section">
+              <section className="arrow double disabled"><i className="fas fa-2x fa-angle-double-left"></i></section>
+              <section className="arrow disabled"><i className="fas fa-2x fa-angle-left"></i></section>
             </section> :
-            <section className="left_section">
-              <section className="arrow" onClick={() => this.props.search(query, page - 1)} ><i className="fas fa-angle-left"></i></section>
-              <section className="arrow double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-angle-double-left"></i></section>  
+            <section className="arrow_section">
+              <section className="arrow" onClick={() => this.props.search(query, page - 1)} ><i className="fas fa-2x fa-angle-left"></i></section>
+              <section className="arrow double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-2x fa-angle-double-left"></i></section>  
             </section>
           }
 
           <section className="center_section">
             {page === 1 ? 
-              <section className="page_number first_page disabled">1</section> : 
-              <section className="page_number first_page" onClick={() => this.props.search(query, lastPage)} >1</section> 
+              <section className="page_number disabled">1</section> : 
+              <section className="page_number" onClick={() => this.props.search(query, lastPage)} >1</section> 
             }
             <section className="page_number current_page">{page}</section>
             {page === lastPage ? 
-              <section className="page_number last_page disabled" >{lastPage}</section> : 
-              <section className="page_number last_page" onClick={() => this.props.search(query, lastPage)} >{lastPage}</section> 
+              <section className="page_number disabled" >{lastPage}</section> : 
+              <section className="page_number" onClick={() => this.props.search(query, lastPage)} >{lastPage}</section> 
             }
           </section>
           
           {page === lastPage ? 
-            <section className="right_section">
-              <section className="arrow disabled" ><i className="fas fa-angle-right"></i></section>
-              <section className="arrow double disabled" ><i className="fas fa-angle-double-right"></i></section>
+            <section className="arrow_section">
+              <section className="arrow disabled" ><i className="fas fa-2x fa-angle-right"></i></section>
+              <section className="arrow double disabled" ><i className="fas fa-2x fa-angle-double-right"></i></section>
             </section> :
-            <section className="right_section">
-              <section className="arrow" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-angle-right"></i></section>
-              <section className="arrow double" onClick={() => this.props.search(query, lastPage)} ><i className="fas fa-angle-double-right"></i></section>
+            <section className="arrow_section">
+              <section className="arrow" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-2x fa-angle-right"></i></section>
+              <section className="arrow double" onClick={() => this.props.search(query, lastPage)} ><i className="fas fa-2x fa-angle-double-right"></i></section>
             </section>
           }
         </section>
