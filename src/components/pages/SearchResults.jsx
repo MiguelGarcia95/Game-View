@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import {search} from '../../actions/gameActions';
@@ -16,7 +17,7 @@ class SearchResults extends React.Component {
       return (
         <section className="search_result" key={result.id} >
           <section className="result_image"><img src={result.image.small_url} alt=""/></section>
-          <p>{result.name}</p>
+          <Link to={`/games/game/${result.guid}`} >{result.name}</Link>
         </section>
       )
     })
