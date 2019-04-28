@@ -98,7 +98,7 @@ class Games extends React.Component {
   displayRow = (content, name) => {
     return (
       <section className="row franchises">
-        <p className='name' >{name}:</p>
+        <p className='name'>{name}:</p>
         <section className="data">
           {content ? this.displayData(content) : 'N/A'}
         </section>

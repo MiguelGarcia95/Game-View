@@ -91,7 +91,7 @@ export const getFranchises = () => {
   }
 }
 
-export const search = (query, page) => {
+export const searchGames = (query, page) => {
   return async (dispatch) => {
     const results = await axios.get(`https://www.giantbomb.com/api/search`,{
       params: {

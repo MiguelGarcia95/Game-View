@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 
   onSearchKeyDown = e => {
     if (e.keyCode === 13 && e.target.value) {
-      this.props.history.push(`/search/${e.target.value}`)
+      this.props.history.push(`/games/search/${e.target.value}`)
     }
   }
 
@@ -43,7 +43,7 @@ class Navbar extends React.Component {
           </section>
         </section>
         <section className={classnames('searchbar', {active: search})} >
-          <input type="text" name='searchTerm' placeholder='search' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm} />
+          <input type="text" name='searchTerm' placeholder='Search for Games' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm} />
         </section>
         <section className={classnames('nav-box', {active: menu})}>
           <section className="screen"></section>
