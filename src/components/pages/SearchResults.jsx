@@ -27,6 +27,7 @@ class SearchResults extends React.Component {
   render() {
     const {history, searchResults, totalResults, page} = this.props;
     const {query} = this.props.match.params;
+    const lastPage = this.getLastPage();
     console.log(searchResults)
     return (
       <Page className="page app">
@@ -54,19 +55,25 @@ class SearchResults extends React.Component {
           }
 
           <section className="center_section">
-            {page === 1 ? <section className="page_number first_page disabled">1</section> : <section className="page_number first_page">1</section> }
+            {page === 1 ? 
+              <section className="page_number first_page disabled">1</section> : 
+              <section className="page_number first_page" onClick={() => this.props.search(query, lastPage)} >1</section> 
+            }
             <section className="page_number current_page">{page}</section>
-            {page === this.getLastPage() ? <section className="page_number last_page disabled">{this.getLastPage()}</section> : <section className="page_number last_page">{this.getLastPage()}</section> }
+            {page === lastPage ? 
+              <section className="page_number last_page disabled" >{lastPage}</section> : 
+              <section className="page_number last_page" onClick={() => this.props.search(query, lastPage)} >{lastPage}</section> 
+            }
           </section>
           
-          {page === this.getLastPage() ? 
+          {page === lastPage ? 
             <section className="right_section">
               <section className="arrow disabled" ><i className="fas fa-angle-right"></i></section>
               <section className="arrow double disabled" ><i className="fas fa-angle-double-right"></i></section>
             </section> :
             <section className="right_section">
               <section className="arrow" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-angle-right"></i></section>
-              <section className="arrow double" onClick={() => this.props.search(query, this.getLastPage())} ><i className="fas fa-angle-double-right"></i></section>
+              <section className="arrow double" onClick={() => this.props.search(query, lastPage)} ><i className="fas fa-angle-double-right"></i></section>
             </section>
           }
         </section>
