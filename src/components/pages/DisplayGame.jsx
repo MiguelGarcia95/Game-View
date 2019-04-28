@@ -77,7 +77,11 @@ class Games extends React.Component {
 
   displayImages = images => {
     return images.map((image, index) => {
-      return <img key={index} src={image.medium_url} alt={image.tags} onClick={() => this.setCurrentImage(image.original, index)} />
+      return (
+        <section key={index}  className="display_image">
+          <img src={image.medium_url} alt={image.tags} onClick={() => this.setCurrentImage(image.original, index)} />
+        </section>
+      ) 
     })
   }
 
