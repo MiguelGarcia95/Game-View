@@ -40,7 +40,7 @@ class SearchResults extends React.Component {
         <section className="search_results">
           {this.displayResults(searchResults)}
         </section>
-        
+
         <section className="pagination">
           {page === 1 ? 
             <section className="left_section">
@@ -53,7 +53,11 @@ class SearchResults extends React.Component {
             </section>
           }
 
-          <section className="center_section"></section>
+          <section className="center_section">
+            {page === 1 ? <section className="page_number first_page disabled">1</section> : <section className="page_number first_page">1</section> }
+            <section className="page_number current_page">{page}</section>
+            {page === this.getLastPage() ? <section className="page_number last_page disabled">{this.getLastPage()}</section> : <section className="page_number last_page">{this.getLastPage()}</section> }
+          </section>
           
           {page === this.getLastPage() ? 
             <section className="right_section">
