@@ -25,7 +25,7 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    const {history, searchResults, totalResults} = this.props;
+    const {history, searchResults, totalResults, page} = this.props;
     const {query} = this.props.match.params;
     console.log(searchResults)
     return (
@@ -43,12 +43,12 @@ class SearchResults extends React.Component {
         <section className="pagination">
           <section className="left_section">
             <section className="arrow left double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-angle-double-left"></i></section>
-            <section className="arrow left"><i className="fas fa-angle-left"></i></section>
+            <section className="arrow left" onClick={() => this.props.search(query, page - 1)} ><i className="fas fa-angle-left"></i></section>
           </section>
           <section className="center_section"></section>
           <section className="right_section">
             <section className="arrow right double" onClick={() => this.props.search(query, this.getLastPage())} ><i className="fas fa-angle-double-right"></i></section>
-            <section className="arrow right"><i className="fas fa-angle-right"></i></section>
+            <section className="arrow right" onClick={() => this.props.search(query, page + 1)} ><i className="fas fa-angle-right"></i></section>
           </section>
         </section>
       </Page>
