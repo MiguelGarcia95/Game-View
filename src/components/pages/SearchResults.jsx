@@ -34,6 +34,12 @@ class SearchResults extends React.Component {
         <section className="search_results">
           {this.displayResults(searchResults)}
         </section>
+        <section className="pagination">
+          <section className="arrow left double"><i className="fas fa-angle-double-left"></i></section>
+          <section className="arrow right double"><i className="fas fa-angle-double-right"></i></section>
+          <section className="arrow left"><i className="fas fa-angle-left"></i></section>
+          <section className="arrow right"><i className="fas fa-angle-right"></i></section>
+        </section>
       </Page>
     );
   }
