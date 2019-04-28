@@ -19,14 +19,20 @@ class SearchResults extends React.Component {
     })
   }
 
+  getLastPage = () => {
+    // let {totalResults} = this.props;
+    return Math.ceil(this.props.totalResults/10);
+  }
+
   render() {
     const {history, searchResults, totalResults} = this.props;
+    const {query} = this.props.match.params;
     console.log(searchResults)
     return (
       <Page className="page app">
         <Navbar history={history} />
-        <section className="header">
-          <section className="title"><h1>{this.props.match.params.query}</h1></section>
+        <section className="search_header">
+          <section className="title"><h1>{query}</h1></section>
           <section className="meta">
             {searchResults && <p>{`${searchResults.length} of ${totalResults}`}</p> }
           </section>
@@ -35,10 +41,15 @@ class SearchResults extends React.Component {
           {this.displayResults(searchResults)}
         </section>
         <section className="pagination">
-          <section className="arrow left double"><i className="fas fa-angle-double-left"></i></section>
-          <section className="arrow right double"><i className="fas fa-angle-double-right"></i></section>
-          <section className="arrow left"><i className="fas fa-angle-left"></i></section>
-          <section className="arrow right"><i className="fas fa-angle-right"></i></section>
+          <section className="left_section">
+            <section className="arrow left double" onClick={() => this.props.search(query, 1)} ><i className="fas fa-angle-double-left"></i></section>
+            <section className="arrow left"><i className="fas fa-angle-left"></i></section>
+          </section>
+          <section className="center_section"></section>
+          <section className="right_section">
+            <section className="arrow right double" onClick={() => this.props.search(query, this.getLastPage())} ><i className="fas fa-angle-double-right"></i></section>
+            <section className="arrow right"><i className="fas fa-angle-right"></i></section>
+          </section>
         </section>
       </Page>
     );
