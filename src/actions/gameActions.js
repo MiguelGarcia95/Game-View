@@ -45,7 +45,7 @@ export const getGame = guid => {
   }
 }
 
-export const getGames = () => {
+export const getGames = offset => {
   return async (dispatch) => {
     // let end = new Date();
     // let start = new Date();
@@ -54,16 +54,20 @@ export const getGames = () => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        // limit: '10',
+        offset: offset,
+        limit: '50',
         // filter: `original_release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
         sort: 'original_release_date:desc',
         field_list: 'deck,expected_release_year,guid,id,image,name,original_release_date'
       }
     });
+    console.log(results)
     dispatch({
       type: actionTypes.GET_GAMES,
       payload: {
-        games: results.data.results
+        games: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        offset: results.data.offset
       }
     })
   }
