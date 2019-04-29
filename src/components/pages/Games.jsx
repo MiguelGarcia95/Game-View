@@ -30,8 +30,8 @@ class Games extends React.Component {
     })
   }
 
-  getLastPage = () => Math.ceil(this.props.totalResults/50) - 1;
-  getCurrentPage = () =>  Math.floor(this.props.offset/50) === 0 ? Math.ceil(this.props.offset/50) + 1     : Math.ceil(this.props.offset/50) - 1;
+  getLastPage = () => Math.floor(this.props.totalResults/50) - 1;
+  getCurrentPage = offset =>  offset === 0 ? 1 : Math.ceil(offset/50);
   getPage = (offset) => {
     if (offset === 0) {
       return 1;
@@ -51,7 +51,7 @@ class Games extends React.Component {
     console.log(Math.ceil(this.props.offset/50))
     console.log(this.getCurrentPage())
     const lastPage = this.getLastPage();
-    const page = this.getCurrentPage();
+    const page = this.getCurrentPage(offset);
     return (
       <Page className="page app">
         <Navbar history={history} />
@@ -63,7 +63,7 @@ class Games extends React.Component {
         <section className="page_content">
           {this.displayGames(games)}
         </section>
-        <PaginationOffset page={page} type={'games'} paginationClick={this.paginationClick} lastPage={lastPage} increment={1} />
+        <PaginationOffset page={page} offset={offset} type={'games'} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }
