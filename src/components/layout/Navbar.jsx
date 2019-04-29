@@ -12,6 +12,10 @@ class Navbar extends React.Component {
     searchTerm: ''
   }
 
+  componentDidMount() {
+    this.scrollTop();
+  }
+
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
 
@@ -23,11 +27,17 @@ class Navbar extends React.Component {
     }
   }
 
+  scrollTop = () => {
+    this.pageTop.scrollIntoView({behavior: 'smooth'});
+  }
+
+
 
   render() {
     const {search, menu} = this.state;
     return (
       <React.Fragment>
+        <div ref={node => this.pageTop = node}></div>
         <section className="navbar">
           <NavLink className='nav-link brand' to='/'>G</NavLink>
           <NavLink className='nav-link home' activeClassName='active' exact to='/'>Home</NavLink>
