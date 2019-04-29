@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames} from '../../actions/gameActions';
+import {searchGames} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 import './css/page.css';
 
@@ -67,9 +67,9 @@ class SearchResults extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    searchResults: state.games.searchResults,
-    totalResults: state.games.totalResults,
-    page: state.games.page
+    searchResults: state.results.searchResults,
+    totalResults: state.results.totalResults,
+    page: state.results.page
   }
 }
 

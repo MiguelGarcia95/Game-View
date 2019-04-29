@@ -33,13 +33,6 @@ const gameReducer = (state = initialState, action) => {
         ...state,
         game: action.payload.game
       }
-    case actionTypes.SEARCH:
-      return {
-        ...state,
-        searchResults: action.payload.searchResults,
-        totalResults: action.payload.totalResults,
-        page: action.payload.page
-      }
     default:
       return state;
   }
