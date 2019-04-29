@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
-import PaginationOffset from '../layout/Pagination';
+import PaginationOffset from '../layout/PaginationOffset';
 import {getGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
@@ -31,18 +31,16 @@ class Games extends React.Component {
   }
 
   getLastPage = () => Math.ceil(this.props.totalResults/50);
-  getCurrentPage = offset =>  offset === 0 ? 1 : Math.ceil(offset/50);
-  getNextOffset = offset => {
-  }
+  getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
+
   getOffset = totalResults => {
-    return Math.floor(totalResults/50);
+    return totalResults - totalResults%50;
   }
 
   paginationClick = offset => {
     console.log(offset)
-    // const pageOffset = (this.getCurrentPage(offset) - 1) * 50;
     this.scrollTop();
-    // this.props.getGames((pageOffset));
+    this.props.getGames(offset);
   }
 
   render() {
