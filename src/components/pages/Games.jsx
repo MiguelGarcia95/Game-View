@@ -5,6 +5,8 @@ import Navbar from '../layout/Navbar';
 import {getHomeGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
+import './css/page.css';
+
 class Games extends React.Component {
   componentDidMount() {
   }
@@ -12,10 +14,14 @@ class Games extends React.Component {
   render() {
     const {history} = this.props;
     return (
-      <Page className="games app">
+      <Page className="page app">
         <Navbar history={history} />
         <section className="header">
           <h1>Search For Games</h1>
+          <input type="text" placeholder='Search For Games' className="search_bar"/>
+        </section>
+        <section className="page_content">
+          
         </section>
       </Page>
     );

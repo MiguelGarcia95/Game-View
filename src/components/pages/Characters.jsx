@@ -1,21 +1,11 @@
 import React from 'react';
-import styled from "styled-components";
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-// import {getGames} from '../../actions/gameActions';
-// import {getReviews} from '../../actions/reviewActions';
-import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
-import {OverflowPage} from '../../utils/styledClasses';
+import {getHomeGames} from '../../actions/gameActions';
+import {Page} from '../../utils/styledClasses';
 
-const CharactersPage = styled(OverflowPage)`
-  &.page-enter {
-    animation: ${slideInLeft} 0.7s ease forwards;
-  }
-  &.page-exit {
-    animation: ${slideOutRight} 0.7s ease forwards;
-  }
-`;
+import './css/page.css';
 
 class Characters extends React.Component {
   componentDidMount() {
@@ -24,9 +14,16 @@ class Characters extends React.Component {
   render() {
     const {history} = this.props;
     return (
-      <CharactersPage className="characters app">
+      <Page className="page app">
         <Navbar history={history} />
-      </CharactersPage>
+        <section className="header">
+          <h1>Search For Characters</h1>
+          <input type="text" placeholder='Search For Characters' className="search_bar"/>
+        </section>
+        <section className="page_content">
+          
+        </section>
+      </Page>
     );
   }
 }

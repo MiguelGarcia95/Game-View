@@ -23,8 +23,15 @@ class Reviews extends React.Component {
   render() {
     const {history} = this.props;
     return (
-      <ReviewsPage className="reviews app">
+      <ReviewsPage className="page app">
         <Navbar history={history} />
+        <section className="header">
+          <h1>Search For Reviews</h1>
+          <input type="text" placeholder='Search For Reviews' className="search_bar"/>
+        </section>
+        <section className="page_content">
+          
+        </section>
       </ReviewsPage>
     );
   }
