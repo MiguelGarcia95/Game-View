@@ -12,7 +12,7 @@ const ImageViewer = ({setCurrentImage, currentImageIndex, currentImage, changeIm
       </section>
       <section className="click left" onClick={() => changeImage(currentImageIndex, 'prev')} ><i className="fas fa-2x fa-arrow-left"></i></section>
       <section className="click right" onClick={() => changeImage(currentImageIndex, 'next')} ><i className="fas fa-2x fa-arrow-right"></i></section>
-      <section className="click exit" onClick={() => changeImage(currentImageIndex, 'prev')} ><i className="fas fa-2x fas fa-times"></i></section>
+      <section className="click exit" onClick={() => setCurrentImage(null, null)} ><i className="fas fa-2x fas fa-times"></i></section>
     </section>
   )
 }
