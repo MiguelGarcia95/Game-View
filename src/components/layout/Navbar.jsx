@@ -31,8 +31,6 @@ class Navbar extends React.Component {
     this.pageTop.scrollIntoView({behavior: 'smooth'});
   }
 
-
-
   render() {
     const {search, menu} = this.state;
     return (

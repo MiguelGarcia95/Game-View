@@ -130,6 +130,7 @@ class Games extends React.Component {
               </section>
 
               <section className="misc">
+                <div ref={node => this.pageDetails = node}></div>
                 {this.displayRow(game.franchises, 'Franchises')}
                 {this.displayRow(game.publishers, 'Publishers')}
                 {this.displayRow(game.original_game_rating, 'Ratings')}
@@ -137,11 +138,13 @@ class Games extends React.Component {
               </section>
 
               <section className="similar_games">
+                <div ref={node => this.pageSimilar = node}></div>
                 <h1>Similar Games</h1>
                 {game.similar_games ? this.displaySimilarGames(game.similar_games) :  <h2 className='not_available'>No Games</h2>}
               </section>
 
               <section className="images">
+                <div ref={node => this.pageImages = node}></div>
                 <h1>Images</h1>
                 {game.images ? this.displayImages(game.images) : <h2 className='not_available'>No Images</h2>}
               </section>
