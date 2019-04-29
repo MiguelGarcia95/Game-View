@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
+import Pagination from '../layout/Pagination';
 import {getGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
@@ -40,6 +41,7 @@ class Games extends React.Component {
         <section className="page_content">
           {this.displayGames(games)}
         </section>
+        <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }
@@ -47,7 +49,9 @@ class Games extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    games: state.games.games
+    games: state.games.games,
+    totalResults: state.games.totalResults,
+    offset: state.games.offset
   }
 }
 
