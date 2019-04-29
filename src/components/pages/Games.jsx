@@ -7,6 +7,7 @@ import {getGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
 import './css/page.css';
+import './css/games.css';
 
 class Games extends React.Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class Games extends React.Component {
       return (
         <section className="display_result" key={game.id} >
           <section className="display_image"><img src={game.image.small_url} alt=""/></section>
-          <Link to={`/games/game/${game.guid}`} >{game.name}</Link>
+          <Link to={`/games/game/${game.guid}`} ><p>{game.name}</p></Link>
         </section>
       )
     })
@@ -28,7 +29,7 @@ class Games extends React.Component {
 
   render() {
     const {history, games} = this.props;
-    console.log(games)
+    // console.log(games)
     return (
       <Page className="page app">
         <Navbar history={history} />
