@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/pagination.css';
 
-const Pagination = ({page, type, paginationClick, lastPage}) => {
+const Pagination = ({page, type, paginationClick, lastPage, increment}) => {
   return (
     <section className="pagination">
       {page === 1 ? 
@@ -10,8 +10,8 @@ const Pagination = ({page, type, paginationClick, lastPage}) => {
           <section className="arrow disabled"><i className="fas fa-2x fa-angle-left"></i></section>
         </section> :
         <section className="arrow_section">
-          <section className="arrow" onClick={() => paginationClick(type, page - 1)} ><i className="fas fa-2x fa-angle-left"></i></section>
-          <section className="arrow double" onClick={() => paginationClick(type, 1)} ><i className="fas fa-2x fa-angle-double-left"></i></section>  
+          <section className="arrow" onClick={() => paginationClick(type, page - increment)} ><i className="fas fa-2x fa-angle-left"></i></section>
+          <section className="arrow double" onClick={() => paginationClick(type, increment)} ><i className="fas fa-2x fa-angle-double-left"></i></section>  
         </section>
       }
 
@@ -33,7 +33,7 @@ const Pagination = ({page, type, paginationClick, lastPage}) => {
           <section className="arrow double disabled" ><i className="fas fa-2x fa-angle-double-right"></i></section>
         </section> :
         <section className="arrow_section">
-          <section className="arrow" onClick={() => paginationClick(type, page + 1)} ><i className="fas fa-2x fa-angle-right"></i></section>
+          <section className="arrow" onClick={() => paginationClick(type, page + increment)} ><i className="fas fa-2x fa-angle-right"></i></section>
           <section className="arrow double" onClick={() => paginationClick(type, lastPage)} ><i className="fas fa-2x fa-angle-double-right"></i></section>
         </section>
       }

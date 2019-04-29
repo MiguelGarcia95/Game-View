@@ -17,6 +17,8 @@ class Games extends React.Component {
     }
   }
 
+  scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
+
   displayGames = games => {
     return games.map(game => {
       return (
@@ -28,12 +30,23 @@ class Games extends React.Component {
     })
   }
 
+  getLastOffset = () => {
+    return Math.ceil(this.props.totalResults/50) - 1;
+  }
+
+  paginationClick = (offset) => {
+    this.scrollTop();
+    this.props.getGames(offset);
+  }
+
   render() {
-    const {history, games} = this.props;
+    const {history, games, offset} = this.props;
     // console.log(games)
+    const lastOffset = this.getLastOffset();
     return (
       <Page className="page app">
         <Navbar history={history} />
+        <div ref={node => this.pageTop = node}></div>
         <section className="header">
           <h1>Search For Games</h1>
           <input type="text" placeholder='Search For Games' className="search_bar"/>
@@ -41,7 +54,7 @@ class Games extends React.Component {
         <section className="page_content">
           {this.displayGames(games)}
         </section>
-        <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} />
+        <Pagination page={offset} type={'games'} paginationClick={this.paginationClick} lastPage={lastOffset} increment={50} />
       </Page>
     );
   }
