@@ -106,7 +106,7 @@ class Games extends React.Component {
       <section className="row franchises">
         <p className='name'>{name}:</p>
         <section className="data">
-          {content ? this.displayData(content) : 'N/A'}
+          {content ? this.displayData(content) :  <span><p>N/A</p></span> }
         </section>
       </section>
     )
