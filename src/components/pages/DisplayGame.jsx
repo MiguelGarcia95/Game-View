@@ -64,9 +64,10 @@ class Games extends React.Component {
     }
   }
 
-  scrollDown = () => {
-    this.pageDown.scrollIntoView({behavior: 'smooth'});
-  }
+  scrollAbout = () => this.pageDown.scrollIntoView({behavior: 'smooth'});
+  scrollDetails = () => this.pageDetails.scrollIntoView({behavior: 'smooth'});
+  scrollSimilar = () => this.pageSimilar.scrollIntoView({behavior: 'smooth'});
+  scrollImages = () => this.pageImages.scrollIntoView({behavior: 'smooth'});
 
   sortPlatforms = (platforms, allPlatforms) => {
     return  platforms.reduce((sortedPlatforms, platform) => {
@@ -120,7 +121,7 @@ class Games extends React.Component {
         <Navbar history={history} />
         {game && (
           <React.Fragment>
-            <DisplayHeader game={game} scrollDown={this.scrollDown} />
+            <DisplayHeader game={game} scrollDown={this.scrollAbout} />
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
 
