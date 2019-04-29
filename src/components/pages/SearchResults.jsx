@@ -30,9 +30,7 @@ class SearchResults extends React.Component {
     return Math.ceil(this.props.totalResults/10);
   }
 
-  scrollTop = () => {
-    this.pageTop.scrollIntoView({behavior: 'smooth'});
-  }
+  scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
   paginationClick = (type, page) => {
     this.scrollTop();
