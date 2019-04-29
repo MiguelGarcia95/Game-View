@@ -60,7 +60,7 @@ class SearchResults extends React.Component {
           {this.displayResults(searchResults)}
         </section>
 
-        <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} increment={1} />
+        <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }

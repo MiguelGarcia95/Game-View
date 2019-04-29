@@ -47,16 +47,12 @@ export const getGame = guid => {
 
 export const getGames = offset => {
   return async (dispatch) => {
-    // let end = new Date();
-    // let start = new Date();
-    // end.setMonth(end.getMonth() + (Math.floor(Math.random() * 12) + 6));
     const results = await axios.get('https://www.giantbomb.com/api/games',{
       params: {
         api_key: GBAPI,
         format: 'json',
         offset: offset,
         limit: '50',
-        // filter: `original_release_date:${moment(start).format('YYYY-MM-DD')}|${moment(end).format('YYYY-MM-DD')}`,
         sort: 'original_release_date:desc',
         field_list: 'deck,expected_release_year,guid,id,image,name,original_release_date'
       }

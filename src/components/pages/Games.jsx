@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
-import Pagination from '../layout/Pagination';
+import PaginationOffset from '../layout/Pagination';
 import {getGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
@@ -30,19 +30,28 @@ class Games extends React.Component {
     })
   }
 
-  getLastOffset = () => {
-    return Math.ceil(this.props.totalResults/50) - 1;
+  getLastPage = () => Math.ceil(this.props.totalResults/50) - 1;
+  getCurrentPage = () =>  Math.floor(this.props.offset/50) === 0 ? Math.ceil(this.props.offset/50) + 1     : Math.ceil(this.props.offset/50) - 1;
+  getPage = (offset) => {
+    if (offset === 0) {
+      return 1;
+    } else {
+      return Math.floor(offset/50);
+    }
   }
 
   paginationClick = (offset) => {
+    const pageOffset = this.getPage(offset);
     this.scrollTop();
-    this.props.getGames(offset);
+    this.props.getGames((pageOffset));
   }
 
   render() {
     const {history, games, offset} = this.props;
-    // console.log(games)
-    const lastOffset = this.getLastOffset();
+    console.log(Math.ceil(this.props.offset/50))
+    console.log(this.getCurrentPage())
+    const lastPage = this.getLastPage();
+    const page = this.getCurrentPage();
     return (
       <Page className="page app">
         <Navbar history={history} />
@@ -54,7 +63,7 @@ class Games extends React.Component {
         <section className="page_content">
           {this.displayGames(games)}
         </section>
-        <Pagination page={offset} type={'games'} paginationClick={this.paginationClick} lastPage={lastOffset} increment={50} />
+        <PaginationOffset page={page} type={'games'} paginationClick={this.paginationClick} lastPage={lastPage} increment={1} />
       </Page>
     );
   }
@@ -70,7 +79,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGames: () => dispatch(getGames())
+    getGames: offset => dispatch(getGames(offset))
   }
 }
 
