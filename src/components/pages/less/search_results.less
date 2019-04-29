@@ -1,0 +1,71 @@
+// out: ../css/search_results.css, compress: true, sourcemap: false
+
+@homeBorderColor: rgb(91, 82, 221);
+@gameBorderColor: rgb(134, 214, 123);
+@reviewBorderColor: rgb(214, 123, 158);
+@franchisesBorderColor: rgb(92, 180, 207);
+@charactersBorderColor: rgb(207, 119, 92);
+
+.search_header {
+  padding-top: 120px;
+  width: 1200px;
+  margin: auto;
+  .title {
+    text-align: center;
+    font-size: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    span {color: green;}
+    &.games {span {color: @gameBorderColor;}}
+    &.reviews {span {color: @reviewBorderColor;}}
+    &.franchises {span {color: @franchisesBorderColor;}}
+    &.characters {span {color: @charactersBorderColor;}}
+  }
+  .meta {
+    text-align: right;
+    p {
+      margin: 0;
+      line-height: 40px;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.search_results {
+  width: 1200px;
+  margin: auto;
+  height: auto;
+  overflow: auto;
+  margin-bottom: 100px;
+  .search_result {
+    width: 400px; float: left;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    .result_image {
+      width: 100%; height: 250px;
+      img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: 0.8s;
+        &:hover {
+          object-position: bottom;
+        }
+        object-position: top;
+      }
+    }
+    a {
+      width: 100%;
+      height: 50px;
+      margin: 0px;
+      color: white;
+      text-decoration: none;
+      line-height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}

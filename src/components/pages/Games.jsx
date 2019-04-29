@@ -14,6 +14,9 @@ class Games extends React.Component {
     return (
       <Page className="games app">
         <Navbar history={history} />
+        <section className="header">
+          <h1>Search For Games</h1>
+        </section>
       </Page>
     );
   }

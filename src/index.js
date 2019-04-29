@@ -38,13 +38,14 @@ const Root = () => {
                 <Switch location={location}>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/games' component={Games} />
-                  <Route path='/:type/search/:query' component={SearchResults} />
                   <Route path='/games/game/:guid' component={DisplayGame} />
                   <Route exact path='/reviews' component={Reviews} />
+                  {/* <Route path='/reviews/review/:guid' component={DisplayReview} /> */}
                   <Route exact path='/franchises' component={Franchises} />
                   {/* <Route path='/franchises/franchise/:guid' component={DisplayFranchise} /> */}
                   <Route exact path='/characters' component={Characters} />
                   {/* <Route path='/characters/character/:guid' component={DisplayCharacter} /> */}
+                  <Route path='/:type/search/:query' component={SearchResults} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
