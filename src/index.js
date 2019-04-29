@@ -42,7 +42,9 @@ const Root = () => {
                   <Route path='/games/game/:guid' component={DisplayGame} />
                   <Route exact path='/reviews' component={Reviews} />
                   <Route exact path='/franchises' component={Franchises} />
+                  {/* <Route path='/franchises/franchise/:guid' component={DisplayFranchise} /> */}
                   <Route exact path='/characters' component={Characters} />
+                  {/* <Route path='/characters/character/:guid' component={DisplayCharacter} /> */}
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
