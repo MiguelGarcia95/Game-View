@@ -27,8 +27,6 @@ class Home extends React.Component {
       this.props.getHomeVideos();
     }
     this.props.getHomeGameReleases();
-    // setTimeout(() => {
-    // }, 1000)
   }
 
   scrollDown = () => {

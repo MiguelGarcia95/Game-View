@@ -69,28 +69,6 @@ export const getHomeGameReleases = () => {
     })
   }
 }
-
-export const getFranchises = () => {
-  return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/franchises',{
-      params: {
-        api_key: GBAPI,
-        format: 'json',
-        limit: '10',
-        // sort: 'date_added:desc',
-        field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,guid,id,image,image_tags,name,site_detail_url'
-      }
-    });
-    console.log(results)
-    // dispatch({
-    //   type: actionTypes.GET_FRANCHISES,
-    //   payload: {
-    //     promos: results.data.results
-    //   }
-    // })
-  }
-}
-
 export const searchGames = (query, page) => {
   return async (dispatch) => {
     const results = await axios.get(`https://www.giantbomb.com/api/search`,{
@@ -113,27 +91,3 @@ export const searchGames = (query, page) => {
     })
   }
 }
-
-
-
-// export const getRating = guid => {
-//   return async (dispatch) => {
-//     const results = await axios.get(`https://www.giantbomb.com/api/game_rating/${guid}`,{
-//       params: {
-//         api_key: GBAPI,
-//         format: 'json',
-//         field_list: 'guid,id,name,image,rating_board'
-//       }
-//     });
-//     dispatch({
-//       type: actionTypes.GET_RATING,
-//       payload: {
-//         rating: results.data.results
-//       }
-//     })
-//   }
-// }
-
-
-
-
