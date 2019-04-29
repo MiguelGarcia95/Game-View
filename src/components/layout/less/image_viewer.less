@@ -13,7 +13,6 @@
     width: 50px; height: 50px;
     background-color: rgba(0,0,0,0.5);
     text-align: center;
-    top: 0; bottom: 0;
     margin: auto;
     cursor: pointer;
     i {
@@ -22,9 +21,17 @@
     }
     &.left {
       left: 10px;
+      top: 0; bottom: 0;
+
     }
     &.right {
       right: 10px;
+      top: 0; bottom: 0;
+    }
+    &.exit {
+      right: 0px;
+      top: 0px;      
+      background-color: rgba(0,0,0,1);
     }
   }
   .image_background {
@@ -43,6 +50,7 @@
     margin: auto;
     img {
       width: 100%; height: 100%;
+      object-fit: contain;
     }
     .imageL, .imageR {
       width: 50%; height: 100%; float: left;
