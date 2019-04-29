@@ -30,27 +30,25 @@ class Games extends React.Component {
     })
   }
 
-  getLastPage = () => Math.floor(this.props.totalResults/50) - 1;
+  getLastPage = () => Math.ceil(this.props.totalResults/50);
   getCurrentPage = offset =>  offset === 0 ? 1 : Math.ceil(offset/50);
-  getPage = (offset) => {
-    if (offset === 0) {
-      return 1;
-    } else {
-      return Math.floor(offset/50);
-    }
+  getNextOffset = offset => {
+  }
+  getOffset = totalResults => {
+    return Math.floor(totalResults/50);
   }
 
-  paginationClick = (offset) => {
-    const pageOffset = this.getPage(offset);
+  paginationClick = offset => {
+    console.log(offset)
+    // const pageOffset = (this.getCurrentPage(offset) - 1) * 50;
     this.scrollTop();
-    this.props.getGames((pageOffset));
+    // this.props.getGames((pageOffset));
   }
 
   render() {
-    const {history, games, offset} = this.props;
-    console.log(Math.ceil(this.props.offset/50))
-    console.log(this.getCurrentPage())
+    const {history, games, offset, totalResults} = this.props;
     const lastPage = this.getLastPage();
+    const lastOffset = this.getOffset(totalResults);
     const page = this.getCurrentPage(offset);
     return (
       <Page className="page app">
@@ -63,7 +61,7 @@ class Games extends React.Component {
         <section className="page_content">
           {this.displayGames(games)}
         </section>
-        <PaginationOffset page={page} offset={offset} type={'games'} paginationClick={this.paginationClick} lastPage={lastPage} />
+        <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }
