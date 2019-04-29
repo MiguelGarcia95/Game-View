@@ -1,8 +1,13 @@
 //out: ../css/page.css, compress: true, sourcemap: false
 
 @bgColor: rgba(255,255,255,0.5);
-@gameBorderColor: rgb(134, 214, 123);
 @textColor: black;
+
+@homeBorderColor: rgb(91, 82, 221);
+@gameBorderColor: rgb(134, 214, 123);
+@reviewBorderColor: rgb(214, 123, 158);
+@franchisesBorderColor: rgb(92, 180, 207);
+@charactersBorderColor: rgb(207, 119, 92);
 
 .page {
   .page_content {
@@ -165,9 +170,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      span {
-        color: green;
-      }
+      span {color: green;}
+      &.games {span {color: @gameBorderColor;}}
+      &.reviews {span {color: @reviewBorderColor;}}
+      &.franchises {span {color: @franchisesBorderColor;}}
+      &.characters {span {color: @charactersBorderColor;}}
     }
     .meta {
       text-align: right;
@@ -260,4 +267,5 @@
       }
     }
   }
+
 }

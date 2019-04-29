@@ -51,7 +51,7 @@ class SearchResults extends React.Component {
         <div ref={node => this.pageTop = node}></div>
 
         <section className="search_header">
-          <section className="title"><h1>Searched for: <span>{query}</span></h1></section>
+          <section className={`title ${type}`}><h1>Searched for: <span>{query}</span></h1></section>
           <section className="meta">
             {searchResults && <p>Results: {`${searchResults.length} of ${totalResults}`}</p> }
           </section>
