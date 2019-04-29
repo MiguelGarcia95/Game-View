@@ -29,9 +29,13 @@ class Games extends React.Component {
     let about = document.querySelector('#about');
     if (about !== null) {
       let links = about.getElementsByTagName('a');
+      let lazyImages = about.querySelectorAll('.js-lazy-load-image');
       for (const link of links) {
         link.removeAttribute('href');
       }
+      lazyImages.forEach(lazyImage => {
+        lazyImage.src = lazyImage.dataset.src
+      })
     }
     
     if (this.state.currentImage) {
