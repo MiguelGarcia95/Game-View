@@ -6,6 +6,7 @@ import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
 import {searchGames, searchFranchises, searchCharacters} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
+
 import './css/page.css';
 import './css/search_results.css';
 
@@ -32,9 +33,7 @@ class SearchResults extends React.Component {
     })
   }
 
-  getLastPage = () => {
-    return Math.ceil(this.props.totalResults/10);
-  }
+  getLastPage = totalResults =>  Math.ceil(totalResults/10);
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
@@ -50,7 +49,7 @@ class SearchResults extends React.Component {
   render() {
     const {history, searchResults, totalResults, page} = this.props;
     const {query, type} = this.props.match.params;
-    const lastPage = this.getLastPage();
+    const lastPage = this.getLastPage(totalResults);
     return (
       <Page className="page app">
         <Navbar history={history} />
