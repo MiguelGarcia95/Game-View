@@ -62,6 +62,7 @@ class Reviews extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
+        <div ref={node => this.pageTop = node}></div>
         <section className="header">
           <h1>Search For Reviews</h1>
           <input 
