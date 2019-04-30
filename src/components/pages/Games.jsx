@@ -7,6 +7,8 @@ import PaginationOffset from '../layout/PaginationOffset';
 import {getGames} from '../../actions/gameActions';
 import {Page} from '../../utils/styledClasses';
 
+import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
+
 import './css/page.css';
 import './css/games.css';
 
@@ -42,13 +44,6 @@ class Games extends React.Component {
     })
   }
 
-  getLastPage = () => Math.ceil(this.props.totalResults/50);
-  getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
-
-  getOffset = totalResults => {
-    return totalResults - totalResults%50;
-  }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getGames(offset);
@@ -56,9 +51,9 @@ class Games extends React.Component {
 
   render() {
     const {history, games, offset, totalResults} = this.props;
-    const lastPage = this.getLastPage();
-    const lastOffset = this.getOffset(totalResults);
-    const page = this.getCurrentPage(offset);
+    const lastPage = getLastPage(totalResults);
+    const lastOffset = getOffset(totalResults);
+    const page = getCurrentPage(offset);
     return (
       <Page className="page app">
         <Navbar history={history} />

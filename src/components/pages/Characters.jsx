@@ -7,6 +7,8 @@ import PaginationOffset from '../layout/PaginationOffset';
 import {getCharacters} from '../../actions/characterActions';
 import {Page} from '../../utils/styledClasses';
 
+import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
+
 import './css/page.css';
 
 class Characters extends React.Component {
@@ -41,13 +43,6 @@ class Characters extends React.Component {
     })
   }
 
-  getLastPage = () => Math.ceil(this.props.totalResults/50);
-  getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
-
-  getOffset = totalResults => {
-    return totalResults - totalResults%50;
-  }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getCharacters(offset);
@@ -55,9 +50,9 @@ class Characters extends React.Component {
 
   render() {
     const {history, characters, offset, totalResults} = this.props;
-    const lastPage = this.getLastPage();
-    const lastOffset = this.getOffset(totalResults);
-    const page = this.getCurrentPage(offset);
+    const lastPage = getLastPage(totalResults);
+    const lastOffset = getOffset(totalResults);
+    const page = getCurrentPage(offset);
     return (
       <Page className="page app">
         <Navbar history={history} />
