@@ -1,24 +1,26 @@
 import * as actionTypes from '../actions/types';
 import axios from 'axios';
-import moment from 'moment';
 import {GBAPI} from '../apiKeys';
 
-export const getCharacters = () => {
+export const getCharacters = offset => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/characters',{
       params: {
-        api_key: GBAPI,
+        pi_key: GBAPI,
         format: 'json',
-        limit: '10',
-        // sort: 'date_added:desc',
-        field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,guid,id,image,image_tags,name,site_detail_url'
+        limit: '50',
+        offset: offset,
+        field_list: 'date_added,date_last_updated,deck,description,guid,id,image,name'
+        // field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,guid,id,image,image_tags,name,site_detail_url'
       }
     });
     console.log(results)
     dispatch({
       type: actionTypes.GET_CHARACTERS,
       payload: {
-        characters: results.data.results
+        characters: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        offset: results.data.offset
       }
     })
   }
