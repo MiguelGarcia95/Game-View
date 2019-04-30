@@ -24,18 +24,18 @@ class Characters extends React.Component {
 
   onSearchKeyDown = e => {
     if (e.keyCode === 13 && e.target.value) {
-      this.props.history.push(`/franchises/search/${e.target.value}`)
+      this.props.history.push(`/characters/search/${e.target.value}`)
     }
   }
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  displayCharacters = franchises => {
-    return franchises.map(franchise => {
+  displayCharacters = characters => {
+    return characters.map(character => {
       return (
-        <section className="display_result" key={franchise.id} >
-          <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
-          <Link to={`/franchises/franchise/${franchise.guid}`} ><p>{franchise.name}</p></Link>
+        <section className="display_result" key={character.id} >
+          <section className="display_image"><img src={character.image.small_url} alt=""/></section>
+          <Link to={`/characters/character/${character.guid}`} ><p>{character.name}</p></Link>
         </section>
       )
     })

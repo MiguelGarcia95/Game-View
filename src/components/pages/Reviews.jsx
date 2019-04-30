@@ -1,46 +1,97 @@
 import React from 'react';
-import styled from "styled-components";
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
-import {getHomeReviews} from '../../actions/reviewActions';
-import {slideInLeft, slideOutRight} from '../../utils/pageTransitions';
-import {OverflowPage} from '../../utils/styledClasses';
+import PaginationOffset from '../layout/PaginationOffset';
+import {getReviews} from '../../actions/reviewActions';
+import {Page} from '../../utils/styledClasses';
 
-const ReviewsPage = styled(OverflowPage)`
-  &.page-enter {
-    animation: ${slideInLeft} 0.7s ease forwards;
-  }
-  &.page-exit {
-    animation: ${slideOutRight} 0.7s ease forwards;
-  }
-`;
+import './css/page.css';
 
 class Reviews extends React.Component {
+  state = {
+    searchTerm: ''
+  }
+  
   componentDidMount() {
+    if (this.props.reviews.length === 0) {
+      this.props.getReviews(0);
+    }
+  }
+
+
+  onChange = e => this.setState({[e.target.name]: e.target.value});
+
+  onSearchKeyDown = e => {
+    if (e.keyCode === 13 && e.target.value) {
+      this.props.history.push(`/reviews/search/${e.target.value}`)
+    }
+  }
+
+  scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
+
+  displayReviews = reviews => {
+    return reviews.map(review => {
+      return (
+        <section className="display_result" key={review.id} >
+          {/* <section className="display_image"><img src={review.image.small_url} alt=""/></section> */}
+          <Link to={`/reviews/review/${review.guid}`} ><p>{review.name}</p></Link>
+        </section>
+      )
+    })
+  }
+
+  getLastPage = () => Math.ceil(this.props.totalResults/50);
+  getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
+
+  getOffset = totalResults => {
+    return totalResults - totalResults%50;
+  }
+
+  paginationClick = offset => {
+    this.scrollTop();
+    this.props.getReviews(offset);
   }
 
   render() {
-    const {history} = this.props;
+    const {history, reviews, offset, totalResults} = this.props;
+    const lastPage = this.getLastPage();
+    const lastOffset = this.getOffset(totalResults);
+    const page = this.getCurrentPage(offset);
     return (
-      <ReviewsPage className="page app">
+      <Page className="page app">
         <Navbar history={history} />
         <section className="header">
           <h1>Search For Reviews</h1>
-          <input type="text" placeholder='Search For Reviews' className="search_bar"/>
+          <input 
+            name='searchTerm' type="text" placeholder='Search For Reviews' className="search_bar" 
+            onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
+          />
         </section>
         <section className="page_content">
-          
+          {this.displayReviews(reviews)}
         </section>
-      </ReviewsPage>
+        <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
+
+      </Page>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    getHomeReviews: () => dispatch(getHomeReviews())
+    reviews: state.reviews.reviews,
+    totalResults: state.reviews.totalResults,
+    offset: state.reviews.offset
   }
 }
 
-export default connect(null, mapDispatchToProps)(Reviews);
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getReviews: offset => dispatch(getReviews(offset))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reviews);
