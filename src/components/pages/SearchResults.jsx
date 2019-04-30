@@ -11,6 +11,10 @@ import './css/page.css';
 import './css/search_results.css';
 
 class SearchResults extends React.Component {
+  state = {
+    searchTerm: this.props.match.params.query
+  }
+
   componentDidMount() {
     if (this.props.match.params.type === 'games') {
       this.props.searchGames(this.props.match.params.query, 1);
@@ -18,6 +22,20 @@ class SearchResults extends React.Component {
       this.props.searchFranchises(this.props.match.params.query, 1);
     }  else if (this.props.match.params.type === 'characters') {
       this.props.searchCharacters(this.props.match.params.query, 1);
+    }
+  }
+
+  onChange = e => this.setState({[e.target.name]: e.target.value});
+
+  onSearchKeyDown = e => {
+    if (e.keyCode === 13 && e.target.value) {
+      if (this.props.match.params.type === 'games') {
+        this.props.history.push(`/games/search/${e.target.value}`)
+      } else if (this.props.match.params.type === 'franchises') {
+        this.props.history.push(`/franchises/search/${e.target.value}`)
+      }  else if (this.props.match.params.type === 'characters') {
+        this.props.history.push(`/characters/search/${e.target.value}`)
+      }
     }
   }
 
@@ -48,6 +66,7 @@ class SearchResults extends React.Component {
 
   render() {
     const {history, searchResults, totalResults, page} = this.props;
+    const {searchTerm} = this.state;
     const {query, type} = this.props.match.params;
     const lastPage = this.getLastPage(totalResults);
     return (
@@ -56,7 +75,9 @@ class SearchResults extends React.Component {
         <div ref={node => this.pageTop = node}></div>
 
         <section className="search_header">
-          <section className={`title ${type}`}><h1>Searched for: <span>{query}</span></h1></section>
+          <section className={`title ${type}`}>
+            <h1>Searched for:  <span><input name='searchTerm' value={searchTerm} onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} /></span></h1>
+          </section>
           <section className="meta">
             {searchResults && <p>Results: {`${searchResults.length} of ${totalResults}`}</p> }
           </section>

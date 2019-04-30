@@ -12,15 +12,35 @@
   margin: auto;
   .title {
     text-align: center;
-    font-size: 3em;
+    font-size: 45px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    span {color: green;}
-    &.games {span {color: @gameBorderColor;}}
-    &.reviews {span {color: @reviewBorderColor;}}
-    &.franchises {span {color: @franchisesBorderColor;}}
-    &.characters {span {color: @charactersBorderColor;}}
+    margin-bottom: 1px;
+    input {
+      border: none;
+      font-size: 45px;
+      background-color: transparent;
+    }
+    span {border-bottom: 1px solid;}
+    &.games {
+      span {
+        color: @gameBorderColor;
+        input {color: @gameBorderColor;}
+      }
+    }
+    &.reviews {
+      color: @reviewBorderColor;
+      input {color: @reviewBorderColor;}
+    }
+    &.franchises {
+      color: @franchisesBorderColor;
+      input {color: @franchisesBorderColor;}
+    }
+    &.characters {
+      color: @charactersBorderColor;
+      input {color: @charactersBorderColor;}
+    }
   }
   .meta {
     text-align: right;
