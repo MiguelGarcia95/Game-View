@@ -30,7 +30,7 @@ class Navbar extends React.Component {
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
   render() {
-    const {search, menu} = this.state;
+    const {search, menu, searchTerm} = this.state;
     return (
       <React.Fragment>
         <div ref={node => this.pageTop = node}></div>
@@ -49,7 +49,7 @@ class Navbar extends React.Component {
           </section>
         </section>
         <section className={classnames('searchbar', {active: search})} >
-          <input type="text" name='searchTerm' placeholder='Search for Games' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm} />
+          <input type="text" name='searchTerm' placeholder='Search for Games' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={searchTerm} />
         </section>
         <section className={classnames('nav-box', {active: menu})}>
           <section className="screen"></section>

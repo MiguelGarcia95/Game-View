@@ -11,9 +11,21 @@ import './css/page.css';
 import './css/games.css';
 
 class Games extends React.Component {
+  state = {
+    searchTerm: ''
+  }
+  
   componentDidMount() {
     if (this.props.games.length === 0) {
       this.props.getGames(0);
+    }
+  }
+
+  onChange = e => this.setState({[e.target.name]: e.target.value});
+
+  onSearchKeyDown = e => {
+    if (e.keyCode === 13 && e.target.value) {
+      this.props.history.push(`/games/search/${e.target.value}`)
     }
   }
 
@@ -54,7 +66,10 @@ class Games extends React.Component {
         <div ref={node => this.pageTop = node}></div>
         <section className="header">
           <h1>Search For Games</h1>
-          <input type="text" placeholder='Search For Games' className="search_bar"/>
+          <input 
+            name='searchTerm' type="text" placeholder='Search For Games' className="search_bar" 
+            onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
+          />
         </section>
         <section className="page_content">
           {this.displayGames(games)}
