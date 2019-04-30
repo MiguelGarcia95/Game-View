@@ -14,7 +14,7 @@ class SearchResults extends React.Component {
     if (this.props.match.params.type === 'games') {
       this.props.searchGames(this.props.match.params.query, 1);
     } else if (this.props.match.params.type === 'franchises') {
-      this.props.searchFranchises(this.props.match.params.query);
+      this.props.searchFranchises(this.props.match.params.query, 1);
     }
   }
 
