@@ -6,7 +6,7 @@ export const getCharacters = offset => {
   return async (dispatch) => {
     const results = await axios.get('https://www.giantbomb.com/api/characters',{
       params: {
-        pi_key: GBAPI,
+        api_key: GBAPI,
         format: 'json',
         limit: '50',
         offset: offset,
@@ -14,7 +14,7 @@ export const getCharacters = offset => {
         // field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,guid,id,image,image_tags,name,site_detail_url'
       }
     });
-    console.log(results)
+    // console.log(results)
     dispatch({
       type: actionTypes.GET_CHARACTERS,
       payload: {
