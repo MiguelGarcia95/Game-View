@@ -6,7 +6,6 @@ import Navbar from '../layout/Navbar';
 import PaginationOffset from '../layout/PaginationOffset';
 import {getFranchises} from '../../actions/franchiseActions';
 import {Page} from '../../utils/styledClasses';
-
 import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
 
 class Franchises extends React.Component {

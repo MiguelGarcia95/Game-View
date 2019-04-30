@@ -6,7 +6,6 @@ import Navbar from '../layout/Navbar';
 import PaginationOffset from '../layout/PaginationOffset';
 import {getCharacters} from '../../actions/characterActions';
 import {Page} from '../../utils/styledClasses';
-
 import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
 
 import './css/page.css';
