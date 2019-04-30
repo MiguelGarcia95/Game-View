@@ -6,6 +6,7 @@ import Navbar from '../layout/Navbar';
 import PaginationOffset from '../layout/PaginationOffset';
 import {getReviews} from '../../actions/reviewActions';
 import {Page} from '../../utils/styledClasses';
+import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
 
 import './css/page.css';
 
@@ -42,13 +43,6 @@ class Reviews extends React.Component {
     })
   }
 
-  getLastPage = () => Math.ceil(this.props.totalResults/50);
-  getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
-
-  getOffset = totalResults => {
-    return totalResults - totalResults%50;
-  }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getReviews(offset);
@@ -56,9 +50,9 @@ class Reviews extends React.Component {
 
   render() {
     const {history, reviews, offset, totalResults} = this.props;
-    const lastPage = this.getLastPage();
-    const lastOffset = this.getOffset(totalResults);
-    const page = this.getCurrentPage(offset);
+    const lastPage = getLastPage(totalResults);
+    const lastOffset = getOffset(totalResults);
+    const page = getCurrentPage(offset);
     return (
       <Page className="page app">
         <Navbar history={history} />
