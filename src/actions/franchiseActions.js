@@ -17,7 +17,9 @@ export const getFranchises = offset => {
     dispatch({
       type: actionTypes.GET_FRANCHISES,
       payload: {
-        franchises: results.data.results
+        franchises: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        offset: results.data.offset
       }
     })
   }

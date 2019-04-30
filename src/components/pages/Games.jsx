@@ -50,7 +50,6 @@ class Games extends React.Component {
   }
 
   paginationClick = offset => {
-    console.log(offset)
     this.scrollTop();
     this.props.getGames(offset);
   }
