@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames} from '../../actions/searchActions';
+import {searchGames, searchFranchises} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 import './css/page.css';
 import './css/search_results.css';
@@ -14,7 +14,7 @@ class SearchResults extends React.Component {
     if (this.props.match.params.type === 'games') {
       this.props.searchGames(this.props.match.params.query, 1);
     } else if (this.props.match.params.type === 'franchises') {
-
+      this.props.searchFranchises(this.props.match.params.query);
     }
   }
 
@@ -39,7 +39,9 @@ class SearchResults extends React.Component {
     this.scrollTop();
     if (type === 'games') {
       this.props.searchGames(this.props.match.params.query, page);
-    }
+    } else if (type === 'franchises') {
+      this.props.searchFranchises(this.props.match.params.query, page);
+    } 
   }
 
   render() {
@@ -78,7 +80,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchGames: (query, page) => dispatch(searchGames(query, page))
+    searchGames: (query, page) => dispatch(searchGames(query, page)),
+    searchFranchises: (query, page) => dispatch(searchFranchises(query, page))
   }
 }
 
