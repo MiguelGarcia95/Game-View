@@ -13,6 +13,8 @@ class SearchResults extends React.Component {
   componentDidMount() {
     if (this.props.match.params.type === 'games') {
       this.props.searchGames(this.props.match.params.query, 1);
+    } else if (this.props.match.params.type === 'franchises') {
+
     }
   }
 
