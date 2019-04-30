@@ -36,8 +36,13 @@ class Reviews extends React.Component {
     return reviews.map(review => {
       return (
         <section className="display_result" key={review.id} >
-          {/* <section className="display_image"><img src={review.image.small_url} alt=""/></section> */}
           <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
+          <section className="display_description"><p>{review.deck}</p></section>
+          <section className="meta">
+            <section className="display_author"><p>{review.reviewer}</p></section>
+            <section className="display_date"><p>{review.publish_date}</p></section>
+            <section className="display_scrore"><p>{review.score}</p></section>
+          </section>
         </section>
       )
     })
@@ -64,7 +69,7 @@ class Reviews extends React.Component {
             onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
           />
         </section>
-        <section className="page_content">
+        <section className="page_content reviews">
           {this.displayReviews(reviews)}
         </section>
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
