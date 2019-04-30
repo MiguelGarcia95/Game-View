@@ -33,7 +33,7 @@ export const searchFranchises = (query, page) => {
         format: 'json',
         page: page,
         query: query,
-        resources: 'game',
+        resources: 'franchise',
         field_list: 'guid,id,name,image'
       }
     });
