@@ -41,7 +41,7 @@ class Reviews extends React.Component {
           <section className="meta">
             <section className="display_author"><p>{review.reviewer}</p></section>
             <section className="display_date"><p>{review.publish_date}</p></section>
-            <section className="display_scrore"><p>{review.score}</p></section>
+            <section className="display_score"><p>{review.score}</p></section>
           </section>
         </section>
       )
