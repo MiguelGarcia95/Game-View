@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames, searchFranchises} from '../../actions/searchActions';
+import {searchGames, searchFranchises, searchCharacters} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 import './css/page.css';
 import './css/search_results.css';
@@ -15,9 +15,12 @@ class SearchResults extends React.Component {
       this.props.searchGames(this.props.match.params.query, 1);
     } else if (this.props.match.params.type === 'franchises') {
       this.props.searchFranchises(this.props.match.params.query, 1);
+    }  else if (this.props.match.params.type === 'characters') {
+      this.props.searchCharacters(this.props.match.params.query, 1);
     }
   }
 
+  // LINKS SHOULD DEPEND ON TYPE
   displayResults = results => {
     return results.map(result => {
       return (
@@ -81,7 +84,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     searchGames: (query, page) => dispatch(searchGames(query, page)),
-    searchFranchises: (query, page) => dispatch(searchFranchises(query, page))
+    searchFranchises: (query, page) => dispatch(searchFranchises(query, page)),
+    searchCharacters: (query, page) => dispatch(searchCharacters(query, page))
   }
 }
 
