@@ -70,3 +70,26 @@ export const searchCharacters = (query, page) => {
     })
   }
 }
+
+export const searchReviews = (query, page) => {
+  return async (dispatch) => {
+    const results = await axios.get(`https://www.giantbomb.com/api/search`,{
+      params: {
+        api_key: GBAPI,
+        format: 'json',
+        page: page,
+        query: query,
+        resources: 'review',
+        field_list: 'guid,id,name,image'
+      }
+    });
+    dispatch({
+      type: actionTypes.SEARCH,
+      payload: {
+        searchResults: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        page: page
+      }
+    })
+  }
+}
