@@ -37,7 +37,7 @@ class Reviews extends React.Component {
       return (
         <section className="display_result" key={review.id} >
           {/* <section className="display_image"><img src={review.image.small_url} alt=""/></section> */}
-          <Link to={`/reviews/review/${review.guid}`} ><p>{review.name}</p></Link>
+          <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
         </section>
       )
     })
