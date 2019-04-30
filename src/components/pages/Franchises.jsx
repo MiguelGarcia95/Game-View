@@ -2,11 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import {getHomeGames} from '../../actions/gameActions';
+import {getFranchises} from '../../actions/franchiseActions';
 import {Page} from '../../utils/styledClasses';
 
 class Franchises extends React.Component {
+  state = {
+    searchTerm: ''
+  }
+  
   componentDidMount() {
+    if (this.props.franchises.length === 0) {
+      this.props.getFranchises(0);
+    }
   }
 
   render() {
@@ -26,10 +33,18 @@ class Franchises extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    getHomeGames: () => dispatch(getHomeGames())
+    franchises: state.franchises.franchises,
+    totalResults: state.franchises.totalResults,
+    offset: state.franchises.offset
   }
 }
 
-export default connect(null, mapDispatchToProps)(Franchises);
+const mapDispatchToProps = dispatch => {
+  return {
+    getFranchises: offset => dispatch(getFranchises(offset))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Franchises);
