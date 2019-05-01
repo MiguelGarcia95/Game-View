@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
@@ -39,9 +40,9 @@ class Reviews extends React.Component {
           <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
           <section className="display_description"><p>{review.deck}</p></section>
           <section className="meta">
-            <section className="display_author"><p>{review.reviewer}</p></section>
-            <section className="display_date"><p>{review.publish_date}</p></section>
-            <section className="display_score"><p>{review.score}</p></section>
+            <section className="display_author"><span>By: </span><p>{review.reviewer}</p></section>
+            <section className="display_date"><span>Date: </span><p>{moment(review.publish_date).format('LL')}</p></section>
+            <section className="display_score"><span>Score: </span><p>{review.score}</p></section>
           </section>
         </section>
       )
