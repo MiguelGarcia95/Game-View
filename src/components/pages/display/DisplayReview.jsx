@@ -11,7 +11,7 @@ import {Page} from '../../../utils/styledClasses';
 import '../css/page.css';
 import '../css/games.css';
 
-class DisplayGame extends React.Component {
+class DisplayReview extends React.Component {
   state = {
     currentVideo: null,
     currentImage: null,
@@ -173,4 +173,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayGame);
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayReview);
