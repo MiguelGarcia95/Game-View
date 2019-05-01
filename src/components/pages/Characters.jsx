@@ -56,7 +56,7 @@ class Characters extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header">
+        <section className="header characters ">
           <h1>Search For Characters</h1>
           <input 
             name='searchTerm' type="text" placeholder='Search For Characters' className="search_bar" 

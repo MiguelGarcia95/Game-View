@@ -54,7 +54,7 @@ class Franchises extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header">
+        <section className="header franchises">
           <h1>Search For Franchises</h1>
           <input 
             name='searchTerm' type="text" placeholder='Search For Franchises' className="search_bar" 

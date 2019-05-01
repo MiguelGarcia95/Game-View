@@ -57,7 +57,7 @@ class Games extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header">
+        <section className="header games">
           <h1>Search For Games</h1>
           <input 
             name='searchTerm' type="text" placeholder='Search For Games' className="search_bar" 
