@@ -3,11 +3,11 @@ import moment from 'moment';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-import Navbar from '../layout/Navbar';
-import PaginationOffset from '../layout/PaginationOffset';
-import {getReviews} from '../../actions/reviewActions';
-import {Page} from '../../utils/styledClasses';
-import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
+import Navbar from '../../layout/Navbar';
+import PaginationOffset from '../../layout/PaginationOffset';
+import {getReviews} from '../../../actions/reviewActions';
+import {Page} from '../../../utils/styledClasses';
+import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
 import './css/page.css';
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Page} from '../../utils/styledClasses';
+import {Page} from '../../../utils/styledClasses';
 
-import Navbar from '../layout/Navbar';
-import HomeHeader from '../layout/header/HomeHeader';
-import HomeResult from '../layout/HomeResult';
-import Sidebar from '../layout/Sidebar';
-import VideoPlayer from '../layout/VideoPlayer';
-import Content from '../layout/Content';
+import Navbar from '../../layout/Navbar';
+import HomeHeader from '../../layout/header/HomeHeader';
+import HomeResult from '../../layout/HomeResult';
+import Sidebar from '../../layout/Sidebar';
+import VideoPlayer from '../../layout/VideoPlayer';
+import Content from '../../layout/Content';
 
-import {getHomeGames, getHomeGameReleases} from '../../actions/gameActions';
-import {getHomeVideos} from '../../actions/videosActions';
+import {getHomeGames, getHomeGameReleases} from '../../../actions/gameActions';
+import {getHomeVideos} from '../../../actions/videosActions';
 
 import './css/page.css';
 

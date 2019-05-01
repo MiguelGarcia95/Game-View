@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-import Navbar from '../layout/Navbar';
-import PaginationOffset from '../layout/PaginationOffset';
-import {getGames} from '../../actions/gameActions';
-import {Page} from '../../utils/styledClasses';
-import {getCurrentPage, getLastPage, getOffset} from '../../utils/functions';
+import Navbar from '../../layout/Navbar';
+import PaginationOffset from '../../layout/PaginationOffset';
+import {getGames} from '../../../actions/gameActions';
+import {Page} from '../../../utils/styledClasses';
+import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
 import './css/page.css';
 import './css/games.css';

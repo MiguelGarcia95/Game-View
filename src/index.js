@@ -7,13 +7,13 @@ import styled from "styled-components";
 import store from './store';
 
 import './style.css';
-import Home from './components/pages/Home';
-import Games from './components/pages/Games';
+import Home from './components/pages/home_pages/Home';
+import Games from './components/pages/home_pages/Games';
 import SearchResults from './components/pages/SearchResults';
 import DisplayGame from './components/pages/display/DisplayGame';
-import Reviews from './components/pages/Reviews';
-import Franchises from './components/pages/Franchises';
-import Characters from './components/pages/Characters';
+import Reviews from './components/pages/home_pages/Reviews';
+import Franchises from './components/pages/home_pages/Franchises';
+import Characters from './components/pages/home_pages/Characters';
 import * as serviceWorker from './serviceWorker';
 
 const PageContainer = styled.div`
