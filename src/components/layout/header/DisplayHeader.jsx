@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import './css/display_header.css';
+import '../css/display_header.css';
 
 const getDate = (original_date, expected_date) => {
   if (original_date !== null) {
