@@ -40,9 +40,9 @@ class Reviews extends React.Component {
           <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
           <section className="display_description"><p>{review.deck}</p></section>
           <section className="meta">
-            <section className="display_author"><span>By: </span><p>{review.reviewer}</p></section>
-            <section className="display_date"><span>Date: </span><p>{moment(review.publish_date).format('LL')}</p></section>
-            <section className="display_score"><span>Score: </span><p>{review.score}</p></section>
+            <section className="display_author"><p><span>By: </span>{review.reviewer}</p></section>
+            <section className="display_date"><p><span>Date: </span>{moment(review.publish_date).format('LL')}</p></section>
+            <section className="display_score"><p><span>Score: </span>{review.score}</p></section>
           </section>
         </section>
       )
