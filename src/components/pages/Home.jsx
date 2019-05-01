@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Page} from '../../utils/styledClasses';
 
 import Navbar from '../layout/Navbar';
-import HomeHeader from '../layout/HomeHeader';
+import HomeHeader from '../layout/header/HomeHeader';
 import HomeResult from '../layout/HomeResult';
 import Sidebar from '../layout/Sidebar';
 import VideoPlayer from '../layout/VideoPlayer';

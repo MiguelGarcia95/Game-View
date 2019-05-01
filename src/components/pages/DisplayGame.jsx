@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../layout/Navbar';
-import DisplayHeader from '../layout/DisplayHeader';
+import DisplayHeader from '../layout/header/DisplayHeader';
 import ImageViewer from '../layout/ImageViewer';
 
 import {getGame} from '../../actions/gameActions';
