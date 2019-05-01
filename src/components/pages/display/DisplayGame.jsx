@@ -1,15 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Navbar from '../layout/Navbar';
-import DisplayHeader from '../layout/header/DisplayHeader';
-import ImageViewer from '../layout/ImageViewer';
+import Navbar from '../../layout/Navbar';
+import DisplayHeader from '../../layout/header/DisplayHeader';
+import ImageViewer from '../../layout/ImageViewer';
 
-import {getGame} from '../../actions/gameActions';
-import {Page} from '../../utils/styledClasses';
+import {getGame} from '../../../actions/gameActions';
+import {Page} from '../../../utils/styledClasses';
 
-import './css/page.css';
-import './css/games.css';
+import '../css/page.css';
+import '../css/games.css';
 
 class Games extends React.Component {
   state = {

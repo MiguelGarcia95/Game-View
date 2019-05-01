@@ -10,7 +10,7 @@ import './style.css';
 import Home from './components/pages/Home';
 import Games from './components/pages/Games';
 import SearchResults from './components/pages/SearchResults';
-import DisplayGame from './components/pages/DisplayGame';
+import DisplayGame from './components/pages/display/DisplayGame';
 import Reviews from './components/pages/Reviews';
 import Franchises from './components/pages/Franchises';
 import Characters from './components/pages/Characters';
