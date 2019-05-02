@@ -43,7 +43,7 @@ const Root = () => {
                   <Route exact path='/games' component={Games} />
                   <Route path='/games/game/:guid' component={DisplayGame} />
                   <Route exact path='/reviews' component={Reviews} />
-                  {/* <Route path='/reviews/review/:guid' component={DisplayReview} /> */}
+                  <Route path='/reviews/review/:guid' component={DisplayReview} />
                   <Route exact path='/franchises' component={Franchises} />
                   {/* <Route path='/franchises/franchise/:guid' component={DisplayFranchise} /> */}
                   <Route exact path='/characters' component={Characters} />

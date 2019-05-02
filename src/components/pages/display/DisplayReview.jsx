@@ -163,7 +163,7 @@ class DisplayReview extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    game: state.games.game
+    review: state.reviews.review
   }
 }
 

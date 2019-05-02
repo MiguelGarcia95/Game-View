@@ -55,11 +55,9 @@ export const getReview = guid => {
       }
     });
     dispatch({
-      type: actionTypes.GET_REVIEWS,
+      type: actionTypes.GET_REVIEW,
       payload: {
-        reviews: results.data.results,
-        totalResults: results.data.number_of_total_results,
-        offset: results.data.offset
+        review: results.data.results
       }
     })
   }
