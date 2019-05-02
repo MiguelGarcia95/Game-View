@@ -28,9 +28,8 @@ class DisplayReview extends React.Component {
 
 
   componentDidUpdate() {
-    // `3030-${guid}`
     if (this.props.review && (!this.props.game || this.props.game.id !== this.props.review.game.id)) {
-      this.props.getGame(this.props.review.game.id)
+      this.props.getGame(`3030-${this.props.review.game.id}`)
     }
 
     // let about = document.querySelector('#about');
@@ -123,15 +122,28 @@ class DisplayReview extends React.Component {
   // setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
-    const {history, review} = this.props;
+    const {history, review, game} = this.props;
     // const {currentImage, currentImageIndex} = this.state;
     console.log(review);
+    console.log(game);
+    let headerBg;
+
+    if (game) {
+      headerBg = {
+        backgroundImage: `url(${game.image.medium_url})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed'
+      }
+    }
     return (
       <Page className="page app">
         <Navbar history={history} />
         {review && (
           <React.Fragment>
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
+            <section className="review_header" style={headerBg}>
+              <h1>{`${review.game.name} review`}</h1>
+            </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content game">
 
@@ -153,7 +165,7 @@ class DisplayReview extends React.Component {
                 <h1>Similar Games</h1>
                 {game.similar_games ? this.displaySimilarGames(game.similar_games) :  <h2 className='not_available'>No Games</h2>}
               </section> */}
-{/* 
+              {/* 
               <section className="images">
                 <div ref={node => this.pageImages = node}></div>
                 <h1>Images</h1>
