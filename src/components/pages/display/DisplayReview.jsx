@@ -13,7 +13,6 @@ import '../css/games.css';
 
 class DisplayReview extends React.Component {
   state = {
-    currentVideo: null,
     currentImage: null,
     currentImageIndex: null
   }
@@ -65,6 +64,8 @@ class DisplayReview extends React.Component {
   //   }
   // }
 
+  scrollToTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
+
   // scrollAbout = () => this.pageDown.scrollIntoView({behavior: 'smooth'});
   // scrollDetails = () => this.pageDetails.scrollIntoView({behavior: 'smooth'});
   // scrollSimilar = () => this.pageSimilar.scrollIntoView({behavior: 'smooth'});
@@ -115,15 +116,15 @@ class DisplayReview extends React.Component {
   // setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
-    const {history} = this.props;
+    const {history, review} = this.props;
     // const {currentImage, currentImageIndex} = this.state;
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {false && (
+        {review && (
           <React.Fragment>
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
-            <div ref={node => this.pageDown = node}></div>
+            <div ref={node => this.pageTop = node}></div>
             <section className="page_content game">
 
               {/* <section className="about" id='about'>

@@ -13,7 +13,6 @@ import '../css/games.css';
 
 class DisplayGame extends React.Component {
   state = {
-    currentVideo: null,
     currentImage: null,
     currentImageIndex: null
   }
