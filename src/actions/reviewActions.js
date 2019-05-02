@@ -44,3 +44,23 @@ export const getReviews = (offset) => {
     })
   }
 }
+
+export const getReview = guid => {
+  return async (dispatch) => {
+    const results = await axios.get(`https://www.giantbomb.com/api/review/${guid}`, {
+      params: {
+        api_key: GBAPI,
+        format: 'json',
+        field_list: 'deck,description,dlc_name,game,guid,id,publish_date,release,reviewer,score'
+      }
+    });
+    dispatch({
+      type: actionTypes.GET_REVIEWS,
+      payload: {
+        reviews: results.data.results,
+        totalResults: results.data.number_of_total_results,
+        offset: results.data.offset
+      }
+    })
+  }
+}
