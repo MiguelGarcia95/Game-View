@@ -29,7 +29,7 @@ export const getReviews = (offset) => {
         api_key: GBAPI,
         format: 'json',
         limit: '50',
-        sort: 'publish_date:desc',
+        sort: 'guid:desc',
         offset: offset,
         field_list: 'deck,description,dlc_name,game,guid,id,publish_date,release,reviewer,score'
       }
