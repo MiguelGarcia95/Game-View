@@ -143,14 +143,16 @@ class DisplayReview extends React.Component {
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
             <section className="review_header" style={headerBg}>
               <h1>{`${review.game.name} review`}</h1>
+              <span className="score">{review.score}</span>
+              <span className="author">{review.reviewer}</span>
             </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content game">
 
-              {/* <section className="about" id='about'>
-                <header>About The Game</header>
-                {game.description ? <div dangerouslySetInnerHTML={{ __html: game.description }} /> : <h2 className='not_available'>Not Available</h2>}
-              </section> */}
+              <section className="about" id='about'>
+                {/* <header>About The Game</header> */}
+                {review.description ? <div dangerouslySetInnerHTML={{ __html: review.description }} /> : <h2 className='not_available'>Not Available</h2>}
+              </section>
 
               {/* <section className="misc">
                 <div ref={node => this.pageDetails = node}></div>
