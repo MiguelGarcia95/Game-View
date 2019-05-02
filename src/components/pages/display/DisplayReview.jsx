@@ -32,17 +32,17 @@ class DisplayReview extends React.Component {
       this.props.getGame(`3030-${this.props.review.game.id}`)
     }
 
-    // let about = document.querySelector('#about');
-    // if (about !== null) {
-    //   let links = about.getElementsByTagName('a');
-    //   let lazyImages = about.querySelectorAll('.js-lazy-load-image');
-    //   for (const link of links) {
-    //     link.removeAttribute('href');
-    //   }
-    //   lazyImages.forEach(lazyImage => {
-    //     lazyImage.src = lazyImage.dataset.src
-    //   })
-    // }
+    let about = document.querySelector('#about_review');
+    if (about !== null) {
+      let links = about.getElementsByTagName('a');
+      let lazyImages = about.querySelectorAll('.js-lazy-load-image');
+      for (const link of links) {
+        link.removeAttribute('href');
+      }
+      lazyImages.forEach(lazyImage => {
+        lazyImage.src = lazyImage.dataset.src
+      })
+    }
     
     // if (this.state.currentImage) {
     //   window.addEventListener('keydown', e => {
