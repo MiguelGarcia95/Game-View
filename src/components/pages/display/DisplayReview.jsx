@@ -6,6 +6,7 @@ import DisplayHeader from '../../layout/header/DisplayHeader';
 import ImageViewer from '../../layout/ImageViewer';
 
 import {getReview} from '../../../actions/reviewActions';
+import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 
 import '../css/page.css';
@@ -118,6 +119,7 @@ class DisplayReview extends React.Component {
   render() {
     const {history, review} = this.props;
     // const {currentImage, currentImageIndex} = this.state;
+    console.log(review);
     return (
       <Page className="page app">
         <Navbar history={history} />
@@ -164,13 +166,15 @@ class DisplayReview extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    review: state.reviews.review
+    review: state.reviews.review,
+    game: state.games.game
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getReview: guid => dispatch(getReview(guid))
+    getReview: guid => dispatch(getReview(guid)),
+    getGame: guid => dispatch(getGame(guid))
   }
 }
 
