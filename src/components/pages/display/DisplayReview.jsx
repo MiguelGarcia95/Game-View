@@ -26,7 +26,13 @@ class DisplayReview extends React.Component {
     }
   }
 
+
   componentDidUpdate() {
+    // `3030-${guid}`
+    if (this.props.review && (!this.props.game || this.props.game.id !== this.props.review.game.id)) {
+      this.props.getGame(this.props.review.game.id)
+    }
+
     // let about = document.querySelector('#about');
     // if (about !== null) {
     //   let links = about.getElementsByTagName('a');
