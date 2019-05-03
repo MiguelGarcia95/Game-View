@@ -144,7 +144,9 @@ class DisplayReview extends React.Component {
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
             <section className="review_header" style={headerBg}>
               <h1>{`${review.game.name} review`}</h1>
-              <span className="score">{review.score}</span>
+              <section className="score">
+                <p>Score: <span>{review.score}</span></p>
+              </section>
               <section className="meta">
                 <span className="author">{review.reviewer}</span>
                 <span className="date">{moment(review.publish_date).format('LL')}</span>
