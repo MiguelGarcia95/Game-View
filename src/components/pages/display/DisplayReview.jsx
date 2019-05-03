@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
@@ -144,7 +145,10 @@ class DisplayReview extends React.Component {
             <section className="review_header" style={headerBg}>
               <h1>{`${review.game.name} review`}</h1>
               <span className="score">{review.score}</span>
-              <span className="author">{review.reviewer}</span>
+              <section className="meta">
+                <span className="author">{review.reviewer}</span>
+                <span className="date">{moment(review.publish_date).format('LL')}</span>
+              </section>
             </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
