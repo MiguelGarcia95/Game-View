@@ -148,8 +148,8 @@ class DisplayReview extends React.Component {
                 <p>Score: <span>{review.score}</span></p>
               </section>
               <section className="meta">
-                <span className="author">By: {review.reviewer}</span>
-                <span className="date">On: {moment(review.publish_date).format('LL')}</span>
+                <span className="author"><span>By: </span> {review.reviewer}</span>
+                <span className="date"><span>On: </span> {moment(review.publish_date).format('LL')}</span>
               </section>
             </section>
             <div ref={node => this.pageTop = node}></div>
