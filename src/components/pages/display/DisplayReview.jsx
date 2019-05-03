@@ -145,7 +145,7 @@ class DisplayReview extends React.Component {
             <section className="review_header" style={headerBg}>
               <h1>{`${review.game.name} review`}</h1>
               <section className="score">
-                <p>Score: <span>{review.score}</span></p>
+                <p>Score: <span>{review.score} / 5</span></p>
               </section>
               <section className="meta">
                 <span className="author"><span>By: </span> {review.reviewer}</span>
