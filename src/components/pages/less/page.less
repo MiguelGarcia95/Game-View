@@ -26,18 +26,28 @@
     height: 200px;
     position: relative;
     h1 {
+      position: absolute;
+      font-weight: 300;
       font-size: 3em;
       color: black;
-      line-height: 200px;
+      top: 128px;
+      left: 0;
     }
     .score {
       position: absolute;
-      font-size: 3em;
       font-weight: 300;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 0 20px;
-      border-radius: 50%;
-      top: 118px;
+      p {
+        color: black;
+        font-size: 3em;
+        margin: 0;
+      }
+      span {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0 20px;
+        border-radius: 50%;
+        color: white;
+      }
+      top: 128px;
       right: 0;
     }
     .meta {
