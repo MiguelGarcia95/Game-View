@@ -36,8 +36,10 @@ class Games extends React.Component {
     return games.map(game => {
       return (
         <section className="display_result" key={game.id} >
-          <section className="display_image"><img src={game.image.small_url} alt=""/></section>
-          <Link to={`/games/game/${game.guid}`} ><p>{game.name}</p></Link>
+          <Link to={`/games/game/${game.guid}`} >
+            <section className="display_image"><img src={game.image.small_url} alt=""/></section>
+            <p>{game.name}</p>
+          </Link>
         </section>
       )
     })
