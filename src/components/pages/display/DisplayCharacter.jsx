@@ -67,9 +67,12 @@ class DisplayReview extends React.Component {
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
-              <ul>
-                {this.displayGames(character.games)}
-              </ul>
+              <section className="character_games">
+                <h2>Appears In</h2>
+                <ul>
+                  {this.displayGames(character.games)}
+                </ul>
+              </section>
             </section>
           </React.Fragment>
         )}
