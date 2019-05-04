@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 // import ReviewHeader from '../../layout/header/ReviewHeader';
@@ -22,7 +23,6 @@ class DisplayReview extends React.Component {
     }
   }
 
-
   componentDidUpdate() {
     let about = document.querySelector('#about_review');
     if (about !== null) {
@@ -35,6 +35,18 @@ class DisplayReview extends React.Component {
         lazyImage.src = lazyImage.dataset.src
       })
     }
+  }
+
+  displayGames = games => {
+    return games.map(game => {
+      return (
+        <section className="display_result" key={game.id} >
+          <Link to={`/games/game/${game.id}`} >
+            <p>{game.name}</p>
+          </Link>
+        </section>
+      )
+    })
   }
 
 
@@ -55,7 +67,7 @@ class DisplayReview extends React.Component {
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
-              {/* displayGames(character.games) */}
+              {this.displayGames(character.games)}
             </section>
           </React.Fragment>
         )}
