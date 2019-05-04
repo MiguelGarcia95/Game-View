@@ -123,27 +123,27 @@ class DisplayFranchise extends React.Component {
     console.log(franchise);
     let headerBg;
 
-    // if (game) {
-    //   headerBg = {
-    //     backgroundImage: `url(${game.image.medium_url})`,
-    //     backgroundSize: 'cover',
-    //     backgroundAttachment: 'fixed'
-    //   }
-    // }
+    if (franchise) {
+      headerBg = {
+        backgroundImage: `url(${franchise.image.medium_url})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed'
+      }
+    }
     return (
       <Page className="page app">
         <Navbar history={history} />
         {franchise && (
           <React.Fragment>
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
-            {/* <section className="review_header" style={headerBg}>
-              <h1>{`${franchise.game.name} review`}</h1>
-            </section> */}
+            <section className="review_header franchise_header" style={headerBg}>
+              <h1>{`Franchise: ${franchise.name}`}</h1>
+            </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
 
               <section className="about_review" id='about_review'>
-                <header>The Game</header>
+                {/* <header>The Game</header> */}
                 {franchise.description ? <div dangerouslySetInnerHTML={{ __html: franchise.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
 
