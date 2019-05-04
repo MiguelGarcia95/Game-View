@@ -6,8 +6,7 @@ import Navbar from '../../layout/Navbar';
 // import DisplayHeader from '../../layout/header/DisplayHeader';
 // import ImageViewer from '../../layout/ImageViewer';
 
-import {getReview} from '../../../actions/reviewActions';
-import {getGame} from '../../../actions/gameActions';
+import {getFranchise} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 
 import '../css/page.css';
@@ -21,29 +20,25 @@ class DisplayFranchise extends React.Component {
 
   componentDidMount() {
     if (!this.props.review) {
-      this.props.getReview(this.props.match.params.guid);
+      this.props.getFranchise(this.props.match.params.guid);
     } else if (this.props.review.guid !== this.props.match.params.guid) {
-      this.props.getReview(this.props.match.params.guid);
+      this.props.getFranchise(this.props.match.params.guid);
     }
   }
 
 
   componentDidUpdate() {
-    if (this.props.review && (!this.props.game || this.props.game.id !== this.props.review.game.id)) {
-      this.props.getGame(`3030-${this.props.review.game.id}`)
-    }
-
-    let about = document.querySelector('#about_review');
-    if (about !== null) {
-      let links = about.getElementsByTagName('a');
-      let lazyImages = about.querySelectorAll('.js-lazy-load-image');
-      for (const link of links) {
-        link.removeAttribute('href');
-      }
-      lazyImages.forEach(lazyImage => {
-        lazyImage.src = lazyImage.dataset.src
-      })
-    }
+    // let about = document.querySelector('#about_review');
+    // if (about !== null) {
+    //   let links = about.getElementsByTagName('a');
+    //   let lazyImages = about.querySelectorAll('.js-lazy-load-image');
+    //   for (const link of links) {
+    //     link.removeAttribute('href');
+    //   }
+    //   lazyImages.forEach(lazyImage => {
+    //     lazyImage.src = lazyImage.dataset.src
+    //   })
+    // }
     
     // if (this.state.currentImage) {
     //   window.addEventListener('keydown', e => {
@@ -123,9 +118,9 @@ class DisplayFranchise extends React.Component {
   // setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
-    const {history, review, game} = this.props;
+    const {history, franchise, game} = this.props;
     // const {currentImage, currentImageIndex} = this.state;
-    console.log(review);
+    console.log(franchise);
     console.log(game);
     let headerBg;
 
@@ -192,15 +187,13 @@ class DisplayFranchise extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    review: state.reviews.review,
-    game: state.games.game
+    franchise: state.franchises.franchise,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getReview: guid => dispatch(getReview(guid)),
-    getGame: guid => dispatch(getGame(guid))
+    getFranchise: guid => dispatch(getFranchise(guid))
   }
 }
 
