@@ -118,41 +118,33 @@ class DisplayFranchise extends React.Component {
   // setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
-    const {history, franchise, game} = this.props;
+    const {history, franchise} = this.props;
     // const {currentImage, currentImageIndex} = this.state;
     console.log(franchise);
-    console.log(game);
     let headerBg;
 
-    if (game) {
-      headerBg = {
-        backgroundImage: `url(${game.image.medium_url})`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed'
-      }
-    }
+    // if (game) {
+    //   headerBg = {
+    //     backgroundImage: `url(${game.image.medium_url})`,
+    //     backgroundSize: 'cover',
+    //     backgroundAttachment: 'fixed'
+    //   }
+    // }
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {review && (
+        {franchise && (
           <React.Fragment>
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
-            <section className="review_header" style={headerBg}>
-              <h1>{`${review.game.name} review`}</h1>
-              <section className="score">
-                <p>Score: <span>{review.score} / 5</span></p>
-              </section>
-              <section className="meta">
-                <span className="author"><span>By: </span> {review.reviewer}</span>
-                <span className="date"><span>On: </span> {moment(review.publish_date).format('LL')}</span>
-              </section>
-            </section>
+            {/* <section className="review_header" style={headerBg}>
+              <h1>{`${franchise.game.name} review`}</h1>
+            </section> */}
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
 
               <section className="about_review" id='about_review'>
                 <header>The Game</header>
-                {review.description ? <div dangerouslySetInnerHTML={{ __html: review.description }} /> : <h2 className='not_available'>Not Available</h2>}
+                {/* {review.description ? <div dangerouslySetInnerHTML={{ __html: review.description }} /> : <h2 className='not_available'>Not Available</h2>} */}
               </section>
 
               {/* <section className="misc">
