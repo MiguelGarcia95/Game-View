@@ -11,11 +11,6 @@ import '../css/page.css';
 import '../css/games.css';
 
 class DisplayReview extends React.Component {
-  state = {
-    currentImage: null,
-    currentImageIndex: null
-  }
-
   componentDidMount() {
     if (!this.props.review) {
       this.props.getReview(this.props.match.params.guid);

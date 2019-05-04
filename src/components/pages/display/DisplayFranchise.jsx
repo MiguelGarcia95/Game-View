@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import moment from 'moment';
 
 import Navbar from '../../layout/Navbar';
 import FranchiseHeader from '../../layout/header/FranchiseHeader';
@@ -11,11 +10,6 @@ import '../css/page.css';
 import '../css/games.css';
 
 class DisplayFranchise extends React.Component {
-  state = {
-    currentImage: null,
-    currentImageIndex: null
-  }
-
   componentDidMount() {
     if (!this.props.franchise) {
       this.props.getFranchise(this.props.match.params.guid);
