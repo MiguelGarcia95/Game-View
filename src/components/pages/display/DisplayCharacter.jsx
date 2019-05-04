@@ -7,7 +7,6 @@ import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
 import '../css/page.css';
-import '../css/games.css';
 
 class DisplayReview extends React.Component {
   state = {
@@ -25,36 +24,35 @@ class DisplayReview extends React.Component {
 
 
   componentDidUpdate() {
-
-    // let about = document.querySelector('#about_review');
-    // if (about !== null) {
-    //   let links = about.getElementsByTagName('a');
-    //   let lazyImages = about.querySelectorAll('.js-lazy-load-image');
-    //   for (const link of links) {
-    //     link.removeAttribute('href');
-    //   }
-    //   lazyImages.forEach(lazyImage => {
-    //     lazyImage.src = lazyImage.dataset.src
-    //   })
-    // }
+    let about = document.querySelector('#about_review');
+    if (about !== null) {
+      let links = about.getElementsByTagName('a');
+      let lazyImages = about.querySelectorAll('.js-lazy-load-image');
+      for (const link of links) {
+        link.removeAttribute('href');
+      }
+      lazyImages.forEach(lazyImage => {
+        lazyImage.src = lazyImage.dataset.src
+      })
+    }
   }
 
 
   scrollToTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
   render() {
-    const {history, review, game} = this.props;
+    const {history, character, game} = this.props;
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {review && (
+        {character && (
           <React.Fragment>
-            {game && <ReviewHeader review={review} game={game} />}
+            {/* {game && <ReviewHeader review={review} game={game} />} */}
             <div ref={node => this.pageTop = node}></div>
-            <section className="page_content review">
+            <section className="page_content review character">
               <section className="about_review" id='about_review'>
-                <header>The Game</header>
-                {review.description ? <div dangerouslySetInnerHTML={{ __html: review.description }} /> : <h2 className='not_available'>Not Available</h2>}
+                <header>Character</header>
+                {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
             </section>
           </React.Fragment>
