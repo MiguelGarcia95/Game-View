@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../../layout/Navbar';
+import ReviewHeader from '../../layout/header/ReviewHeader';
 // import DisplayHeader from '../../layout/header/DisplayHeader';
 // import ImageViewer from '../../layout/ImageViewer';
 
@@ -124,34 +125,12 @@ class DisplayReview extends React.Component {
 
   render() {
     const {history, review, game} = this.props;
-    // const {currentImage, currentImageIndex} = this.state;
-    console.log(review);
-    console.log(game);
-    let headerBg;
-
-    if (game) {
-      headerBg = {
-        backgroundImage: `url(${game.image.medium_url})`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed'
-      }
-    }
     return (
       <Page className="page app">
         <Navbar history={history} />
         {review && (
           <React.Fragment>
-            {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
-            <section className="review_header" style={headerBg}>
-              <h1>{`${review.game.name} review`}</h1>
-              <section className="score">
-                <p>Score: <span>{review.score} / 5</span></p>
-              </section>
-              <section className="meta">
-                <span className="author"><span>By: </span> {review.reviewer}</span>
-                <span className="date"><span>On: </span> {moment(review.publish_date).format('LL')}</span>
-              </section>
-            </section>
+            {game && <ReviewHeader review={review} game={game} />}
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
 

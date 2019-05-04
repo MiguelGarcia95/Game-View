@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../css/display_header.css';
-
 const FranchiseHeader = ({franchise}) => {
   const headerImage = {
     backgroundImage: `url(${franchise.image.screen_large_url})`,
