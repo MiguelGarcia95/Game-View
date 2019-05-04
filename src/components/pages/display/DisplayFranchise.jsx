@@ -125,8 +125,9 @@ class DisplayFranchise extends React.Component {
 
     if (franchise) {
       headerBg = {
-        backgroundImage: `url(${franchise.image.medium_url})`,
+        backgroundImage: `url(${franchise.image.screen_large_url})`,
         backgroundSize: 'cover',
+        backgroundPosition: 'center center',
         backgroundAttachment: 'fixed'
       }
     }
@@ -138,7 +139,7 @@ class DisplayFranchise extends React.Component {
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
             <section className="review_header franchise_header" style={headerBg}>
               <h1>{`Franchise: ${franchise.name}`}</h1>
-              <p>{`${franchise.deck}`}</p>
+              <p className='franchise_details'><span>Details:</span>{`${franchise.deck}`}</p>
             </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
