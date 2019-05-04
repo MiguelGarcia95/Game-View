@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/types';
 
 const initialState = {
+  character: null,
   characters: [],
   totalResults: null,
   offset: 0
@@ -14,6 +15,11 @@ const characterReducer = (state = initialState, action) => {
         characters: action.payload.characters,
         totalResults: action.payload.totalResults,
         offset: action.payload.offset
+      }
+    case actionTypes.GET_CHARACTER: 
+      return {
+        ...state,
+        character: action.payload.character
       }
     default:
       return state;
