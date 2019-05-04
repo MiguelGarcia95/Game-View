@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../../layout/Navbar';
-import DisplayHeader from '../../layout/header/DisplayHeader';
-import ImageViewer from '../../layout/ImageViewer';
+// import DisplayHeader from '../../layout/header/DisplayHeader';
+// import ImageViewer from '../../layout/ImageViewer';
 
 import {getReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';
