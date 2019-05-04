@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
-// import ReviewHeader from '../../layout/header/ReviewHeader';
+import FranchiseHeader from '../../layout/header/FranchiseHeader';
 import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
@@ -60,9 +60,11 @@ class DisplayReview extends React.Component {
         {character && (
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
-            <section className="review_header character_header">
+            {/* <section className="review_header character_header">
               <h1>Character: <span>{character.name}</span></h1>
-            </section>
+            </section> */}
+            <FranchiseHeader franchise={character} headerClass='character_header' image={false} title='Character' />
+
             <section className="page_content review character">
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
