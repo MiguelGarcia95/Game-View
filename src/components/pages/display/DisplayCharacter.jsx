@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
-import ReviewHeader from '../../layout/header/ReviewHeader';
+// import ReviewHeader from '../../layout/header/ReviewHeader';
 import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
@@ -41,19 +41,21 @@ class DisplayReview extends React.Component {
   scrollToTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
   render() {
-    const {history, character, game} = this.props;
+    const {history, character} = this.props;
     return (
       <Page className="page app">
         <Navbar history={history} />
         {character && (
           <React.Fragment>
-            {/* {game && <ReviewHeader review={review} game={game} />} */}
             <div ref={node => this.pageTop = node}></div>
+            <section className="review_header character_header">
+              <h1>Character: <span>{character.name}</span></h1>
+            </section>
             <section className="page_content review character">
               <section className="about_review" id='about_review'>
-                <header>Character</header>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
+              {/* displayGames(character.games) */}
             </section>
           </React.Fragment>
         )}

@@ -42,8 +42,8 @@ class DisplayFranchise extends React.Component {
         <Navbar history={history} />
         {franchise && (
           <React.Fragment>
-            <FranchiseHeader franchise={franchise} />
             <div ref={node => this.pageTop = node}></div>
+            <FranchiseHeader franchise={franchise} />
             <section className="page_content review">
             <section className='franchise_details'><span>Details</span><p>{`${franchise.deck}`}</p></section>
               <section className="about_review" id='about_review'>
