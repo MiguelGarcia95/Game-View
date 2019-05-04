@@ -40,11 +40,11 @@ class DisplayReview extends React.Component {
   displayGames = games => {
     return games.map(game => {
       return (
-        <section className="display_result" key={game.id} >
+        <li className="display_result" key={game.id} >
           <Link to={`/games/game/${game.id}`} >
-            <p>{game.name}</p>
+            <p>{game.name} <i className="fas fa-chevron-right"></i></p>
           </Link>
-        </section>
+        </li>
       )
     })
   }
@@ -67,7 +67,9 @@ class DisplayReview extends React.Component {
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
-              {this.displayGames(character.games)}
+              <ul>
+                {this.displayGames(character.games)}
+              </ul>
             </section>
           </React.Fragment>
         )}
