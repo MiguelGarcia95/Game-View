@@ -139,11 +139,10 @@ class DisplayFranchise extends React.Component {
             {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
             <section className="review_header franchise_header" style={headerBg}>
               <h1>{`Franchise: ${franchise.name}`}</h1>
-              <p className='franchise_details'><span>Details:</span>{`${franchise.deck}`}</p>
             </section>
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
-
+            <section className='franchise_details'><span>Details:</span><p>{`${franchise.deck}`}</p></section>
               <section className="about_review" id='about_review'>
                 {/* <header>The Game</header> */}
                 {franchise.description ? <div dangerouslySetInnerHTML={{ __html: franchise.description }} /> : <h2 className='not_available'>Not Available</h2>}
