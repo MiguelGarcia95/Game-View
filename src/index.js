@@ -12,7 +12,7 @@ import Games from './components/pages/home_pages/Games';
 import SearchResults from './components/pages/SearchResults';
 import DisplayGame from './components/pages/display/DisplayGame';
 import DisplayReview from './components/pages/display/DisplayReview';
-// import DisplayFranchise from './components/pages/display/DisplayFranchise';
+import DisplayFranchise from './components/pages/display/DisplayFranchise';
 // import DisplayCharacter from './components/pages/display/DisplayCharacter';
 import Reviews from './components/pages/home_pages/Reviews';
 import Franchises from './components/pages/home_pages/Franchises';
@@ -45,7 +45,7 @@ const Root = () => {
                   <Route exact path='/reviews' component={Reviews} />
                   <Route path='/reviews/review/:guid' component={DisplayReview} />
                   <Route exact path='/franchises' component={Franchises} />
-                  {/* <Route path='/franchises/franchise/:guid' component={DisplayFranchise} /> */}
+                  <Route path='/franchises/franchise/:guid' component={DisplayFranchise} />
                   <Route exact path='/characters' component={Characters} />
                   {/* <Route path='/characters/character/:guid' component={DisplayCharacter} /> */}
                   <Route path='/:type/search/:query' component={SearchResults} />
