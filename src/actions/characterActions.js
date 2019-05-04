@@ -30,7 +30,7 @@ export const getCharacter = guid => {
       params: {
         api_key: GBAPI,
         format: 'json',
-        field_list: 'aliases,api_detail_url,date_added,date_last_updated,deck,description,games,guid,id,image,image_tags,name,site_detail_url'
+        field_list: 'date_added,date_last_updated,deck,description,first_appeared_in_game,games,guid,id,image,name'
       }
     });
     dispatch({
