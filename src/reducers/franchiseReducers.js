@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/types';
 
 const initialState = {
+  franchise: null,
   franchises: [],
   totalResults: null,
   offset: 0
@@ -14,6 +15,11 @@ const franchiseReducer = (state = initialState, action) => {
         franchises: action.payload.franchises,
         totalResults: action.payload.totalResults,
         offset: action.payload.offset
+      }
+    case actionTypes.GET_FRANCHISE: 
+      return {
+        ...state,
+        franchise: action.payload.franchise
       }
     default:
       return state;

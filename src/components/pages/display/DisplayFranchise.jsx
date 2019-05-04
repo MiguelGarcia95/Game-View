@@ -13,7 +13,7 @@ import {Page} from '../../../utils/styledClasses';
 import '../css/page.css';
 import '../css/games.css';
 
-class DisplayReview extends React.Component {
+class DisplayFranchise extends React.Component {
   state = {
     currentImage: null,
     currentImageIndex: null
@@ -204,4 +204,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayReview);
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayFranchise);
