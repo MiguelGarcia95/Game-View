@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment';
 
 import Navbar from '../../layout/Navbar';
+import FranchiseHeader from '../../layout/header/FranchiseHeader';
 // import DisplayHeader from '../../layout/header/DisplayHeader';
 // import ImageViewer from '../../layout/ImageViewer';
 
@@ -119,30 +120,16 @@ class DisplayFranchise extends React.Component {
 
   render() {
     const {history, franchise} = this.props;
-    // const {currentImage, currentImageIndex} = this.state;
     console.log(franchise);
-    let headerBg;
-
-    if (franchise) {
-      headerBg = {
-        backgroundImage: `url(${franchise.image.screen_large_url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        backgroundAttachment: 'fixed'
-      }
-    }
     return (
       <Page className="page app">
         <Navbar history={history} />
         {franchise && (
           <React.Fragment>
-            {/* <DisplayHeader game={game} scrollDown={this.scrollAbout} /> */}
-            <section className="review_header franchise_header" style={headerBg}>
-              <h1>{`Franchise: ${franchise.name}`}</h1>
-            </section>
+            <FranchiseHeader franchise={franchise} />
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
-            <section className='franchise_details'><span>Details:</span><p>{`${franchise.deck}`}</p></section>
+            <section className='franchise_details'><span>Details</span><p>{`${franchise.deck}`}</p></section>
               <section className="about_review" id='about_review'>
                 {/* <header>The Game</header> */}
                 {franchise.description ? <div dangerouslySetInnerHTML={{ __html: franchise.description }} /> : <h2 className='not_available'>Not Available</h2>}
