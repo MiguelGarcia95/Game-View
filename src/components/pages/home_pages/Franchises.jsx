@@ -8,6 +8,8 @@ import {getFranchises} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
+import '../css/front_page.css';
+
 class Franchises extends React.Component {
   state = {
     searchTerm: ''
