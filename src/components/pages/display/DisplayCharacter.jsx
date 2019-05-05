@@ -60,7 +60,7 @@ class DisplayReview extends React.Component {
         {character && (
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
-            <FranchiseHeader franchise={character} headerClass='character_header' image={false} title='Character' />
+            <FranchiseHeader franchise={character} headerClass='character_header' image={false} title='Character: ' />
             <section className="page_content review character">
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
