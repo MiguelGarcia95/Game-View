@@ -8,7 +8,6 @@ const FranchiseHeader = ({franchise, title, headerClass, image}) => {
       backgroundPosition: 'center center',
       backgroundAttachment: 'fixed'
     };
-
     return (
       <section className={`review_header ${headerClass}`} style={headerImage}>
         <h1>{title} <span>{franchise.name}</span></h1>
@@ -18,6 +17,7 @@ const FranchiseHeader = ({franchise, title, headerClass, image}) => {
     return (
       <section className={`review_header ${headerClass}`}>
         <h1>{title} <span>{franchise.name}</span></h1>
+        <img src={franchise.image.small_url} alt={franchise.name} />
       </section>
     )
   }
