@@ -9,7 +9,7 @@ import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
-import '../css/page.css';
+// import '../css/page.css';
 import '../css/front_page.css';
 
 

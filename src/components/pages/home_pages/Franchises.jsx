@@ -36,8 +36,10 @@ class Franchises extends React.Component {
     return franchises.map(franchise => {
       return (
         <section className="display_result" key={franchise.id} >
-          <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
-          <Link to={`/franchises/franchise/${franchise.guid}`} ><p>{franchise.name}</p></Link>
+          <Link to={`/franchises/franchise/${franchise.guid}`} >
+            <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
+            <p>{franchise.name}</p>
+          </Link>
         </section>
       )
     })
