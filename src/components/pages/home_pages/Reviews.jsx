@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
+import SearchHeader from '../../layout/header/SearchHeader';
 import {getReviews} from '../../../actions/reviewActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -65,13 +66,10 @@ class Reviews extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header reviews">
-          <h1>Search For Reviews</h1>
-          <input 
-            name='searchTerm' type="text" placeholder='Search For Reviews' className="search_bar" 
-            onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
-          />
-        </section>
+        <SearchHeader 
+          title='Search For Reviews' headerClass='reviews' 
+          onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
+        />
         <section className="page_content reviews">
           {this.displayReviews(reviews)}
         </section>
