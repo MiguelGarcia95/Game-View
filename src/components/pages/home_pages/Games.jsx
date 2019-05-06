@@ -9,8 +9,6 @@ import {getGames} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
-import '../css/page.css';
-import '../css/games.css';
 import '../css/front_page.css';
 
 class Games extends React.Component {
