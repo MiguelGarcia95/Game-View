@@ -61,7 +61,10 @@ class Games extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <SearchHeader title='Search For Games' headerClass='games' onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  />
+        <SearchHeader 
+          title='Search For Games' headerClass='games' 
+          onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
+        />
         <section className="page_content">
           {this.displayGames(games)}
         </section>
