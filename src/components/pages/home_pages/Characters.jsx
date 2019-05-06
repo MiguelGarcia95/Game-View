@@ -9,7 +9,6 @@ import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
-// import '../css/page.css';
 import '../css/front_page.css';
 
 
@@ -38,8 +37,10 @@ class Characters extends React.Component {
     return characters.map(character => {
       return (
         <section className="display_result" key={character.id} >
-          <section className="display_image"><img src={character.image.small_url} alt=""/></section>
-          <Link to={`/characters/character/${character.guid}`} ><p>{character.name}</p></Link>
+          <Link to={`/characters/character/${character.guid}`} >
+            <section className="display_image"><img src={character.image.small_url} alt=""/></section>
+            <p>{character.name}</p>
+          </Link>
         </section>
       )
     })
