@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
+import SearchHeader from '../../layout/header/SearchHeader';
 import PaginationOffset from '../../layout/PaginationOffset';
 import {getGames} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -60,13 +61,7 @@ class Games extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header games">
-          <h1>Search For Games</h1>
-          <input 
-            name='searchTerm' type="text" placeholder='Search For Games' className="search_bar" 
-            onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
-          />
-        </section>
+        <SearchHeader title='Search For Games' headerClass='games' onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  />
         <section className="page_content">
           {this.displayGames(games)}
         </section>

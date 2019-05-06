@@ -7,7 +7,7 @@ const SearchHeader = ({title, headerClass, onChange, onSearchKeyDown, searchTerm
       <h1>{title}</h1>
       <input 
         name='searchTerm' type="text" placeholder='Search For Games' className="search_bar" 
-        onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
+        onChange={onChange}  onKeyDown={onSearchKeyDown} value={searchTerm}
       />
     </section>
   )
