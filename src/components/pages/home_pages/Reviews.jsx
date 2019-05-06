@@ -10,8 +10,8 @@ import {getReviews} from '../../../actions/reviewActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
-import '../css/page.css';
-import '../css/front_page.css';
+// import '../css/page.css';
+// import '../css/front_page.css';
 
 class Reviews extends React.Component {
   state = {
@@ -38,7 +38,7 @@ class Reviews extends React.Component {
   displayReviews = reviews => {
     return reviews.map(review => {
       return (
-        <section className="display_result" key={review.id} >
+        <section className="display_result review" key={review.id} >
           <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
           <section className="display_description"><p>{review.deck}</p></section>
           <section className="meta">
