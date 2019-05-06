@@ -6,7 +6,7 @@ const SearchHeader = ({title, headerClass, onChange, onSearchKeyDown, searchTerm
     <section className={`header ${headerClass}`}>
       <h1>{title}</h1>
       <input 
-        name='searchTerm' type="text" placeholder='Search For Games' className="search_bar" 
+        name='searchTerm' type="text" placeholder={title} className="search_bar" 
         onChange={onChange}  onKeyDown={onSearchKeyDown} value={searchTerm}
       />
     </section>
