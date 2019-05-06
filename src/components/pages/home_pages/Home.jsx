@@ -12,7 +12,6 @@ import Content from '../../layout/Content';
 import {getHomeGames, getHomeGameReleases} from '../../../actions/gameActions';
 import {getHomeVideos} from '../../../actions/videosActions';
 
-import '../css/page.css';
 import '../css/front_page.css';
 
 class Home extends React.Component {
