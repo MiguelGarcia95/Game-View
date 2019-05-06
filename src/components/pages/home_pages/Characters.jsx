@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
+import SearchHeader from '../../layout/header/SearchHeader';
 import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -58,13 +59,10 @@ class Characters extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <section className="header characters ">
-          <h1>Search For Characters</h1>
-          <input 
-            name='searchTerm' type="text" placeholder='Search For Characters' className="search_bar" 
-            onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} value={this.state.searchTerm}
-          />
-        </section>
+        <SearchHeader 
+          title='Search For Characters' headerClass='characters' 
+          onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
+        />
         <section className="page_content">
           {this.displayCharacters(characters)}
         </section>
