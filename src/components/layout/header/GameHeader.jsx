@@ -19,7 +19,7 @@ const displayMetaData = (data) => {
   })
 }
 
-const DisplayHeader = ({game, scrollDown}) => {
+const GameHeader = ({game, scrollDown}) => {
   const headerImage = {
     backgroundImage: `url(${game.image.screen_large_url})`,
     backgroundSize: 'cover',
@@ -66,4 +66,4 @@ const DisplayHeader = ({game, scrollDown}) => {
   )
 }
 
-export default DisplayHeader;
+export default GameHeader;

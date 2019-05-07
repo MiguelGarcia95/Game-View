@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
-import DisplayHeader from '../../layout/header/DisplayHeader';
+import GameHeader from '../../layout/header/GameHeader';
 import ImageViewer from '../../layout/ImageViewer';
 
 import {getGame} from '../../../actions/gameActions';
@@ -123,7 +123,7 @@ class DisplayGame extends React.Component {
         <Navbar history={history} />
         {game && (
           <React.Fragment>
-            <DisplayHeader game={game} scrollDown={this.scrollAbout} />
+            <GameHeader game={game} scrollDown={this.scrollAbout} />
             <div ref={node => this.pageDown = node}></div>
             <section className="page_content game">
 
