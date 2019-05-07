@@ -6,6 +6,7 @@ export const getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
 
 export const getOffset = totalResults => totalResults - totalResults%50;
 
+
 export const setBackgroundImage = image => {
   return {
     backgroundImage: `url(${image})`,
