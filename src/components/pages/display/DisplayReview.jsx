@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
-import ReviewHeader from '../../layout/header/ReviewHeader';
+// import ReviewHeader from '../../layout/header/ReviewHeader';
+import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -48,7 +49,7 @@ class DisplayReview extends React.Component {
         <Navbar history={history} />
         {review && (
           <React.Fragment>
-            {game && <ReviewHeader review={review} game={game} />}
+            {game && <DisplayHeader content={review} game={game} type='review' />}
             <div ref={node => this.pageTop = node}></div>
             <section className="page_content review">
               <section className="about" id='about_review'>
