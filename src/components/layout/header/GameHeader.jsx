@@ -1,18 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 
-import {setBackgroundImage, setBackgroundImageFixed} from '../../../utils/functions';
+import {setBackgroundImage, setBackgroundImageFixed, getDate} from '../../../utils/functions';
 import '../css/game_header.css';
-
-const getDate = (original_date, expected_date) => {
-  if (original_date !== null) {
-    return moment(original_date).format('LL');
-  } else if (expected_date) {
-    return expected_date;
-  } else {
-    return 'N/A';
-  }
-}
 
 const displayMetaData = (data) => {
   return data.map(item => {
