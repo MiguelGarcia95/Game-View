@@ -1,13 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {trimString} from '../../utils/functions';
+import {setBackgroundImage} from '../../utils/functions';
 
 const HomeResult = ({result, type, setCurrentVideo}) => {
-  const imageStyle = {
-    backgroundImage: `url(${result.image.medium_url})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center'
-  }
+  const imageStyle = setBackgroundImage(result.image.medium_url)
   return (
     <section className="content_result">
       <section className="image" style={imageStyle}>
