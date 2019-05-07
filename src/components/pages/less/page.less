@@ -1,236 +1,236 @@
-//out: ../css/page.css, compress: true, sourcemap: false
+// //out: ../css/page.css, compress: true, sourcemap: false
 
-@bgColor: rgba(255,255,255,0.5);
-@textColor: black;
+// @bgColor: rgba(255,255,255,0.5);
+// @textColor: black;
 
-@homeBorderColor: rgb(91, 82, 221);
-@gameBorderColor: rgb(134, 214, 123);
-@reviewBorderColor: rgb(214, 123, 158);
-@franchisesBorderColor: rgb(92, 180, 207);
-@charactersBorderColor: rgb(207, 119, 92);
+// @homeBorderColor: rgb(91, 82, 221);
+// @gameBorderColor: rgb(134, 214, 123);
+// @reviewBorderColor: rgb(214, 123, 158);
+// @franchisesBorderColor: rgb(92, 180, 207);
+// @charactersBorderColor: rgb(207, 119, 92);
 
-.page {
-  .page_content {
-    overflow: auto;
-    padding-top: 100px;
-    height: auto;
-    width: 1200px;
-    margin: auto;    
-    &.character {
-      padding-top: 0px;
-    }
-  }
+// .page {
+//   .page_content {
+//     overflow: auto;
+//     padding-top: 100px;
+//     height: auto;
+//     width: 1200px;
+//     margin: auto;    
+//     &.character {
+//       padding-top: 0px;
+//     }
+//   }
 
-  // .not_available {
-  //   font-weight: 300;
-  //   font-size: 2em;
-  //   padding: 20px 0;
-  //   text-align: center;
-  // }
+//   // .not_available {
+//   //   font-weight: 300;
+//   //   font-size: 2em;
+//   //   padding: 20px 0;
+//   //   text-align: center;
+//   // }
 
-  // //character
-  // .character_games {
-  //   padding-bottom: 100px;
-  //   height: auto;
-  //   overflow-y: auto;
-  //   h2 {
-  //     margin: 30px 0;
-  //     font-size: 2.5em;
-  //     font-weight: 300;
-  //   }
-  //   ul {
-  //     list-style: none;
-  //     .display_result {
-  //       width: 100%; 
-  //       width: 330px;
-  //       padding: 0;
-  //       a {
-  //         width: 100%; 
-  //         p {
-  //           width: 100%;
-  //           float: left; 
-  //           text-align: left;
-  //           line-height: 35px;
-  //           height: auto;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+//   // //character
+//   // .character_games {
+//   //   padding-bottom: 100px;
+//   //   height: auto;
+//   //   overflow-y: auto;
+//   //   h2 {
+//   //     margin: 30px 0;
+//   //     font-size: 2.5em;
+//   //     font-weight: 300;
+//   //   }
+//   //   ul {
+//   //     list-style: none;
+//   //     .display_result {
+//   //       width: 100%; 
+//   //       width: 330px;
+//   //       padding: 0;
+//   //       a {
+//   //         width: 100%; 
+//   //         p {
+//   //           width: 100%;
+//   //           float: left; 
+//   //           text-align: left;
+//   //           line-height: 35px;
+//   //           height: auto;
+//   //         }
+//   //       }
+//   //     }
+//   //   }
+//   // }
 
-  //Franchises
+//   //Franchises
 
-  // .franchise_details {
-  //   padding-right: 25px;
-  //   color: white;
-  //   span {
-  //     font-weight: 300;
-  //     width: 100%;
-  //     float: left;
-  //     font-size: 2em;
-  //     margin: 50px 0;
-  //   }
-  // }
+//   // .franchise_details {
+//   //   padding-right: 25px;
+//   //   color: white;
+//   //   span {
+//   //     font-weight: 300;
+//   //     width: 100%;
+//   //     float: left;
+//   //     font-size: 2em;
+//   //     margin: 50px 0;
+//   //   }
+//   // }
 
-  ////Review////
+//   ////Review////
 
-  // .review_header {
-  //   margin-top: 180px;
-  //   box-sizing: content-box;
-  //   height: 200px;
-  //   position: relative;
-  //   &.franchise_header {
-  //     text-align: center;
-  //   }
-  //   &.character_header {
-  //     margin-top: 60px;
-  //     text-align: center;
-  //     h1 {
-  //       position: absolute;
-  //       font-weight: 300;
-  //       font-size: 3em;
-  //       color: white;
-  //       line-height: 200px;
-  //       width: 100%;
-  //       background: rgba(0,0,0,0.4);
-  //       span {
-  //         letter-spacing: 3px;
-  //         margin-left: 10px;
-  //         color: @charactersBorderColor;
-  //         border-bottom: 1px solid @charactersBorderColor;
-  //       }
-  //     }
-  //     img {
-  //       float: right;
-  //       margin: 25px 50px;
-  //       border-radius: 50%;
-  //       width: 150px; height: 150px;
-  //     }
-  //   }
-  //   h1 {
-  //     position: absolute;
-  //     font-weight: 300;
-  //     font-size: 3em;
-  //     color: white;
-  //     line-height: 200px;
-  //     width: 100%;
-  //     background: rgba(0,0,0,0.4);
+//   // .review_header {
+//   //   margin-top: 180px;
+//   //   box-sizing: content-box;
+//   //   height: 200px;
+//   //   position: relative;
+//   //   &.franchise_header {
+//   //     text-align: center;
+//   //   }
+//   //   &.character_header {
+//   //     margin-top: 60px;
+//   //     text-align: center;
+//   //     h1 {
+//   //       position: absolute;
+//   //       font-weight: 300;
+//   //       font-size: 3em;
+//   //       color: white;
+//   //       line-height: 200px;
+//   //       width: 100%;
+//   //       background: rgba(0,0,0,0.4);
+//   //       span {
+//   //         letter-spacing: 3px;
+//   //         margin-left: 10px;
+//   //         color: @charactersBorderColor;
+//   //         border-bottom: 1px solid @charactersBorderColor;
+//   //       }
+//   //     }
+//   //     img {
+//   //       float: right;
+//   //       margin: 25px 50px;
+//   //       border-radius: 50%;
+//   //       width: 150px; height: 150px;
+//   //     }
+//   //   }
+//   //   h1 {
+//   //     position: absolute;
+//   //     font-weight: 300;
+//   //     font-size: 3em;
+//   //     color: white;
+//   //     line-height: 200px;
+//   //     width: 100%;
+//   //     background: rgba(0,0,0,0.4);
 
-  //     padding: 0 25px;
-  //     padding-left: 50px;
-  //   }
-  //   .score {
-  //     position: absolute;
-  //     font-weight: 300;
-  //     top: 68px;
-  //     right: 0;
-  //     background: rgba(0,0,0,0.4);
-  //     padding: 0 25px;
-  //     p {
-  //       color: black;
-  //       font-size: 3em;
-  //     color: white;
+//   //     padding: 0 25px;
+//   //     padding-left: 50px;
+//   //   }
+//   //   .score {
+//   //     position: absolute;
+//   //     font-weight: 300;
+//   //     top: 68px;
+//   //     right: 0;
+//   //     background: rgba(0,0,0,0.4);
+//   //     padding: 0 25px;
+//   //     p {
+//   //       color: black;
+//   //       font-size: 3em;
+//   //     color: white;
 
-  //       margin: 0;
-  //     }
-  //     span {
-  //       padding: 0 20px;
-  //       border-radius: 50%;
-  //       color: black;
-  //       color: white;
+//   //       margin: 0;
+//   //     }
+//   //     span {
+//   //       padding: 0 20px;
+//   //       border-radius: 50%;
+//   //       color: black;
+//   //       color: white;
 
-  //     }
-  //   }
-  //   .meta {
-  //     color: white;
-  //     position: absolute;
-  //     bottom: 0;
-  //     background: rgba(0,0,0,0.4);
-  //     span {
-  //       margin-right: 5px;
-  //     }
-  //     .author {
-  //       padding: 0 50px;
-  //     }
-  //     .date {
-  //       padding: 0 50px;
+//   //     }
+//   //   }
+//   //   .meta {
+//   //     color: white;
+//   //     position: absolute;
+//   //     bottom: 0;
+//   //     background: rgba(0,0,0,0.4);
+//   //     span {
+//   //       margin-right: 5px;
+//   //     }
+//   //     .author {
+//   //       padding: 0 50px;
+//   //     }
+//   //     .date {
+//   //       padding: 0 50px;
 
-  //     }
-  //   }
-  // }
+//   //     }
+//   //   }
+//   // }
 
-  ////////////////////////////////
+//   ////////////////////////////////
 
-  // .header {
-  //   padding-top: 60px;
-  //   width: 1200px;
-  //   box-sizing: content-box;
-  //   margin: auto;
-  //   text-align: center;
-  //   margin-bottom: 50px;
-  //   &.reviews {
-  //     input {color: @reviewBorderColor;}
-  //   }
-  //   &.games {
-  //     input {color: @gameBorderColor;}
-  //   }
-  //   &.franchises {
-  //     input {color: @franchisesBorderColor;}
-  //   }
-  //   &.characters {
-  //     input {color: @charactersBorderColor;}
-  //   }
-  //   h1 {
-  //     font-size: 3em;
-  //     line-height: 80px;
-  //     padding-top: 50px;
-  //     margin: 0;
-  //   }
-  //   input {
-  //     width: 100%;
-  //     padding: 10px;
-  //     font-size: 2.5em;
-  //     border: none;
-  //     margin-top: 50px;
-  //     text-align: center;
-  //     font-family: 'Lato';
-  //     color: white;
-  //     background-color: transparent;
-  //     border-bottom: 1px solid white;
-  //     outline:none;
-  //   }
-  // }
+//   // .header {
+//   //   padding-top: 60px;
+//   //   width: 1200px;
+//   //   box-sizing: content-box;
+//   //   margin: auto;
+//   //   text-align: center;
+//   //   margin-bottom: 50px;
+//   //   &.reviews {
+//   //     input {color: @reviewBorderColor;}
+//   //   }
+//   //   &.games {
+//   //     input {color: @gameBorderColor;}
+//   //   }
+//   //   &.franchises {
+//   //     input {color: @franchisesBorderColor;}
+//   //   }
+//   //   &.characters {
+//   //     input {color: @charactersBorderColor;}
+//   //   }
+//   //   h1 {
+//   //     font-size: 3em;
+//   //     line-height: 80px;
+//   //     padding-top: 50px;
+//   //     margin: 0;
+//   //   }
+//   //   input {
+//   //     width: 100%;
+//   //     padding: 10px;
+//   //     font-size: 2.5em;
+//   //     border: none;
+//   //     margin-top: 50px;
+//   //     text-align: center;
+//   //     font-family: 'Lato';
+//   //     color: white;
+//   //     background-color: transparent;
+//   //     border-bottom: 1px solid white;
+//   //     outline:none;
+//   //   }
+//   // }
 
-  // .display_result {
-  //   width: 300px; float: left;
-  //   padding: 25px;
-  //   box-sizing: border-box;
-  //   text-align: center;
-  //   .display_image {
-  //     width: 250px; height: 188px;
-  //     img {
-  //       width: 100%; height: 100%;
-  //       object-fit: cover;
-  //       transition: 0.8s;
-  //       &:hover {
-  //         object-position: bottom;
-  //       }
-  //       object-position: top;
-  //     }
-  //   }
-  //   a {
-  //     color: white;
-  //     text-decoration: none;
-  //     p {
-  //       width: 250px;
-  //       height: 50px;
-  //       margin: 0px auto;
-  //       line-height: 50px;
-  //       white-space: nowrap;
-  //       overflow: hidden;
-  //       text-overflow: ellipsis;
-  //       text-align: center;
-  //     }
-  //   }
-  // }  
-}
+//   // .display_result {
+//   //   width: 300px; float: left;
+//   //   padding: 25px;
+//   //   box-sizing: border-box;
+//   //   text-align: center;
+//   //   .display_image {
+//   //     width: 250px; height: 188px;
+//   //     img {
+//   //       width: 100%; height: 100%;
+//   //       object-fit: cover;
+//   //       transition: 0.8s;
+//   //       &:hover {
+//   //         object-position: bottom;
+//   //       }
+//   //       object-position: top;
+//   //     }
+//   //   }
+//   //   a {
+//   //     color: white;
+//   //     text-decoration: none;
+//   //     p {
+//   //       width: 250px;
+//   //       height: 50px;
+//   //       margin: 0px auto;
+//   //       line-height: 50px;
+//   //       white-space: nowrap;
+//   //       overflow: hidden;
+//   //       text-overflow: ellipsis;
+//   //       text-align: center;
+//   //     }
+//   //   }
+//   // }  
+// }
