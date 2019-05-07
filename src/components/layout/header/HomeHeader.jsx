@@ -2,8 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
 
-// import '../css/home_header.css';
-import '../css/header.css';
+import '../css/home_header.css';
 
 const closeColumns = () => {
   const header = document.querySelectorAll('.home_header_col');
