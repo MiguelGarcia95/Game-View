@@ -129,7 +129,7 @@ class DisplayGame extends React.Component {
 
               <section className="about" id='about'>
                 <header>About The Game</header>
-                {game.description ? <div dangerouslySetInnerHTML={{ __html: game.description }} /> : <h2 className='not_available'>Not Available</h2>}
+                {game.description ? <section dangerouslySetInnerHTML={{ __html: game.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
 
               <section className="misc">
