@@ -36,8 +36,8 @@ const DisplayHeader = ({type, content, game}) => {
     )
   } else {
     return (
-      <section className='review_header franchise_header'>
-        <h1>Franchise <span>{content.name}</span></h1>
+      <section className='review_header character_header'>
+        <h1>Character: <span>{content.name}</span></h1>
         <img src={content.image.small_url} alt={content.name} />
       </section>
     )
