@@ -43,8 +43,10 @@ class SearchResults extends React.Component {
     return results.map(result => {
       return (
         <section className="search_result" key={result.id} >
-          <section className="result_image"><img src={result.image.small_url} alt=""/></section>
-          <Link to={`/games/game/${result.guid}`} >{result.name}</Link>
+          <Link to={`/games/game/${result.guid}`} >
+            <section className="result_image"><img src={result.image.small_url} alt=""/></section>
+            {result.name}
+          </Link>
         </section>
       )
     })
