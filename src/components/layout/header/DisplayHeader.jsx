@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
+import '../css/display_header.css';
+
 const DisplayHeader = ({type, content, game}) => {
   if (type === 'review') {
     const headerImage = {

@@ -8,9 +8,6 @@ import ImageViewer from '../../layout/ImageViewer';
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 
-// import '../css/page.css';
-// import '../css/games.css';
-
 import '../css/display_page.css';
 
 class DisplayGame extends React.Component {
