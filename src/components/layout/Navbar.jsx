@@ -18,7 +18,6 @@ class Navbar extends React.Component {
 
   toggleSearch = () => this.setState({search: !this.state.search});
   toggleMenu = () => this.setState({menu: !this.state.menu});
-
   onChange = e => this.setState({[e.target.name]: e.target.value});
 
   onSearchKeyDown = e => {
