@@ -13,7 +13,6 @@ export const getFranchises = offset => {
         field_list: 'date_added,date_last_updated,deck,description,guid,id,image,name'
       }
     });
-    console.log(results)
     dispatch({
       type: actionTypes.GET_FRANCHISES,
       payload: {
@@ -34,7 +33,6 @@ export const getFranchise = guid => {
         field_list: 'date_added,date_last_updated,deck,description,guid,id,image,name'
       }
     });
-    console.log(results)
     dispatch({
       type: actionTypes.GET_FRANCHISE,
       payload: {
