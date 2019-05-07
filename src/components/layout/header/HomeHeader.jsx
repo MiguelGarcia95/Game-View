@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
 
+import {setBackgroundImage} from '../../../utils/functions';
 import '../css/home_header.css';
 
 const closeColumns = () => {
@@ -70,11 +71,7 @@ const getUniqueGames = games => {
 const displayColumns = (games) => {
   return games.map((game, index) => {
     const colName = getColumnName(index);
-    const imageStyle = {
-      backgroundImage: `url(${game.image.super_url})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center'
-    }
+    const imageStyle = setBackgroundImage(game.image.super_url);
     return (
       <section key={index} className={`home_header_col ${colName}`} onClick={() => expandColumn(colName)}>
         <section className="image" style={imageStyle}></section>
