@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
 import FranchiseHeader from '../../layout/header/FranchiseHeader';
+import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getFranchise} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 
@@ -43,10 +44,11 @@ class DisplayFranchise extends React.Component {
         {franchise && (
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
-            <FranchiseHeader franchise={franchise} headerClass='franchise_header' image={true} title='Franchise' />
+            <DisplayHeader content={franchise} type='franchise' />
+            
             <section className="page_content review">
             <section className='franchise_details'><span>Details</span><p>{`${franchise.deck}`}</p></section>
-              <section className="about_review" id='about_review'>
+              <section className="about" id='about_review'>
                 {franchise.description ? <div dangerouslySetInnerHTML={{ __html: franchise.description }} /> : <h2 className='not_available'>Not Available</h2>}
               </section>
 

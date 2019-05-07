@@ -21,10 +21,24 @@ const DisplayHeader = ({type, content, game}) => {
         </section>
       </section>
     )
+  } else if (type === 'franchise') {
+    const headerImage = {
+      backgroundImage: `url(${content.image.screen_large_url})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'fixed'
+    };
+    
+    return (
+      <section className='review_header franchise_header' style={headerImage}>
+        <h1>Franchise: <span>{content.name}</span></h1>
+      </section>
+    )
   } else {
     return (
-      <section>
-  
+      <section className='review_header franchise_header'>
+        <h1>Franchise <span>{content.name}</span></h1>
+        <img src={content.image.small_url} alt={content.name} />
       </section>
     )
   }

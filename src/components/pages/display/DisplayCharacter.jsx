@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import FranchiseHeader from '../../layout/header/FranchiseHeader';
+import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
@@ -61,6 +62,7 @@ class DisplayReview extends React.Component {
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
             <FranchiseHeader franchise={character} headerClass='character_header' image={false} title='Character: ' />
+            {/* <DisplayHeader franchise={character} headerClass='character_header' image={false} title='Character: ' /> */}
             <section className="page_content review character">
               <section className="about_review" id='about_review'>
                 {character.description ? <div dangerouslySetInnerHTML={{ __html: character.description }} /> : <h2 className='not_available'>Not Available</h2>}
