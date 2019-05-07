@@ -7,9 +7,9 @@ import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
-import '../css/page.css';
+import '../css/display_page.css';
 
-class DisplayReview extends React.Component {
+class DisplayCharacter extends React.Component {
   state = {
     currentImage: null,
     currentImageIndex: null
@@ -91,4 +91,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayReview);
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayCharacter);

@@ -7,7 +7,6 @@ import Pagination from '../layout/Pagination';
 import {searchGames, searchFranchises, searchCharacters} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 
-import './css/page.css';
 import './css/search_results.css';
 
 class SearchResults extends React.Component {
