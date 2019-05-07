@@ -16,6 +16,14 @@ export const setBackgroundImage = image => {
   return {
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center center'
+  }
+}
+
+export const setBackgroundImageFixed = image => {
+  return {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundAttachment: 'fixed'
   }

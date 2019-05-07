@@ -1,12 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-import {setBackgroundImage} from '../../../utils/functions';
+import {setBackgroundImageFixed} from '../../../utils/functions';
 
 import '../css/display_header.css';
 
 const DisplayHeader = ({type, content, game}) => {
   if (type === 'review') {
-    const headerImage = setBackgroundImage(game.image.screen_large_url);
+    const headerImage = setBackgroundImageFixed(game.image.screen_large_url);
     return (
       <section className="display_header" style={headerImage}>
         <h1>{`${content.game.name} review`}</h1>
@@ -20,7 +20,7 @@ const DisplayHeader = ({type, content, game}) => {
       </section>
     )
   } else if (type === 'franchise') {
-    const headerImage = setBackgroundImage(game.image.screen_large_url);
+    const headerImage = setBackgroundImageFixed(game.image.screen_large_url);
     return (
       <section className='display_header franchise_header' style={headerImage}>
         <h1>Franchise: <span>{content.name}</span></h1>

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
+import {setBackgroundImage, setBackgroundImageFixed} from '../../../utils/functions';
 import '../css/game_header.css';
 
 const getDate = (original_date, expected_date) => {
@@ -20,17 +21,8 @@ const displayMetaData = (data) => {
 }
 
 const GameHeader = ({game, scrollDown}) => {
-  const headerImage = {
-    backgroundImage: `url(${game.image.screen_large_url})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center'
-  }
-  const displayImage = {
-    backgroundImage: `url(${game.image.small_url})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    backgroundRepeat: 'no-repeat'
-  }
+  const headerImage = setBackgroundImageFixed(game.image.screen_large_url);
+  const displayImage = setBackgroundImage(game.image.small_url);
   
   return (
     <section className="game_header" style={headerImage}>
