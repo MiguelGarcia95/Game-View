@@ -81,7 +81,6 @@ const displayColumns = (games) => {
           <section className="platform"><h3>Platform: {game.platform.name}</h3></section>
           <section className="date"><p>Release Date: {moment(game.release_date).format('LL')}</p></section>
           <Link to={`games/game/3030-${game.game.id}`} ><section className='link'>Check Out <i className="fas fa-arrow-right fa-lg"></i></section></Link>
-          
         </section>
       </section>
     )
