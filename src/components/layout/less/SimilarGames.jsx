@@ -24,7 +24,6 @@ const SimilarGames = ({}) => {
     <section className="similar_games_slider">
       <Slider {...settings}>
 
-        
       </Slider>
     </section>
   )
