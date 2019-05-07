@@ -10,15 +10,15 @@ const SimilarGames = ({}) => {
     centerPadding: "20px",
     slidesToShow: 3,
     speed: 500,
-    responsive: [
-      {
-        breakpoint: 670,
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "0px",
-        }
-      },
-    ]
+    // responsive: [
+    //   {
+    //     breakpoint: 670,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       centerPadding: "0px",
+    //     }
+    //   },
+    // ]
   };
   return (
     <section className="similar_games_slider">
@@ -28,3 +28,5 @@ const SimilarGames = ({}) => {
     </section>
   )
 }
+
+export default SimilarGames;

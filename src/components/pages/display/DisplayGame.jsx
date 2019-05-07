@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Navbar from '../../layout/Navbar';
 import GameHeader from '../../layout/header/GameHeader';
 import ImageViewer from '../../layout/ImageViewer';
+import SimilarGames from '../../layout/SimilarGames';
 
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -95,9 +96,6 @@ class DisplayGame extends React.Component {
     })
   }
 
-  displaySimilarGames = games => {
-    return <span>games here</span>
-  }
 
   displayRow = (content, name) => {
     return (
@@ -140,7 +138,7 @@ class DisplayGame extends React.Component {
               <section className="similar_games">
                 <div ref={node => this.pageSimilar = node}></div>
                 <h1>Similar Games</h1>
-                {game.similar_games ? this.displaySimilarGames(game.similar_games) :  <h2 className='not_available'>No Games</h2>}
+                {game.similar_games ? <SimilarGames games={game.similar_games} /> :  <h2 className='not_available'>No Games</h2>}
               </section>
 
               <section className="images">
