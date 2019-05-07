@@ -1,16 +1,12 @@
 import React from 'react';
 import moment from 'moment';
+import {setBackgroundImage} from '../../../utils/functions';
 
 import '../css/display_header.css';
 
 const DisplayHeader = ({type, content, game}) => {
   if (type === 'review') {
-    const headerImage = {
-      backgroundImage: `url(${game.image.screen_large_url})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center',
-      backgroundAttachment: 'fixed'
-    }
+    const headerImage = setBackgroundImage(game.image.screen_large_url);
     return (
       <section className="display_header" style={headerImage}>
         <h1>{`${content.game.name} review`}</h1>
@@ -24,13 +20,7 @@ const DisplayHeader = ({type, content, game}) => {
       </section>
     )
   } else if (type === 'franchise') {
-    const headerImage = {
-      backgroundImage: `url(${content.image.screen_large_url})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center',
-      backgroundAttachment: 'fixed'
-    };
-    
+    const headerImage = setBackgroundImage(game.image.screen_large_url);
     return (
       <section className='display_header franchise_header' style={headerImage}>
         <h1>Franchise: <span>{content.name}</span></h1>

@@ -14,7 +14,7 @@ export const getOffset = totalResults => totalResults - totalResults%50;
 
 export const setBackgroundImage = image => {
   return {
-    backgroundImage: `url(${image.screen_large_url})`,
+    backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundAttachment: 'fixed'
