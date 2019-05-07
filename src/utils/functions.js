@@ -11,3 +11,12 @@ export const getLastPage = totalResults => Math.ceil(totalResults/50);
 export const getCurrentPage = offset =>  Math.ceil(offset/50) + 1;
 
 export const getOffset = totalResults => totalResults - totalResults%50;
+
+export const setBackgroundImage = image => {
+  return {
+    backgroundImage: `url(${image.screen_large_url})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed'
+  }
+}
