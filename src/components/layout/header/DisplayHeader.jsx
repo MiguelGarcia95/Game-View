@@ -12,7 +12,7 @@ const DisplayHeader = ({type, content, game}) => {
       backgroundAttachment: 'fixed'
     }
     return (
-      <section className="review_header" style={headerImage}>
+      <section className="display_header" style={headerImage}>
         <h1>{`${content.game.name} review`}</h1>
         <section className="score">
           <p>Score: <span>{content.score} / 5</span></p>
@@ -32,13 +32,13 @@ const DisplayHeader = ({type, content, game}) => {
     };
     
     return (
-      <section className='review_header franchise_header' style={headerImage}>
+      <section className='display_header franchise_header' style={headerImage}>
         <h1>Franchise: <span>{content.name}</span></h1>
       </section>
     )
   } else {
     return (
-      <section className='review_header character_header'>
+      <section className='display_header character_header'>
         <h1>Character: <span>{content.name}</span></h1>
         <img src={content.image.small_url} alt={content.name} />
       </section>

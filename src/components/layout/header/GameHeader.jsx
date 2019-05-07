@@ -33,7 +33,7 @@ const GameHeader = ({game, scrollDown}) => {
   }
   
   return (
-    <section className="display_header" style={headerImage}>
+    <section className="game_header" style={headerImage}>
       <section className="display_cover"></section>
       <section className="display_box">
         <section className="display_top">
