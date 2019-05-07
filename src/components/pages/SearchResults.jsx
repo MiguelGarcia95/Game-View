@@ -68,7 +68,7 @@ class SearchResults extends React.Component {
   render() {
     const {history, searchResults, totalResults, page} = this.props;
     const {searchTerm} = this.state;
-    const {query, type} = this.props.match.params;
+    const {type} = this.props.match.params;
     const lastPage = this.getLastPage(totalResults);
     return (
       <Page className="page app">
