@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
-// import ReviewHeader from '../../layout/header/ReviewHeader';
 import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';

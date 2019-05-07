@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
-import FranchiseHeader from '../../layout/header/FranchiseHeader';
 import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getFranchise} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
