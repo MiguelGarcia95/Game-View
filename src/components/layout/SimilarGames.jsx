@@ -19,9 +19,9 @@ const SimilarGames = ({games}) => {
   };
   return (
     <section className="similar_games_slider">
-      <Slider {...settings}>
         {displaySlides(games)}
-      </Slider>
+      {/* <Slider {...settings}> */}
+      {/* </Slider> */}
     </section>
   )
 }
