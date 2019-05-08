@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/image_viewer.css';
+import './style/css/image_viewer.css';
 
 const ImageViewer = ({setCurrentImage, currentImageIndex, currentImage, changeImage}) => {
   return (
