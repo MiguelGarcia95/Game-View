@@ -6,7 +6,7 @@ import DisplayHeader from '../../layout/header/DisplayHeader';
 import {getFranchise} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 
-import '../css/display_page.css';
+import '../style/css/display_page.css';
 
 class DisplayFranchise extends React.Component {
   componentDidMount() {

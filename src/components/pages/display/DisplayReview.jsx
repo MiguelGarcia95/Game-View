@@ -7,7 +7,7 @@ import {getReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 
-import '../css/display_page.css';
+import '../style/css/display_page.css';
 
 class DisplayReview extends React.Component {
   componentDidMount() {
