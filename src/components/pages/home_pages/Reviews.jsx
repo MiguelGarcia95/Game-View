@@ -10,7 +10,7 @@ import {getReviews} from '../../../actions/reviewActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 
-import '../css/front_page.css';
+import '../style/css/front_page.css';
 
 class Reviews extends React.Component {
   state = {

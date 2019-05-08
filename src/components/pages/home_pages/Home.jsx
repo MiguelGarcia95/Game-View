@@ -12,7 +12,7 @@ import Content from '../../layout/Content';
 import {getHomeGames, getHomeGameReleases} from '../../../actions/gameActions';
 import {getHomeVideos} from '../../../actions/videosActions';
 
-import '../css/front_page.css';
+import '../style/css/front_page.css';
 
 class Home extends React.Component {
   state = {
