@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/video_player.css';
+import './style/css/video_player.css';
 
 const VideoPlayer = ({setCurrentVideo, currentVideo}) => {
   return (

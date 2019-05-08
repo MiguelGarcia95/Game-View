@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeResult from './HomeResult';
-import './css/sidebar.css';
+import './style/css/sidebar.css';
 
 const displayResults = (results, type, setCurrentVideo) => {
   return results.map(result => {
