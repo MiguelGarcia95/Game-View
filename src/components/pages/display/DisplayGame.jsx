@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import GameHeader from '../../layout/header/GameHeader';
 import ImageViewer from '../../layout/ImageViewer';
-import SimilarGames from '../../layout/SimilarGames';
 
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -108,6 +108,19 @@ class DisplayGame extends React.Component {
     )
   }
 
+  displaySimilarGames = games => {
+    return games.map(game => {
+      return (
+        <section className="similar_game" key={game.id}>
+          <section className="similar_game_image" ></section>
+          <Link to={`/games/game/3030-${game.id}`}>
+            <p>{game.name} <i className="fas fa-chevron-right"></i></p>
+          </Link>
+        </section>
+      )
+    })
+  }
+
   setCurrentImage = (image, index) => this.setState({currentImage: image, currentImageIndex: index});
 
   render() {
@@ -138,7 +151,7 @@ class DisplayGame extends React.Component {
               <section className="similar_games">
                 <div ref={node => this.pageSimilar = node}></div>
                 <h1>Similar Games</h1>
-                {game.similar_games ? <SimilarGames games={game.similar_games} /> :  <h2 className='not_available'>No Games</h2>}
+                {game.similar_games ? this.displaySimilarGames(game.similar_games) :  <h2 className='not_available'>No Games</h2>}
               </section>
 
               <section className="images">
