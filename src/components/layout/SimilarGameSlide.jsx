@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 const SimilarGameSlide = ({game}) => {
   // const imageStyle = setBackgroundImage(game.image.medium_url);
   return(
-    <section className="cast_character">
+    <section className="similar_game">
       {/* <section className="cast_image" style={imageStyle}></section> */}
-      <section className="cast_image" ></section>
+      <section className="similar_game_image" ></section>
       <Link to={`/games/game/3030-${game.id}`}>
         <p className="name" >{game.name}</p>
       </Link>

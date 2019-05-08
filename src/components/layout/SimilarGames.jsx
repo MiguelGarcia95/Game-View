@@ -1,6 +1,6 @@
 import React from "react";
-import Slider from "react-slick";
 import SimilarGameSlide from './SimilarGameSlide';
+import './css/similar_games.css';
 
 const displaySlides = slides => {
   return slides.map(slide => {
@@ -9,19 +9,9 @@ const displaySlides = slides => {
 }
 
 const SimilarGames = ({games}) => {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "20px",
-    slidesToShow: 3,
-    speed: 500
-  };
   return (
-    <section className="similar_games_slider">
-        {displaySlides(games)}
-      {/* <Slider {...settings}> */}
-      {/* </Slider> */}
+    <section className="similar_games">
+      {displaySlides(games)}
     </section>
   )
 }
