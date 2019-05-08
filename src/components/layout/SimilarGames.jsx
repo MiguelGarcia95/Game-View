@@ -4,8 +4,7 @@ import SimilarGameSlide from './SimilarGameSlide';
 
 const displaySlides = slides => {
   return slides.map(slide => {
-    // return <SimilarGameSlide key={slide.guid} game={slide} />
-    console.log(slide)
+    return <SimilarGameSlide key={slide.id} game={slide} />
   })
 }
 
@@ -16,16 +15,7 @@ const SimilarGames = ({games}) => {
     infinite: true,
     centerPadding: "20px",
     slidesToShow: 3,
-    speed: 500,
-    // responsive: [
-    //   {
-    //     breakpoint: 670,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       centerPadding: "0px",
-    //     }
-    //   },
-    // ]
+    speed: 500
   };
   return (
     <section className="similar_games_slider">
