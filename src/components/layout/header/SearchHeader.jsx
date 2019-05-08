@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/search_header.css';
+import '../style/css/search_header.css';
 
 const SearchHeader = ({title, headerClass, onChange, onSearchKeyDown, searchTerm}) => {
   return (

@@ -3,7 +3,7 @@ import moment from 'moment';
 import {Link} from 'react-router-dom';
 
 import {setBackgroundImage} from '../../../utils/functions';
-import '../css/home_header.css';
+import '../style/css/home_header.css';
 
 const closeColumns = () => {
   const header = document.querySelectorAll('.home_header_col');

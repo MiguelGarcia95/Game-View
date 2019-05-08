@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {setBackgroundImage, setBackgroundImageFixed, getDate} from '../../../utils/functions';
-import '../css/game_header.css';
+import '../style/css/game_header.css';
 
 const displayMetaData = (data) => {
   return data.map(item => {

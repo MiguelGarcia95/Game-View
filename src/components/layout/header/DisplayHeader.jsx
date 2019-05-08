@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import {setBackgroundImageFixed} from '../../../utils/functions';
 
-import '../css/display_header.css';
+import '../style/css/display_header.css';
 
 const DisplayHeader = ({type, content, game}) => {
   if (type === 'review') {
