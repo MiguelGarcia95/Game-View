@@ -2,7 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 import SimilarGameSlide from './SimilarGameSlide';
 
-const SimilarGames = ({}) => {
+const displaySlides = slides => {
+  return slides.map(slide => {
+    // return <SimilarGameSlide key={slide.guid} game={slide} />
+    console.log(slide)
+  })
+}
+
+const SimilarGames = ({games}) => {
   const settings = {
     className: "center",
     centerMode: true,
@@ -23,7 +30,7 @@ const SimilarGames = ({}) => {
   return (
     <section className="similar_games_slider">
       <Slider {...settings}>
-
+        {displaySlides(games)}
       </Slider>
     </section>
   )
