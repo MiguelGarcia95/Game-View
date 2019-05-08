@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames, searchFranchises, searchCharacters} from '../../actions/searchActions';
+import {searchGames, searchFranchises, searchCharacters, searchReviews} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 
 import './style/css/search_results.css';
@@ -21,6 +21,8 @@ class SearchResults extends React.Component {
       this.props.searchFranchises(this.props.match.params.query, 1);
     }  else if (this.props.match.params.type === 'characters') {
       this.props.searchCharacters(this.props.match.params.query, 1);
+    } else if (this.props.match.params.type === 'reviews', 1) {
+      this.props.searchReviews(this.props.match.params.query, 1);
     }
   }
 
@@ -32,13 +34,14 @@ class SearchResults extends React.Component {
         this.props.history.push(`/games/search/${e.target.value}`)
       } else if (this.props.match.params.type === 'franchises') {
         this.props.history.push(`/franchises/search/${e.target.value}`)
-      }  else if (this.props.match.params.type === 'characters') {
+      } else if (this.props.match.params.type === 'characters') {
         this.props.history.push(`/characters/search/${e.target.value}`)
+      } else if (this.props.match.params.type === 'reviews', 1) {
+        this.props.history.push(`/reviews/search/${e.target.value}`)
       }
     }
   }
 
-  // LINKS SHOULD DEPEND ON TYPE
   displayResults = results => {
     return results.map(result => {
       return (
@@ -106,7 +109,8 @@ const mapDispatchToProps = dispatch => {
   return {
     searchGames: (query, page) => dispatch(searchGames(query, page)),
     searchFranchises: (query, page) => dispatch(searchFranchises(query, page)),
-    searchCharacters: (query, page) => dispatch(searchCharacters(query, page))
+    searchCharacters: (query, page) => dispatch(searchCharacters(query, page)),
+    searchReviews: (query, page) => dispatch(searchReviews(query, page))
   }
 }
 
