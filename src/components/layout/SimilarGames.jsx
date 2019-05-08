@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-// import SimilarGameSlide from './SimilarGameSlide';
+import SimilarGameSlide from './SimilarGameSlide';
 
 const SimilarGames = ({}) => {
   const settings = {
