@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeResult from './HomeResult';
-import './css/content.css';
+import './style/css/content.css';
 
 const displayResults = (results, type) => {
   return results.map(result => {
