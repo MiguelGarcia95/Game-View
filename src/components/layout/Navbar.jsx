@@ -51,7 +51,14 @@ class Navbar extends React.Component {
           <input type="text" name='searchTerm' placeholder='Search for Games' onChange={this.onChange} onKeyDown={this.onSearchKeyDown} value={searchTerm} />
         </section>
         <section className={classnames('nav-box', {active: menu})}>
-          <section className="screen"></section>
+          <section className="screen">
+            <NavLink className='nav-link brand' to='/'>G</NavLink>
+            <NavLink className='nav-link home' activeClassName='active' exact to='/'>Home</NavLink>
+            <NavLink className='nav-link games' activeClassName='active' to='/games'>Games</NavLink>
+            <NavLink className='nav-link reviews' activeClassName='active' to='/reviews'>Reviews</NavLink>
+            <NavLink className='nav-link franchises' activeClassName='active' to='/franchises'>Franchises</NavLink>
+            <NavLink className='nav-link characters' activeClassName='active' to='/characters'>Characters</NavLink>
+          </section>
         </section>
       </React.Fragment>
     )

@@ -80,6 +80,7 @@
     height: @height;
     width: 0px;
     padding-top: 14px;
+    transition: 0.5s;
   }
 }
 
@@ -132,30 +133,23 @@
 }
 
 @media (max-width: 800px) {
-  // .nav-ham {
-  //   width: @height; 
-  // }
   .navbar {
     // width: @width;
     // height: @height;
-    // background-color: @bgColor;
-    // z-index: 100;
-    // position: fixed;
     a, .nav-search {
       // float: left;
-      // text-decoration: none;
-      // color: black;
-      // text-align: center;
       // line-height: @height;
     }
     
     .nav-link {
+      display: none;
       // box-sizing: border-box;
       // cursor: pointer;
       // transition: border 0.3s;
       // border-top: 0px solid rgba(0,0,0,0); 
       &.brand {
         // width: 10%;
+        display: block;
       }
       // width: 12%;
     }
