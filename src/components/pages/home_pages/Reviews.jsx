@@ -13,22 +13,9 @@ import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
 import '../style/css/front_page.css';
 
 class Reviews extends React.Component {
-  state = {
-    searchTerm: ''
-  }
-  
   componentDidMount() {
     if (this.props.reviews.length === 0) {
       this.props.getReviews(0);
-    }
-  }
-
-
-  onChange = e => this.setState({[e.target.name]: e.target.value});
-
-  onSearchKeyDown = e => {
-    if (e.keyCode === 13 && e.target.value) {
-      this.props.history.push(`/reviews/search/${e.target.value}`)
     }
   }
 
@@ -65,10 +52,6 @@ class Reviews extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        {/* <SearchHeader 
-          title='Search For Reviews' headerClass='reviews' 
-          onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
-        /> */}
         <section className='header'>
           <h1>Reviews</h1>
         </section>
