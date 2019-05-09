@@ -183,6 +183,29 @@
 
 @media (max-width: 800px) {
   .navbar {
+    .nav-link {
+      display: none;
+      &.brand {
+        display: block;
+      }
+    }
+    .nav-ham {
+      width: @height;
+    }
+  }
+  
+  .nav-box {
+    .screen {
+      width: 100%;
+    }
+    &.active {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar {
     // width: @width;
     // height: @height;
     a, .nav-search {
