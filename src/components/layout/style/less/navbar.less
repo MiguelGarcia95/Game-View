@@ -126,6 +126,48 @@
     width: 100%;
     height: 100%;
     background-color: @bgColor;
+    .nav-link {
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: border 0.3s;
+      border-top: 0px solid rgba(0,0,0,0); 
+      text-decoration: none;
+      width: 200px;
+      display: block;
+      margin: auto;
+      &.brand {
+      }
+      &.home {
+        &:hover, &.active  {
+          border-top: 3px solid @homeBorderColor; 
+          color: @homeBorderColor;
+        }
+      }
+      &.games {
+        &:hover, &.active  {
+          border-top: 3px solid @gameBorderColor; 
+          color: @gameBorderColor; 
+        }
+      }
+      &.reviews {
+        &:hover, &.active  {
+          border-top: 3px solid @reviewBorderColor; 
+          color: @reviewBorderColor;
+        }
+      }
+      &.franchises {
+        &:hover, &.active  {
+          border-top: 3px solid @franchisesBorderColor; 
+          color: @franchisesBorderColor;
+        }
+      }
+      &.characters {
+        &:hover, &.active  {
+          border-top: 3px solid @charactersBorderColor; 
+          color: @charactersBorderColor;
+        }
+      }
+    }
   }
   &.active {
     width: 100%;
