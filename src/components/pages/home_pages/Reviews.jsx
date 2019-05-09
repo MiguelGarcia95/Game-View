@@ -65,10 +65,13 @@ class Reviews extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <SearchHeader 
+        {/* <SearchHeader 
           title='Search For Reviews' headerClass='reviews' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
-        />
+        /> */}
+        <section className='header'>
+          <h1>Reviews</h1>
+        </section>
         <section className="page_content reviews">
           {this.displayReviews(reviews)}
         </section>
