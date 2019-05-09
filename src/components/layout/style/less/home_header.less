@@ -34,10 +34,12 @@
                          0px 0px 7px black;
           }
         }
-        .link {
-          opacity: 1;
-          a {
-            color: @linkColor;
+        a {
+          color: @linkColor;
+          .link {
+            opacity: 1;
+            padding: 10px;
+            width: 90px;
           }
         }
       }
@@ -70,23 +72,45 @@
           font-weight: 300;
         }
       }
+      // .link {
+      //   width: 90px;
+      //   background-color: @bgColor;
+      //   height: 25px;
+      //   padding: 10px;
+      //   position: absolute;
+      //   box-sizing: content-box;
+      //   left: 0; right: 0;
+      //   bottom: 150px;
+      //   margin: auto;
+      //   opacity: 0.1;
+      //   transition: opacity @transitionTime;
+      //   a {
+      //     color: @linkColor;
+      //     text-decoration: none;
+      //     line-height: 25px;
+      //     font-size: 0.9em;
+      //   }
+      // }
       a {
         color: @linkColor;
         text-decoration: none;
         line-height: 25px;
         font-size: 0.9em;
         .link {
-          width: 90px;
           background-color: @bgColor;
           height: 25px;
-          padding: 10px;
+          padding: 0px;
+          width: 0px;
+          overflow: hidden;
           position: absolute;
           box-sizing: content-box;
           left: 0; right: 0;
           bottom: 150px;
           margin: auto;
           opacity: 0.1;
-          transition: opacity @transitionTime;
+          transition: opacity  @transitionTime;
+          transition: width @transitionTime;
+          transition: padding @transitionTime;
         }
       }
       .name {
