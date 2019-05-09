@@ -52,7 +52,7 @@ class Navbar extends React.Component {
         </section>
         <section className={classnames('nav-box', {active: menu})}>
           <section className="screen">
-            <NavLink className='nav-link brand' to='/'>G</NavLink>
+            {/* <NavLink className='nav-link brand' to='/'>G</NavLink> */}
             <NavLink className='nav-link home' activeClassName='active' exact to='/'>Home</NavLink>
             <NavLink className='nav-link games' activeClassName='active' to='/games'>Games</NavLink>
             <NavLink className='nav-link reviews' activeClassName='active' to='/reviews'>Reviews</NavLink>
