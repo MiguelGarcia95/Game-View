@@ -50,8 +50,8 @@ class Home extends React.Component {
         <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
         <div ref={node => this.pageDown = node}></div>
         <section className="page_content">
-          <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
           <Content title='Upcoming Games' content={homeGames} />
+          <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
         </section>
         {currentVideo && <VideoPlayer currentVideo={currentVideo} setCurrentVideo={this.setCurrentVideo} /> }
       </Page>
