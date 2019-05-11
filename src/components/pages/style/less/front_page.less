@@ -193,10 +193,6 @@
 @media (max-width: 750px) {
   .page.app {
     .page_content {
-      .display_result {
-        width: 50%; 
-      }
-
       .display_result_review {
         width: 48%;
         .meta {
@@ -227,13 +223,23 @@
   }
 }
 
+@media (max-width: 550px) {
+  .page.app {
+    .page_content {
+      .display_result {
+        width: 50%; 
+      }
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .page.app {
     .page_content {
       padding: 50px 25px; 
-      .display_result {
-        width: 100%; 
-      }
+      // .display_result {
+      //   width: 100%; 
+      // }
 
       .display_result_review {
         width: 98%; 
@@ -244,6 +250,16 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page.app {
+    .page_content {
+      .display_result {
+        width: 100%; 
       }
     }
   }
