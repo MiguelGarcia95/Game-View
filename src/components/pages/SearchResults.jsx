@@ -44,7 +44,7 @@ class SearchResults extends React.Component {
         <section className="search_result" key={result.id} >
           <Link to={`/games/game/${result.guid}`} >
             <section className="result_image"><img src={result.image.small_url} alt=""/></section>
-            {result.name}
+            <p>{result.name}</p>
           </Link>
         </section>
       )
