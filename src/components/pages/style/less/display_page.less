@@ -277,6 +277,9 @@
           figcaption {font-size: 0.9em;}
         }
         p {font-size: 0.9em;}
+        ul {
+          li {font-size: 0.9em;}
+        }
       }
 
       .images {
@@ -336,29 +339,40 @@
 @media (max-width: 550px) {
   .page {
     .page_content {
+      .images {
+        .display_image {width: 98%;}
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page {
+    .page_content {
       .about {
         header {
-          // font-size: 2em;
+          font-size: 1.8em;
           // margin-bottom: 50px;
         }
         h1, h2, h3 {
-          // font-size: 1.5em;
+          font-size: 1.3em;
           // padding-top: 35px;
           // padding-bottom: 10px;
         }
         h3 {
-          // font-size: 1.3em;
+          font-size: 1.1em;
         }
         h4 {
-          // font-size: 1.1em;
+          font-size: 1em;
           // padding-top: 25px;
           // padding-bottom: 10px;
         }
+        p {font-size: 0.8em;}
         figure {
           // width: 100% !important;
           // padding: 50px 25px;
           img {
-            // width: 300px;
+            width: 90%;
           }
           figcaption {
             // width: 100%;
@@ -372,9 +386,7 @@
         }
         ul {
           // margin-bottom: 50px;
-          li {
-            // padding: 5px 0;
-          }
+          li {font-size: 0.8em;}
         }
       }
 
@@ -391,20 +403,11 @@
           //   border-top: 1px solid white;
           // }
           .name {
-            // font-weight: bold;
-            // width: 100px;
-            width: 20%;
-            font-size: 0.7em;
-            // float: left;
-            // line-height: 50px;
-            // box-sizing: border-box;
-            // margin: 0;
-            // border-right: 1px solid white;
+            width: 25%;
+            // font-size: 0.7em;
           }
           .data {
-            width: 80%;
-            // float: left;
-            // padding: 0 10px;
+            width: 75%;
             p {
               // line-height: 50px;
               // margin: 0px 10px;
@@ -418,7 +421,7 @@
       .images {
         // margin-bottom: 150px;
         .display_image {
-          // width: 48%;
+          // width: 98%;
           // height: 180px;
           // margin: 1%;
           // margin-bottom: 25px;
