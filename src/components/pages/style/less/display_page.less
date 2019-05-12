@@ -135,8 +135,8 @@
         padding: 20px 0;
       }
       .similar_game {
-        width: 30%;
-        margin: 0 1.6%;
+        width: 31%;
+        margin: 0 1%;
         float: left;
         text-align: center;
         a {
@@ -281,6 +281,18 @@
 
       .similar_games {
         h1 {font-size: 2.5em;}
+        .similar_game {
+          // width: 31%;
+          // margin: 0 1%;
+          a {
+            p {
+              font-size: 0.9em;
+              i {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
       }
 
       .images {
@@ -312,6 +324,7 @@
 
       .similar_games {
         h1 {font-size: 2em;}
+        .similar_game {width: 48%;}
       }
 
       .images {
@@ -346,6 +359,17 @@
     .page_content {
       .images {
         .display_image {width: 98%;}
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .page {
+    .page_content {
+      .similar_games {
+        h1 {font-size: 1.8em;}
+        .similar_game {width: 98%;}
       }
     }
   }
@@ -440,6 +464,18 @@
         h1 {
           // font-size: 2em;
           // padding: 20px 0;
+        }
+        .similar_game {
+          width: 98%;
+          // margin: 0 1%;
+          a {
+            p {
+              // font-size: 0.9em;
+              i {
+                // margin-left: 10px;
+              }
+            }
+          }
         }
       }
 
