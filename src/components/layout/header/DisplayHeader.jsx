@@ -20,7 +20,7 @@ const DisplayHeader = ({type, content, game}) => {
       </section>
     )
   } else if (type === 'franchise') {
-    const headerImage = setBackgroundImageFixed(game.image.screen_large_url);
+    const headerImage = setBackgroundImageFixed(content.image.screen_large_url);
     return (
       <section className='display_header franchise_header' style={headerImage}>
         <h1>Franchise: <span>{content.name}</span></h1>
