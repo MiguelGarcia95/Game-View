@@ -112,7 +112,6 @@ class DisplayGame extends React.Component {
     return games.map(game => {
       return (
         <section className="similar_game" key={game.id}>
-          <section className="similar_game_image" ></section>
           <Link to={`/games/game/3030-${game.id}`}>
             <p>{game.name} <i className="fas fa-chevron-right"></i></p>
           </Link>
