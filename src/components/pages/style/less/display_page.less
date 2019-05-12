@@ -215,10 +215,8 @@
           cursor: pointer;
           width: 100%; height: 100%;
           transition: 0.8s;
+          object-fit: cover;
           object-fit: contain;
-          &:hover {
-            // object-position: bottom;
-          }
         }
       }
     }
@@ -252,6 +250,14 @@
             width: 85%;
             p {font-size: 0.8em;}
           }
+        }
+      }
+
+      .images {
+        margin-bottom: 150px;
+        .display_image {
+          height: 180px;
+          margin-bottom: 25px;
         }
       }
     }
@@ -293,6 +299,13 @@
             font-size: 0.8em;
           }
           .data {width: 82%;}
+        }
+      }
+
+      .images {
+        .display_image {
+          width: 48%;
+          margin-bottom: 25px;
         }
       }
     }
@@ -377,6 +390,26 @@
               // font-size: 0.8em;
               // float: left;
             }
+          }
+        }
+      }
+
+      .images {
+        // width: 100%;
+        // height: auto;
+        // overflow: auto;
+        // margin-bottom: 150px;
+        .display_image {
+          width: 48%;
+          // height: 180px;
+          // margin: 1%;
+          margin-bottom: 25px;
+          img {
+            // cursor: pointer;
+            // width: 100%; height: 100%;
+            // transition: 0.8s;
+            // object-fit: cover;
+            // object-fit: contain;
           }
         }
       }
