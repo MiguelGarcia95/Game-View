@@ -117,6 +117,7 @@
       ul {
         margin-bottom: 50px;
         li {
+          list-style: none;
           padding: 5px 0;
         }
       }
@@ -282,6 +283,10 @@
         }
       }
 
+      .similar_games {
+        h1 {font-size: 2.5em;}
+      }
+
       .images {
         h1 {font-size: 2.5em;}
       }
@@ -307,6 +312,10 @@
           }
           .data {width: 82%;}
         }
+      }
+
+      .similar_games {
+        h1 {font-size: 2em;}
       }
 
       .images {
@@ -350,29 +359,68 @@
   .page {
     .page_content {
       .about {
+        header {font-size: 1.8em;}
+        h1, h2, h3 {font-size: 1.3em;}
+        h3 {font-size: 1.1em;}
+        h4 {font-size: 1em;}
+        p {font-size: 0.8em;}
+        figure {
+          img {
+            width: 90%;
+          }
+        }
+        ul {
+          li {font-size: 0.8em;}
+        }
+      }
+
+      .misc {
+        .row {
+          .name {width: 30%;}
+          .data {width: 70%;}
+        }
+      }
+
+      .similar_games {
+        h1 {font-size: 1.8em;}
+      }
+
+      .images {
+        h1 {font-size: 1.8em;}
+      }
+    }
+  }
+}
+
+
+@media (max-width: 350px) {
+  .page {
+    .page_content {
+      .about {
+        padding: 0px 25px;
         header {
-          font-size: 1.8em;
+          // font-size: 1.8em;
           // margin-bottom: 50px;
         }
         h1, h2, h3 {
-          font-size: 1.3em;
+          // font-size: 1.3em;
           // padding-top: 35px;
           // padding-bottom: 10px;
         }
         h3 {
-          font-size: 1.1em;
+          // font-size: 1.1em;
         }
         h4 {
-          font-size: 1em;
+          // font-size: 1em;
           // padding-top: 25px;
           // padding-bottom: 10px;
         }
-        p {font-size: 0.8em;}
+        // p {font-size: 0.8em;}
         figure {
           // width: 100% !important;
           // padding: 50px 25px;
           img {
-            width: 90%;
+            // width: 90%;
           }
           figcaption {
             // width: 100%;
@@ -386,7 +434,16 @@
         }
         ul {
           // margin-bottom: 50px;
-          li {font-size: 0.8em;}
+          // li {font-size: 0.8em;}
+        }
+      }
+
+      .similar_games {
+        padding: 0px 25px;
+        // margin-bottom: 150px;
+        h1 {
+          // font-size: 2em;
+          // padding: 20px 0;
         }
       }
 
@@ -394,8 +451,9 @@
         // width: 100%;
         // height: 204px;
         // overflow: hidden;
-        // margin-top: 50px;
-        // margin-bottom: 100px;
+        padding: 0px 25px;
+        margin-top: 50px;
+        margin-bottom: 100px;
         .row {
           // height: 51px;
           // border-bottom: 1px solid white;
@@ -403,11 +461,11 @@
           //   border-top: 1px solid white;
           // }
           .name {
-            width: 25%;
+            // width: 25%;
             // font-size: 0.7em;
           }
           .data {
-            width: 75%;
+            // width: 75%;
             p {
               // line-height: 50px;
               // margin: 0px 10px;
@@ -420,6 +478,7 @@
 
       .images {
         // margin-bottom: 150px;
+        padding: 0px 25px;
         .display_image {
           // width: 98%;
           // height: 180px;
