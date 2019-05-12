@@ -10,13 +10,15 @@ const DisplayHeader = ({type, content, game}) => {
     return (
       <section className="display_header" style={headerImage}>
         <h1>{`${content.game.name} review`}</h1>
-        <section className="score">
-          <p>Score: <span>{content.score} / 5</span></p>
-        </section>
-        <section className="meta">
+        <section className="data">
+          <section className="score">
+            <p>Score: <span>{content.score} / 5</span></p>
+          </section>
           <span className="author"><span>By: </span> {content.reviewer}</span>
           <span className="date"><span>On: </span> {moment(content.publish_date).format('LL')}</span>
         </section>
+        {/* <section className="meta">
+        </section> */}
       </section>
     )
   } else if (type === 'franchise') {
