@@ -10,7 +10,7 @@ const DisplayHeader = ({type, content, game}) => {
     return (
       <section className="display_header" style={headerImage}>
         <section className="display_header_screen">
-          {/* <h1>{`${content.game.name} review`}</h1> */}
+          <h1>{`${content.game.name} review`}</h1>
           <section className="data">
             <section className="score">
               <p>Score: <span>{content.score} / 5</span></p>
