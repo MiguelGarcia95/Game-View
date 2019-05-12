@@ -5,6 +5,13 @@
 @reviewBorderColor: rgb(214, 123, 158);
 @franchisesBorderColor: rgb(92, 180, 207);
 @charactersBorderColor: rgb(207, 119, 92);
+.not_available {
+  font-weight: 300;
+  font-size: 2em;
+  padding: 20px 0;
+  text-align: center;
+}
+
 .page {
   .page_content {
     overflow: auto;
@@ -197,9 +204,9 @@
         padding: 20px 0;
       }
       .display_image {
-        width: 333px;
+        width: 31%;
         height: 208px;
-        padding: 0 25px;
+        margin: 1%;
         margin-bottom: 25px;
         box-sizing: border-box;
         float: left;
@@ -218,9 +225,54 @@
   }
 }
 
-.not_available {
-  font-weight: 300;
-  font-size: 2em;
-  padding: 20px 0;
-  text-align: center;
+@media (max-width: 800) {
+  .page {
+    .page_content {
+      .about {
+        header {
+          // font-size: 3em;
+          // margin-bottom: 50px;
+        }
+        h1, h2, h3 {
+          // font-size: 2em;
+          // padding-top: 35px;
+          // padding-bottom: 10px;
+        }
+        h3 {
+          // font-size: 1.5em;
+        }
+        h4 {
+          // font-size: 1.2em;
+          // padding-top: 25px;
+          // padding-bottom: 10px;
+        }
+        figure {
+          // width: 100% !important;
+          // padding: 50px 25px;
+          &:nth-of-type(odd) {
+            // float: right;
+          }
+          &:nth-of-type(even) {
+            // float: left;
+          }
+          img {
+            // width: 300px;
+          }
+          figcaption {
+            // width: 100%;
+          }
+        }
+        table {
+          // width: 100%;
+          // text-align: center;
+        }
+        ul {
+          // margin-bottom: 50px;
+          li {
+            // padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
 }
