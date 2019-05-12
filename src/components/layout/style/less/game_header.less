@@ -109,38 +109,80 @@
 
 @media (max-width: 1200px) {
   .game_header {
+    .display_box {width: 800px;}
+  }
+}
+
+@media (max-width: 900px) {
+  .game_header {
     .display_box {
-      // width: 1000px;
+      width: 600px;
+      height: 420px;
+      .display_top {
+        .image {width: 30%;}
+        .about, .name {
+          width: 70%; 
+        }
+        .about {
+          p {font-size: 0.9em;}
+        }
+        .name {
+          height: 45px;
+          h1 {
+            line-height: 45px;
+            font-size: 1.5em;
+          }
+        }
+      }
+      .row {
+        height: 45px;
+        &.genres, &.themes, &.date, &.platforms {
+          .data_span, .date {
+            line-height: 45px;
+          }
+          .title {line-height: 45px;}
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .game_header {
+    .display_box {
+      width: 600px;
       // height: 500px;
+      height: 420px;
       // top: 0; bottom: 0; left: 0; right: 0;
       .display_top {
         // width: 100%;
         // height: 240px;
         .image {
-          // width: 20%; 
+          width: 30%; 
           // height: 100%;
           // float: left;
         }
         .about, .name {
-          // width: 80%; 
+          width: 70%; 
           // padding: 5px;
         }
         .about {
           // height: 175px;
-          // p {
-          //   margin: 0;
-          // }
+          p {
+            font-size: 0.9em;
+            // margin: 0;
+          }
         }
         .name {
-          // height: 65px;
+          height: 45px;
           h1 {
-            // line-height: 55px;
-            // font-size: 2em;
+            line-height: 45px;
+            font-size: 1.5em;
           }
         }
       }
       .row {
-        // height: 65px;
+        height: 45px;
         // width: 100%;
         &.genres, &.themes, &.date, &.platforms {
           // width: 100%;
@@ -148,7 +190,7 @@
           .data_span, .date {
             // float: left;
             // font-size: 0.9em;
-            // line-height: 65px;
+            line-height: 45px;
             // padding: 0 5px;
             // max-width: 150px;
           }
@@ -157,7 +199,7 @@
             // font-size: 0.9em;
             // width: 100px;
             // margin-right: 10px;
-            // line-height: 65px;
+            line-height: 45px;
           }
         }
       }
