@@ -93,6 +93,22 @@
 
 @media (max-width: 550px) {
   .display_header {
+    h1 {font-size: 2em;}
+    .data {
+      .score, .author, .date {
+        font-size: 1em;
+        margin-left: 40px;
+        span {
+          font-size: 0.8em;
+          line-height: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .display_header {
     &.franchise_header {
       // text-align: center;
     }
@@ -117,7 +133,7 @@
     .data {
       .score, .author, .date {
         font-size: 1em;
-        // margin-left: 50px;
+        margin-left: 40px;
         span {
           font-size: 0.8em;
           line-height: 60px;
