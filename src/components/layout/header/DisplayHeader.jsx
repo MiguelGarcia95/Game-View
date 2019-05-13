@@ -12,9 +12,7 @@ const DisplayHeader = ({type, content, game}) => {
         <section className="display_header_screen">
           <h1>{`${content.game.name} review`}</h1>
           <section className="data">
-            <section className="score">
-              <p>Score: <span>{content.score} / 5</span></p>
-            </section>
+            <span className="score"><span>Score: </span> {content.score} / 5</span>
             <span className="author"><span>By: </span> {content.reviewer}</span>
             <span className="date"><span>On: </span> {moment(content.publish_date).format('LL')}</span>
           </section>
