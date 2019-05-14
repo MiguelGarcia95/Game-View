@@ -32,19 +32,6 @@ class Franchises extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  // displayFranchises = franchises => {
-  //   return franchises.map(franchise => {
-  //     return (
-  //       <section className="display_result" key={franchise.id} >
-  //         <Link to={`/franchises/franchise/${franchise.guid}`} >
-  //           <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
-  //           <p>{franchise.name}</p>
-  //         </Link>
-  //       </section>
-  //     )
-  //   })
-  // }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getFranchises(offset);

@@ -21,22 +21,22 @@ class Reviews extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  displayReviews = reviews => {
-    return reviews.map(review => {
-      return (
-        <section className="display_result_review" key={review.id} >
-          <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
-          <section className="display_description"><p>{review.deck}</p></section>
-          <section className="meta">
-            <section className="display_author"><p><span>Author: </span>{review.reviewer}</p></section>
-            <section className="display_date"><p><span>Date: </span>{moment(review.publish_date).format('LL')}</p></section>
-            <section className="display_score"><p><span>Score: </span>{review.score} / 5</p></section> 
-          </section>
-          <section className="display_button"><Link to={`/reviews/review/${review.guid}`}>Read More...</Link></section> 
-        </section>
-      )
-    })
-  }
+  // displayReviews = reviews => {
+  //   return reviews.map(review => {
+  //     return (
+  //       <section className="display_result_review" key={review.id} >
+  //         <Link to={`/reviews/review/${review.guid}`} ><p>Review - {review.game.name}</p></Link>
+  //         <section className="display_description"><p>{review.deck}</p></section>
+  //         <section className="meta">
+  //           <section className="display_author"><p><span>Author: </span>{review.reviewer}</p></section>
+  //           <section className="display_date"><p><span>Date: </span>{moment(review.publish_date).format('LL')}</p></section>
+  //           <section className="display_score"><p><span>Score: </span>{review.score} / 5</p></section> 
+  //         </section>
+  //         <section className="display_button"><Link to={`/reviews/review/${review.guid}`}>Read More...</Link></section> 
+  //       </section>
+  //     )
+  //   })
+  // }
 
   paginationClick = offset => {
     this.scrollTop();
