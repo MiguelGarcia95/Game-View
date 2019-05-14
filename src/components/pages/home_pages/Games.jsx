@@ -33,18 +33,18 @@ class Games extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  displayGames = games => {
-    return games.map(game => {
-      return (
-        <section className="display_result" key={game.id} >
-          <Link to={`/games/game/${game.guid}`} >
-            <section className="display_image"><img src={game.image.small_url} alt=""/></section>
-            <p>{game.name}</p>
-          </Link>
-        </section>
-      )
-    })
-  }
+  // displayGames = games => {
+  //   return games.map(game => {
+  //     return (
+  //       <section className="display_result" key={game.id} >
+  //         <Link to={`/games/game/${game.guid}`} >
+  //           <section className="display_image"><img src={game.image.small_url} alt=""/></section>
+  //           <p>{game.name}</p>
+  //         </Link>
+  //       </section>
+  //     )
+  //   })
+  // }
 
   paginationClick = offset => {
     this.scrollTop();

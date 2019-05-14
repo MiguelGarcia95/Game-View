@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
 import SearchHeader from '../../layout/header/SearchHeader';
-import {ResultsLoader} from '../../layout/Loader';
+// import {ResultsLoader} from '../../layout/Loader';
+import Results from '../../layout/Results';
 import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -34,18 +35,18 @@ class Characters extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  displayCharacters = characters => {
-    return characters.map(character => {
-      return (
-        <section className="display_result" key={character.id} >
-          <Link to={`/characters/character/${character.guid}`} >
-            <section className="display_image"><img src={character.image.small_url} alt=""/></section>
-            <p>{character.name}</p>
-          </Link>
-        </section>
-      )
-    })
-  }
+  // displayCharacters = characters => {
+  //   return characters.map(character => {
+  //     return (
+  //       <section className="display_result" key={character.id} >
+  //         <Link to={`/characters/character/${character.guid}`} >
+  //           <section className="display_image"><img src={character.image.small_url} alt=""/></section>
+  //           <p>{character.name}</p>
+  //         </Link>
+  //       </section>
+  //     )
+  //   })
+  // }
 
   paginationClick = offset => {
     this.scrollTop();
@@ -66,11 +67,13 @@ class Characters extends React.Component {
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
 
-        {characters && characters > 0 ? (
+        <Results data={characters} type='character' color='#CF775C' />
+
+        {/* {characters ? (
           <section className="page_content">
             {this.displayCharacters(characters)}
           </section>
-        ) : <ResultsLoader color='#CF775C' />}
+        ) : <ResultsLoader color='#CF775C' />} */}
 
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
