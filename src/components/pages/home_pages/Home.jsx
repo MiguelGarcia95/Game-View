@@ -5,6 +5,7 @@ import {Page} from '../../../utils/styledClasses';
 import Navbar from '../../layout/Navbar';
 import HomeHeader from '../../layout/header/HomeHeader';
 import HomeResult from '../../layout/HomeResult';
+import {FullHeaderLoader} from '../../layout/Loader';
 import Sidebar from '../../layout/Sidebar';
 import VideoPlayer from '../../layout/VideoPlayer';
 import Content from '../../layout/Content';
@@ -47,7 +48,10 @@ class Home extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
+        {/* {homeReleases ? ( */}
+        {false ? (
+          <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
+        ) : <FullHeaderLoader />}
         <div ref={node => this.pageDown = node}></div>
         <section className="page_content">
           <Content title='Upcoming Games' content={homeGames} />
