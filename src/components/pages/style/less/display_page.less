@@ -53,7 +53,7 @@
     //Franchise
     
     .franchise_details {
-      padding-right: 25px;
+      // padding-right: 25px;
       color: white;
       span {
         font-weight: 300;
@@ -264,7 +264,9 @@
 @media (max-width: 800px) {
   .page {
     .page_content {
-
+      .franchise_details {
+        span {font-size: 1.8em;}
+      }
       .about {
         header {font-size: 2.5em;}
         h1, h2, h3 {font-size: 1.8em;}
@@ -282,14 +284,10 @@
       .similar_games {
         h1 {font-size: 2.5em;}
         .similar_game {
-          // width: 31%;
-          // margin: 0 1%;
           a {
             p {
               font-size: 0.9em;
-              i {
-                margin-left: 10px;
-              }
+              i {margin-left: 10px;}
             }
           }
         }
@@ -305,6 +303,9 @@
 @media (max-width: 700px) {
   .page {
     .page_content {
+      .franchise_details {
+        span {font-size: 1.5em;}
+      }
       .about {
         header {font-size: 2em;}
         h1, h2, h3 {font-size: 1.5em;}
@@ -378,6 +379,9 @@
 @media (max-width: 450px) {
   .page {
     .page_content {
+      .franchise_details {
+        span {font-size: 1.3em;}
+      }
       .about {
         header {font-size: 1.8em;}
         h1, h2, h3 {font-size: 1.3em;}
@@ -417,7 +421,7 @@
   .page {
     .page_content {
       .about {padding: 0px 25px;}
-
+      .franchise_details {padding: 0px 25px;}
       .similar_games {
         padding: 0px 25px;
         .similar_game {width: 98%;}
