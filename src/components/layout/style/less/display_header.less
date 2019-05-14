@@ -52,6 +52,9 @@
     font-weight: 300;
     font-size: 3em;
     color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .data {
     width: 100%;
@@ -109,39 +112,42 @@
 
 @media (max-width: 450px) {
   .display_header {
-    &.franchise_header {
-      // text-align: center;
+    .data {
+      .score, .author, .date {margin-left: 25px;}
     }
-    &.character_header {
-      // text-align: center;
-      h1 {
-        // font-size: 3em;
-        span {
-          // letter-spacing: 3px;
-          // margin-left: 10px;
-        }
-      }
-      img {
-        // margin: 25px 50px;
-        // width: 150px; height: 150px;
-      }
+  }
+}
+
+@media (max-width: 400px) {
+  .display_header {
+    .data {
+      .score, .author, .date {margin-left: 15px;}
     }
-    h1 {
-      font-size: 2em;
-      // padding: 0px;
-    }
+  }
+}
+
+
+@media (max-width: 350px) {
+  .display_header {
     .data {
       .score, .author, .date {
-        font-size: 1em;
-        margin-left: 40px;
-        span {
-          font-size: 0.8em;
-          line-height: 60px;
-        }
+        font-size: 0.9em;
+        margin-left: 10px;
       }
-      // .score {}
-      // .author {}
-      // .date {}
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .display_header {
+    .data {
+      .score, .author, .date {
+        margin-left: 25px;
+        line-height: 50px;
+        &:after {content: ',';}
+        &.date:after {content: '';}
+        span {display: none;}
+      }
     }
   }
 }
