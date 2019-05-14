@@ -1,7 +1,6 @@
 import * as actionTypes from '../actions/types';
 
 const initialState = {
-  homeReviews: [],
   review: null,
   reviews: [],
   totalResults: null,
@@ -16,11 +15,6 @@ const reviewReducer = (state = initialState, action) => {
         reviews: action.payload.reviews,
         totalResults: action.payload.totalResults,
         offset: action.payload.offset
-      }
-    case actionTypes.GET_HOME_REVIEWS: 
-      return {
-        ...state,
-        homeReviews: action.payload.reviews
       }
     case actionTypes.GET_REVIEW: 
       return {
