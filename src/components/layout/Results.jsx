@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResultsContent = ({type}) => {
+const Results = ({type}) => {
   return (
     <section>
 
@@ -8,4 +8,4 @@ const ResultsContent = ({type}) => {
   )
 }
 
-export default ResultsContent;
+export default Results;
