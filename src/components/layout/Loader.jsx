@@ -1,5 +1,5 @@
 import React from 'react';
-import { PacmanLoader } from 'react-spinners';
+import { PacmanLoader, ClipLoader } from 'react-spinners';
 
 export const FullHeaderLoader = () => {
   return (
@@ -35,6 +35,20 @@ export const SidebarLoader = () => {
       <section className="loader">
         <PacmanLoader
           size={25}
+          sizeUnit={"px"}
+          color={`#FFFF00`}
+        />
+      </section>
+    </section>
+  )
+};
+
+export const ResultsLoader = () => {
+  return (
+    <section className="loader_container results_loader">
+      <section className="loader">
+        <ClipLoader
+          size={100}
           sizeUnit={"px"}
           color={`#FFFF00`}
         />

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import SearchHeader from '../../layout/header/SearchHeader';
+import {ResultsLoader} from '../../layout/Loader';
 import PaginationOffset from '../../layout/PaginationOffset';
 import {getGames} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -63,9 +64,13 @@ class Games extends React.Component {
           title='Search For Games' headerClass='games' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-        <section className="page_content">
-          {this.displayGames(games)}
-        </section>
+
+        {false > 0 ? (
+          <section className="page_content">
+            {this.displayGames(games)}
+          </section>
+        ) : <ResultsLoader />}
+
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
