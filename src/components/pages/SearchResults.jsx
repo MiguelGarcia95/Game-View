@@ -51,7 +51,7 @@ class SearchResults extends React.Component {
     })
   }
 
-  getLastPage = totalResults =>  Math.ceil(totalResults/10);
+  getLastPage = totalResults => Math.ceil(totalResults/10);
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
@@ -79,7 +79,7 @@ class SearchResults extends React.Component {
             <h1>Searched for:  <span><input name='searchTerm' value={searchTerm} onChange={this.onChange}  onKeyDown={this.onSearchKeyDown} /></span></h1>
           </section>
           <section className="meta">
-            {searchResults && <p>Results: {`${searchResults.length} of ${totalResults}`}</p> }
+            {searchResults && <p>Results: {`${searchResults.length} of ${totalResults ? totalResults : 0}`}</p> }
           </section>
         </section>
 

@@ -89,7 +89,7 @@ const displayColumns = (games) => {
 }
 
 const HomeHeader = ({games, pageDown}) => {
-  if (games) {
+  if (games && games.length > 0) {
     const sortedGames = getUniqueGames(games);
     return (
       <section className="home_header selected">
@@ -101,7 +101,7 @@ const HomeHeader = ({games, pageDown}) => {
     )
   } else {
     return (
-      <section className="home_header selected">
+      <section className="home_header">
         <FullHeaderLoader />
       </section>
     )    
