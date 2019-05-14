@@ -1,8 +1,11 @@
 import React from 'react';
+import { PacmanLoader } from 'react-spinners';
 
 const Loader = () => {
   return (
-    <section className="loader"></section>
+    <section className="loader">
+      <PacmanLoader />
+    </section>
   )
 };
 
