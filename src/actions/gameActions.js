@@ -8,7 +8,7 @@ export const getHomeGames = () => {
     let end = new Date();
     let start = new Date();
     end.setMonth(end.getMonth() + (Math.floor(Math.random() * 12) + 6));
-    const results = await axios.get('https://www.giantbomb.com/api/games',{
+    const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/games',{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -29,7 +29,7 @@ export const getHomeGames = () => {
 
 export const getGame = guid => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/game/${guid}/`,{
+    const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/game/${guid}/`,{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -47,7 +47,7 @@ export const getGame = guid => {
 
 export const getGames = offset => {
   return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/games',{
+    const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/games',{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -74,7 +74,7 @@ export const getHomeGameReleases = () => {
     let end = new Date();
     let start = new Date();
     start.setDate(start.getDate() - 14);
-    const results = await axios.get('https://www.giantbomb.com/api/releases',{
+    const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/releases',{
       params: {
         api_key: GBAPI,
         format: 'json',

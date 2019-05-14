@@ -4,7 +4,7 @@ import {GBAPI} from '../apiKeys';
 
 export const searchGames = (query, page) => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/search`,{
+    const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -27,7 +27,7 @@ export const searchGames = (query, page) => {
 
 export const searchFranchises = (query, page) => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/search`,{
+    const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -50,7 +50,7 @@ export const searchFranchises = (query, page) => {
 
 export const searchCharacters = (query, page) => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/search`,{
+    const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
         format: 'json',

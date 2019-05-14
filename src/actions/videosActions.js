@@ -4,7 +4,7 @@ import {GBAPI} from '../apiKeys';
 
 export const getHomeVideos = () => {
   return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/videos',{
+    const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/videos',{
       params: {
         api_key: GBAPI,
         format: 'json',

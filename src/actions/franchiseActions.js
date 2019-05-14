@@ -4,7 +4,7 @@ import {GBAPI} from '../apiKeys';
 
 export const getFranchises = offset => {
   return async (dispatch) => {
-    const results = await axios.get('https://www.giantbomb.com/api/franchises',{
+    const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/franchises',{
       params: {
         api_key: GBAPI,
         format: 'json',
@@ -26,7 +26,7 @@ export const getFranchises = offset => {
 
 export const getFranchise = guid => {
   return async (dispatch) => {
-    const results = await axios.get(`https://www.giantbomb.com/api/franchise/${guid}`,{
+    const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/franchise/${guid}`,{
       params: {
         api_key: GBAPI,
         format: 'json',
