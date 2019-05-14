@@ -54,6 +54,7 @@ class Home extends React.Component {
           <Content title='Upcoming Games' content={homeGames} />
           <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
         </section>
+
         {currentVideo && <VideoPlayer currentVideo={currentVideo} setCurrentVideo={this.setCurrentVideo} /> }
       </Page>
     );

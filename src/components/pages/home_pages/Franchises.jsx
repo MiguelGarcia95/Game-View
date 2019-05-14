@@ -64,7 +64,6 @@ class Franchises extends React.Component {
           title='Search For Franchises' headerClass='franchises' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-        
 
         {franchises && franchises.length > 0 ? (
           <section className="page_content">

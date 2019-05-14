@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {trimString} from '../../utils/functions';
 import {setBackgroundImage} from '../../utils/functions';
 
-const HomeResult = ({result, type, setCurrentVideo}) => {
+const HomeResults = ({result, type, setCurrentVideo}) => {
   const imageStyle = setBackgroundImage(result.image.medium_url)
   return (
     <section className="content_result">
@@ -31,4 +31,4 @@ const HomeResult = ({result, type, setCurrentVideo}) => {
   )
 }
 
-export default HomeResult;
+export default HomeResults;
