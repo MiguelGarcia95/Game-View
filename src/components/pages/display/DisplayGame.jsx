@@ -156,7 +156,7 @@ class DisplayGame extends React.Component {
               <section className="images">
                 <div ref={node => this.pageImages = node}></div>
                 <h1>Images</h1>
-                {game.images.length !== 0 ? this.displayImages(game.images) : <h2 className='not_available'>No Images</h2>}
+                {game.images && game.images.length !== 0 ? this.displayImages(game.images) : <h2 className='not_available'>No Images</h2>}
               </section>
 
             </section>

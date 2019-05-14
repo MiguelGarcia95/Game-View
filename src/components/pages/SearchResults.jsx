@@ -38,11 +38,11 @@ class SearchResults extends React.Component {
     }
   }
 
-  displayResults = results => {
+  displayResults = (results, type) => {
     return results.map(result => {
       return (
         <section className="search_result" key={result.id} >
-          <Link to={`/games/game/${result.guid}`} >
+          <Link to={`/${type}/${type.slice(0,-1)}/${result.guid}`} >
             <section className="result_image"><img src={result.image.small_url} alt=""/></section>
             <p>{result.name}</p>
           </Link>
@@ -84,7 +84,7 @@ class SearchResults extends React.Component {
         </section>
 
         <section className="search_results">
-          {this.displayResults(searchResults)}
+          {this.displayResults(searchResults, type)}
         </section>
 
         <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} />
