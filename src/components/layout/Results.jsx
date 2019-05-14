@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {ResultsLoader} from './Loader';
-import {moment} from 'moment';
+import moment from 'moment';
 
 const displayData = (dataArray, type) => {
   return dataArray.map(data => {

@@ -36,7 +36,6 @@ class DisplayFranchise extends React.Component {
 
   render() {
     const {history, franchise} = this.props;
-    console.log(franchise);
     return (
       <Page className="page app">
         <Navbar history={history} />
