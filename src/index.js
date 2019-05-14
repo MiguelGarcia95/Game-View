@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Switch, Route, withRouter} from 'react-router-dom';
+import {HashRouter, Switch, Route, withRouter} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import {Provider, connect} from 'react-redux';
 import styled from "styled-components";
@@ -28,7 +28,7 @@ const PageContainer = styled.div`
 
 const Root = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Route render={({location}) => {
         return (
           <PageContainer>
@@ -55,7 +55,7 @@ const Root = () => {
           </PageContainer>
         )
       }} />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
@@ -64,9 +64,9 @@ const RootWithAuth = withRouter(connect()(Root));
 const RootWithRouter = () => {
   return (
     <Provider store={store} >
-      <BrowserRouter>
+      <HashRouter>
         <RootWithAuth />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   )
 }
