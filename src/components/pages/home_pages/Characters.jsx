@@ -1,11 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
 import SearchHeader from '../../layout/header/SearchHeader';
-// import {ResultsLoader} from '../../layout/Loader';
 import Results from '../../layout/Results';
 import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
@@ -35,19 +33,6 @@ class Characters extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  // displayCharacters = characters => {
-  //   return characters.map(character => {
-  //     return (
-  //       <section className="display_result" key={character.id} >
-  //         <Link to={`/characters/character/${character.guid}`} >
-  //           <section className="display_image"><img src={character.image.small_url} alt=""/></section>
-  //           <p>{character.name}</p>
-  //         </Link>
-  //       </section>
-  //     )
-  //   })
-  // }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getCharacters(offset);
@@ -67,14 +52,7 @@ class Characters extends React.Component {
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
 
-        <Results data={characters} type='character' color='#CF775C' />
-
-        {/* {characters ? (
-          <section className="page_content">
-            {this.displayCharacters(characters)}
-          </section>
-        ) : <ResultsLoader color='#CF775C' />} */}
-
+        <Results results={characters} type='character' color='#CF775C' />
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>

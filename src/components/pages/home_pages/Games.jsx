@@ -1,10 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import SearchHeader from '../../layout/header/SearchHeader';
-import {ResultsLoader} from '../../layout/Loader';
+import Results from '../../layout/Results';
 import PaginationOffset from '../../layout/PaginationOffset';
 import {getGames} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -33,19 +32,6 @@ class Games extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  // displayGames = games => {
-  //   return games.map(game => {
-  //     return (
-  //       <section className="display_result" key={game.id} >
-  //         <Link to={`/games/game/${game.guid}`} >
-  //           <section className="display_image"><img src={game.image.small_url} alt=""/></section>
-  //           <p>{game.name}</p>
-  //         </Link>
-  //       </section>
-  //     )
-  //   })
-  // }
-
   paginationClick = offset => {
     this.scrollTop();
     this.props.getGames(offset);
@@ -64,12 +50,8 @@ class Games extends React.Component {
           title='Search For Games' headerClass='games' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-        
-        {games && games.length > 0 ? (
-          <section className="page_content">
-            {this.displayGames(games)}
-          </section>
-        ) : <ResultsLoader color='#86D67B' />}
+
+        <Results results={games} type='game' color='#86D67B' />
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
