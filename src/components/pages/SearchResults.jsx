@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames, searchFranchises, searchCharacters, search} from '../../actions/searchActions';
+import {search} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 
 import './style/css/search_results.css';
@@ -93,9 +93,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchGames: (query, page) => dispatch(searchGames(query, page)),
-    searchFranchises: (query, page) => dispatch(searchFranchises(query, page)),
-    searchCharacters: (query, page) => dispatch(searchCharacters(query, page)),
     search: (query, page, type) => dispatch(search(query, page, type))
   }
 }
