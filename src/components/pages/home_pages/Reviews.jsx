@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
+import {ResultsLoader} from '../../layout/Loader';
 import {getReviews} from '../../../actions/reviewActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -13,7 +14,7 @@ import '../style/css/front_page.css';
 
 class Reviews extends React.Component {
   componentDidMount() {
-    if (this.props.reviews.length === 0) {
+    if (this.props.reviews === null) {
       this.props.getReviews(0);
     }
   }
@@ -52,11 +53,16 @@ class Reviews extends React.Component {
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
         <section className='header'><h1>Reviews</h1></section>
-        <section className="page_content reviews">
-          {this.displayReviews(reviews)}
-        </section>
-        <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
 
+        
+
+        {reviews && reviews.length > 0 ? (
+          <section className="page_content reviews">
+            {this.displayReviews(reviews)}
+          </section>
+        ) : <ResultsLoader color='#D67B9E' />}
+
+        <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }

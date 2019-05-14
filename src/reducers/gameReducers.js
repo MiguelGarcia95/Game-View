@@ -3,8 +3,8 @@ import * as actionTypes from '../actions/types';
 const initialState = {
   homeGames: [],
   homeVideos: [],
-  games: [],
   homeReleases: [],
+  games: null,
   totalResults: null,
   offset: 0,
   game: null

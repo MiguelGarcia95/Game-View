@@ -18,7 +18,7 @@ class Games extends React.Component {
   }
   
   componentDidMount() {
-    if (this.props.games.length === 0) {
+    if (this.props.games === null) {
       this.props.getGames(0);
     }
   }
@@ -70,7 +70,7 @@ class Games extends React.Component {
             {this.displayGames(games)}
           </section>
         ) : <ResultsLoader color='#86D67B' />}
-        
+
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PacmanLoader, ClipLoader } from 'react-spinners';
+import './style/css/loader.css';
 
 export const FullHeaderLoader = () => {
   return (
