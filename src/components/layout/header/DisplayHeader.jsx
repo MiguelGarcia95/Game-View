@@ -24,7 +24,7 @@ const DisplayHeader = ({type, content, game}) => {
     return (
       <section className='display_header franchise_header' style={headerImage}>
         <section className="display_header_screen">
-          <h1>Franchise: <span>{content.name}</span></h1>
+          <h1><span className='title'>Franchise:</span> <span>{content.name}</span></h1>
         </section>
       </section>
     )
