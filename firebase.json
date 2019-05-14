@@ -7,8 +7,7 @@
       "**/node_modules/**"
     ],
     "headers": [ {
-
-      "source": "https://www.giantbomb.com/api/",
+      "source": "https://game-view.firebaseapp.com",
       "headers": [ {
         "key": "Access-Control-Allow-Origin",
         "value": "*"
