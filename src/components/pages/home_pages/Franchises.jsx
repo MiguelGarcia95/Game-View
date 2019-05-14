@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
 import SearchHeader from '../../layout/header/SearchHeader';
+import {ResultsLoader} from '../../layout/Loader';
 import {getFranchises} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -17,7 +18,7 @@ class Franchises extends React.Component {
   }
   
   componentDidMount() {
-    if (this.props.franchises.length === 0) {
+    if (this.props.franchises === null) {
       this.props.getFranchises(0);
     }
   }
@@ -63,9 +64,14 @@ class Franchises extends React.Component {
           title='Search For Franchises' headerClass='franchises' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-        <section className="page_content">
-          {this.displayFranchises(franchises)}
-        </section>
+        
+
+        {franchises && franchises.length > 0 ? (
+          <section className="page_content">
+            {this.displayFranchises(franchises)}
+          </section>
+        ) : <ResultsLoader color='#D67B9E' />}
+
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );

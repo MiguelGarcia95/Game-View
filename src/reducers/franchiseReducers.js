@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/types';
 
 const initialState = {
   franchise: null,
-  franchises: [],
+  franchises: null,
   totalResults: null,
   offset: 0
 };

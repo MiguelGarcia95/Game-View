@@ -54,8 +54,6 @@ class Reviews extends React.Component {
         <div ref={node => this.pageTop = node}></div>
         <section className='header'><h1>Reviews</h1></section>
 
-        
-
         {reviews && reviews.length > 0 ? (
           <section className="page_content reviews">
             {this.displayReviews(reviews)}
