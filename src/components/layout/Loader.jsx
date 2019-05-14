@@ -28,3 +28,17 @@ export const ContentLoader = () => {
     </section>
   )
 };
+
+export const SidebarLoader = () => {
+  return (
+    <section className="loader_container sidebar_loader">
+      <section className="loader">
+        <PacmanLoader
+          size={25}
+          sizeUnit={"px"}
+          color={`#FFFF00`}
+        />
+      </section>
+    </section>
+  )
+};
