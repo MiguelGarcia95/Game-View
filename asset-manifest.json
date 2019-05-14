@@ -1,13 +1,13 @@
 {
   "main.css": "/Game-View/static/css/main.0ee2b584.chunk.css",
-  "main.js": "/Game-View/static/js/main.22801a39.chunk.js",
-  "main.js.map": "/Game-View/static/js/main.22801a39.chunk.js.map",
+  "main.js": "/Game-View/static/js/main.33d23e0a.chunk.js",
+  "main.js.map": "/Game-View/static/js/main.33d23e0a.chunk.js.map",
   "runtime~main.js": "/Game-View/static/js/runtime~main.ae58509a.js",
   "runtime~main.js.map": "/Game-View/static/js/runtime~main.ae58509a.js.map",
-  "static/js/2.88c04829.chunk.js": "/Game-View/static/js/2.88c04829.chunk.js",
-  "static/js/2.88c04829.chunk.js.map": "/Game-View/static/js/2.88c04829.chunk.js.map",
+  "static/js/2.59ee5204.chunk.js": "/Game-View/static/js/2.59ee5204.chunk.js",
+  "static/js/2.59ee5204.chunk.js.map": "/Game-View/static/js/2.59ee5204.chunk.js.map",
   "index.html": "/Game-View/index.html",
-  "precache-manifest.d42da0245492e8542029a004d630bc7e.js": "/Game-View/precache-manifest.d42da0245492e8542029a004d630bc7e.js",
+  "precache-manifest.45ba7cd29a061a73451798559e97997e.js": "/Game-View/precache-manifest.45ba7cd29a061a73451798559e97997e.js",
   "service-worker.js": "/Game-View/service-worker.js",
   "static/css/main.0ee2b584.chunk.css.map": "/Game-View/static/css/main.0ee2b584.chunk.css.map"
 }
