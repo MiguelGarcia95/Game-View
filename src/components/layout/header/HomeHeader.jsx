@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
 
+import {FullHeaderLoader} from '../Loader';
 import {setBackgroundImage} from '../../../utils/functions';
 import '../style/css/home_header.css';
 
@@ -88,15 +89,24 @@ const displayColumns = (games) => {
 }
 
 const HomeHeader = ({games, pageDown}) => {
-  const sortedGames = getUniqueGames(games);
-  return (
-    <section className="home_header selected">
-      {games && displayColumns(sortedGames)}
-      <section className="scroll_down" onClick={() => pageDown()}>
-        <i className="fas fa-caret-down fa-4x"></i>
+  if (games) {
+    const sortedGames = getUniqueGames(games);
+    return (
+      <section className="home_header selected">
+        {games && displayColumns(sortedGames)}
+        <section className="scroll_down" onClick={() => pageDown()}>
+          <i className="fas fa-caret-down fa-4x"></i>
+        </section>
       </section>
-    </section>
-  )
+    )
+  } else {
+    return (
+      <section className="home_header selected">
+        <FullHeaderLoader />
+      </section>
+    )    
+  }
+  
 }
 
 export default HomeHeader;
