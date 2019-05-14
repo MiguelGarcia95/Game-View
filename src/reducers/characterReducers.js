@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/types';
 
 const initialState = {
   character: null,
-  characters: [],
+  characters: null,
   totalResults: null,
   offset: 0
 };

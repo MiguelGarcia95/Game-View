@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
 import SearchHeader from '../../layout/header/SearchHeader';
+import {ResultsLoader} from '../../layout/Loader';
 import {getCharacters} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -18,7 +19,7 @@ class Characters extends React.Component {
   }
   
   componentDidMount() {
-    if (this.props.characters.length === 0) {
+    if (this.props.characters === null) {
       this.props.getCharacters(0);
     }
   }
@@ -64,9 +65,13 @@ class Characters extends React.Component {
           title='Search For Characters' headerClass='characters' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-        <section className="page_content">
-          {this.displayCharacters(characters)}
-        </section>
+
+        {characters && characters > 0 ? (
+          <section className="page_content">
+            {this.displayCharacters(characters)}
+          </section>
+        ) : <ResultsLoader color='#CF775C' />}
+
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>

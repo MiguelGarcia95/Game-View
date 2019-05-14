@@ -70,7 +70,7 @@ class Franchises extends React.Component {
           <section className="page_content">
             {this.displayFranchises(franchises)}
           </section>
-        ) : <ResultsLoader color='#D67B9E' />}
+        ) : <ResultsLoader color='#5CB4CF' />}
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
