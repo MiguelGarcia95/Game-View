@@ -2,32 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {ResultsLoader} from './Loader';
 
-const displayGames = games => {
-  return games.map(game => {
-    return (
-      <section className="display_result" key={game.id} >
-        <Link to={`/games/game/${game.guid}`} >
-          <section className="display_image"><img src={game.image.small_url} alt=""/></section>
-          <p>{game.name}</p>
-        </Link>
-      </section>
-    )
-  })
-}
-
-const displayCharacters = characters => {
-  return characters.map(character => {
-    return (
-      <section className="display_result" key={character.id} >
-        <Link to={`/characters/character/${character.guid}`} >
-          <section className="display_image"><img src={character.image.small_url} alt=""/></section>
-          <p>{character.name}</p>
-        </Link>
-      </section>
-    )
-  })
-}
-
 const displayData = (dataArray, type) => {
   return dataArray.map(data => {
     return (

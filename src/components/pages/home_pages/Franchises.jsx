@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import PaginationOffset from '../../layout/PaginationOffset';
 import SearchHeader from '../../layout/header/SearchHeader';
-import {ResultsLoader} from '../../layout/Loader';
+import Results from '../../layout/Results';
 import {getFranchises} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 import {getCurrentPage, getLastPage, getOffset} from '../../../utils/functions';
@@ -33,18 +32,18 @@ class Franchises extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  displayFranchises = franchises => {
-    return franchises.map(franchise => {
-      return (
-        <section className="display_result" key={franchise.id} >
-          <Link to={`/franchises/franchise/${franchise.guid}`} >
-            <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
-            <p>{franchise.name}</p>
-          </Link>
-        </section>
-      )
-    })
-  }
+  // displayFranchises = franchises => {
+  //   return franchises.map(franchise => {
+  //     return (
+  //       <section className="display_result" key={franchise.id} >
+  //         <Link to={`/franchises/franchise/${franchise.guid}`} >
+  //           <section className="display_image"><img src={franchise.image.small_url} alt=""/></section>
+  //           <p>{franchise.name}</p>
+  //         </Link>
+  //       </section>
+  //     )
+  //   })
+  // }
 
   paginationClick = offset => {
     this.scrollTop();
@@ -65,11 +64,7 @@ class Franchises extends React.Component {
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
 
-        {franchises && franchises.length > 0 ? (
-          <section className="page_content">
-            {this.displayFranchises(franchises)}
-          </section>
-        ) : <ResultsLoader color='#5CB4CF' />}
+        <Results results={franchises} type='franchise' color='#5CB4CF' />
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
