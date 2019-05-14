@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
-import {searchGames, searchFranchises, searchCharacters} from '../../actions/searchActions';
+import {searchGames, searchFranchises, searchCharacters, search} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 
 import './style/css/search_results.css';
@@ -15,13 +15,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.match.params.type === 'games') {
-      this.props.searchGames(this.props.match.params.query, 1);
-    } else if (this.props.match.params.type === 'franchises') {
-      this.props.searchFranchises(this.props.match.params.query, 1);
-    }  else if (this.props.match.params.type === 'characters') {
-      this.props.searchCharacters(this.props.match.params.query, 1);
-    }
+    this.props.search(this.props.match.params.query, 1, this.props.match.params.type.slice(0, -1)); 
   }
 
   onChange = e => this.setState({[e.target.name]: e.target.value});
@@ -55,13 +49,9 @@ class SearchResults extends React.Component {
 
   scrollTop = () => this.pageTop.scrollIntoView({behavior: 'smooth'});
 
-  paginationClick = (type, page) => {
+  paginationClick = page => {
     this.scrollTop();
-    if (type === 'games') {
-      this.props.searchGames(this.props.match.params.query, page);
-    } else if (type === 'franchises') {
-      this.props.searchFranchises(this.props.match.params.query, page);
-    } 
+    this.props.search(this.props.match.params.query, page, this.props.match.params.type.slice(0, -1)); 
   }
 
   render() {
@@ -87,7 +77,7 @@ class SearchResults extends React.Component {
           {this.displayResults(searchResults, type)}
         </section>
 
-        <Pagination page={page} type={type} paginationClick={this.paginationClick} lastPage={lastPage} />
+        <Pagination page={page} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );
   }
@@ -105,7 +95,8 @@ const mapDispatchToProps = dispatch => {
   return {
     searchGames: (query, page) => dispatch(searchGames(query, page)),
     searchFranchises: (query, page) => dispatch(searchFranchises(query, page)),
-    searchCharacters: (query, page) => dispatch(searchCharacters(query, page))
+    searchCharacters: (query, page) => dispatch(searchCharacters(query, page)),
+    search: (query, page, type) => dispatch(search(query, page, type))
   }
 }
 
