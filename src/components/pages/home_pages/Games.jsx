@@ -64,13 +64,13 @@ class Games extends React.Component {
           title='Search For Games' headerClass='games' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
         />
-
-        {false > 0 ? (
+        
+        {games && games.length > 0 ? (
           <section className="page_content">
             {this.displayGames(games)}
           </section>
-        ) : <ResultsLoader />}
-
+        ) : <ResultsLoader color='#86D67B' />}
+        
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
       </Page>
     );

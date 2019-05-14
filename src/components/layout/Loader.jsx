@@ -43,14 +43,14 @@ export const SidebarLoader = () => {
   )
 };
 
-export const ResultsLoader = () => {
+export const ResultsLoader = ({color}) => {
   return (
     <section className="loader_container results_loader">
       <section className="loader">
         <ClipLoader
           size={100}
           sizeUnit={"px"}
-          color={`#FFFF00`}
+          color={color}
         />
       </section>
     </section>
