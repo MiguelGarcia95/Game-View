@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeResult from './HomeResult';
+import {ContentLoader} from './Loader';
 import './style/css/content.css';
 
 const displayResults = (results, type) => {
@@ -9,16 +10,27 @@ const displayResults = (results, type) => {
 }
 
 const Content = ({title, content}) => {
-  return (
-    <section className="content">
-      <section className="title">
-        <h1>{title}</h1>
+  if (content && content.length > 0) {
+    return (
+      <section className="content">
+        <section className="title">
+          <h1>{title}</h1>
+        </section>
+        <section className="content_results">
+          {content.length > 0 && displayResults(content, 'content')}
+        </section>
       </section>
-      <section className="content_results">
-        {content.length > 0 && displayResults(content, 'content')}
+    )
+  } else {
+    return (
+      <section className="content">
+        <section className="title">
+          <h1>{title}</h1>
+        </section>
+        <ContentLoader />
       </section>
-    </section>
-  )
+    )
+  }
 }
 
 export default Content;

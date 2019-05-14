@@ -5,7 +5,7 @@ import {Page} from '../../../utils/styledClasses';
 import Navbar from '../../layout/Navbar';
 import HomeHeader from '../../layout/header/HomeHeader';
 import HomeResult from '../../layout/HomeResult';
-import {FullHeaderLoader} from '../../layout/Loader';
+import {FullHeaderLoader, ContentLoader} from '../../layout/Loader';
 import Sidebar from '../../layout/Sidebar';
 import VideoPlayer from '../../layout/VideoPlayer';
 import Content from '../../layout/Content';
@@ -48,12 +48,12 @@ class Home extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {/* {homeReleases ? ( */}
-        {false ? (
-          <HomeHeader games={homeReleases} pageDown={this.scrollDown} />
-        ) : <FullHeaderLoader />}
+        {homeReleases && homeReleases.length > 0 ? <HomeHeader games={homeReleases} pageDown={this.scrollDown} /> : <FullHeaderLoader />}
+
         <div ref={node => this.pageDown = node}></div>
+
         <section className="page_content">
+          {/* {false ? <Content title='Upcoming Games' content={homeGames} /> : <ContentLoader />} */}
           <Content title='Upcoming Games' content={homeGames} />
           <Sidebar title='Videos' content={homeVideos} setCurrentVideo={this.setCurrentVideo} />
         </section>
