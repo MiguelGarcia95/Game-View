@@ -15,6 +15,7 @@ class DisplayFranchise extends React.Component {
     if (!this.props.franchise) {
       this.props.getFranchise(this.props.match.params.guid);
     } else if (this.props.franchise.guid !== this.props.match.params.guid) {
+      this.props.clearFranchise();
       this.props.getFranchise(this.props.match.params.guid);
     }
   }

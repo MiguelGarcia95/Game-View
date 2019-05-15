@@ -15,6 +15,7 @@ class DisplayReview extends React.Component {
     if (!this.props.review) {
       this.props.getReview(this.props.match.params.guid);
     } else if (this.props.review.guid !== this.props.match.params.guid) {
+      this.props.clearReview();
       this.props.getReview(this.props.match.params.guid);
     }
   }

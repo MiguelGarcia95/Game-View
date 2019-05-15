@@ -21,6 +21,7 @@ class DisplayCharacter extends React.Component {
     if (!this.props.character) {
       this.props.getCharacter(this.props.match.params.guid);
     } else if (this.props.character.guid !== this.props.match.params.guid) {
+      this.props.clearCharacter();
       this.props.getCharacter(this.props.match.params.guid);
     }
   }
