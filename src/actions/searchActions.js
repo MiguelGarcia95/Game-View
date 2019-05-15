@@ -4,6 +4,9 @@ import {GBAPI} from '../apiKeys';
 
 export const search = (query, page, type) => {
   return async (dispatch) => {
+    if (type === 'franchise') {
+      type = 'franchises';
+    }
     const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/search`,{
       params: {
         api_key: GBAPI,
@@ -14,6 +17,9 @@ export const search = (query, page, type) => {
         field_list: 'guid,id,name,image'
       }
     });
+
+
+    console.log(results)
     dispatch({
       type: actionTypes.SEARCH,
       payload: {

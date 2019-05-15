@@ -22,13 +22,7 @@ class SearchResults extends React.Component {
 
   onSearchKeyDown = e => {
     if (e.keyCode === 13 && e.target.value) {
-      if (this.props.match.params.type === 'games') {
-        this.props.history.push(`/games/search/${e.target.value}`)
-      } else if (this.props.match.params.type === 'franchises') {
-        this.props.history.push(`/franchises/search/${e.target.value}`)
-      } else if (this.props.match.params.type === 'characters') {
-        this.props.history.push(`/characters/search/${e.target.value}`)
-      }
+      this.props.history.push(`/${this.props.match.params.type}/search/${e.target.value}`)
     }
   }
 
