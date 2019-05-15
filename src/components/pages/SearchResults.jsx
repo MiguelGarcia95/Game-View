@@ -28,16 +28,25 @@ class SearchResults extends React.Component {
   }
 
   displayResults = (results, type) => {
-    return results.map(result => {
+    if (results.length > 0) {
+      return results.map(result => {
+        return (
+          <section className="search_result" key={result.id} >
+            <Link to={`/${type}/${type.slice(0,-1)}/${result.guid}`} >
+              <section className="result_image"><img src={result.image.small_url} alt=""/></section>
+              <p>{result.name}</p>
+            </Link>
+          </section>
+        )
+      })
+    } else {
       return (
-        <section className="search_result" key={result.id} >
-          <Link to={`/${type}/${type.slice(0,-1)}/${result.guid}`} >
-            <section className="result_image"><img src={result.image.small_url} alt=""/></section>
-            <p>{result.name}</p>
-          </Link>
+        <section className="no_results">
+          <h1>No Results</h1>
         </section>
       )
-    })
+    }
+
   }
 
   searchHeader = (searchResults, type, searchTerm, totalResults) => {
