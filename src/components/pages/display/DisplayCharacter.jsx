@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
+import {FullHeaderLoader} from '../../layout/Loader';
+
 import {getCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 

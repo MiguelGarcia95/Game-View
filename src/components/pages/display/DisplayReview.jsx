@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
+import {FullHeaderLoader} from '../../layout/Loader';
 import {getReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
@@ -45,7 +46,7 @@ class DisplayReview extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {review && (
+        {review ? (
           <React.Fragment>
             {game && <DisplayHeader content={review} game={game} type='review' />}
             <div ref={node => this.pageTop = node}></div>
@@ -56,7 +57,7 @@ class DisplayReview extends React.Component {
               </section>
             </section>
           </React.Fragment>
-        )}
+        ) : <FullHeaderLoader />}
       </Page>
     );
   }

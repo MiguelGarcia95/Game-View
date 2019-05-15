@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 
 import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
+import {FullHeaderLoader} from '../../layout/Loader';
+
 import {getFranchise} from '../../../actions/franchiseActions';
 import {Page} from '../../../utils/styledClasses';
 
