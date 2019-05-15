@@ -59,7 +59,7 @@ class DisplayCharacter extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {character && (
+        {character ? (
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
             <DisplayHeader content={character} />
@@ -75,7 +75,7 @@ class DisplayCharacter extends React.Component {
               </section>
             </section>
           </React.Fragment>
-        )}
+        ) : <FullHeaderLoader /> }
       </Page>
     );
   }

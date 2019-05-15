@@ -41,7 +41,7 @@ class DisplayFranchise extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {franchise && (
+        {franchise ? (
           <React.Fragment>
             <div ref={node => this.pageTop = node}></div>
             <DisplayHeader content={franchise} type='franchise' />
@@ -54,7 +54,7 @@ class DisplayFranchise extends React.Component {
 
             </section>
           </React.Fragment>
-        )}
+        ) : <FullHeaderLoader />}
       </Page>
     );
   }
