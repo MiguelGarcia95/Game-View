@@ -21,6 +21,11 @@ const franchiseReducer = (state = initialState, action) => {
         ...state,
         franchise: action.payload.franchise
       }
+    case actionTypes.CLEAR_FRANCHISE:
+      return {
+        ...state,
+        franchise: action.payload.franchise
+      }
     default:
       return state;
   }
