@@ -62,11 +62,22 @@ class SearchResults extends React.Component {
     this.props.search(this.props.match.params.query, page, this.props.match.params.type.slice(0, -1)); 
   }
 
+  getLoaderColor = type => {
+    if (type === 'franchises') {
+      return '#5CB4CF';
+    } else if (type === 'games') {
+      return '#86D67B';
+    } else {
+      return '#CF775C';
+    }
+  }
+
   render() {
     const {history, searchResults, totalResults, page} = this.props;
     const {searchTerm} = this.state;
     const {type} = this.props.match.params;
     const lastPage = this.getLastPage(totalResults);
+    const color = this.getLoaderColor(type);
     return (
       <Page className="page app">
         <Navbar history={history} />
@@ -75,7 +86,7 @@ class SearchResults extends React.Component {
         {this.searchHeader(searchResults, type, searchTerm, totalResults)}
 
         <section className="search_results">
-          {searchResults ? this.displayResults(searchResults, type) : <ResultsLoader color='#251574' />}
+          {searchResults ? this.displayResults(searchResults, type) : <ResultsLoader color={color} />}
         </section>
 
         <Pagination page={page} paginationClick={this.paginationClick} lastPage={lastPage} />
