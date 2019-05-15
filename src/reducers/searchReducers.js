@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/types';
 
 const initialState = {
-  searchResults: [],
+  searchResults: null,
   totalResults: null,
   page: 1,
 };

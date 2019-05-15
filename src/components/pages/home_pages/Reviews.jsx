@@ -35,12 +35,6 @@ class Reviews extends React.Component {
         <div ref={node => this.pageTop = node}></div>
         <section className='header'><h1>Reviews</h1></section>
 
-        {/* {reviews && reviews.length > 0 ? (
-          <section className="page_content reviews">
-            {this.displayReviews(reviews)}
-          </section>
-        ) : <ResultsLoader color='#D67B9E' />} */}
-
         <Results results={reviews} type='review' color='#D67B9E' />
 
         <PaginationOffset page={page} lastOffset={lastOffset} offset={offset} paginationClick={this.paginationClick} lastPage={lastPage} />
