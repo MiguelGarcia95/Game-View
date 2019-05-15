@@ -46,10 +46,12 @@ class Franchises extends React.Component {
       <Page className="page app">
         <Navbar history={history} />
         <div ref={node => this.pageTop = node}></div>
-        <SearchHeader 
+        {/* <SearchHeader 
           title='Search For Franchises' headerClass='franchises' 
           onChange={this.onChange} onSearchKeyDown={this.onSearchKeyDown} searchTerm={this.state.searchTerm}  
-        />
+        /> */}
+        <section className='header'><h1>Franchises</h1></section>
+
 
         <Results results={franchises} type='franchise' color='#5CB4CF' />
 
