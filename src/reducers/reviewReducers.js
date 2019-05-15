@@ -21,6 +21,11 @@ const reviewReducer = (state = initialState, action) => {
         ...state,
         review: action.payload.review
       }
+    case actionTypes.CLEAR_REVIEW:
+      return {
+        ...state,
+        review: action.payload.review
+      }
     default:
       return state;
   }
