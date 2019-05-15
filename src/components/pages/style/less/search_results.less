@@ -74,6 +74,18 @@
   height: auto;
   overflow: auto;
   margin-bottom: 100px;
+  .no_results {
+    text-align: center;
+    h1 {
+      &.games {color: @gameBorderColor;}
+      &.reviews {color: @reviewBorderColor;}
+      &.franchises {color: @franchisesBorderColor;}
+      &.characters {color: @charactersBorderColor;}
+      font-size: 3em; 
+      margin: 50px 0;
+      font-weight: 300;
+    }
+  }
   .search_result {
     width: 31%;
     margin: 25px 1.1%;

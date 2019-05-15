@@ -42,7 +42,7 @@ class SearchResults extends React.Component {
     } else {
       return (
         <section className="no_results">
-          <h1>No Results</h1>
+          <h1 className={type} >No Results</h1>
         </section>
       )
     }
