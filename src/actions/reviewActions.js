@@ -25,6 +25,17 @@ export const getReviews = (offset) => {
   }
 }
 
+export const clearReview = () => {
+  return dispatch => {
+    dispatch({
+      type: actionTypes.CLEAR_REVIEW,
+      payload: {
+        review: null
+      }
+    })
+  }
+}
+
 export const getReview = guid => {
   return async (dispatch) => {
     const results = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/review/${guid}`, {
