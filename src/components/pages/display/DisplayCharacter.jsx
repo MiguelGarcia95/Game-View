@@ -6,7 +6,7 @@ import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
 import {FullHeaderLoader} from '../../layout/Loader';
 
-import {getCharacter} from '../../../actions/characterActions';
+import {getCharacter, clearCharacter} from '../../../actions/characterActions';
 import {Page} from '../../../utils/styledClasses';
 
 import '../style/css/display_page.css';
@@ -89,7 +89,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getCharacter: guid => dispatch(getCharacter(guid))
+    getCharacter: guid => dispatch(getCharacter(guid)),
+    clearCharacter: () => dispatch(clearCharacter())
   }
 }
 

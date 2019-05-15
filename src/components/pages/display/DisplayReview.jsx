@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Navbar from '../../layout/Navbar';
 import DisplayHeader from '../../layout/header/DisplayHeader';
 import {FullHeaderLoader} from '../../layout/Loader';
-import {getReview} from '../../../actions/reviewActions';
+import {getReview, clearReview} from '../../../actions/reviewActions';
 import {getGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 
@@ -73,7 +73,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getReview: guid => dispatch(getReview(guid)),
-    getGame: guid => dispatch(getGame(guid))
+    getGame: guid => dispatch(getGame(guid)),
+    clearReview: () => dispatch(clearReview())
   }
 }
 
