@@ -8,6 +8,7 @@ const VideoPlayer = ({setCurrentVideo, currentVideo}) => {
       <section className="video_box">
         <embed src={currentVideo} type=""/>
       </section>
+      <section className="exit" onClick={() => setCurrentVideo(null)} ><i className="fas fa-2x fas fa-times"></i></section>
     </section>
   )
 }
