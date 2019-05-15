@@ -41,3 +41,14 @@ export const getCharacter = guid => {
     })
   }
 }
+
+export const clearCharacter = () => {
+  return dispatch => {
+    dispatch({
+      type: actionTypes.CLEAR_CHARACTER,
+      payload: {
+        character: null
+      }
+    })
+  }
+}
