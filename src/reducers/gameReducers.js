@@ -34,6 +34,11 @@ const gameReducer = (state = initialState, action) => {
         ...state,
         game: action.payload.game
       }
+    case actionTypes.CLEAR_GAME:
+      return {
+        ...state,
+        game: action.payload.game
+      }
     default:
       return state;
   }

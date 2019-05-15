@@ -3,10 +3,11 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Navbar from '../../layout/Navbar';
+import {FullHeaderLoader} from '../../layout/Loader';
 import GameHeader from '../../layout/header/GameHeader';
 import ImageViewer from '../../layout/ImageViewer';
 
-import {getGame} from '../../../actions/gameActions';
+import {getGame, clearGame} from '../../../actions/gameActions';
 import {Page} from '../../../utils/styledClasses';
 
 import '../style/css/display_page.css';
@@ -21,6 +22,7 @@ class DisplayGame extends React.Component {
     if (!this.props.game) {
       this.props.getGame(this.props.match.params.guid);
     } else if (this.props.game.guid !== this.props.match.params.guid) {
+      this.props.clearGame();
       this.props.getGame(this.props.match.params.guid);
     }
   }
@@ -128,7 +130,7 @@ class DisplayGame extends React.Component {
     return (
       <Page className="page app">
         <Navbar history={history} />
-        {game && (
+        {game ? (
           <React.Fragment>
             <GameHeader game={game} scrollDown={this.scrollAbout} />
             <div ref={node => this.pageDown = node}></div>
@@ -163,7 +165,7 @@ class DisplayGame extends React.Component {
             {currentImage && <ImageViewer changeImage={this.changeImage} currentImageIndex={currentImageIndex} currentImage={currentImage} setCurrentImage={this.setCurrentImage} /> }
             
           </React.Fragment>
-        )}
+        ) : <FullHeaderLoader />}
       </Page>
     );
   }
@@ -177,7 +179,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGame: guid => dispatch(getGame(guid))
+    getGame: guid => dispatch(getGame(guid)),
+    clearGame: () => dispatch(clearGame())
   }
 }
 

@@ -45,6 +45,17 @@ export const getGame = guid => {
   }
 }
 
+export const clearGame = () => {
+  return dispatch => {
+    dispatch({
+      type: actionTypes.CLEAR_GAME,
+      payload: {
+        game: null
+      }
+    })
+  }
+}
+
 export const getGames = offset => {
   return async (dispatch) => {
     const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/games',{
