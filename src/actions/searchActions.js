@@ -17,8 +17,6 @@ export const search = (query, page, type) => {
         field_list: 'guid,id,name,image'
       }
     });
-
-
     console.log(results)
     dispatch({
       type: actionTypes.SEARCH,
