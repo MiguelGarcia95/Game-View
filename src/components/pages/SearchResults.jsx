@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Navbar from '../layout/Navbar';
 import Pagination from '../layout/Pagination';
 import {ResultsLoader} from '../layout/Loader';
-import {search} from '../../actions/searchActions';
+import {search, clearSearch} from '../../actions/searchActions';
 import {Page} from '../../utils/styledClasses';
 
 import './style/css/search_results.css';
@@ -16,6 +16,7 @@ class SearchResults extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearSearch();
     this.props.search(this.props.match.params.query, 1, this.props.match.params.type.slice(0, -1)); 
   }
 
@@ -114,7 +115,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    search: (query, page, type) => dispatch(search(query, page, type))
+    search: (query, page, type) => dispatch(search(query, page, type)),
+    clearSearch: () => dispatch(clearSearch())
   }
 }
 
