@@ -14,3 +14,4 @@ export const GET_FRANCHISE = 'GET_FRANCHISE';
 export const GET_CHARACTERS = 'GET_CHARACTERS';
 export const GET_CHARACTER = 'GET_CHARACTER';
 export const SEARCH = 'SEARCH';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
