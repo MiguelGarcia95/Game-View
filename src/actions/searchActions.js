@@ -27,3 +27,16 @@ export const search = (query, page, type) => {
     })
   }
 }
+
+export const clearSearch = () => {
+  return async (dispatch) => {
+    dispatch({
+      type: actionTypes.CLEAR_SEARCH,
+      payload: {
+        searchResults: null,
+        totalResults: null,
+        page: 1
+      }
+    })
+  }
+}

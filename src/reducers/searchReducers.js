@@ -15,6 +15,13 @@ const searchReducer = (state = initialState, action) => {
         totalResults: action.payload.totalResults,
         page: action.payload.page
       }
+    case actionTypes.CLEAR_SEARCH:
+      return {
+        ...state,
+        searchResults: action.payload.searchResults,
+        totalResults: action.payload.totalResults,
+        page: action.payload.page
+      }
     default:
       return state;
   }
