@@ -9,6 +9,7 @@ export const getHomeGames = () => {
     let start = new Date();
     end.setMonth(end.getMonth() + (Math.floor(Math.random() * 12) + 6));
     const results = await axios.get('https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/games',{
+      headers: {'origin': 'x-requested-with'},
       params: {
         api_key: GBAPI,
         format: 'json',
